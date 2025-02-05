@@ -1,0 +1,34 @@
+---
+title: "RegisterProgIdInfo element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Manages the registration of OLE ProgId information with the system. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdvertiseExecuteSequence",
+      link: "../advertiseexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "RegisterProgIdInfo Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registerprogidinfo-action"
+    }
+  ]}
+/>

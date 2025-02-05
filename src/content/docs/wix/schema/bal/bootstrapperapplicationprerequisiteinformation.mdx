@@ -1,0 +1,61 @@
+---
+title: "BootstrapperApplicationPrerequisiteInformation element (Bal extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Adds license information for a prereq package, should only be used when unable to add the license attributes to the package directly.
+
+ _Available in WiX v5._
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "LicenseFile",
+      type: "string"
+    }}
+  >
+  Source file of the license. May not be used with LicenseUrl.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LicenseUrl",
+      type: "string"
+    }}
+  >
+  Source url of the license. May not be used with LicenseFile.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PackageId",
+      type: "string",
+      required: true
+    }}
+  >
+  Id of the target package.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

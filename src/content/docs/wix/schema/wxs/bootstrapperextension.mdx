@@ -1,0 +1,76 @@
+---
+title: "BootstrapperExtension element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+[WIX v5] An extension to the Burn engine. Currently requires a WiX compiler extension to do anything useful.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  The identifier of the BootstrapperExtension element. Only required if you want to reference this element using a BootstrapperExtensionRef element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  The relative destination path and file name for the bundle extension DLL.
+   The default is the source file name. Use this attribute to rename the bundle extension DLL or extract it into a subfolder.
+   At a minimum, the Name or SourceFile attribute must be specified.
+   This must be a relative path ('\foo' or 'C:\foo' is not allowed).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  The DLL with the bundle extension entry function.
+   The default value is the Name attribute, if provided.
+   At a minimum, the SourceFile or Name attribute must be specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Payload",
+      link: "../payload"
+    },
+    {
+      title: "PayloadGroupRef",
+      link: "../payloadgroupref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

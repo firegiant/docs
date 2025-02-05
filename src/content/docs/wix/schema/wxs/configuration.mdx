@@ -1,0 +1,132 @@
+---
+title: "Configuration element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines the configurable attributes of merge module.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ContextData",
+      type: "string"
+    }}
+  >
+  Specifies a semantic context for the requested data.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultValue",
+      type: "string"
+    }}
+  >
+  Specifies a default value for the item in this record if the merge tool declines to provide a value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Description for authoring.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  Display name for authoring.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Format",
+      type: "",
+      required: true
+    }}
+  >
+  Specifies the format of the data being changed. This attribute's value must be one of the following:
+  - *Text*
+  - *Key*
+  - *Integer*
+  - *Bitfield*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HelpKeyword",
+      type: "string"
+    }}
+  >
+  Keyword into chm file for authoring.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HelpLocation",
+      type: "string"
+    }}
+  >
+  Location of chm file for authoring.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyNoOrphan",
+      type: "yesno"
+    }}
+  >
+  Does not merge rule according to rules in MSI SDK.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Defines the name of the configurable item.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NonNullable",
+      type: "yesno"
+    }}
+  >
+  If yes, null is not a valid entry.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "string"
+    }}
+  >
+  Specifies the type of the data being changed.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Module",
+      link: "../module"
+    }
+  ]}
+/>

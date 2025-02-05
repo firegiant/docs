@@ -1,0 +1,134 @@
+---
+title: "Certificate element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used to install and uninstall certificates.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BinaryRef",
+      type: "string"
+    }}
+  >
+  Reference to a Binary element that will store the certificate as a stream inside the package. This attribute cannot be specified with
+   the CertificatePath attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CertificatePath",
+      type: "string"
+    }}
+  >
+  If the Request attribute is "no" then this attribute is the path to the certificate file outside of the package.
+   If the Request attribute is "yes" then this atribute is the certificate authority to request the certificate from.
+   This attribute may be set via a formatted Property (e.g. [MyProperty]).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this certificate in the installation package. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the certificate that will be installed or uninstalled in the specified store.
+   This attribute may be set via a formatted Property (e.g. [MyProperty]).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PFXPassword",
+      type: "string"
+    }}
+  >
+  If the Binary stream or path to the file outside of the package is a password protected PFX file, the password for that
+   PFX must be specified here. This attribute may be set via a formatted Property (e.g. [MyProperty]).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Request",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  This attribute controls whether the CertificatePath attribute is a path to a certificate file (Request='no') or the
+   certificate authority to request the certificate from (Request='yes').
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "StoreLocation",
+      type: "",
+      required: true
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *currentUser*
+  - *localMachine*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "StoreName",
+      type: "",
+      required: true
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *ca*: Contains the certificates of certificate authorities that the user trusts to issue certificates to others. Certificates in these stores are normally supplied with the operating system or by the user's network administrator.
+  - *my*: Use the "personal" value instead.
+  - *personal*: Contains personal certificates. These certificates will usually have an associated private key. This store is often
+     referred to as the "MY" certificate store.
+  - *request*
+  - *root*: Contains the certificates of certificate authorities that the user trusts to issue certificates to others. Certificates in these stores are normally supplied with the operating system or by the user's network administrator. Certificates in this store are typically self-signed.
+  - *otherPeople*: Contains the certificates of those that the user normally sends enveloped messages to or receives signed messages from.
+     See [MSDN documentation](http://msdn.microsoft.com/library/aa388160.aspx) for more information.
+  - *trustedPeople*: Contains the certificates of those directly trusted people and resources.
+     See [MSDN documentation](http://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.storename.aspx) for more information.
+  - *trustedPublisher*: Contains the certificates of those publishers who are trusted.
+     See [MSDN documentation](http://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.storename.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Vital",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether to fail the install if the certificate fails to install. The default is "yes".
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>
+
+## See also
+[CertificateRef](../certificateref)

@@ -1,0 +1,51 @@
+---
+title: "ActivatableClass element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an activatable class.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Activatable class id.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThreadingModel",
+      type: "ThreadingModelTypeUnion",
+      typeLink: "../threadingmodeltype",
+      typeTitle: "Values of this type will be \"STA\", \"MTA\", or \"Both\"."
+    }}
+  >
+  Threading model for in-process server: STA, MTA, or Both. Required for in-process activatable class. Prohibited for out-of-process activatable class.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    },
+    {
+      title: "OutOfProcessServer",
+      link: "../outofprocessserver"
+    }
+  ]}
+/>

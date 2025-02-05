@@ -1,0 +1,24 @@
+<section class="wrapper">
+  <slot />
+</section>
+
+<style>
+  .wrapper {
+    --sl-text-xs: 0.75rem;
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 0.25rem;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    section {
+      padding-inline: 1rem;
+    }
+    section + section {
+      margin-block-start: 0;
+      padding-block-start: 1.5rem;
+      border-top: 1px solid var(--sl-color-hairline-light);
+    }
+  }
+</style>

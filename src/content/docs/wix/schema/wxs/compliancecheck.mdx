@@ -1,0 +1,67 @@
+---
+title: "ComplianceCheck element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Adds a row to the CCPSearch table.
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComplianceDrive",
+      description: "Starts searches from the CCP_DRIVE.",
+      link: "../compliancedrive"
+    },
+    {
+      title: "ComponentSearch",
+      link: "../componentsearch"
+    },
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "IniFileSearch",
+      link: "../inifilesearch"
+    },
+    {
+      title: "RegistrySearch",
+      link: "../registrysearch"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[Property](../property)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "CCPSearch Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/ccpsearch-table"
+    },
+    {
+      title: "Signature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/signature-table"
+    }
+  ]}
+/>

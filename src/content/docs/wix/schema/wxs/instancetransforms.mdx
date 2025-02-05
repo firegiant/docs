@@ -1,0 +1,46 @@
+---
+title: "InstanceTransforms element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Use this element to contain definitions for instance transforms.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string",
+      required: true
+    }}
+  >
+  The Id of the Property who's value should change for each instance.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Instance",
+      link: "../instance"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    }
+  ]}
+/>

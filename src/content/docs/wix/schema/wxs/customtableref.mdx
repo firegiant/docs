@@ -1,0 +1,55 @@
+---
+title: "CustomTableRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used to reference a CustomTable element and optionally add more data.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the CustomTable element to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Row",
+      description: "Row definition for the custom table.",
+      link: "../row"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

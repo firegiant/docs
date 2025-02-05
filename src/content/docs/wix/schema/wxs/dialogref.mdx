@@ -1,0 +1,41 @@
+---
+title: "DialogRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Reference to a Dialog. This will cause the entire referenced section's contents
+ to be included in the installer database.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the Dialog to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## See also
+[Dialog](../dialog)

@@ -1,0 +1,54 @@
+---
+title: "TargetFile element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Information about specific files in a target image.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the File table.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "IgnoreRange",
+      link: "../ignorerange"
+    },
+    {
+      title: "ProtectRange",
+      link: "../protectrange"
+    },
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "TargetImage",
+      link: "../targetimage"
+    }
+  ]}
+/>

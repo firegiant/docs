@@ -1,0 +1,72 @@
+---
+title: "CommandLine element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes additional, conditional command-line arguments for an ExePackage or BundlePackage.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition that controls whether the command-line arguments specified in the
+   InstallArgument, UninstallArgument, or RepairArgument attributes are appended to the
+   command line passed to the package. Which attribute is used depends on the
+   action being applied to the package. For example, when the package is
+   being installed, the InstallArgument attribute value is appended to the command
+   line when the package is executed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InstallArgument",
+      type: "string"
+    }}
+  >
+  Additional command-line arguments to apply during package installation if Condition is true.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RepairArgument",
+      type: "string"
+    }}
+  >
+  Additional command-line arguments to apply during package repair if Condition is true.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UninstallArgument",
+      type: "string"
+    }}
+  >
+  Additional command-line arguments to apply during package uninstallation if Condition is true.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    },
+    {
+      title: "BundlePackage",
+      link: "../bundlepackage"
+    }
+  ]}
+/>

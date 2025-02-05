@@ -1,0 +1,74 @@
+---
+title: "EmbeddedUIResource element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a resource for use by the embedded UI.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the embedded UI resource.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
+      required: true
+    }}
+  >
+  The name for the resource when it is extracted from the MSI package for use by the embedded UI DLL. (Windows
+   Installer does not support the typical short filename and long filename combination for embedded UI files
+   as it does for other kinds of files.) If this attribute is not specified the Id attribute will be used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string",
+      required: true
+    }}
+  >
+  Path to the binary file that is the embedded UI resource.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "EmbeddedUI",
+      link: "../embeddedui"
+    }
+  ]}
+/>
+
+## See also
+[EmbeddedUI](../embeddedui)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiEmbeddedUI Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiembeddedui-table"
+    }
+  ]}
+/>

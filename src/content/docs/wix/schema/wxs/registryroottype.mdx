@@ -1,0 +1,17 @@
+---
+title: "RegistryRootType type"
+---
+
+Values of this type represent possible registry roots.
+
+## Enumeration values
+
+  - *HKMU*: A per-user installation will make the operation occur under HKEY_CURRENT_USER.
+     A per-machine installation will make the operation occur under HKEY_LOCAL_MACHINE.
+  - *HKCR*: Operation occurs under HKEY_CLASSES_ROOT. When using Windows 2000 or later, the installer writes or removes the value
+     from the HKCU\Software\Classes hive during per-user installations. When using Windows 2000 or later operating systems,
+     the installer writes or removes the value from the HKLM\Software\Classes hive during per-machine installations.
+  - *HKCU*: Operation occurs under HKEY_CURRENT_USER. It is recommended to set the KeyPath attribute to `yes` when setting this value for writing values
+     in order to ensure that the installer writes the necessary registry entries when there are multiple users on the same computer.
+  - *HKLM*: Operation occurs under HKEY_LOCAL_MACHINE.
+  - *HKU*: Operation occurs under HKEY_USERS.

@@ -1,0 +1,68 @@
+---
+title: "Log element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Overrides the default log settings for a bundle.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Disable",
+      type: "yesno"
+    }}
+  >
+  Disables the default logging in the Bundle. The end user can still generate a
+   log file by specifying the "-l" command-line argument when installing the
+   Bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Extension",
+      type: "string"
+    }}
+  >
+  The extension to use for the log. The default is ".log".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PathVariable",
+      type: "string"
+    }}
+  >
+  Name of a Variable that will hold the path to the log file. An empty value
+   will cause the variable to not be set. The default is "WixBundleLog".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Prefix",
+      type: "string"
+    }}
+  >
+  File name and optionally a relative path to use as the prefix for the log file. The
+   default is to use the Bundle/@Name or, if Bundle/@Name is not specified, the value
+   "Setup".
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    }
+  ]}
+/>

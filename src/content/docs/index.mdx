@@ -1,0 +1,50 @@
+---
+title: FireGiant Documentation
+description: Explore HeatWave and the WiX Toolset to create high-quality Windows installer packages.
+template: splash
+hero:
+  tagline: Explore HeatWave and the WiX Toolset to create high-quality Windows installer packages.
+  image:
+    file: '@assets/hero.svg'
+  actions:
+    - text: Go to Quick Start
+      link: /quick-start/
+      icon: right-arrow
+      variant: primary
+    - text: WiX Developer Direct
+      link: https://www.firegiant.com/wix-developer-direct/
+      icon: external
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="HeatWave" icon="seti:css">
+    Seamless Visual Studio integration for your WiX projects.
+    Visual Studio 2022 and 2019 supported.
+
+    [Read more about HeatWave](https://www.firegiant.com/heatwave/)
+
+    [HeatWave Documentation](/heatwave/)
+  </Card>
+  <Card title="WiX Toolset" icon="seti:html">
+    The most powerful set of tools available to create your Windows installer.
+    Open Source since 2004.
+
+    {/* [Quick start](/quick-start/) */}
+    [Read more about the WiX Toolset](https://www.firegiant.com/wixtoolset/)
+
+    [WiX Toolset Documentation](/wix/)
+  </Card>
+  <Card title="WiX Developer Direct" icon="rocket">
+    Direct access to the creators of WiX, extended support for WiX, and site wide use of FireGiant's advanced tools for WiX.
+
+    [Read more about WiX Developer Direct](https://www.firegiant.com/wix-developer-direct/)
+  </Card>
+  <Card title="News" icon="rss">
+    Follow the FireGiant blog for the latest information about HeatWave and the WiX Toolset.
+
+    [FireGiant's Blog: Setup Matters](https://www.firegiant.com/blog/)
+  </Card>
+</CardGrid>

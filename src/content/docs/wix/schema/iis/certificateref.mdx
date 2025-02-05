@@ -1,0 +1,41 @@
+---
+title: "CertificateRef element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Associates a certificate with the parent WebSite. The Certificate element should be
+ in the same Component as the parent WebSite.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the referenced Certificate.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>
+
+## See also
+[Certificate](../certificate)

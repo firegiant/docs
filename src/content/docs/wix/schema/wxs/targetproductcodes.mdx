@@ -1,0 +1,45 @@
+---
+title: "TargetProductCodes element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The product codes for products that can accept the patch.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Replace",
+      type: "yesno"
+    }}
+  >
+  Whether to replace the product codes that can accept the patch from the target packages with the child elements.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "TargetProductCode",
+      link: "../targetproductcode"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Patch",
+      link: "../patch"
+    }
+  ]}
+/>

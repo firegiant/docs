@@ -1,0 +1,129 @@
+---
+title: "ProgId element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+ProgId registration for parent Component. If ProgId has an associated Class, it must be a child of that element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Advertise",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Icon",
+      type: "string"
+    }}
+  >
+  For an advertised ProgId, the Id of an Icon element. For a non-advertised ProgId, this is the Id of a file containing an icon resource.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconIndex",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NoOpen",
+      type: "string"
+    }}
+  >
+  Specifies that the associated ProgId should not be opened by users. The value is presented as a warning to users. An empty string is also valid for this attribute.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Extension",
+      description: "Extensions that refer to this ProgId",
+      link: "../extension"
+    },
+    {
+      title: "ProgId",
+      description: "The version-independent ProgId must be the first child element of actual ProgId. Nesting other ProgId elements within the Version-independent ProgId will create COM+ aliases, see [http://support.microsoft.com/kb/305745](http://support.microsoft.com/kb/305745) for more information.",
+      link: "../progid"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ProgId",
+      link: "../progid"
+    },
+    {
+      title: "Class",
+      link: "../class"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ProgId Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/progid-table"
+    },
+    {
+      title: "Class Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/class-table"
+    },
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    },
+    {
+      title: "Icon Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/icon-table"
+    }
+  ]}
+/>

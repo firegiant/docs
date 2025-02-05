@@ -1,0 +1,63 @@
+---
+title: "ComPlusGroupInPartitionRole element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This element represents a security group membership in a
+ partition role. When the parent component of this element is installed, the
+ security group will be added to the associated partition role.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Group",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the Group table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PartitionRole",
+      type: "string"
+    }}
+  >
+  The id of a ComPlusPartitionRole element representing the
+   partition the user should be added to.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ComPlusPartitionRole",
+      link: "../compluspartitionrole"
+    }
+  ]}
+/>

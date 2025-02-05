@@ -1,0 +1,150 @@
+---
+title: "PatchCreation element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The PatchCreation element is analogous to the main function in a C program. When linking, only one PatchCreation section
+ can be given to the linker to produce a successful result. Using this element creates a pcp file.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AllowMajorVersionMismatches",
+      type: "yesno"
+    }}
+  >
+  Use this to set whether the major versions between the upgrade and target images match. See [AllowProductVersionMajorMismatches](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AllowProductCodeMismatches",
+      type: "yesno"
+    }}
+  >
+  Use this to set whether the product code between the upgrade and target images match. See [AllowProductCodeMismatches](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CleanWorkingFolder",
+      type: "yesno"
+    }}
+  >
+  Use this to set whether Patchwiz should clean the temp folder when finished. See [DontRemoveTempFolderWhenFinished](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Codepage",
+      type: "string"
+    }}
+  >
+  The code page integer value or web name for the resulting PCP. See remarks for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  PatchCreation identifier; this is the primary key for identifying patches.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OutputPath",
+      type: "string"
+    }}
+  >
+  The full path, including file name, of the patch package file that is to be generated. See [PatchOutputPath](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceList",
+      type: "string"
+    }}
+  >
+  Used to locate the .msp file for the patch if the cached copy is unavailable. See [PatchSourceList](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SymbolFlags",
+      type: "integer"
+    }}
+  >
+  An 8-digit hex integer representing the combination of patch symbol usage flags to use when creating a binary file patch. See [ApiPatchingSymbolFlags](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WholeFilesOnly",
+      type: "yesno"
+    }}
+  >
+  Use this to set whether changing files should be included in their entirety. See [IncludeWholeFilesOnly](http://msdn.microsoft.com/library/aa370890.aspx) for more information.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Family",
+      link: "../family"
+    },
+    {
+      title: "PatchInformation",
+      link: "../patchinformation"
+    },
+    {
+      title: "PatchMetadata",
+      link: "../patchmetadata"
+    },
+    {
+      title: "PatchProperty",
+      link: "../patchproperty"
+    },
+    {
+      title: "PatchSequence",
+      link: "../patchsequence"
+    },
+    {
+      title: "ReplacePatch",
+      link: "../replacepatch"
+    },
+    {
+      title: "TargetProductCode",
+      link: "../targetproductcode"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Wix",
+      link: "../wix"
+    }
+  ]}
+/>
+
+## Remarks
+
+You can specify any valid Windows code by by integer like 1252, or by web name like Windows-1252. See [Code pages](../../tools/codepage/) for more information.
+

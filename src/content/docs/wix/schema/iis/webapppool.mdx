@@ -1,0 +1,206 @@
+---
+title: "WebAppPool element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+IIS Application Pool
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "CpuAction",
+      type: ""
+    }}
+  >
+  Action taken when CPU exceeds maximum CPU use (as defined with MaxCpuUsage and RefreshCpu). This attribute's value must be one of the following:
+  - *none*
+  - *shutdown*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Id of the AppPool. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Identity",
+      type: ""
+    }}
+  >
+  Identity you want the AppPool to run under (applicationPoolIdentity is only available on IIS7). Use the 'other' value in conjunction with the User attribute to specify non-standard user. This attribute's value must be one of the following:
+  - *networkService*
+  - *localService*
+  - *localSystem*
+  - *other*
+  - *applicationPoolIdentity*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IdleTimeout",
+      type: "wxs:Integer"
+    }}
+  >
+  Shutdown worker process after being idle for (time in minutes).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ManagedPipelineMode",
+      type: "string"
+    }}
+  >
+  Specifies the request-processing mode that is used to process requests for managed content. Only available on IIS7, ignored on IIS6.
+   See https://learn.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/applicationPoolDefaults/ for valid values.
+   This attribute may be set via a formatted Property (e.g. [MyProperty]).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ManagedRuntimeVersion",
+      type: "string"
+    }}
+  >
+  Specifies the .NET Framework version to be used by the application pool. Only available on IIS7, ignored on IIS6.
+   See https://learn.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/applicationPoolDefaults/ for valid values.
+   This attribute may be set via a formatted Property (e.g. [MyProperty]).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxCpuUsage",
+      type: "PercentType",
+      typeLink: "../percenttype",
+      typeTitle: "Values of this type are any integers between 0 and 100, inclusive."
+    }}
+  >
+  Maximum CPU usage (percent).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxWorkerProcesses",
+      type: "wxs:Integer"
+    }}
+  >
+  Maximum number of worker processes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the AppPool to be shown in IIs.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PrivateMemory",
+      type: "wxs:Integer"
+    }}
+  >
+  Specifies the amount of private memory (in KB) that a worker process can use before the worker process recycles. The maximum value supported for this attribute is 4,294,967 KB.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "QueueLimit",
+      type: "wxs:Integer"
+    }}
+  >
+  Limit the kernel request queue (number of requests).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleMinutes",
+      type: "wxs:Integer"
+    }}
+  >
+  How often, in minutes, you want the AppPool to be recycled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleRequests",
+      type: "wxs:Integer"
+    }}
+  >
+  How often, in requests, you want the AppPool to be recycled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RefreshCpu",
+      type: "wxs:Integer"
+    }}
+  >
+  Refresh CPU usage numbers (in minutes).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string"
+    }}
+  >
+  User account to run the AppPool as. To use this, you must set the Identity attribute to 'other'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "VirtualMemory",
+      type: "wxs:Integer"
+    }}
+  >
+  Specifies the amount of virtual memory (in KB) that a worker process can use before the worker process recycles. The maximum value supported for this attribute is 4,294,967 KB.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "RecycleTime",
+      link: "../recycletime"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>

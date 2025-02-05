@@ -1,0 +1,81 @@
+---
+title: "Binary element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Binary data used for CustomAction elements and UI controls.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The Id cannot be longer than 55 characters. In order to prevent errors in cases where the Id is modularized, it should not be longer than 18 characters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Path to the binary file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressModularization",
+      type: "yesno"
+    }}
+  >
+  Use to suppress modularization of this Binary identifier in merge modules.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Control",
+      link: "../control"
+    },
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Binary Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/binary-table"
+    }
+  ]}
+/>

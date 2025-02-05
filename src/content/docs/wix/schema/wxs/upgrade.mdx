@@ -1,0 +1,67 @@
+---
+title: "Upgrade element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Upgrade info for a particular UpgradeCode
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  This value specifies the upgrade code for the products that are to be detected by the FindRelatedProducts action.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Property",
+      description: "Nesting a Property element under an Upgrade element has been deprecated.\r\n Please nest Property elements in any of the other supported locations.",
+      link: "../property"
+    },
+    {
+      title: "UpgradeVersion",
+      link: "../upgradeversion"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Upgrade Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/upgrade-table"
+    }
+  ]}
+/>

@@ -1,0 +1,47 @@
+---
+title: "SFPFile element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Provides a many-to-many mapping from the SFPCatalog table to the File table
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Primary Key to File Table.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "SFPCatalog",
+      link: "../sfpcatalog"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "FileSFPCatalog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/filesfpcatalog-table"
+    }
+  ]}
+/>

@@ -1,0 +1,117 @@
+---
+title: "Tile element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Additional configuration and overrides for an Application's tile when a Shortcut element does not provide enough control.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AppListIconSource",
+      type: "string"
+    }}
+  >
+  Optional path to an image for app list icon (44x44).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "BackgroundColor",
+      type: "string"
+    }}
+  >
+  Optional background color for the tile.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LargeLogoSource",
+      type: "string"
+    }}
+  >
+  Optional path to an image for large (310x310) tile logo.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MediumLogoSource",
+      type: "string"
+    }}
+  >
+  Optional path to an image for medium (150x150) tile logo.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortDisplayName",
+      type: "string"
+    }}
+  >
+  Optional short display name of the application to be displayed on the Application's tile. Max length is 40 characters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShowNameOnTiles",
+      type: "string"
+    }}
+  >
+  Whitespace-delimited list of tile sizes. Valid values are: medium, large, wide.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SmallLogoSource",
+      type: "string"
+    }}
+  >
+  Optional path to an image for small (71x71) tile logo.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SplashScreenBackgroundColor",
+      type: "string"
+    }}
+  >
+  Optional background color for splash screen. The SplashScreenImageSource attribute must also be specified when using this attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SplashScreenImageSource",
+      type: "string"
+    }}
+  >
+  Optional path to an image for splash screen (620x200).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WideLogoSource",
+      type: "string"
+    }}
+  >
+  Optional path to an image for wide (310x150) tile logo.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Application",
+      link: "../application"
+    }
+  ]}
+/>

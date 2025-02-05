@@ -1,0 +1,57 @@
+---
+title: "MergeRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Merge reference to connect a Merge Module to parent Feature
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The unique identifier for the Merge element to be referenced.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Primary",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the feature containing this MergeRef is the primary feature for advertising the merge module's components.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    }
+  ]}
+/>
+
+## See also
+[Merge](../merge)

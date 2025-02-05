@@ -1,0 +1,78 @@
+---
+title: "ArpEntry element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Information about the Add/Remove Programs entry that is installed by the package.
+ ArpEntry may not be specified with DetectCondition or UninstallArguments.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AdditionalUninstallArguments",
+      type: "string"
+    }}
+  >
+  Additional arguments for the uninstall command line.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The id of the ARP entry.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UseUninstallString",
+      type: "yesno"
+    }}
+  >
+  If yes, use the `UninstallString` value instead of the default `QuietUninstallString`.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string",
+      required: true
+    }}
+  >
+  The DisplayVersion value of the ARP entry that is installed by this package.
+   Older or missing versions cause this package to be detected as absent.
+   Newer versions cause this package to be detected as obsolete.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Win64",
+      type: "yesno",
+      required: true
+    }}
+  >
+  Whether the ARP entry is 64-bit.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    }
+  ]}
+/>

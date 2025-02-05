@@ -1,0 +1,57 @@
+---
+title: "PackageGroupRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Create a reference to PackageGroup element that exists inside a Bundle or Fragment element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  The identifier of a package that this group should be installed after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the PackageGroup element to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Chain",
+      link: "../chain"
+    },
+    {
+      title: "PackageGroup",
+      link: "../packagegroup"
+    },
+    {
+      title: "Container",
+      link: "../container"
+    }
+  ]}
+/>
+
+## See also
+[PackageGroup](../packagegroup)

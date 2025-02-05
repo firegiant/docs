@@ -1,0 +1,79 @@
+---
+title: "WindowsFeatureSearch element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Detects the existence of a Windows feature.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Id of the search that this one should come after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition for evaluating the search. If this evaluates to false, the search is not executed at all.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Feature",
+      type: "",
+      required: true
+    }}
+  >
+  The feature to detect. This attribute's value must be one of the following:
+  - *sha2CodeSigning*: The oldest OS with this feature is Win7 SP1 with KB3033929.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Id of the search for ordering and dependency.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Variable",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the variable in which to place the result of the search.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

@@ -1,0 +1,97 @@
+---
+title: "SniSslCertificate element (Http extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Associates an SNI SSL certificate with HTTP.SYS.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AppId",
+      type: "string"
+    }}
+  >
+  A GUID used ot identify the SNI SSL binding.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HandleExisting",
+      type: ""
+    }}
+  >
+  Rights for this ACE. Default is "all". This attribute's value must be one of the following:
+  - *replace*
+  - *ignore*
+  - *fail*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Host",
+      type: "string",
+      required: true
+    }}
+  >
+  Host of the URL to bind with the SNI SSL certificate.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique ID of this SNI SSL.
+   If this attribute is not specified, an identifier will be generated automatically.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Port",
+      type: "string",
+      required: true
+    }}
+  >
+  Host of the URL to bind with the SNI SSL certificate.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Store",
+      type: "string"
+    }}
+  >
+  Certificate store containing the SNI SSL certificate.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Thumbprint",
+      type: "string",
+      required: true
+    }}
+  >
+  Thumbprint of the SNI SSL certificate.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

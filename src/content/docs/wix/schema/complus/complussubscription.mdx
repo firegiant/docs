@@ -1,0 +1,193 @@
+---
+title: "ComPlusSubscription element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an event subscription for a COM+ component.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Component",
+      type: "string"
+    }}
+  >
+  If the element is not a child of a ComPlusComponent
+   element, this attribute should be provided with the id of a ComPlusComponent
+   element representing the component the subscription is to be created for.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Enabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EventClassPartitionID",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EventCLSID",
+      type: "string"
+    }}
+  >
+  CLSID of the event class for the subscription. If a value
+   for this attribute is not provided, a value for the PublisherID attribute
+   must be provided.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FilterCriteria",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InterfaceID",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MachineName",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MethodName",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the subscription.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PerUser",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PublisherID",
+      type: "string"
+    }}
+  >
+  Publisher id for the subscription. If a value for this
+   attribute is not provided, a value for the EventCLSID attribute must be
+   provided.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Queued",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SubscriberMoniker",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SubscriptionId",
+      type: "string"
+    }}
+  >
+  Id of the subscription. If a value is not provided for
+   this attribute, an id will be generated during installation.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UserName",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ComPlusComponent",
+      link: "../compluscomponent"
+    }
+  ]}
+/>

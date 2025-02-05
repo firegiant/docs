@@ -1,0 +1,34 @@
+---
+title: "PatchFiles element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Queries the Patch table to determine which patches are to be applied. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "PatchFiles Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/patchfiles-action"
+    }
+  ]}
+/>

@@ -1,0 +1,39 @@
+---
+title: "ReplacePatch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+A patch that is deprecated by this patch.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  Patch GUID to be unregistered if it exists on the machine targeted by this patch.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchCreation",
+      link: "../patchcreation"
+    }
+  ]}
+/>

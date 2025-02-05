@@ -1,0 +1,37 @@
+---
+title: "SoftwareTagRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Reference to a SoftwareTag by Regid.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Regid",
+      type: "string",
+      required: true
+    }}
+  >
+  Regid of SoftwareTag to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchFamily",
+      link: "../patchfamily"
+    }
+  ]}
+/>

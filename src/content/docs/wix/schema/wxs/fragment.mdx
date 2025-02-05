@@ -1,0 +1,503 @@
+---
+title: "Fragment element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The Fragment element is the building block of creating an installer database in WiX. Once defined,
+ the Fragment becomes an immutable, atomic unit which can either be completely included or excluded
+ from a product. The contents of a Fragment element can be linked into a product by utilizing one
+ of the many *Ref elements. When linking in a Fragment, it will be necessary to link in all of its
+ individual units. For instance, if a given Fragment contains two Component elements, you must link
+ both under features using ComponentRef for each linked Component. Otherwise, you will get a linker
+ warning and have a floating Component that does not appear under any Feature.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Optional identifier for a Fragment. Should only be set by advanced users to tag sections.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    },
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    },
+    {
+      title: "AdvertiseExecuteSequence",
+      link: "../advertiseexecutesequence"
+    },
+    {
+      title: "AppId",
+      link: "../appid"
+    },
+    {
+      title: "Application (Msix extension)",
+      link: "../../msix/application"
+    },
+    {
+      title: "Binary",
+      link: "../binary"
+    },
+    {
+      title: "BootstrapperApplication",
+      link: "../bootstrapperapplication"
+    },
+    {
+      title: "BootstrapperApplicationPrerequisiteInformation (Bal extension)",
+      link: "../../bal/bootstrapperapplicationprerequisiteinformation"
+    },
+    {
+      title: "BootstrapperApplicationRef",
+      link: "../bootstrapperapplicationref"
+    },
+    {
+      title: "BootstrapperExtension",
+      link: "../bootstrapperextension"
+    },
+    {
+      title: "BootstrapperExtensionRef",
+      link: "../bootstrapperextensionref"
+    },
+    {
+      title: "BroadcastEnvironmentChange (Util extension)",
+      link: "../../util/broadcastenvironmentchange"
+    },
+    {
+      title: "BroadcastSettingChange (Util extension)",
+      link: "../../util/broadcastsettingchange"
+    },
+    {
+      title: "BundleCustomData",
+      link: "../bundlecustomdata"
+    },
+    {
+      title: "BundleCustomDataRef",
+      link: "../bundlecustomdataref"
+    },
+    {
+      title: "BundleExtension",
+      link: "../bundleextension"
+    },
+    {
+      title: "BundleExtensionRef",
+      link: "../bundleextensionref"
+    },
+    {
+      title: "CheckRebootRequired (Util extension)",
+      link: "../../util/checkrebootrequired"
+    },
+    {
+      title: "CloseApplication (Util extension)",
+      link: "../../util/closeapplication"
+    },
+    {
+      title: "ComplianceCheck",
+      link: "../compliancecheck"
+    },
+    {
+      title: "ComPlusApplication (Complus extension)",
+      link: "../../complus/complusapplication"
+    },
+    {
+      title: "ComPlusApplicationRole (Complus extension)",
+      link: "../../complus/complusapplicationrole"
+    },
+    {
+      title: "ComPlusPartition (Complus extension)",
+      link: "../../complus/compluspartition"
+    },
+    {
+      title: "ComPlusPartitionRole (Complus extension)",
+      link: "../../complus/compluspartitionrole"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "ComponentGroup",
+      link: "../componentgroup"
+    },
+    {
+      title: "ComponentSearch (Util extension)",
+      link: "../../util/componentsearch"
+    },
+    {
+      title: "ComponentSearchRef (Util extension)",
+      link: "../../util/componentsearchref"
+    },
+    {
+      title: "Condition (Bal extension)",
+      link: "../../bal/condition"
+    },
+    {
+      title: "Container",
+      link: "../container"
+    },
+    {
+      title: "CustomAction",
+      link: "../customaction"
+    },
+    {
+      title: "CustomActionRef",
+      link: "../customactionref"
+    },
+    {
+      title: "CustomTable",
+      link: "../customtable"
+    },
+    {
+      title: "CustomTableRef",
+      link: "../customtableref"
+    },
+    {
+      title: "Dependency (Msix extension)",
+      link: "../../msix/dependency"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "DirectorySearch (Util extension)",
+      link: "../../util/directorysearch"
+    },
+    {
+      title: "DirectorySearchRef (Util extension)",
+      link: "../../util/directorysearchref"
+    },
+    {
+      title: "DotNetCoreSdkFeatureBandSearch (Netfx extension)",
+      link: "../../netfx/dotnetcoresdkfeaturebandsearch"
+    },
+    {
+      title: "DotNetCoreSdkFeatureBandSearchRef (Netfx extension)",
+      link: "../../netfx/dotnetcoresdkfeaturebandsearchref"
+    },
+    {
+      title: "DotNetCoreSdkSearch (Netfx extension)",
+      link: "../../netfx/dotnetcoresdksearch"
+    },
+    {
+      title: "DotNetCoreSdkSearchRef (Netfx extension)",
+      link: "../../netfx/dotnetcoresdksearchref"
+    },
+    {
+      title: "DotNetCoreSearch (Netfx extension)",
+      link: "../../netfx/dotnetcoresearch"
+    },
+    {
+      title: "DotNetCoreSearchRef (Netfx extension)",
+      link: "../../netfx/dotnetcoresearchref"
+    },
+    {
+      title: "EmbeddedChainer",
+      link: "../embeddedchainer"
+    },
+    {
+      title: "EmbeddedChainerRef",
+      link: "../embeddedchainerref"
+    },
+    {
+      title: "EnsureTable",
+      link: "../ensuretable"
+    },
+    {
+      title: "ExitEarlyWithSuccess (Util extension)",
+      link: "../../util/exitearlywithsuccess"
+    },
+    {
+      title: "FailWhenDeferred (Util extension)",
+      link: "../../util/failwhendeferred"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "FileSearch (Util extension)",
+      link: "../../util/filesearch"
+    },
+    {
+      title: "FileSearchRef (Util extension)",
+      link: "../../util/filesearchref"
+    },
+    {
+      title: "FindVisualStudio (Vs extension)",
+      link: "../../vs/findvisualstudio"
+    },
+    {
+      title: "GetCapabilities (Directx extension)",
+      link: "../../directx/getcapabilities"
+    },
+    {
+      title: "Group (Util extension)",
+      link: "../../util/group"
+    },
+    {
+      title: "Icon",
+      link: "../icon"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "Launch",
+      link: "../launch"
+    },
+    {
+      title: "ManagedBootstrapperApplicationPrereqInformation (Bal extension)",
+      link: "../../bal/managedbootstrapperapplicationprereqinformation"
+    },
+    {
+      title: "Media",
+      link: "../media"
+    },
+    {
+      title: "MediaTemplate",
+      link: "../mediatemplate"
+    },
+    {
+      title: "Msix (Msix extension)",
+      link: "../../msix/msix"
+    },
+    {
+      title: "PackageCertificates",
+      link: "../packagecertificates"
+    },
+    {
+      title: "PackageGroup",
+      link: "../packagegroup"
+    },
+    {
+      title: "PatchCertificates",
+      link: "../patchcertificates"
+    },
+    {
+      title: "PatchFamily",
+      link: "../patchfamily"
+    },
+    {
+      title: "PatchFamilyGroup",
+      link: "../patchfamilygroup"
+    },
+    {
+      title: "PatchFamilyGroupRef",
+      link: "../patchfamilygroupref"
+    },
+    {
+      title: "PayloadGroup",
+      link: "../payloadgroup"
+    },
+    {
+      title: "ProductSearch (Util extension)",
+      link: "../../util/productsearch"
+    },
+    {
+      title: "ProductSearchRef (Util extension)",
+      link: "../../util/productsearchref"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    },
+    {
+      title: "PropertyRef",
+      link: "../propertyref"
+    },
+    {
+      title: "PublicRegistry (Msix extension)",
+      link: "../../msix/publicregistry"
+    },
+    {
+      title: "QueryNativeMachine (Util extension)",
+      link: "../../util/querynativemachine"
+    },
+    {
+      title: "QueryWindowsDirectories (Util extension)",
+      link: "../../util/querywindowsdirectories"
+    },
+    {
+      title: "QueryWindowsDriverInfo (Util extension)",
+      link: "../../util/querywindowsdriverinfo"
+    },
+    {
+      title: "QueryWindowsSuiteInfo (Util extension)",
+      link: "../../util/querywindowssuiteinfo"
+    },
+    {
+      title: "QueryWindowsWellKnownSIDs (Util extension)",
+      link: "../../util/querywindowswellknownsids"
+    },
+    {
+      title: "RegistrySearch (Util extension)",
+      link: "../../util/registrysearch"
+    },
+    {
+      title: "RegistrySearchRef (Util extension)",
+      link: "../../util/registrysearchref"
+    },
+    {
+      title: "RelatedBundle",
+      link: "../relatedbundle"
+    },
+    {
+      title: "Requires",
+      link: "../requires"
+    },
+    {
+      title: "RestartResource (Util extension)",
+      link: "../../util/restartresource"
+    },
+    {
+      title: "SetDirectory",
+      link: "../setdirectory"
+    },
+    {
+      title: "SetProperty",
+      link: "../setproperty"
+    },
+    {
+      title: "SetVariable",
+      link: "../setvariable"
+    },
+    {
+      title: "SetVariableRef",
+      link: "../setvariableref"
+    },
+    {
+      title: "SFPCatalog",
+      link: "../sfpcatalog"
+    },
+    {
+      title: "SqlDatabase (Sql extension)",
+      link: "../../sql/sqldatabase"
+    },
+    {
+      title: "StandardDirectory",
+      link: "../standarddirectory"
+    },
+    {
+      title: "UI",
+      link: "../ui"
+    },
+    {
+      title: "UIRef",
+      link: "../uiref"
+    },
+    {
+      title: "Upgrade",
+      link: "../upgrade"
+    },
+    {
+      title: "User (Util extension)",
+      link: "../../util/user"
+    },
+    {
+      title: "Variable",
+      link: "../variable"
+    },
+    {
+      title: "WaitForEvent (Util extension)",
+      link: "../../util/waitforevent"
+    },
+    {
+      title: "WaitForEventDeferred (Util extension)",
+      link: "../../util/waitforeventdeferred"
+    },
+    {
+      title: "WebApplication (Iis extension)",
+      link: "../../iis/webapplication"
+    },
+    {
+      title: "WebAppPool (Iis extension)",
+      link: "../../iis/webapppool"
+    },
+    {
+      title: "WebDirProperties (Iis extension)",
+      link: "../../iis/webdirproperties"
+    },
+    {
+      title: "WebLog (Iis extension)",
+      link: "../../iis/weblog"
+    },
+    {
+      title: "WebSite (Iis extension)",
+      link: "../../iis/website"
+    },
+    {
+      title: "WindowsFeatureSearch (Util extension)",
+      link: "../../util/windowsfeaturesearch"
+    },
+    {
+      title: "WindowsFeatureSearchRef (Util extension)",
+      link: "../../util/windowsfeaturesearchref"
+    },
+    {
+      title: "WixUI (Ui extension)",
+      link: "../../ui/wixui"
+    },
+    {
+      title: "WixVariable",
+      link: "../wixvariable"
+    },
+    {
+      title: "WriteRegistry (Msix extension)",
+      link: "../../msix/writeregistry"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Wix",
+      link: "../wix"
+    }
+  ]}
+/>

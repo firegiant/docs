@@ -1,0 +1,38 @@
+---
+title: "InstallFiles element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Copies files specified in the File table from the source directory to the destination directory. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    },
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "InstallFiles Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/installfiles-action"
+    }
+  ]}
+/>

@@ -1,0 +1,44 @@
+---
+title: "SetVariableRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used to reference a SetVariable element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the SetVariable element to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[SetVariable](../setvariable)

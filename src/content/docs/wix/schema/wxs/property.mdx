@@ -1,0 +1,172 @@
+---
+title: "Property element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Property value for a Package or Module.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Admin",
+      type: "yesno"
+    }}
+  >
+  Denotes that the property is saved during [administrative installations](https://learn.microsoft.com/en-us/windows/win32/msi/administrative-installation).
+   Adds the property name to the [AdminProperties property](https://learn.microsoft.com/en-us/windows/win32/msi/adminproperties).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ComplianceCheck",
+      type: "yesno"
+    }}
+  >
+  Adds a row to the CCPSearch table. This attribute is only valid when this Property contains a search element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hidden",
+      type: "yesno"
+    }}
+  >
+  Denotes that the Property is not logged during installation. See the [MsiHiddenProperties Property](https://learn.microsoft.com/en-us/windows/win32/msi/msihiddenproperties) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier for Property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Secure",
+      type: "yesno"
+    }}
+  >
+  Denotes that the Property can be passed to the server side when doing a managed installation with elevated privileges. See the [SecureCustomProperties Property](https://learn.microsoft.com/en-us/windows/win32/msi/securecustomproperties) for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressModularization",
+      type: "yesno"
+    }}
+  >
+  Use to suppress modularization of this property identifier in merge modules.
+   Using this functionality is strongly discouraged; it should only be
+   necessary as a workaround of last resort in rare scenarios.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Sets a default value for the property. The value will be overwritten if the Property is used for a search.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComplianceDrive",
+      link: "../compliancedrive"
+    },
+    {
+      title: "ComponentSearch",
+      link: "../componentsearch"
+    },
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "IniFileSearch",
+      link: "../inifilesearch"
+    },
+    {
+      title: "ProductSearch",
+      link: "../productsearch"
+    },
+    {
+      title: "RegistrySearch",
+      link: "../registrysearch"
+    },
+    {
+      title: "RegistrySearchRef",
+      link: "../registrysearchref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "ODBCDataSource",
+      link: "../odbcdatasource"
+    },
+    {
+      title: "ODBCDriver",
+      link: "../odbcdriver"
+    },
+    {
+      title: "Upgrade",
+      link: "../upgrade"
+    },
+    {
+      title: "Control",
+      link: "../control"
+    },
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## See also
+[PropertyRef](../propertyref)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Property Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/property-table"
+    }
+  ]}
+/>

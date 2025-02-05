@@ -1,0 +1,48 @@
+---
+title: Create your first installation package
+sidebar:
+  label: Create your first package
+  order: 1
+---
+
+import { Code, Steps } from '@astrojs/starlight/components';
+import ReplacePutGuidHere from '@components/ReplacePutGuidHere.astro';
+import quickStartProject from '@examples/quick-start/QuickStart.wixproj?raw';
+import quickStartSource from '@examples/quick-start/Package.wxs?raw';
+import quickStartTxt from '@examples/quick-start/example.txt?raw';
+export const createDirectoryCmd = 'md C:\\src\\QuickStart\ncd C:\\src\\QuickStart\n';
+
+To create your first installation package with the WiX Toolset, you only need a text editor and the [.NET SDK](https://dotnet.microsoft.com/en-us/download).
+If you have Visual Studio 2022, you have both.
+
+Open a command prompt and follow these steps.
+
+<Steps>
+
+1. Create a new directory for your first WiX project.
+
+   <Code lang="cmd" title="C:\>" code={createDirectoryCmd} />
+
+1. Create a new text file to serve as your WiX project file named `QuickStart.wixproj` with the following content.
+
+   <Code lang="xml" title="QuickStart.wixproj" code={quickStartProject} />
+
+1. Create a new WiX source file named `Package.wxs` with the following content.
+
+   <Code lang="xml" title="Package.wxs" code={quickStartSource} />
+
+1. Create a new text file named `example.txt` with any content you want.
+
+   <Code lang="txt" title="example.txt" code={quickStartTxt} />
+
+1. Build the project.
+
+   <Code lang="cmd" title="C:\src\QuickStart>" code="dotnet build" />
+
+</Steps>
+
+## Success
+
+Your MSI package is `bin\Debug\QuickStart.msi`. Now you are ready to install it.
+
+<ReplacePutGuidHere storageId='quick_start_upgrade_code' />

@@ -1,0 +1,63 @@
+---
+title: "ComPlusPartitionUser element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Represents a default partition definition for a user. When
+ the parent component of this element is installed, the default partition of the
+ user will be set to the referenced partition.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Partition",
+      type: "string"
+    }}
+  >
+  The id of a ComPlusPartition element representing the
+   partition that will be the default partition for the user.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the User table.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ComPlusPartition",
+      link: "../compluspartition"
+    }
+  ]}
+/>

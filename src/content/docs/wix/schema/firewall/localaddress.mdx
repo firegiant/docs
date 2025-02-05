@@ -1,0 +1,38 @@
+---
+title: "LocalAddress element (Firewall extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+[WiX v5] Registers a local address to the firewall rule.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  A local address to which the port or program can listen. See [LocalAddresses](https://learn.microsoft.com/en-us/windows/win32/api/netfw/nf-netfw-inetfwrule-get_localaddresses)
+   for examples.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "FirewallException",
+      link: "../firewallexception"
+    }
+  ]}
+/>

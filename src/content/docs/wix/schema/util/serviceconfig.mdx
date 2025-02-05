@@ -1,0 +1,123 @@
+---
+title: "ServiceConfig element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Service configuration information for failure actions.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "FirstFailureActionType",
+      type: "",
+      required: true
+    }}
+  >
+  Action to take on the first failure of the service. This attribute's value must be one of the following:
+  - *none*
+  - *reboot*
+  - *restart*
+  - *runCommand*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProgramCommandLine",
+      type: "string"
+    }}
+  >
+  If any of the three *ActionType attributes is "runCommand", this specifies the command to run when doing so. This value is formatted.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RebootMessage",
+      type: "string"
+    }}
+  >
+  If any of the three *ActionType attributes is "reboot", this specifies the message to broadcast to server users before doing so.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ResetPeriodInDays",
+      type: "wxs:Integer"
+    }}
+  >
+  Number of days after which to reset the failure count to zero if there are no failures.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RestartServiceDelayInSeconds",
+      type: "wxs:Integer"
+    }}
+  >
+  If any of the three *ActionType attributes is "restart", this specifies the number of seconds to wait before doing so.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SecondFailureActionType",
+      type: "",
+      required: true
+    }}
+  >
+  Action to take on the second failure of the service. This attribute's value must be one of the following:
+  - *none*
+  - *reboot*
+  - *restart*
+  - *runCommand*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceName",
+      type: "string"
+    }}
+  >
+  Required if not under a ServiceInstall element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThirdFailureActionType",
+      type: "",
+      required: true
+    }}
+  >
+  Action to take on the third failure of the service. This attribute's value must be one of the following:
+  - *none*
+  - *reboot*
+  - *restart*
+  - *runCommand*
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ServiceInstall (Wxs extension)",
+      link: "../../wxs/serviceinstall"
+    }
+  ]}
+/>
+
+## Remarks
+
+Nesting a ServiceConfig element under a ServiceInstall element will result in the service being installed to be configured.
+ Nesting a ServiceConfig element under a component element will result in an already installed service to be configured. If the service does not exist prior to the install of the MSI package, the install will fail.

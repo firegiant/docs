@@ -1,0 +1,77 @@
+---
+title: "WixVariable element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This element exposes advanced WiX functionality. Use this element to declare WiX variables
+ from directly within your authoring. WiX variables are not resolved until the final package
+ file is actually generated (bind time). WiX variables do not persist into the package file,
+ so they cannot be used when an MSI file is being installed; it's a WiX-only concept.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the variable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Overridable",
+      type: "yesno"
+    }}
+  >
+  Set this value to 'yes' in order to make the variable's value overridable either by
+   another WixVariable entry or via the command-line option -d_name_=_value_;
+   for light.exe. If the same variable is declared overridable in multiple places it
+   will cause an error (since WiX won't know which value is correct). The default value
+   is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  The value of the variable. Note that because values are substituted at bind time,
+   they skip all the validation done at compile time, which can be more thorough than
+   validation done at bind time.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

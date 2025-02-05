@@ -1,0 +1,55 @@
+---
+title: "StartupTask element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a startup task for the package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  The optional display name for the task.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Enabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether the task starts enabled or disabled. Enabled tasks run the next time the user logs on, unless the user disables them.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TaskId",
+      type: "string",
+      required: true
+    }}
+  >
+  A unique identifier for the task.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

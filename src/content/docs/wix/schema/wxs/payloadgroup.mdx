@@ -1,0 +1,84 @@
+---
+title: "PayloadGroup element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a payload group to a bootstrapper. PayloadGroups referenced from within a Bundle are tied to the Bundle.
+ PayloadGroups referenced from a Fragment are tied to the context of whatever references them such as an ExePackage or MsiPackage.
+ It is possible to share a PayloadGroup between multiple Packages and/or a Bundle by creating multiple references to it.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for payload group.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "BundlePackagePayload",
+      link: "../bundlepackagepayload"
+    },
+    {
+      title: "ExePackagePayload",
+      link: "../exepackagepayload"
+    },
+    {
+      title: "HarvestPayload (Buildtools extension)",
+      link: "../../buildtools/harvestpayload"
+    },
+    {
+      title: "HarvestPayloadFolder (Buildtools extension)",
+      link: "../../buildtools/harvestpayloadfolder"
+    },
+    {
+      title: "MsiPackagePayload",
+      link: "../msipackagepayload"
+    },
+    {
+      title: "MspPackagePayload",
+      link: "../msppackagepayload"
+    },
+    {
+      title: "MsuPackagePayload",
+      link: "../msupackagepayload"
+    },
+    {
+      title: "Payload",
+      link: "../payload"
+    },
+    {
+      title: "PayloadGroupRef",
+      link: "../payloadgroupref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

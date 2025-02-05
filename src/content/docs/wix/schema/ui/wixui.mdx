@@ -1,0 +1,64 @@
+---
+title: "WixUI element (Ui extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+References a WixUI dialog set, either one that's included in WixToolset.UI.wixext or a 
+ custom dialog set included in your authoring.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the dialog set to reference.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InstallDirectory",
+      type: "string"
+    }}
+  >
+  An optional identifier that specifies the directory to set WIXUI_INSTALLDIR to,
+   for WixUI dialog sets that require it.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "PatchFamily (Wxs extension)",
+      link: "../../wxs/patchfamily"
+    },
+    {
+      title: "UI (Wxs extension)",
+      link: "../../wxs/ui"
+    }
+  ]}
+/>

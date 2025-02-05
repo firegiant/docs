@@ -1,0 +1,140 @@
+---
+title: "SqlScript element (Sql extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+SQL Script
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BinaryRef",
+      type: "string",
+      required: true
+    }}
+  >
+  Reference to Binary stream that contains the SQL script to execute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ContinueOnError",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Continue executing scripts even if this one fails.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExecuteOnInstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies to execute the script when the associated component is installed. This attribute is mutually exclusive with the RollbackOnInstall, RollbackOnReinstall and RollbackOnUninstall attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExecuteOnReinstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether to execute the script when the associated component is reinstalled. Setting ExecuteOnInstall to yes does **not** imply ExecuteOnReinstall is set to yes. ExecuteOnReinstall must be set in addition to ExecuteOnInstall for it to be executed during both install and reinstall. This attribute is mutually exclusive with the RollbackOnInstall, RollbackOnReinstall and RollbackOnUninstall attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExecuteOnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies to execute the script when the associated component is uninstalled. This attribute is mutually exclusive with the RollbackOnInstall, RollbackOnReinstall and RollbackOnUninstall attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier in your installation package for this sql script. If an Id is not provided, one will generated for you.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RollbackOnInstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether to execute the script on rollback if an attempt is made to install the associated component. This attribute is mutually exclusive with the ExecuteOnInstall, ExecuteOnReinstall and ExecuteOnUninstall attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RollbackOnReinstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether to execute the script on rollback if an attempt is made to reinstall the associated component. This attribute is mutually exclusive with the ExecuteOnInstall, ExecuteOnReinstall and ExecuteOnUninstall attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RollbackOnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether to execute the script on rollback if an attempt is made to uninstall the associated component. This attribute is mutually exclusive with the ExecuteOnInstall, ExecuteOnReinstall and ExecuteOnUninstall attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sequence",
+      type: "wxs:Integer"
+    }}
+  >
+  Specifes the order to run the SQL Scripts. It is recommended that rollback scripts be scheduled before their complementary execution script. This order is also relative across the SqlString element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SqlDb",
+      type: "string"
+    }}
+  >
+  Id of the SqlDatabase to execute the script against. Required when not child of SqlDatabase.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string"
+    }}
+  >
+  Optional user used to connect to database.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "SqlDatabase",
+      link: "../sqldatabase"
+    }
+  ]}
+/>

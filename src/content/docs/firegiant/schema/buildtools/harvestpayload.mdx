@@ -1,0 +1,72 @@
+---
+title: "HarvestPayload element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Harvest a payload and exclude it from future harvesting.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BundleUI",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether the harvested payload is the entry point for the Bundle UI. The default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this harvest configuration. This value will generated if not specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Optional file name for the payload. By default the file name from the Source attribute will be used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Source",
+      type: "string",
+      required: true
+    }}
+  >
+  File path to harvest relative to the harvesting document.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BootstrapperApplication (Wxs extension)",
+      link: "../../wxs/bootstrapperapplication"
+    },
+    {
+      title: "BootstrapperApplicationRef (Wxs extension)",
+      link: "../../wxs/bootstrapperapplicationref"
+    },
+    {
+      title: "PayloadGroup (Wxs extension)",
+      link: "../../wxs/payloadgroup"
+    }
+  ]}
+/>

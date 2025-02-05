@@ -1,0 +1,77 @@
+---
+title: "PatchBaseline element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Identifies a set of product versions.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BaselineFile",
+      type: "string",
+      required: true
+    }}
+  >
+  Path to baseline MSI for patch.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DiskId",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Optional id for cabinet to place patched files in.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for a set of product versions. It is recommended to use short identifiers like 'RTM' and 'SP1'. The identifier will been trimmed to less than 28 characters as required by the Windows Installer.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpdateFile",
+      type: "string",
+      required: true
+    }}
+  >
+  Path to updated MSI for patch.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Validate",
+      link: "../validate"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Media",
+      link: "../media"
+    }
+  ]}
+/>

@@ -1,0 +1,47 @@
+---
+title: "ConfigurationData element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Data to use as input to a configurable merge module.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the item in the ModuleConfiguration table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  Value to be passed to configurable merge module.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Merge",
+      link: "../merge"
+    }
+  ]}
+/>

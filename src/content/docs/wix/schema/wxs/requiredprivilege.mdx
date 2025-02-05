@@ -1,0 +1,31 @@
+---
+title: "RequiredPrivilege element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Privilege required by service configured by ServiceConfig parent. Valid values are a [privilege constant](http://msdn.microsoft.com/en-us/library/bb530716.aspx) or a
+ Formatted property that resolves to a privilege constant.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ServiceConfig",
+      link: "../serviceconfig"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiServiceConfig Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiserviceconfig-table"
+    }
+  ]}
+/>

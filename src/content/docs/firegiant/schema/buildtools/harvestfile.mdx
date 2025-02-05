@@ -1,0 +1,100 @@
+---
+title: "HarvestFile element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Harvest a file and exclude it from future harvesting.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Sets the File/@Id for the key harvested file. This value will generated if not specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfReg",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Capture self-registration for executable files during harvesting. Self-reg is only attempted when the attribute is set to 'yes'. The default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegExecutableArguments",
+      type: "string"
+    }}
+  >
+  Command-line arguments to pass to an executable when capturing self-registration. Ignored unless SelfReg attribute is 'yes'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegExtensions",
+      type: "string"
+    }}
+  >
+  Whitespace separated list of file extensions to capture self-registration. Ignored unless SelfReg attribute is 'yes'. Default set of extensions is: .exe, .com, .dll, .ocx, .tlb, .olb
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegWarnOnError",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Downgrade error messages encountered during self-registration capture to warnings. Ignored unless SelfReg attribute is 'yes'. The default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Source",
+      type: "string",
+      required: true
+    }}
+  >
+  File path to harvest relative to the harvesting document.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressFont",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Prevent automatically marking ".ttf" and ".otf" files as a font. The default is 'no'.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ExcludeRegistry",
+      link: "../excluderegistry"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

@@ -1,0 +1,33 @@
+---
+title: "Row element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Row data for a Custom Table
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Data",
+      link: "../data"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "CustomTable",
+      link: "../customtable"
+    },
+    {
+      title: "CustomTableRef",
+      link: "../customtableref"
+    }
+  ]}
+/>

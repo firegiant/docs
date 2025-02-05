@@ -1,0 +1,132 @@
+---
+title: "ServiceConfigFailureActions element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Configures the failure actions for a service being installed or one that already exists. This element's functionality is available starting with MSI 5.0.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Command",
+      type: "string"
+    }}
+  >
+  This attribute specifies command to execute when a "runCommand" failure action hit. If an empty string is provided it clears
+   the existing command. If this attribute is not present the setting is not changed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this service configuration. This value will default to the ServiceName attribute if not
+   specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnInstall",
+      type: "yesno"
+    }}
+  >
+  Specifies whether to configure the service when the parent Component is installed. This attribute may be combined with OnReinstall
+   and OnUninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnReinstall",
+      type: "yesno"
+    }}
+  >
+  Specifies whether to configure the service when the parent Component is reinstalled. This attribute may be combined with OnInstall
+   and OnUninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnUninstall",
+      type: "yesno"
+    }}
+  >
+  Specifies whether to configure the service when the parent Component is uninstalled. This attribute may be combined with OnInstall
+   and OnReinstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RebootMessage",
+      type: "string"
+    }}
+  >
+  Specifies the message to show for a reboot failure action. If an empty string is provided it clears any existing reboot message. If this
+   attribute is not present the setting is not changed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ResetPeriod",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Specifies the time in seconds to reset the failure count. If this attribute is not present the failure count will not be reset.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceName",
+      type: "string"
+    }}
+  >
+  Specifies the name of the service to configure. This value will default to the ServiceInstall/@Name attribute when nested under
+   a ServiceInstall element.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Failure",
+      description: "Ordered list of failure actions to apply to service.",
+      link: "../failure"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ServiceInstall",
+      link: "../serviceinstall"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiServiceConfigFailureActions Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiserviceconfigfailureactions-table"
+    }
+  ]}
+/>

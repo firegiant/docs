@@ -1,0 +1,143 @@
+---
+title: "UI element (Wxl extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Allows a localization to override the position, size, and text of dialogs and controls.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Control",
+      type: "string"
+    }}
+  >
+  Combined with the Dialog attribute, identifies the control to localize.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Dialog",
+      type: "string"
+    }}
+  >
+  Identifies the dialog to localize or the dialog that a control to localize is in.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be an integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)."
+    }}
+  >
+  For a dialog, overrides the authored height in dialog units. For a control, overrides the authored height of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LeftScroll",
+      type: "LocalizationYesNoType",
+      typeLink: "../localizationyesnotype",
+      typeTitle: "Values of this type will either be \"yes\"/\"true\" or \"no\"/\"false\"."
+    }}
+  >
+  Set this attribute to "yes" to cause the scroll bar to display on the left side of the Control. Not valid for a dialog. This attribute's value must be one of the following:
+  - *no*
+  - *false*
+  - *yes*
+  - *true*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RightAligned",
+      type: "LocalizationYesNoType",
+      typeLink: "../localizationyesnotype",
+      typeTitle: "Values of this type will either be \"yes\"/\"true\" or \"no\"/\"false\"."
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to be right aligned. Not valid for a dialog. This attribute's value must be one of the following:
+  - *no*
+  - *false*
+  - *yes*
+  - *true*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RightToLeft",
+      type: "LocalizationYesNoType",
+      typeLink: "../localizationyesnotype",
+      typeTitle: "Values of this type will either be \"yes\"/\"true\" or \"no\"/\"false\"."
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to display from right to left. Not valid for a dialog. This attribute's value must be one of the following:
+  - *no*
+  - *false*
+  - *yes*
+  - *true*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Text",
+      type: "string"
+    }}
+  >
+  Override the text of a UI element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be an integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)."
+    }}
+  >
+  For a dialog, overrides the authored width in dialog units. For a control, overrides the authored width of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "X",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be an integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)."
+    }}
+  >
+  For a dialog, overrides the authored horizontal centering. For a control, overrides the authored horizontal coordinate of the upper-left corner of the rectangular boundary. This must be a non-negative number.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Y",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be an integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)."
+    }}
+  >
+  For a dialog, overrides the authored vertical centering. For a control, overrides the authored vertical coordinate of the upper-left corner of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WixLocalization",
+      link: "../wixlocalization"
+    }
+  ]}
+/>

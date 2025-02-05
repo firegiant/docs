@@ -1,0 +1,60 @@
+---
+title: "WebLog element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+WebLog definition.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the WebLog.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "",
+      required: true
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *IIS*: Microsoft IIS Log File Format
+  - *NCSA*: NCSA Common Log File Format
+  - *none*: Disables logging.
+  - *ODBC*: ODBC Logging
+  - *W3C*: W3C Extended Log File Format
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>

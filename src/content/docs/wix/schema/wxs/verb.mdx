@@ -1,0 +1,107 @@
+---
+title: "Verb element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Verb definition for an Extension. When advertised, this element creates a row in the [Verb table](https://learn.microsoft.com/en-us/windows/win32/msi/verb-table) .
+ When not advertised, this element creates the appropriate rows in [Registry table](https://learn.microsoft.com/en-us/windows/win32/msi/registry-table) .
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Argument",
+      type: "string"
+    }}
+  >
+  Value for the command arguments. Note that the resolution of properties in the
+   Argument field is limited. A property formatted as [Property] in this field can only be resolved if the property
+   already has the intended value when the component owning the verb is installed. For example, for the argument
+   "[#MyDoc.doc]" to resolve to the correct value, the same process must be installing the file MyDoc.doc and the
+   component that owns the verb.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Command",
+      type: "string"
+    }}
+  >
+  The localized text displayed on the context menu.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The verb for the command.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sequence",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The sequence of the commands. Only verbs for which the Sequence is specified
+   are used to prepare an ordered list for the default value of the shell key. The Verb with the lowest value in this
+   column becomes the default verb. Used only for Advertised verbs.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TargetFile",
+      type: "string"
+    }}
+  >
+  Either this attribute or the TargetProperty attribute must be specified for a non-advertised verb.
+   The value should be the identifier of the target file to be executed for the verb.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TargetProperty",
+      type: "string"
+    }}
+  >
+  Either this attribute or the TargetFile attribute must be specified for a non-advertised verb.
+   The value should be the identifier of the property which will resolve to the path to the target file to be executed for the verb.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Extension",
+      link: "../extension"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Verb Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/verb-table"
+    },
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    }
+  ]}
+/>

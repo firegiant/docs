@@ -1,0 +1,90 @@
+---
+title: "SqlFileSpec element (Sql extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+File specification for a Sql database.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Filename",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the operating-system file name for the database file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GrowthSize",
+      type: "string"
+    }}
+  >
+  Specifies the growth increment of the database file. The GB, MB and KB and % suffixes can be used to 
+   specify gigabytes, megabytes, kilobytes or a percentage of the current file size to grow. The default is 
+   megabytes if no suffix is specified. The default value is 10% if GrowthSize is not specified, and the 
+   minimum value is 64 KB. The GrowthSize setting for a file cannot exceed the MaxSize setting.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier in your installation package for this file specification. If an Id is not provided, one will generated for you.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxSize",
+      type: "string"
+    }}
+  >
+  Specifies the maximum size to which the database file can grow. The GB, MB and KB suffixes can be used to 
+   to specify gigabytes, megabytes or kilobytes. The default is megabytes if no suffix is specified. If 
+   MaxSize is not specified, the file will grow until the disk is full.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Specifies the logical name for the database file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Size",
+      type: "string"
+    }}
+  >
+  Specifies the size of the database file. The GB, MB and KB suffixes can be used to specify gigabytes, 
+   megabytes or kilobytes. The default is megabytes if no suffix is specified. When a Size is not 
+   supplied for a database file, SQL Server uses the size of the primary file in the model database.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "SqlDatabase",
+      link: "../sqldatabase"
+    }
+  ]}
+/>

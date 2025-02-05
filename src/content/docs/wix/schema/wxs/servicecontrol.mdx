@@ -1,0 +1,130 @@
+---
+title: "ServiceControl element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Starts, stops, and removes services for parent Component. This element is used to control the state
+ of a service installed by the MSI or MSM file by using the start, stop and remove attributes.
+ For example, Start='install' Stop='both' Remove='uninstall' would mean: start the service on install,
+ remove the service when the product is uninstalled, and stop the service both on install and uninstall.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this service control. This value will default to the Name attribute if not
+   specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the service.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Remove",
+      type: "InstallUninstallType",
+      typeLink: "../installuninstalltype",
+      typeTitle: "Specifies whether an action occur on install, uninstall or both."
+    }}
+  >
+  Specifies whether the service should be removed by the DeleteServices action on install, uninstall or both.
+   For 'install', the service will be removed only when the parent component is being installed (msiInstallStateLocal or
+   msiInstallStateSource); for 'uninstall', the service will be removed only when the parent component
+   is being removed (msiInstallStateAbsent); for 'both', the service will be removed in both cases. This attribute's value must be one of the following:
+  - *install*: The action should happen during install (msiInstallStateLocal or msiInstallStateSource).
+  - *uninstall*: The action should happen during uninstall (msiInstallStateAbsent).
+  - *both*: The action should happen during both install and uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Start",
+      type: "InstallUninstallType",
+      typeLink: "../installuninstalltype",
+      typeTitle: "Specifies whether an action occur on install, uninstall or both."
+    }}
+  >
+  Specifies whether the service should be started by the StartServices action on install, uninstall or both.
+   For 'install', the service will be started only when the parent component is being installed (msiInstallStateLocal or
+   msiInstallStateSource); for 'uninstall', the service will be started only when the parent component
+   is being removed (msiInstallStateAbsent); for 'both', the service will be started in both cases. This attribute's value must be one of the following:
+  - *install*: The action should happen during install (msiInstallStateLocal or msiInstallStateSource).
+  - *uninstall*: The action should happen during uninstall (msiInstallStateAbsent).
+  - *both*: The action should happen during both install and uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Stop",
+      type: "InstallUninstallType",
+      typeLink: "../installuninstalltype",
+      typeTitle: "Specifies whether an action occur on install, uninstall or both."
+    }}
+  >
+  Specifies whether the service should be stopped by the StopServices action on install, uninstall or both.
+   For 'install', the service will be stopped only when the parent component is being installed (msiInstallStateLocal or
+   msiInstallStateSource); for 'uninstall', the service will be stopped only when the parent component
+   is being removed (msiInstallStateAbsent); for 'both', the service will be stopped in both cases. This attribute's value must be one of the following:
+  - *install*: The action should happen during install (msiInstallStateLocal or msiInstallStateSource).
+  - *uninstall*: The action should happen during uninstall (msiInstallStateAbsent).
+  - *both*: The action should happen during both install and uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Wait",
+      type: "yesno"
+    }}
+  >
+  Specifies whether or not to wait for the service to complete before continuing. The default is 'yes'.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ServiceArgument",
+      description: "Ordered list of arguments used when modifying services.",
+      link: "../serviceargument"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ServiceControl Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/servicecontrol-table"
+    }
+  ]}
+/>

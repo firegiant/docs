@@ -1,0 +1,46 @@
+---
+title: "AppUriHandler element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a URI handler.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "HostName",
+      type: "string",
+      required: true
+    }}
+  >
+  The host name that should instead launch the app.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Parameters",
+      type: "string"
+    }}
+  >
+  Command-line arguments used when launching the app from a URI.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

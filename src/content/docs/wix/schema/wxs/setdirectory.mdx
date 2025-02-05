@@ -1,0 +1,108 @@
+---
+title: "SetDirectory element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Sets a Directory to a particular value. This is accomplished by creating a Type 51 custom action that is appropriately scheduled in
+ the InstallUISequence and InstallExecuteSequence.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Action",
+      type: "string"
+    }}
+  >
+  By default the action is "Set" + Id attribute's value. This optional attribute can override the action name in the case
+   where multiple SetDirectory elements target the same Id (probably with mutually exclusive conditions).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition that determines whether the Directory is set. If the condition evaluates to false, the SetDirectory is skipped.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  This attribute specifies a reference to a Directory element with matching Id attribute. The path of the Directory will be set to
+   the Value attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sequence",
+      type: "SequenceType",
+      typeLink: "../sequencetype",
+      typeTitle: "Controls which sequences the item assignment is sequenced in."
+    }}
+  >
+  Controls which sequences the Directory assignment is sequenced in.
+   For 'execute', the assignment is scheduled in the InstallExecuteSequence.
+   For 'ui', the assignment is scheduled in the InstallUISequence.
+   For 'first', the assignment is scheduled in the InstallUISequence or the InstallExecuteSequence if the InstallUISequence is skipped at install time.
+   For 'both', the assignment is scheduled in both the InstallUISequence and the InstallExecuteSequence.
+   The default is 'both'. This attribute's value must be one of the following:
+  - *both*: Schedules the assignment in the InstallUISequence and the InstallExecuteSequence.
+  - *first*: Schedules the assignment to run in the InstallUISequence or the InstallExecuteSequence if the InstallUISequence is skipped.
+  - *execute*: Schedules the assignment only in the the InstallExecuteSequence.
+  - *ui*: Schedules the assignment only in the the InstallUISequence.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  This attribute specifies a string value to assign to the Directory. The value can be a literal value or derived from a
+   Property element using the [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) syntax.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[Custom](../custom), [CustomActionRef](../customactionref), [InstallUISequence](../installuisequence), [InstallExecuteSequence](../installexecutesequence)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "CustomAction Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/customaction-table"
+    }
+  ]}
+/>

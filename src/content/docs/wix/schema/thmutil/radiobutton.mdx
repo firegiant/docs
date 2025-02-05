@@ -1,0 +1,185 @@
+---
+title: "RadioButton element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an individual radio button within a set of radio buttons.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "EnableCondition",
+      type: "string"
+    }}
+  >
+  A condition that determines if the control is enabled. If this condition is true or omitted, then the control will be enabled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FontId",
+      type: "string"
+    }}
+  >
+  Identifier to the Font element that serves as the font for the control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "integer",
+      required: true
+    }}
+  >
+  Height of the control. Non-positive values extend the control to the bottom of the window minus the value. A zero value extends the control to the bottom of the window.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HexStyle",
+      type: "hex"
+    }}
+  >
+  Hexadecimal window style for the control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HideWhenDisabled",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the control should be hidden when disabled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Optional name for the control.
+  
+   If the ThmUtil variable callback system has been configured, such as by
+   WixStandardBootstrapperApplication, ThmUtil uses the control name to
+   find a matching variable name. ThmUtil retrieves the variable's value
+   to set the initial value of the control and sets the variable's value
+   when the user interacts with the control.
+  
+   For example, a checkbox control is checked when the matching variable
+   has a nonzero value and unchecked for a value of `0`. When the user
+   checks a checkbox control, ThmUtil sets the variable value to a nonzero
+   value (currently `1`) and to `0` if the checkbox is unchecked.
+  
+   An edit box control gets its initial value from a matching variable
+   value. The control value is saved to the variable when navigating away
+   from the page or when choosing a folder via an associated Browse button.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "StringId",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references a string resource in the module to define the text for the control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TabStop",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the control is part of the tab sequence of controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Optional value used when setting the variable associated with the set of radio buttons.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Visible",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the control is initially visible.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "VisibleCondition",
+      type: "string"
+    }}
+  >
+  A condition that determines if the control is visible. If this condition is true or omitted, then the control will be visible.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "integer",
+      required: true
+    }}
+  >
+  Width of the control. Non-positive values extend the control to the right of the window minus the value. A zero value extends the control to the right of the window.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "X",
+      type: "integer",
+      required: true
+    }}
+  >
+  X coordinate for the control from the left of the window. Negative values are coordinates from the right of the window minus the width of the control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Y",
+      type: "integer",
+      required: true
+    }}
+  >
+  Y coordinate for the control from the top of the window. Negative values are coordinates from the bottom of the window minus the height of the control.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Text",
+      link: "../text"
+    },
+    {
+      title: "Tooltip",
+      link: "../tooltip"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "RadioButtons",
+      link: "../radiobuttons"
+    }
+  ]}
+/>

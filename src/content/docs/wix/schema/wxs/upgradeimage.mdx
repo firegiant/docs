@@ -1,0 +1,72 @@
+---
+title: "UpgradeImage element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Contains information about the upgraded images of the product.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier to connect target images with upgraded image.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Full path to location of msi file for upgraded image.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourcePatch",
+      type: "string"
+    }}
+  >
+  Modified copy of the upgraded installation database that contains additional authoring specific to patching.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    },
+    {
+      title: "TargetImage",
+      link: "../targetimage"
+    },
+    {
+      title: "UpgradeFile",
+      link: "../upgradefile"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Family",
+      link: "../family"
+    }
+  ]}
+/>

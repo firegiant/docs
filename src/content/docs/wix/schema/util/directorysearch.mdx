@@ -1,0 +1,97 @@
+---
+title: "DirectorySearch element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a directory search.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Id of the search that this one should come after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition for evaluating the search. If this evaluates to false, the search is not executed at all.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisableFileRedirection",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes" and the running bundle is 32-bit, Wow64DisableWow64FsRedirection is called before starting the search.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Id of the search for ordering and dependency.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Path",
+      type: "string"
+    }}
+  >
+  Directory path to search for.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Result",
+      type: ""
+    }}
+  >
+  Rather than saving the matching directory path into the variable, a DirectorySearch can save an
+   attribute of the matching directory instead. This attribute's value must be one of the following:
+  - *exists*: Saves true if a matching directory is found; false otherwise.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Variable",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the variable in which to place the result of the search.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

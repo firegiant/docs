@@ -1,0 +1,518 @@
+---
+title: "ComPlusApplication element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a COM+ application. If this element is a descendent
+ of a Component element, the application will be created in association with
+ this component. If the element is a child of any of the Fragment, Module, or
+ Package elements it is considered to be a locater, referencing an existing
+ application.
+
+ If the element is a child of a ComPlusPartition element,
+ or have its Partition attribute set, the application will be installed under
+ the referenced partition.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AccessChecksLevel",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *applicationLevel*
+  - *applicationComponentLevel*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Activation",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *inproc*
+  - *local*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ApplicationAccessChecksEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ApplicationDirectory",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ApplicationId",
+      type: "string"
+    }}
+  >
+  Id for the application. This attribute can be omitted, in
+   which case an id will be generated on install. If the element is a locater,
+   this attribute can be omitted if a value is provided for the Name attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Authentication",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *default*
+  - *none*
+  - *connect*
+  - *call*
+  - *packet*
+  - *integrity*
+  - *privacy*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AuthenticationCapability",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *none*
+  - *secureReference*
+  - *staticCloaking*
+  - *dynamicCloaking*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Changeable",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CommandLine",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ConcurrentApps",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreatedBy",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CRMEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CRMLogFile",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Deleteable",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DumpEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DumpOnException",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DumpOnFailfast",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DumpPath",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EventsEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Identity",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImpersonationLevel",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *anonymous*
+  - *identify*
+  - *impersonate*
+  - *delegate*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IsEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxDumpCount",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Name of the application. This attribute can be omitted if
+   the element is a locater, and a value is provided for the PartitionId
+   attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Partition",
+      type: "string"
+    }}
+  >
+  If the element is not a child of a ComPlusPartition
+   element, this attribute can be provided with the id of a ComPlusPartition
+   element representing the partition the application belongs to.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Password",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "QCAuthenticateMsgs",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *secureApps*
+  - *off*
+  - *on*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "QCListenerMaxThreads",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "QueueListenerEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "QueuingEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleActivationLimit",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleCallLimit",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleExpirationTimeout",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleLifetimeLimit",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RecycleMemoryLimit",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Replicable",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RunForever",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShutdownAfter",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SoapActivated",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SoapBaseUrl",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SoapMailTo",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SoapVRoot",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SRPEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SRPTrustLevel",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *disallowed*
+  - *fullyTrusted*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThreeGigSupportEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComPlusApplicationRole",
+      link: "../complusapplicationrole"
+    },
+    {
+      title: "ComPlusAssembly",
+      link: "../complusassembly"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "ComPlusPartition",
+      link: "../compluspartition"
+    }
+  ]}
+/>

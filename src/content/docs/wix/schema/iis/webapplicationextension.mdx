@@ -1,0 +1,76 @@
+---
+title: "WebApplicationExtension element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Extension for WebApplication
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "CheckPath",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Executable",
+      type: "string",
+      required: true
+    }}
+  >
+  Usually a Property that resolves to short file name path.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Extension",
+      type: "string"
+    }}
+  >
+  Extension being registered. Do not prefix with a '.' (e.g. you should use "html", not ".html").
+   To register for all extensions, use Extension="*". To register a wildcard application map (which
+   handles all requests, even those for directories or files with no extension) omit the Extension
+   attribute completely.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Script",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Verbs",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WebApplication",
+      link: "../webapplication"
+    }
+  ]}
+/>

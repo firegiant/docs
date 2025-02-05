@@ -1,0 +1,197 @@
+---
+title: "WixStandardBootstrapperApplication element (Bal extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Uses WixStandardBootstrapperApplication as the Bootstrapper Application for a Bundle.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "LaunchArguments",
+      type: "string"
+    }}
+  >
+  If set, WixStdBA will supply these arguments when launching the application specified by the LaunchTarget attribute.
+   The string value can be formatted using Burn variables enclosed in brackets,
+   to refer to installation directories and so forth.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LaunchHidden",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If set to "yes", WixStdBA will launch the application specified by the LaunchTarget attribute with the SW_HIDE flag.
+   This attribute is ignored when the LaunchTargetElevatedId attribute is specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LaunchTarget",
+      type: "string"
+    }}
+  >
+  If set, the success page will show a Launch button the user can use to launch the application being installed.
+   The string value can be formatted using Burn variables enclosed in brackets,
+   to refer to installation directories and so forth.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LaunchTargetElevatedId",
+      type: "string"
+    }}
+  >
+  Id of the target ApprovedExeForElevation element.
+   If set with LaunchTarget, WixStdBA will launch the application through the Engine's LaunchApprovedExe method instead of through ShellExecute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LaunchWorkingFolder",
+      type: "string"
+    }}
+  >
+  WixStdBA will use this working folder when launching the specified application.
+   The string value can be formatted using Burn variables enclosed in brackets,
+   to refer to installation directories and so forth.
+   This attribute is ignored when the LaunchTargetElevatedId attribute is specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LicenseFile",
+      type: "string"
+    }}
+  >
+  Source file of the RTF license file. Cannot be used simultaneously with LicenseUrl.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LicenseUrl",
+      type: "string"
+    }}
+  >
+  URL target of the license link. Cannot be used simultaneously with LicenseFile. This attribute can be empty to hide the license link completely.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LocalizationFile",
+      type: "string"
+    }}
+  >
+  Source file of the theme localization .wxl file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogoFile",
+      type: "string"
+    }}
+  >
+  Source file of the logo graphic.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogoSideFile",
+      type: "string"
+    }}
+  >
+  Source file of the side logo graphic.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShowVersion",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If set to "yes", the application version will be displayed on the UI.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportCacheOnly",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If set to "yes", the bundle can be pre-cached using the /cache command line argument.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressDowngradeFailure",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If set to "yes", attempting to installer a downgraded version of a bundle will be treated as a successful do-nothing operation.
+   The default behavior (or when explicitly set to "no") is to treat downgrade attempts as failures.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressOptionsUI",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If set to "yes", the Options button will not be shown and the user will not be able to choose an installation directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressRepair",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If set to "yes", the Repair button will not be shown in the maintenance-mode UI.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Theme",
+      type: "",
+      required: true
+    }}
+  >
+  The built-in theme to use. This attribute's value must be one of the following:
+  - *hyperlinkLargeLicense*
+  - *hyperlinkLicense*
+  - *hyperlinkSidebarLicense*
+  - *none*
+  - *rtfLargeLicense*
+  - *rtfLicense*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThemeFile",
+      type: "string"
+    }}
+  >
+  Source file of the theme XML.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BootstrapperApplication (Wxs extension)",
+      link: "../../wxs/bootstrapperapplication"
+    }
+  ]}
+/>

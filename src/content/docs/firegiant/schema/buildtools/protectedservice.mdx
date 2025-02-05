@@ -1,0 +1,48 @@
+---
+title: "ProtectedService element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Configures a service as a protected service.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ElamFile",
+      type: "string",
+      required: true
+    }}
+  >
+  Id of driver file with ELAM certificate info.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Name of the service. If specified, the ids of the user-defined custom actions required to unprotect the service will have this name appended. 
+   The name of the service as specified in the ServiceInstall element will be used when protecting the service so this attribute can 
+   be omitted if not needed to distinguish the unprotect custom actions for multiple services.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

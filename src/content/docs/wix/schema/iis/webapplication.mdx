@@ -1,0 +1,170 @@
+---
+title: "WebApplication element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines properties for a web application. These properties can be used for more than one application defined in a web site or vroot, by defining this element in a common location and referring to it by setting the WebApplication attribute of the WebSite and WebVirtualDir elements.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AllowSessions",
+      type: "wxs:YesNoDefaultTypeUnion"
+    }}
+  >
+  Sets the Enable Session State option. When enabled, you can set the session timeout using the SessionTimeout attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Buffer",
+      type: "wxs:YesNoDefaultTypeUnion"
+    }}
+  >
+  Sets the option that enables response buffering in the application, which allows ASP script to set response headers anywhere in the script.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ClientDebugging",
+      type: "wxs:YesNoDefaultTypeUnion"
+    }}
+  >
+  Enable ASP client-side script debugging.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultScript",
+      type: ""
+    }}
+  >
+  Sets the default script language for the site. This attribute's value must be one of the following:
+  - *VBScript*
+  - *JScript*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the web application. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Isolation",
+      type: ""
+    }}
+  >
+  Sets the application isolation level for this application for pre-IIS 6 applications. This attribute's value must be one of the following:
+  - *low*: Means the application executes within the IIS process.
+  - *medium*: Executes pooled in a separate process.
+  - *high*: Means execution alone in a separate process.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Sets the name of this application.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ParentPaths",
+      type: "wxs:YesNoDefaultTypeUnion"
+    }}
+  >
+  Sets the parent paths option, which allows a client to use relative paths to reach parent directories from this application.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ScriptTimeout",
+      type: "wxs:Integer"
+    }}
+  >
+  Sets the timeout value in seconds for executing ASP scripts.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServerDebugging",
+      type: "wxs:YesNoDefaultTypeUnion"
+    }}
+  >
+  Enable ASP server-side script debugging.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SessionTimeout",
+      type: "wxs:Integer"
+    }}
+  >
+  Sets the timeout value for sessions in minutes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WebAppPool",
+      type: "string"
+    }}
+  >
+  References the Id attribute of a WebAppPool element to use as the application pool for this application in IIS 6 applications.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "WebApplicationExtension",
+      link: "../webapplicationextension"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "WebVirtualDir",
+      link: "../webvirtualdir"
+    },
+    {
+      title: "WebDir",
+      link: "../webdir"
+    },
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>

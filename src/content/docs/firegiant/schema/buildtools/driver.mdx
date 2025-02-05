@@ -1,0 +1,123 @@
+---
+title: "Driver element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Installs and uninstalls kernel and file system drivers.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BinaryPath",
+      type: "string"
+    }}
+  >
+  A formatted property that resolves to the path of the driver binary.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  The localizable string that user interface programs use to identify the driver.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ErrorControl",
+      type: "",
+      required: true
+    }}
+  >
+  Determines what action should be taken on an error. This attribute's value must be one of the following:
+  - *ignore*: Logs the error and continues with the startup operation.
+  - *normal*: Logs the error, displays a message box and continues the startup operation.
+  - *critical*: The startup program logs the error in the event log, if possible. If the last-known-good configuration is being started, the startup operation fails. Otherwise, the system is restarted with the last-known good configuration.
+  - *severe*: The startup program logs the error in the event log. If the last-known-good configuration is being started, the startup operation continues. Otherwise, the system is restarted with the last-known-good configuration.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this driver configuration. This value will generated if not specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LoadOrderGroup",
+      type: "string"
+    }}
+  >
+  The load ordering group that this driver should be a part of.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name to register with the service control manager.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Start",
+      type: "",
+      required: true
+    }}
+  >
+  Determines when the driver should be started. This attribute's value must be one of the following:
+  - *auto*: The driver will start during startup of the system.
+  - *demand*: The driver will start when the service control manager calls the StartService function.
+  - *disabled*: The driver can no longer be started.
+  - *boot*: A device driver that will be started by the operating system boot loader.
+  - *system*: A device driver that will be started by the IoInitSystem function.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "",
+      required: true
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *kernel*: A kernel driver.
+  - *fileSystem*: A file system driver.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DriverDependency",
+      link: "../driverdependency"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

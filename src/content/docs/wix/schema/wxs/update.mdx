@@ -1,0 +1,40 @@
+---
+title: "Update element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines the update for a Bundle.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Location",
+      type: "string",
+      required: true
+    }}
+  >
+  The absolute path or URL to check for an update bundle. Currently the engine provides this value
+   in the IBootstrapperApplication::OnDetectUpdateBegin() and otherwise ignores the value. In the
+   future the engine will be able to acquire an update bundle from the location and determine if it
+   is newer than the current executing bundle.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    }
+  ]}
+/>

@@ -1,0 +1,64 @@
+---
+title: "AppService element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an application contracts as a way for an app to invoke a background task belonging to another app; or for a background task invoked to service an app contract a way to communicate with its caller.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "EntryPoint",
+      type: "string"
+    }}
+  >
+  Entry point in application.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  The service name (used to match the caller of the Application Contract with the provider).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServerName",
+      type: "string"
+    }}
+  >
+  The COM server to be instantiated to satisfy the contract activation (ensures that only one instance of the server exists at runtime). This is an optional attribute that is only used for PPLE host processes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportsMultipleInstances",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Supports multiple, separate instances of an app service.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

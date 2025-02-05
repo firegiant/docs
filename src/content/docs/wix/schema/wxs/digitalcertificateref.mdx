@@ -1,0 +1,38 @@
+---
+title: "DigitalCertificateRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Reference to a DigitalCertificate element. This will force the entire referenced Fragment's contents
+ to be included in the installer database. This is only used for references when patching.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchFamily",
+      link: "../patchfamily"
+    }
+  ]}
+/>

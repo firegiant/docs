@@ -1,0 +1,62 @@
+---
+title: "BootstrapperApplicationRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used to reference a BootstrapperApplication element and optionally add additional payloads to the bootstrapper application.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the BootstrapperApplication element to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "HarvestPayload (Buildtools extension)",
+      link: "../../buildtools/harvestpayload"
+    },
+    {
+      title: "HarvestPayloadFolder (Buildtools extension)",
+      link: "../../buildtools/harvestpayloadfolder"
+    },
+    {
+      title: "Payload",
+      link: "../payload"
+    },
+    {
+      title: "PayloadGroupRef",
+      link: "../payloadgroupref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

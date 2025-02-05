@@ -1,0 +1,68 @@
+---
+title: "WixPrerequisiteBootstrapperApplication element (Bal extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Uses WixPrerequisiteBootstrapperApplication as a secondary Bootstrapper Application for a Bundle,
+ to bootstrap the prerequisites needed for a primary bootstrapper application.
+
+ _Available in WiX v5._
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "LocalizationFile",
+      type: "string"
+    }}
+  >
+  Source file of the theme localization .wxl file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogoFile",
+      type: "string"
+    }}
+  >
+  Source file of the logo graphic.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Theme",
+      type: ""
+    }}
+  >
+  The built-in theme to use. The default is "standard". This attribute's value must be one of the following:
+  - *none*
+  - *standard*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThemeFile",
+      type: "string"
+    }}
+  >
+  Source file of the theme XML.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BootstrapperApplication (Wxs extension)",
+      link: "../../wxs/bootstrapperapplication"
+    }
+  ]}
+/>

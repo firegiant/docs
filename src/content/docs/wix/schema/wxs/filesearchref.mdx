@@ -1,0 +1,62 @@
+---
+title: "FileSearchRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+References an existing FileSearch element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Specify the Id to the FileSearch to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "ComponentSearch",
+      link: "../componentsearch"
+    },
+    {
+      title: "IniFileSearch",
+      link: "../inifilesearch"
+    },
+    {
+      title: "RegistrySearch",
+      link: "../registrysearch"
+    }
+  ]}
+/>
+
+## Remarks
+
+A reference to another FileSearch element must reference the same Id and the same Parent Id. If any of these attribute values are different you must instead use a FileSearch element.
+
+
+
+## See also
+[FileSearch](../filesearch)

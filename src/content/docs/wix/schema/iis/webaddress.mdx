@@ -1,0 +1,82 @@
+---
+title: "WebAddress element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+WebAddress for WebSite
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Header",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the web application. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IP",
+      type: "string"
+    }}
+  >
+  The IP address to locate an existing WebSite or create a new WebSite. When the WebAddress is part of a WebSite element
+   used to locate an existing web site the following rules are used:
+  - When this attribute is not specified only the "All Unassigned" IP address will be located.
+  - When this attribute is explicitly specified only the specified IP address will be located.
+  - When this attribute has the value "*" then any IP address including the "All Unassigned" IP address will be located
+  When the WebAddress is part of a WebSite element used to create a new web site the following rules are used:
+  - When this attribute is not specified or the value is "*" the "All Unassigned" IP address will be used.
+  - When this attribute is explicitly specified the IP address will use that value.
+  The IP attribute can contain a formatted string that is processed at install time to insert the values of properties using
+   [PropertyName] syntax.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Port",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Secure",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Determines if this address represents a secure binding. The default is 'no'.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>

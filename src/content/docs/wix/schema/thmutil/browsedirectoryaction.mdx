@@ -1,0 +1,50 @@
+---
+title: "BrowseDirectoryAction element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+When the button is pressed, a directory browser dialog is shown.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition that determines if the parent control will execute this action.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "VariableName",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the variable to update when the user selects a directory from the dialog.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Button",
+      link: "../button"
+    },
+    {
+      title: "CommandLink",
+      link: "../commandlink"
+    }
+  ]}
+/>

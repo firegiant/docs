@@ -1,0 +1,73 @@
+---
+title: "SymbolPath element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+A path to symbols.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Path",
+      type: "string",
+      required: true
+    }}
+  >
+  The path.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "UpgradeImage",
+      link: "../upgradeimage"
+    },
+    {
+      title: "TargetImage",
+      link: "../targetimage"
+    },
+    {
+      title: "TargetFile",
+      link: "../targetfile"
+    },
+    {
+      title: "ExternalFile",
+      link: "../externalfile"
+    },
+    {
+      title: "UpgradeFile",
+      link: "../upgradefile"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "Media",
+      link: "../media"
+    }
+  ]}
+/>

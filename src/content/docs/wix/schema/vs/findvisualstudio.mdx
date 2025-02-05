@@ -1,0 +1,30 @@
+---
+title: "FindVisualStudio element (Vs extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This element detects which, if any, Visual Studio instances are installed. If so, it sets
+ the appropriate property or properties: `VS2017_ROOT_FOLDER`, `VS2019_ROOT_FOLDER`, or
+ `VS2022_ROOT_FOLDER`.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>

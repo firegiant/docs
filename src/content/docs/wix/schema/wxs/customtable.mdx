@@ -1,0 +1,67 @@
+---
+title: "CustomTable element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a custom table for use from a custom action.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the custom table. The id must be less than 31 characters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Unreal",
+      type: "yesno"
+    }}
+  >
+  Indicates the table is not supposed to be included in the final output.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Column",
+      link: "../column"
+    },
+    {
+      title: "Row",
+      link: "../row"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

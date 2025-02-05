@@ -1,0 +1,70 @@
+---
+title: "PackageGroup element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a package group to a bootstrapper.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for package group.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "BundlePackage",
+      link: "../bundlepackage"
+    },
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    },
+    {
+      title: "MsiPackage",
+      link: "../msipackage"
+    },
+    {
+      title: "MspPackage",
+      link: "../msppackage"
+    },
+    {
+      title: "MsuPackage",
+      link: "../msupackage"
+    },
+    {
+      title: "PackageGroupRef",
+      link: "../packagegroupref"
+    },
+    {
+      title: "RollbackBoundary",
+      link: "../rollbackboundary"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

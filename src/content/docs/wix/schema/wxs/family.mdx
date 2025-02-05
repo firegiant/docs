@@ -1,0 +1,101 @@
+---
+title: "Family element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Group of one or more upgraded images of a product.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DiskId",
+      type: "DiskIdType",
+      typeLink: "../diskidtype",
+      typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Entered into the DiskId field of the new Media table record.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DiskPrompt",
+      type: "string"
+    }}
+  >
+  Value to display in the "[1]" of the DiskPrompt Property. Using this attribute will require you to define a DiskPrompt Property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MediaSrcProp",
+      type: "string"
+    }}
+  >
+  Entered into the Source field of the new Media table entry of the upgraded image.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the family.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SequenceStart",
+      type: "integer"
+    }}
+  >
+  Sequence number for the starting file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "VolumeLabel",
+      type: "string"
+    }}
+  >
+  Entered into the VolumeLabel field of the new Media table record.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ExternalFile",
+      link: "../externalfile"
+    },
+    {
+      title: "ProtectFile",
+      link: "../protectfile"
+    },
+    {
+      title: "UpgradeImage",
+      link: "../upgradeimage"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchCreation",
+      link: "../patchcreation"
+    }
+  ]}
+/>

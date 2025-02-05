@@ -1,0 +1,144 @@
+---
+title: "RegistryKey element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used for organization of child RegistryValue elements or to create a registry key
+ (and optionally remove it during uninstallation).
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Action",
+      type: ""
+    }}
+  >
+  The Action attribute has been deprecated. In most cases, you can simply omit @Action. If you need to force Windows Installer
+   to create an empty key or recursively delete the key, use the ForceCreateOnInstall or ForceDeleteOnUninstall attributes instead. This attribute's value must be one of the following:
+  - *create*: Creates the key, if absent, when the parent component is installed.
+  - *createAndRemoveOnUninstall*: Creates the key, if absent, when the parent component is installed then remove the key with all its values and subkeys when the parent component is uninstalled.
+     Note that this value is useful only if your program creates additional values or subkeys under this key and you want an uninstall to remove them. MSI already
+     removes all values and subkeys that it creates, so this option just adds additional overhead to uninstall.
+  - *none*: Does nothing; this element is used merely in WiX authoring for organization and does nothing to the final output.
+     This is the default value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ForceCreateOnInstall",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to 'yes' to create an empty key, if absent, when the parent component is installed.
+   This value is needed only to create an empty key with no subkeys or values. Windows Installer creates
+   keys as needed to store subkeys and values. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ForceDeleteOnUninstall",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to 'yes' to remove the key with all its values and subkeys when the parent component is uninstalled.
+   Note that this value is useful only if your program creates additional values or subkeys under this key and you want an uninstall to remove them. MSI already
+   removes all values and subkeys that it creates, so this option just adds additional overhead to uninstall.
+   The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Primary key used to identify this particular entry. If this attribute is not specified, an identifier will be
+   generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string"
+    }}
+  >
+  The localizable key for the registry value.
+   If the parent element is a RegistryKey, this value may be omitted to use the
+   path of the parent, or if its specified it will be appended to the path of the parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Root",
+      type: "RegistryRootType",
+      typeLink: "../registryroottype",
+      typeTitle: "Values of this type represent possible registry roots."
+    }}
+  >
+  The predefined root key for the registry value. This attribute's value must be one of the following:
+  - *HKMU*: A per-user installation will make the operation occur under HKEY_CURRENT_USER.
+     A per-machine installation will make the operation occur under HKEY_LOCAL_MACHINE.
+  - *HKCR*: Operation occurs under HKEY_CLASSES_ROOT. When using Windows 2000 or later, the installer writes or removes the value
+     from the HKCU\Software\Classes hive during per-user installations. When using Windows 2000 or later operating systems,
+     the installer writes or removes the value from the HKLM\Software\Classes hive during per-machine installations.
+  - *HKCU*: Operation occurs under HKEY_CURRENT_USER. It is recommended to set the KeyPath attribute to `yes` when setting this value for writing values
+     in order to ensure that the installer writes the necessary registry entries when there are multiple users on the same computer.
+  - *HKLM*: Operation occurs under HKEY_LOCAL_MACHINE.
+  - *HKU*: Operation occurs under HKEY_USERS.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Permission",
+      description: "ACL permission",
+      link: "../permission"
+    },
+    {
+      title: "PermissionEx (Util extension)",
+      link: "../../util/permissionex"
+    },
+    {
+      title: "RegistryKey",
+      link: "../registrykey"
+    },
+    {
+      title: "RegistryValue",
+      link: "../registryvalue"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "RegistryKey",
+      link: "../registrykey"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    }
+  ]}
+/>

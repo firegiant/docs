@@ -1,0 +1,6 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="QuickStart Example" Manufacturer="ACME Corp"
+           Version="0.0.1" UpgradeCode="PUT-GUID-HERE">
+    <File Source="example.txt" />
+  </Package>
+</Wix>

@@ -1,0 +1,12 @@
+---
+title: "SequenceType type"
+---
+
+Controls which sequences the item assignment is sequenced in.
+
+## Enumeration values
+
+  - *both*: Schedules the assignment in the InstallUISequence and the InstallExecuteSequence.
+  - *first*: Schedules the assignment to run in the InstallUISequence or the InstallExecuteSequence if the InstallUISequence is skipped.
+  - *execute*: Schedules the assignment only in the the InstallExecuteSequence.
+  - *ui*: Schedules the assignment only in the the InstallUISequence.

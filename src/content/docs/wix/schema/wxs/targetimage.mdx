@@ -1,0 +1,87 @@
+---
+title: "TargetImage element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Contains information about the target images of the product.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the target image.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreMissingFiles",
+      type: "yesno"
+    }}
+  >
+  Files missing from the target image are ignored by the installer.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Order",
+      type: "integer",
+      required: true
+    }}
+  >
+  Relative order of the target image.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Full path to the location of the msi file for the target image.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Validation",
+      type: "string"
+    }}
+  >
+  Product checking to avoid applying irrelevant transforms.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    },
+    {
+      title: "TargetFile",
+      link: "../targetfile"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UpgradeImage",
+      link: "../upgradeimage"
+    }
+  ]}
+/>

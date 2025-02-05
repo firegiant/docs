@@ -1,0 +1,92 @@
+---
+title: "ODBCDriver element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+ODBCDriver for a Component
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string"
+    }}
+  >
+  Required if not found as child of File element
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the driver.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name for the driver.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SetupFile",
+      type: "string"
+    }}
+  >
+  Required if not found as child of File element or different from File attribute above
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ODBCDataSource",
+      link: "../odbcdatasource"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ODBCDriver Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/odbcdriver-table"
+    }
+  ]}
+/>

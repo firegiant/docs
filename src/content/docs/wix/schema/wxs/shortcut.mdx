@@ -1,0 +1,293 @@
+---
+title: "Shortcut element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Shortcut, default target is parent File, CreateFolder, or Component's Directory
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Advertise",
+      type: "yesno"
+    }}
+  >
+  Specifies if the shortcut should be advertised or not. Note that advertised shortcuts
+   always point at a particular application, identified by a ProductCode, and should not be shared between applications.
+   Advertised shortcuts only work for the most recently installed application, and are removed when that application is
+   removed. The default value is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Arguments",
+      type: "string"
+    }}
+  >
+  The command-line arguments for the shortcut. Note that the resolution of properties
+   in the Arguments field is limited. A property formatted as [Property] in this field can only be resolved if the
+   property already has the intended value when the component owning the shortcut is installed. For example, for the
+   argument "[#MyDoc.doc]" to resolve to the correct value, the same process must be installing the file MyDoc.doc and
+   the component that owns the shortcut.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  The localizable description for the shortcut.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DescriptionResourceDll",
+      type: "string"
+    }}
+  >
+  The Formatted string providing the full path to the language neutral file containing the MUI Manifest. Generally
+   authored using [#filekey] form. When this attribute is specified, the DescriptionResourceId attribute must also
+   be provided.
+  
+   This attribute is only used on Windows Vista and above. If this attribute is not specified and the install
+   is running on Vista and above, the value in the Name attribute is used. If this attribute is provided and
+   the install is running on Vista and above, the value in the Name attribute is ignored.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DescriptionResourceId",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The description name index for the shortcut. This must be a non-negative number. When this attribute is specified,
+   the DescriptionResourceDll attribute must also be populated.
+  
+   This attribute is only used on Windows Vista and above. If this attribute is not specified and the install
+   is running on Vista and above, the value in the Name attribute is used. If this attribute is populated and the
+   install is running on Vista and above, the value in the Name attribute is ignored.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string"
+    }}
+  >
+  Identifier reference to Directory element where shortcut is to be created. When nested under a Component element, this attribute's value will default to the parent directory. Otherwise, this attribute is required.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayResourceDll",
+      type: "string"
+    }}
+  >
+  The Formatted string providing the full path to the language neutral file containing the MUI Manifest. Generally
+   authored using [#filekey] form. When this attribute is specified, the DisplayResourceId attribute must also
+   be provided.
+  
+   This attribute is only used on Windows Vista and above. If this attribute is not populated and the install
+   is running on Vista and above, the value in the Name attribute is used. If this attribute is populated and
+   the install is running on Vista and above, the value in the Name attribute is ignored.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayResourceId",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The display name index for the shortcut. This must be a non-negative number. When this attribute is specified, the
+   DisplayResourceDll attribute must also be provided.
+  
+   This attribute is only used on Windows Vista and above. If this attribute is not specified and the install
+   is running on Vista and above, the value in the Name attribute is used. If this attribute is specified and
+   the install is running on Vista and above, the value in the Name attribute is ignored.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hotkey",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The hotkey for the shortcut. The low-order byte contains the virtual-key code for
+   the key, and the high-order byte contains modifier flags. This must be a non-negative number. Authors of
+   installation packages are generally recommend not to set this option, because this can add duplicate hotkeys to a
+   users desktop. In addition, the practice of assigning hotkeys to shortcuts can be problematic for users using hotkeys
+   for accessibility.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Icon",
+      type: "string"
+    }}
+  >
+  Identifier reference to Icon element. The Icon identifier should have the same extension
+   as the file that it points at. For example, a shortcut to an executable (e.g. "my.exe") should reference an Icon with identifier
+   like "MyIcon.exe"
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconIndex",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Identifier reference to Icon element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for the shortcut. This value will serve as the primary key for the row.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
+      required: true
+    }}
+  >
+  If a short name is specified, the ShortName attribute may not be specified.
+   If this value is a long name, the ShortName attribute may be omitted to
+   allow WiX to attempt to generate a unique short name.
+   However, if this name collides with another shortcut or you wish to manually specify
+   the short name, then the ShortName attribute may be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortName",
+      type: "ShortFileNameType",
+      typeLink: "../shortfilenametype",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short name of the shortcut in 8.3 format.
+   This attribute should only be set if there is a conflict between generated short names
+   or the user wants to manually specify the short name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Show",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *normal*: The shortcut target will be displayed using the SW_SHOWNORMAL attribute.
+  - *minimized*: The shortcut target will be displayed using the SW_SHOWMINNOACTIVE attribute.
+  - *maximized*: The shortcut target will be displayed using the SW_SHOWMAXIMIZED attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Subdirectory",
+      type: "string"
+    }}
+  >
+  This attribute defines one or more directories below the directory referenced by the Directory attribute
+   where the shortcut will be installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Target",
+      type: "string"
+    }}
+  >
+  This attribute can only be set if this Shortcut element is nested under a Component element.
+   When nested under a Component element, this attribute's value will default to the parent directory.
+   This attribute's value is the target for a non-advertised shortcut.
+   This attribute is not valid for advertised shortcuts.
+   If you specify this value, its value should be a property identifier enclosed by square brackets ([ ]), that is expanded into the file or a folder pointed to by the shortcut.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WorkingDirectory",
+      type: "string"
+    }}
+  >
+  Directory identifier (or Property identifier that resolves to a directory) that resolves
+   to the path of the working directory for the shortcut.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WorkingSubdirectory",
+      type: "string"
+    }}
+  >
+  This attribute defines one or more directories below the directory referenced by the WorkingDirectory attribute
+   for the shortcut's working directory.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Icon",
+      link: "../icon"
+    },
+    {
+      title: "ShortcutProperty",
+      link: "../shortcutproperty"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "CreateFolder",
+      link: "../createfolder"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Shortcut Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/shortcut-table"
+    }
+  ]}
+/>

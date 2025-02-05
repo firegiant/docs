@@ -1,0 +1,75 @@
+---
+title: "StandardDirectory element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+References a standard Windows Installer directory, such as ProgramFilesFolder.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "StandardDirectoryTypeUnion",
+      typeLink: "../standarddirectorytype",
+      typeTitle: "A Windows Installer standard directory.",
+      required: true
+    }}
+  >
+  The identifier of the standard directory to include in the package.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "Merge",
+      link: "../merge"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[Directory](../directory)

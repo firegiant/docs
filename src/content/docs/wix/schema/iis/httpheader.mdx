@@ -1,0 +1,59 @@
+---
+title: "HttpHeader element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Custom HTTP Header definition for IIS resources such as WebSite and WebVirtualDir.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Primary key for custom HTTP Header entry. This will default to the Name attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the custom HTTP Header.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Value for the custom HTTP Header. This attribute can contain a formatted string that is processed at install time to insert the values of properties using [PropertyName] syntax. Also supported are environment variables, file installation paths, and component installation directories; see [Formatted](http://msdn.microsoft.com/library/aa368609.aspx) for details.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WebVirtualDir",
+      link: "../webvirtualdir"
+    },
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>

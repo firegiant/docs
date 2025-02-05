@@ -1,0 +1,48 @@
+---
+title: "Failure element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Failure action for a ServiceConfigFailureActions element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Action",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the action to take when the service fails. Valid values are "none", "restartComputer", "restartService", "runCommand" or a Formatted property
+   that resolves to "0" (for "none"), "1" (for "restartService"), "2" (for "restartComputer") or "3" (for "runCommand").
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Delay",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the time in milliseconds to wait before performing the value from the Action attribute.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ServiceConfigFailureActions",
+      link: "../serviceconfigfailureactions"
+    }
+  ]}
+/>

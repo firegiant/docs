@@ -1,0 +1,202 @@
+---
+title: "SqlDatabase element (Sql extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+SQL Database
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ConfirmOverwrite",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Prompt the user to overwrite the database.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ContinueOnError",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Continue even if the database operation fails.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateOnInstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Create the database during installation.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateOnReinstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether to create the database when the associated component is reinstalled. Setting CreateOnInstall to yes does **not** imply CreateOnReinstall is set to yes. CreateOnReinstall must be set in addition to CreateOnInstall for it to be created during both install and reinstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateOnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Create the database during uninstallation.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Database",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the database. The value can be a literal value or derived from a
+   Property element using the [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted)
+   syntax.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DropOnInstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Drop the database during installation.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DropOnReinstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether to drop the database when the associated component is reinstalled. Setting DropOnInstall to yes does **not** imply DropOnReinstall is set to yes. DropOnReinstall must be set in addition to DropOnInstall for it to be dropped during both install and reinstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DropOnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Drop the database during uninstallation.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier in your installation package for this database. If an Id is not provided, one will generated for you.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Instance",
+      type: "string"
+    }}
+  >
+  Optional database server instance.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Server",
+      type: "string",
+      required: true
+    }}
+  >
+  Database server name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string"
+    }}
+  >
+  Optional user used to connect to database.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "SqlFileSpec",
+      link: "../sqlfilespec"
+    },
+    {
+      title: "SqlLogFileSpec",
+      link: "../sqllogfilespec"
+    },
+    {
+      title: "SqlScript",
+      link: "../sqlscript"
+    },
+    {
+      title: "SqlString",
+      link: "../sqlstring"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>
+
+## Remarks
+
+Nesting SqlDatabase under a Component element will result in a SqlDatabase being installed to the machine as the package is installed.
+
+ Nesting SqlDatabase under Package, Fragment, or Module
+ results in a database "locator" record being created in
+ the SqlDatabase table. This means that the database
+ itself is neither installed nor uninstalled by the MSI
+ package. It does make the database available for referencing
+ from a SqlString or SqlScript record. This allows MSI to install
+ SqlScripts or SqlStrings to already existing databases on the machine.
+ The install will fail if the database does not exist in these cases.
+
+ The User attribute references credentials specified in a User element.
+ If a user is not specified then Windows Authentication will be used by default
+ using the credentials of the user performing the install to execute sql
+ strings, etc.
+
+## See also
+[User](../../util/user)

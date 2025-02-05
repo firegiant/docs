@@ -1,0 +1,53 @@
+---
+title: "FormatsFile element (Powershell extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Identifies the parent File as a formats XML file for the referenced PowerShell snap-in.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "FileId",
+      type: "string"
+    }}
+  >
+  Reference to the formats File ID. This is required when nested under the SnapIn element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SnapIn",
+      type: "string"
+    }}
+  >
+  Reference to the PowerShell snap-in ID for which this formats file is associated. This is required when nested under the File element.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    },
+    {
+      title: "SnapIn",
+      link: "../snapin"
+    }
+  ]}
+/>
+
+## Remarks
+
+A formats XML file that defines output formats for objects on the pipeline.

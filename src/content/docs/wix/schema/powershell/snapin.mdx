@@ -1,0 +1,126 @@
+---
+title: "SnapIn element (Powershell extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Identifies the parent File as a PowerShell snap-in to be registered on the system.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "CustomSnapInType",
+      type: "string"
+    }}
+  >
+  The full type name of a class that is used to register a list of cmdlets and providers.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  A brief description of the snap-in.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DescriptionIndirect",
+      type: "EmbeddedResource",
+      typeLink: "../embeddedresource",
+      typeTitle: "Values should be in the format *ResourceName,StringName*, where *ResourceName*\r\n is the name of the embedded resource in your assembly sans the \".resources\" extension, and *StringName*\r\n is the name of the string resource in the embedded resource.\r\n\r\nExample: UtilityMshSnapInResources,Description\r\n\r\n"
+    }}
+  >
+  An embedded resource that contains a brief description of the snap-in.
+   This resource must be embedded in the current snap-in assembly.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier for this PowerShell snap-in.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RequiredPowerShellVersion",
+      type: "wxs:VersionType"
+    }}
+  >
+  The required version of PowerShell that must be installed and is associated with the
+   snap-in registration. The default value is "1.0".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Vendor",
+      type: "string"
+    }}
+  >
+  The name of the snap-in vendor.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "VendorIndirect",
+      type: "EmbeddedResource",
+      typeLink: "../embeddedresource",
+      typeTitle: "Values should be in the format *ResourceName,StringName*, where *ResourceName*\r\n is the name of the embedded resource in your assembly sans the \".resources\" extension, and *StringName*\r\n is the name of the string resource in the embedded resource.\r\n\r\nExample: UtilityMshSnapInResources,Description\r\n\r\n"
+    }}
+  >
+  An embedded resource that contains the name of the snap-in vendor.
+   This resource must be embedded in the current snap-in assembly.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "wxs:VersionType"
+    }}
+  >
+  The version of the snapin. If not specified, this is taken from the assembly name.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "FormatsFile",
+      link: "../formatsfile"
+    },
+    {
+      title: "TypesFile",
+      link: "../typesfile"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>
+
+## Remarks
+
+[PowerShell](http://www.microsoft.com/powershell) snap-ins allow developers to
+ extend the functionality of of the PowerShell engine. Add this element to identify
+ the parent File as a PowerShell snap-in that will get registered on the system.

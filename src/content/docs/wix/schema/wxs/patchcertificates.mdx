@@ -1,0 +1,43 @@
+---
+title: "PatchCertificates element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Identifies the possible signer certificates used to digitally sign patches.
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DigitalCertificate",
+      link: "../digitalcertificate"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiPatchCertificate Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msipatchcertificate-table"
+    }
+  ]}
+/>

@@ -1,0 +1,151 @@
+---
+title: "EventSource element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Creates an event source.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "CategoryCount",
+      type: "wxs:Integer"
+    }}
+  >
+  The number of categories in CategoryMessageFile. CategoryMessageFile
+   must be specified too.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CategoryMessageFile",
+      type: "string"
+    }}
+  >
+  Name of the category message file. CategoryCount must be specified too.
+   Note that this is a formatted field, so you can use [#fileId] syntax to
+   refer to a file being installed. It is also written as a REG_EXPAND_SZ
+   string, so you can use %environment_variable% syntax to refer to a file
+   already present on the user's machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EventMessageFile",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the event message file.
+   Note that this is a formatted field, so you can use [#fileId] syntax to
+   refer to a file being installed. It is also written as a REG_EXPAND_SZ
+   string, so you can use %environment_variable% syntax to refer to a file
+   already present on the user's machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyPath",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Marks the EventSource registry as the key path of the component it belongs to.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Log",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the event source's log. The "Security" log is not support.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the event source.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ParameterMessageFile",
+      type: "string"
+    }}
+  >
+  Name of the parameter message file.
+   Note that this is a formatted field, so you can use [#fileId] syntax to
+   refer to a file being installed. It is also written as a REG_EXPAND_SZ
+   string, so you can use %environment_variable% syntax to refer to a file
+   already present on the user's machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportsErrors",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Equivalent to EVENTLOG_ERROR_TYPE.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportsFailureAudits",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Equivalent to EVENTLOG_AUDIT_FAILURE.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportsInformationals",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Equivalent to EVENTLOG_INFORMATION_TYPE.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportsSuccessAudits",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Equivalent to EVENTLOG_AUDIT_SUCCESS.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportsWarnings",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Equivalent to EVENTLOG_WARNING_TYPE.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

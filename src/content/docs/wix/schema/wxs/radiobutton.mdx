@@ -1,0 +1,155 @@
+---
+title: "RadioButton element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Text or Icon plus Value that is assigned to the Property of the parent Control (RadioButtonGroup).
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Bitmap",
+      type: "string"
+    }}
+  >
+  This attribute defines the bitmap displayed with the radio button. The value of the attribute creates a reference
+   to a Binary element that represents the bitmap. This attribute is mutually exclusive with the Icon and Text
+   attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Help",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Icon",
+      type: "string"
+    }}
+  >
+  This attribute defines the icon displayed with the radio button. The value of the attribute creates a reference
+   to a Binary element that represents the icon. This attribute is mutually exclusive with the Bitmap and Text
+   attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Text",
+      type: "string"
+    }}
+  >
+  Text displayed with the radio button. This attribute is mutually exclusive with the Bitmap and Icon attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ToolTip",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  Value assigned to the associated control Property when this radio button is selected.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "X",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Y",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "RadioButtonGroup",
+      link: "../radiobuttongroup"
+    }
+  ]}
+/>
+
+## See also
+[RadioButtonGroup](../radiobuttongroup)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "RadioButton Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/radiobutton-table"
+    },
+    {
+      title: "Control Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/control-table"
+    },
+    {
+      title: "Dialog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/dialog-table"
+    }
+  ]}
+/>

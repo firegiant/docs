@@ -1,0 +1,214 @@
+---
+title: "Directory element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Directory layout for the product. Also specifies the mappings between source and target directories.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ComponentGuidGenerationSeed",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  The Component Guid Generation Seed is a guid that must be used when a Component with the generate guid directive ("*")
+   is not rooted in a standard Windows Installer directory (for example, ProgramFilesFolder or CommonFilesFolder).
+   It is recommended that this attribute be avoided and that developers install their Components under standard
+   directories with unique names instead (for example, "ProgramFilesFolder\Company Name Product Name Version"). It is
+   important to note that once a directory is assigned a Component Guid Generation Seed the value must not change until
+   (and must be changed when) the path to that directory, including itself and all parent directories, changes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DiskId",
+      type: "DiskIdType",
+      typeLink: "../diskidtype",
+      typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Sets the default disk identifier for the files contained in this directory.
+   This attribute's value may be overridden by a child Component, Directory,
+   Merge or File element. See the File or Merge elements' DiskId attribute for
+   more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FileSource",
+      type: "string"
+    }}
+  >
+  Used to set the file system source for this directory's child elements.
+   For more information, see [Specifying source files](../../tools/payloads/).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  An optional identifier for the directory. If one is not specified,
+   a private identifier will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LoaderSearchPathEntry, from extension namespace http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools/msix",
+      type: ""
+    }}
+  >
+  Allows you to add the directory to the loader search path for the package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  The name of the directory.
+  
+   Do not specify this attribute if this directory represents
+   the same directory as the parent (see the Windows Installer SDK's [Directory table](http://msdn.microsoft.com/library/Aa368295.aspx) topic for more information about the "." operator).
+  
+   This attribute's value may either a short or long directory name. If a short directory
+   name is specified, the ShortName attribute may not be specified. If this value is a long
+   directory name, the ShortName attribute may be omitted to
+   allow WiX to attempt to generate a unique short directory name.
+   However, if this name collides with another directory or you wish to manually specify
+   the short directory name, then the ShortName attribute may be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortName",
+      type: "ShortFileNameType",
+      typeLink: "../shortfilenametype",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short name of the directory in 8.3 format.
+   This attribute should only be set if there is a conflict between generated short directory names
+   or the user wants to manually specify the short directory name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortSourceName",
+      type: "ShortFileNameType",
+      typeLink: "../shortfilenametype",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short name of the directory on the source media in 8.3 format.
+   This attribute should only be set if there is a conflict between generated short directory names
+   or the user wants to manually specify the short source directory name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceName",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The name of the directory on the source media.
+   If this attribute is not specified, Windows Installer will default to the Name attribute.
+  
+   In prior versions of the WiX toolset, this attribute specified the short source directory name.
+   This attribute's value may now be either a short or long directory name.
+   If a short directory name is specified, the ShortSourceName attribute may not be specified.
+   If a long directory name is specified, the LongSource attribute may not be specified.
+   Also, if this value is a long directory name, the ShortSourceName attribute may be omitted to
+   allow WiX to attempt to generate a unique short directory name.
+   However, if this name collides with another directory or you wish to manually specify
+   the short directory name, then the ShortSourceName attribute may be specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "Merge",
+      link: "../merge"
+    },
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "StandardDirectory",
+      link: "../standarddirectory"
+    }
+  ]}
+/>
+
+## See also
+[DirectoryRef](../directoryref)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Directory Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/directory-table"
+    }
+  ]}
+/>

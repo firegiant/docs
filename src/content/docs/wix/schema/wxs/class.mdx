@@ -1,0 +1,302 @@
+---
+title: "Class element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+COM Class registration for parent Component.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Advertise",
+      type: "yesno"
+    }}
+  >
+  Set this value to "yes" in order to create a normal Class table row. Set this value to
+   "no" in order to generate Registry rows that perform similar registration (without the
+   often problematic Windows Installer advertising behavior).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AppId",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  This attribute is only allowed when a Class is advertised. Using this attribute will reference an Application ID
+   containing DCOM information for the associated application GUID. The value must correspond to an AppId/@Id of an
+   AppId element nested under a Fragment, Module, or Package element. To associate an AppId with a non-advertised
+   class, nest the class within a parent AppId element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Argument",
+      type: "string"
+    }}
+  >
+  This column is optional only when the Context column is set to "LocalServer"
+   or "LocalServer32" server context. The text is registered as the argument against
+   the OLE server and is used by OLE for invoking the server. Note that the resolution
+   of properties in the Argument field is limited. A property formatted as [Property] in
+   this field can only be resolved if the property already has the intended value when
+   the component owning the class is installed. For example, for the argument "[#MyDoc.doc]"
+   to resolve to the correct value, the same process must be installing the file MyDoc.doc and the
+   component that owns the class.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Context",
+      type: ""
+    }}
+  >
+  The server context(s) for this COM server. This attribute is optional for VB6 libraries that are marked "PublicNotCreateable".
+   Class elements marked Advertised must specify at least one server context. It is most common for there to be a single value
+   for the Context attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Control",
+      type: "yesno"
+    }}
+  >
+  Set this attribute's value to 'yes' to identify an object as an ActiveX Control. The default value is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Localized description associated with the Class ID and Program ID.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ForeignServer",
+      type: "string"
+    }}
+  >
+  May only be specified if the value of the Advertise attribute is "no" and Server has not been specified. In addition, it may only
+   be used when the Class element is directly under the Component element. The value can be
+   that of an registry type (REG_SZ). This attribute should be used to specify foreign servers, such as mscoree.dll if needed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Handler",
+      type: "string"
+    }}
+  >
+  The default inproc handler. May be optionally provided only for Context = LocalServer or
+   LocalServer32. Value of "1" creates a 16-bit InprocHandler (appearing as the InprocHandler
+   value). Value of "2" creates a 32-bit InprocHandler (appearing as the InprocHandler32 value).
+   Value of "3" creates 16-bit as well as 32-bit InprocHandlers. A non-numeric value is treated
+   as a system file that serves as the 32-bit InprocHandler (appearing as the InprocHandler32 value).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Icon",
+      type: "string"
+    }}
+  >
+  The file providing the icon associated with this CLSID. Reference to an Icon element
+   (should match the Id attribute of an Icon element). This is currently not supported if the
+   value of the Advertise attribute is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconIndex",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Icon index into the icon file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  The Class identifier (CLSID) of a COM server.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Insertable",
+      type: "yesno"
+    }}
+  >
+  Specifies the CLSID may be insertable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Programmable",
+      type: "yesno"
+    }}
+  >
+  Specifies the CLSID may be programmable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RelativePath",
+      type: "yesno"
+    }}
+  >
+  When the value is "yes", the bare file name can be used for COM servers. The installer
+   registers the file name only instead of the complete path. This enables the server in
+   the current directory to take precedence and allows multiple copies of the same component.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SafeForInitializing",
+      type: "yesno"
+    }}
+  >
+  May only be specified if the value of the Advertise attribute is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SafeForScripting",
+      type: "yesno"
+    }}
+  >
+  May only be specified if the value of the Advertise attribute is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Server",
+      type: "string"
+    }}
+  >
+  May only be specified if the value of the Advertise attribute is "no" and the ForeignServer attribute is not specified. File Id of the
+   COM server file. If this element is nested under a File element, this value defaults to
+   the value of the parent File/@Id.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortPath",
+      type: "yesno"
+    }}
+  >
+  Specifies whether or not to use the short path for the COM server. This can only apply when Advertise is set to 'no'. The default is 'no' meaning that it will use the long file name for the COM server.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThreadingModel",
+      type: ""
+    }}
+  >
+  Threading model for the CLSID. This attribute's value must be one of the following:
+  - *apartment*
+  - *free*
+  - *both*
+  - *neutral*
+  - *single*
+  - *rental*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string"
+    }}
+  >
+  Version for the CLSID.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "FileTypeMask",
+      link: "../filetypemask"
+    },
+    {
+      title: "Interface",
+      link: "../interface"
+    },
+    {
+      title: "ProgId",
+      description: "A ProgId associated with Class must be a child element of the Class element",
+      link: "../progid"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "TypeLib",
+      link: "../typelib"
+    },
+    {
+      title: "AppId",
+      link: "../appid"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+
+## See also
+[AppId](../appid)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Class Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/class-table"
+    },
+    {
+      title: "ProgId Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/progid-table"
+    },
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    },
+    {
+      title: "AppId Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/appid-table"
+    }
+  ]}
+/>

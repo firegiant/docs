@@ -1,0 +1,83 @@
+---
+title: "ListItem element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The value (and optional text) associated with an item in a ComboBox, ListBox, or ListView.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Icon",
+      type: "string"
+    }}
+  >
+  The identifier of the Binary (not Icon) element containing the icon to associate with this item.
+   This value is only valid when nested under a ListView element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Text",
+      type: "string"
+    }}
+  >
+  The localizable, visible text to be assigned to the item.
+   If not specified, this will default to the value of the Value attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  The value assigned to the associated ComboBox, ListBox, or ListView property if this item is selected.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ListBox",
+      link: "../listbox"
+    },
+    {
+      title: "ComboBox",
+      link: "../combobox"
+    },
+    {
+      title: "ListView",
+      link: "../listview"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ComboBox Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/combobox-table"
+    },
+    {
+      title: "ListBox Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listbox-table"
+    },
+    {
+      title: "ListView Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listview-table"
+    }
+  ]}
+/>

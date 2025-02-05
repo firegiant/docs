@@ -1,0 +1,14 @@
+---
+title: "PackageScopeType type"
+---
+
+Use this attribute to specify the installation scope of this package: per-machine, per-user, or a choice of either.
+
+## Enumeration values
+
+  - *perMachine*: Set this value to declare that the package is a per-machine installation and requires elevated privileges to install.
+     Sets the ALLUSERS property to 1.
+  - *perUser*: Set this value to declare that the package is a per-user installation and does not require elevated privileges to install.
+     Sets the package's InstallPrivileges attribute to "limited."
+  - *perUserOrMachine*: Set this value to declare that the package is [dual-purpose that can install per-user or per-machine](https://learn.microsoft.com/en-us/windows/win32/msi/single-package-authoring).
+     Sets the ALLUSERS property to 2 and MSIINSTALLPERUSER property to 1.

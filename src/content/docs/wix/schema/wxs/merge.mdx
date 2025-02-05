@@ -1,0 +1,101 @@
+---
+title: "Merge element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Merge directive to bring in a merge module that will be redirected to the parent directory.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DiskId",
+      type: "DiskIdType",
+      typeLink: "../diskidtype",
+      typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The value of this attribute should correspond to the Id attribute of a
+   Media element authored elsewhere. By creating this connection between the merge module and Media
+   element, you set the packaging options to the values specified in the Media
+   element (values such as compression level, cab embedding, etc...).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FileCompression",
+      type: "yesno"
+    }}
+  >
+  Specifies if the files in the merge module should be compressed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The unique identifier for the Merge element in the source code. Referenced by the MergeRef/@Id.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Language",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  Specifies the decimal LCID or localization token for the language to merge the Module in as.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Path to the source location of the merge module.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ConfigurationData",
+      link: "../configurationdata"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "StandardDirectory",
+      link: "../standarddirectory"
+    }
+  ]}
+/>
+
+## See also
+[MergeRef](../mergeref)

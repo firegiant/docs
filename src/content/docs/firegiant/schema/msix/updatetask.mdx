@@ -1,0 +1,40 @@
+---
+title: "UpdateTask element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a task that runs at update.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ActivatableClass",
+      type: "string"
+    }}
+  >
+  Class to activate in the application.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    },
+    {
+      title: "Application",
+      link: "../application"
+    }
+  ]}
+/>

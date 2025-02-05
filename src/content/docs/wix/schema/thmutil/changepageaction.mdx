@@ -1,0 +1,59 @@
+---
+title: "ChangePageAction element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+When the button is pressed, the specified page is shown.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Cancel",
+      type: "yesno"
+    }}
+  >
+  When set to 'yes', none of the variable changes made on the current page are saved.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition that determines if the parent control will execute this action.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Page",
+      type: "string",
+      required: true
+    }}
+  >
+  The Name of the Page to show.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Button",
+      link: "../button"
+    },
+    {
+      title: "CommandLink",
+      link: "../commandlink"
+    }
+  ]}
+/>

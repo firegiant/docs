@@ -1,0 +1,153 @@
+---
+title: "PatchMetadata element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Properties about the patch to be placed in the PatchMetadata table.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AllowRemoval",
+      type: "yesno",
+      required: true
+    }}
+  >
+  Whether this is an uninstallable patch.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Classification",
+      type: "string",
+      required: true
+    }}
+  >
+  Category of updates. Recommended values are Critical Update, Hotfix, Security Rollup, Security Update, Service Pack, Update, Update Rollup.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreationTimeUTC",
+      type: "string"
+    }}
+  >
+  Creation time of the .msp file in the form mm-dd-yy HH:MM (month-day-year hour:minute).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string",
+      required: true
+    }}
+  >
+  Description of the patch.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string",
+      required: true
+    }}
+  >
+  A title for the patch that is suitable for public display. In Add/Remove Programs from XP SP2 on.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ManufacturerName",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the manufacturer.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinorUpdateTargetRTM",
+      type: "string"
+    }}
+  >
+  Indicates that the patch targets the RTM version of the product or the most recent major
+   upgrade patch. Author this optional property in minor update patches that contain sequencing
+   information to indicate that the patch removes all patches up to the RTM version of the
+   product, or up to the most recent major upgrade patch. This property is available beginning
+   with Windows Installer 3.1.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MoreInfoURL",
+      type: "string",
+      required: true
+    }}
+  >
+  A URL that provides information specific to this patch. In Add/Remove Programs from XP SP2 on.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OptimizedInstallMode",
+      type: "yesno"
+    }}
+  >
+  If this attribute is set to 'yes' in all the patches to be applied in a transaction, the
+   application of the patch is optimized if possible. Available beginning with Windows Installer 3.1.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TargetProductName",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the application or target product suite.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "CustomProperty",
+      link: "../customproperty"
+    },
+    {
+      title: "OptimizeCustomActions",
+      description: "Indicates whether custom actions can be skipped when applying the patch.",
+      link: "../optimizecustomactions"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchCreation",
+      link: "../patchcreation"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiPatchMetadata Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msipatchmetadata-table"
+    }
+  ]}
+/>

@@ -1,0 +1,48 @@
+---
+title: "PatchFamilyGroupRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Create a reference to a PatchFamilyGroup in another Fragment.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the PatchFamilyGroup to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Patch",
+      link: "../patch"
+    },
+    {
+      title: "PatchFamilyGroup",
+      link: "../patchfamilygroup"
+    }
+  ]}
+/>
+
+## See also
+[PatchFamilyGroup](../patchfamilygroup)

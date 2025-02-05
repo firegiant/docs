@@ -1,0 +1,178 @@
+---
+title: "ComPlusAssembly element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Represents a DLL or assembly to be registered with COM+. If
+ this element is a child of a ComPlusApplication element, the assembly will be
+ registered in this application. Other ways the Application attribute must be
+ set to an application. The element must be a descendent of a Component element,
+ it can not be a child of a ComPlusApplication locator element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Application",
+      type: "string"
+    }}
+  >
+  If the element is not a child of a ComPlusApplication
+   element, this attribute should be provided with the id of a ComPlusApplication
+   element representing the application the assembly is to be registered in.
+   This attribute can be omitted for a .NET assembly even if the application is
+   not a child of a ComPlusApplication element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AssemblyName",
+      type: "string"
+    }}
+  >
+  The name of the assembly used to identify the assembly in
+   the GAC. This attribute can be provided only if DllPathFromGAC is set to
+   “yes”.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DllPath",
+      type: "string"
+    }}
+  >
+  The path to locate the assembly DLL during registration.
+   This attribute should be provided if DllPathFromGAC is not set to “yes”.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DllPathFromGAC",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates that the DLL path should be extracted from the
+   GAC instead for being provided in the DllPath attribute. If this attribute is
+   set to “yes”, the name of the assembly can be provided using the AssemblyName
+   attribute. Or, if this AssemblyName attribute is missing, the name will be
+   extracted from the MsiAssemblyName table using the id of the parent Component
+   element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EventClass",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates that the assembly is to be installed as an event
+   class DLL. This attribute is only valid for native assemblies. The assembly
+   will be installed with the COM+ catalog’s InstallEventClass() function.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PSDllPath",
+      type: "string"
+    }}
+  >
+  An optional path to an external proxy/stub DLL for the assembly.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RegisterInCommit",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates that the assembly should be installed in the
+   commit custom action instead of the normal deferred custom action. This is
+   necessary when installing .NET assemblies to the GAC in the same
+   installation, as the assemblies are not visible in the GAC until after the
+   InstallFinalize action has run.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TlbPath",
+      type: "string"
+    }}
+  >
+  An optional path to an external type lib for the assembly.
+   This attribute must be provided if the Type attribute is set to “.net”.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "",
+      required: true
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *native*
+  - *.net*
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComPlusAssemblyDependency",
+      link: "../complusassemblydependency"
+    },
+    {
+      title: "ComPlusComponent",
+      link: "../compluscomponent"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ComPlusApplication",
+      link: "../complusapplication"
+    }
+  ]}
+/>
+
+## Remarks
+
+When installing a native assembly, all components
+ contained in the assembly must be represented as ComPlusComponent elements
+ under this element. Any component not listed will not be removed during
+ uninstall.
+
+The fields DllPath, TlbPath and PSDllPath are formatted
+ fields that should contain file paths to there respective file types. A typical
+ value for DllPath for example, should be something like “[#MyAssembly_dll]”,
+ where “MyAssembly_dll” is the key of the dll file in the File table.
+
+ **Warning** : The assembly name provided in the AssemblyName
+ attribute must be a fully specified assembly name, if a partial name is
+ provided a random assembly matching the partial name will be selected.
+

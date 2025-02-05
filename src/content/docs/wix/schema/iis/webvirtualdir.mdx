@@ -1,0 +1,121 @@
+---
+title: "WebVirtualDir element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an IIS virtual directory. When this element is a child of WebSite element, the virtual directory is defined within that web site. Otherwise this virtual directory must reference a WebSite element via the WebSite attribute
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Alias",
+      type: "string",
+      required: true
+    }}
+  >
+  Sets the application name, which is the URL relative path used to access this virtual directory
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string",
+      required: true
+    }}
+  >
+  References the Id attribute for a Directory element that points to the content for this virtual directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DirProperties",
+      type: "string"
+    }}
+  >
+  References the Id attribute for a WebDirProperties element that specifies the security and access properties for this virtual directory.
+   This attribute may not be specified if a WebDirProperties element is directly nested in this element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the web application. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WebApplication",
+      type: "string"
+    }}
+  >
+  References the Id attribute for a WebApplication element that specifies web application settings for this virtual directory. If a WebApplication child is not specified, the virtual directory does not host web applications.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WebSite",
+      type: "string"
+    }}
+  >
+  References the Id attribute for a WebSite in which this virtual directory belongs. Required when this element is not a child of WebSite element.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "HttpHeader",
+      link: "../httpheader"
+    },
+    {
+      title: "MimeMap",
+      link: "../mimemap"
+    },
+    {
+      title: "WebApplication",
+      link: "../webapplication"
+    },
+    {
+      title: "WebDirProperties",
+      link: "../webdirproperties"
+    },
+    {
+      title: "WebError",
+      link: "../weberror"
+    },
+    {
+      title: "WebVirtualDir",
+      link: "../webvirtualdir"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "WebVirtualDir",
+      link: "../webvirtualdir"
+    },
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>

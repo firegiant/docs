@@ -1,0 +1,70 @@
+---
+title: "BackgroundTask element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an out of process background task.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "EntryPoint",
+      type: "string"
+    }}
+  >
+  Entry point in application.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServerName",
+      type: "string"
+    }}
+  >
+  Name of server.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Tasks",
+      type: "string",
+      required: true
+    }}
+  >
+  Whitespace-delimited list of background task types. Valid values are:
+   audio,
+   bluetooth,
+   chatMessageNotification,
+   controlChannel,
+   deviceConnectionChange,
+   deviceServicing,
+   deviceUse,
+   general,
+   location,
+   mediaProcessing,
+   phoneCall,
+   pushNotification,
+   systemEvent,
+   timer,
+   vpnClient
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

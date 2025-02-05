@@ -1,0 +1,94 @@
+---
+title: "Variable element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a burn engine variable to define.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Hidden",
+      type: "yesno"
+    }}
+  >
+  Whether the value of the variable should be hidden.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  The name for the variable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Overridable, from extension namespace http://wixtoolset.org/schemas/v4/wxs/bal",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes", lets the user override the variable's default value by specifying another value on the command line,
+   in the form Variable=Value. Otherwise, WixStdBA won't overwrite the default value and will log
+   "Ignoring attempt to set non-overridable variable: 'BAR'."
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Persisted",
+      type: "yesno"
+    }}
+  >
+  Whether the variable should be persisted.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "VariableType",
+      typeLink: "../variabletype",
+      typeTitle: "Indicates the type of a Variable."
+    }}
+  >
+  Type of the variable, inferred from the value if not specified. This attribute's value must be one of the following:
+  - *string*: A literal string.
+  - *formatted*: A string that may contain Variables.
+  - *numeric*
+  - *version*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Starting value for the variable.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

@@ -1,0 +1,41 @@
+---
+title: "AppSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Uses file signatures to search for existing versions of products. The AppSearch action may use this information to determine where upgrades are to be installed. The AppSearch action can also be used to set a property to the existing value of an registry or .ini file entry. AppSearch should be authored into the InstallUISequence table and InstallExecuteSequence table. The installer prevents The AppSearch action from running in the InstallExecuteSequence sequence if the action has already run in InstallUISequence sequence. The AppSearch action searches for file signatures using the CompLocator table first, the RegLocator table next, then the IniLocator table, and finally the DrLocator table. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    }
+  ]}
+/>
+
+## See also
+[ComponentSearch](../componentsearch), [FileSearch](../filesearch), [IniFileSearch](../inifilesearch), [RegistrySearch](../registrysearch)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "AppSearch Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/appsearch-table"
+    },
+    {
+      title: "AppSearch Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/appsearch-action"
+    }
+  ]}
+/>

@@ -1,0 +1,65 @@
+---
+title: "DigitalCertificate element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Adds a digital certificate.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for a certificate file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string",
+      required: true
+    }}
+  >
+  The path to the certificate file.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchCertificates",
+      link: "../patchcertificates"
+    },
+    {
+      title: "PackageCertificates",
+      link: "../packagecertificates"
+    },
+    {
+      title: "DigitalSignature",
+      link: "../digitalsignature"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiDigitalCertificate Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msidigitalcertificate-table"
+    }
+  ]}
+/>

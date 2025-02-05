@@ -1,0 +1,42 @@
+---
+title: "InstallValidate element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Verifies that all costed volumes have enough space for the installation. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    },
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    },
+    {
+      title: "AdvertiseExecuteSequence",
+      link: "../advertiseexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "InstallValidate Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/installvalidate-action"
+    }
+  ]}
+/>

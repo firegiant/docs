@@ -1,0 +1,75 @@
+---
+title: "ExcludeRegistry element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Exclude specified registry keys found during self-reg harvesting.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string",
+      required: true
+    }}
+  >
+  Full path or wildcard of registry keys to exclude from self-reg harvesting. For example, to exclude everything under a registry key from harvesting use: Key="SOFTWARE\FireGiant\Ignore\**"
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Name or partial name with wildcard of registry values to exclude from a harvesting. If this attribute is not specified, the default is "*" which matches all registry value names in a key.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Root",
+      type: "RegistryRootTypeUnion",
+      typeLink: "../registryroottype",
+      typeTitle: "Values of this type will be \"HKCR\", \"HKCU\", \"HKMU\" or \"HKLM\".",
+      required: true
+    }}
+  >
+  Root of the registry keys to excluded. The standard Windows Installer registry roots are supported: "HKCR", "HKCU", "HKMU", "HKLM"
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Registry value or partial value with wildcard of registry values to exclude from a harvesting. If this attribute is not specified, the default is "**" which matches all registry values (including values with backslashes, like file paths) of a registry name in a key.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "HarvestFile",
+      link: "../harvestfile"
+    },
+    {
+      title: "HarvestFolder",
+      link: "../harvestfolder"
+    },
+    {
+      title: "HarvestProjectOutput",
+      link: "../harvestprojectoutput"
+    }
+  ]}
+/>

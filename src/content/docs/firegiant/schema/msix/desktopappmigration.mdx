@@ -1,0 +1,54 @@
+---
+title: "DesktopAppMigration element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a desktop app migration.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AcquisitionUri",
+      type: "string"
+    }}
+  >
+  Identifies the URI that a tile or pin will be migrated to.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AumId",
+      type: "string"
+    }}
+  >
+  The AUMID (application user model id) of the desktop app. Required if ShortcutPath attribute is not present.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortcutPath",
+      type: "string"
+    }}
+  >
+  Relative path to the shortcut to migrate from. Required if AumId attribute is not present.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

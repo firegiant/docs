@@ -1,0 +1,57 @@
+---
+title: "RequiresRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+References existing authoring for a dependency on a provider for the current component or package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Enforce, from extension namespace http://wixtoolset.org/schemas/v4/wxs/dependency",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes", adds a custom action to prompt the user when dependencies are missing from the computer. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the Requires element to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Provides",
+      link: "../provides"
+    }
+  ]}
+/>
+
+## Remarks
+
+This element references a dependency on any product that uses the Provides element. If that product is uninstalled
+ before a product that requires it, the uninstall will err or warn the user that other products are installed
+ which depend on that product. This behavior can be modified by changing the attribute values on the Requires element.
+
+
+
+## See also
+[Requires](../requires)

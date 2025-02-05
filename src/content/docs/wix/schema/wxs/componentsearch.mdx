@@ -1,0 +1,101 @@
+---
+title: "ComponentSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Searches for file or directory and assigns to value of parent Property.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Guid",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  The component ID of the component whose key path is to be used for the search.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: ""
+    }}
+  >
+  Must be file if last child is FileSearch element and must be directory if last child is DirectorySearch element. This attribute's value must be one of the following:
+  - *directory*: The key path of the component is a directory.
+  - *file*: The key path of the component is a file. This is the default value.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "FileSearch",
+      link: "../filesearch"
+    },
+    {
+      title: "FileSearchRef",
+      link: "../filesearchref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ComplianceCheck",
+      link: "../compliancecheck"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    }
+  ]}
+/>
+
+## See also
+[IniFileSearch](../inifilesearch), [RegistrySearch](../registrysearch)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "CompLocator Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/complocator-table"
+    },
+    {
+      title: "Signature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/signature-table"
+    }
+  ]}
+/>

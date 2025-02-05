@@ -1,0 +1,58 @@
+---
+title: "EnsureTable element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Use this element to ensure that a table appears in the installer database, even if its empty.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the table.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Remarks
+
+This element is particularly useful for two problems that may occur while merging merge modules:
+
+ * The first likely problem is that in order to properly merge you need to have certain
+ tables present prior to merging. Using this element is one way to ensure those tables
+ are present prior to the merging.
+
+ * The other common problem is that a merge module has incorrect validation information
+ about some tables. By ensuring these tables prior to merging, you can avoid this
+ problem because the correct validation information will go into the installer database
+ before the merge module has a chance to set it incorrectly.

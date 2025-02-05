@@ -1,0 +1,36 @@
+---
+title: "Tab element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an individual tab within a set of tabs.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "StringId",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references a string resource in the module to define the caption of the tab.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Tabs",
+      link: "../tabs"
+    }
+  ]}
+/>

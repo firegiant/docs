@@ -1,0 +1,55 @@
+---
+title: "Subscribe element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Sets attributes for events in the EventMapping table
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Attribute",
+      type: "string"
+    }}
+  >
+  if not present can only handle enable, disable, hide, unhide events
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Event",
+      type: "string"
+    }}
+  >
+  must be one of the standard control events'
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Control",
+      link: "../control"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "EventMapping Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/eventmapping-table"
+    }
+  ]}
+/>

@@ -1,0 +1,60 @@
+---
+title: "MsiProperty element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Allows an MSI property to be set based on the value of a burn engine expression.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition to determine whether to pass the MSI Property. If this evaluates to false, the MSI Property is not passed along.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the MSI property to set. Burn controls the follow MSI properties so they cannot be set with MsiProperty: ACTION, ALLUSERS, REBOOT, REINSTALL, REINSTALLMODE
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  The value to set the property to. This string is evaluated by the Burn engine and can be as simple as a Burn engine variable reference or as complex as a full expression.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "MsiPackage",
+      link: "../msipackage"
+    },
+    {
+      title: "MspPackage",
+      link: "../msppackage"
+    }
+  ]}
+/>

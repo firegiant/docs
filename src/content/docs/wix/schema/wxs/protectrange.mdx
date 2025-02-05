@@ -1,0 +1,55 @@
+---
+title: "ProtectRange element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Specifies part of a file that cannot be overwritten during patching.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Length",
+      type: "integer",
+      required: true
+    }}
+  >
+  Length of the range.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Offset",
+      type: "integer",
+      required: true
+    }}
+  >
+  Offset of the start of the range.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "TargetFile",
+      link: "../targetfile"
+    },
+    {
+      title: "ProtectFile",
+      link: "../protectfile"
+    },
+    {
+      title: "ExternalFile",
+      link: "../externalfile"
+    }
+  ]}
+/>

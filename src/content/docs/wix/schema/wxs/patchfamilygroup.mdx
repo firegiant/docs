@@ -1,0 +1,61 @@
+---
+title: "PatchFamilyGroup element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Groups together multiple patch families to be used in other locations.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the PatchFamilyGroup.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "PatchFamily",
+      link: "../patchfamily"
+    },
+    {
+      title: "PatchFamilyGroupRef",
+      link: "../patchfamilygroupref"
+    },
+    {
+      title: "PatchFamilyRef",
+      link: "../patchfamilyref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Patch",
+      link: "../patch"
+    }
+  ]}
+/>
+
+## See also
+[PatchFamilyGroupRef](../patchfamilygroupref)

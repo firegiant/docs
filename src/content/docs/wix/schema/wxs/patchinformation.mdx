@@ -1,0 +1,139 @@
+---
+title: "PatchInformation element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Properties about the patch to be placed in the Summary Information Stream. These are visible from COM through the IStream interface, and these properties can be seen on the package in Explorer.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AdminImage",
+      type: "yesno"
+    }}
+  >
+  Deprecated
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Comments",
+      type: "string"
+    }}
+  >
+  General purpose of the patch package. For example, "This patch contains the logic and data required to install _product_."
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Compressed",
+      type: "yesno"
+    }}
+  >
+  Deprecated
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  A short description of the patch that includes the name of the product.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Keywords",
+      type: "string"
+    }}
+  >
+  A semicolon-delimited list of network or URL locations for alternate sources of the patch. The default is "Installer,Patching,PCP,Database".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Languages",
+      type: "string"
+    }}
+  >
+  Deprecated
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Manufacturer",
+      type: "string"
+    }}
+  >
+  The name of the manufacturer of the patch package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Platforms",
+      type: "string"
+    }}
+  >
+  Deprecated
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadOnly",
+      type: "YesNoDefaultTypeUnion",
+      typeLink: "../yesnodefaulttype",
+      typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
+    }}
+  >
+  The value of this attribute conveys whether the package should be opened as read-only.
+   A database editing tool should not modify a read-only enforced database and should
+   issue a warning at attempts to modify a read-only recommended database.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortNames",
+      type: "yesno"
+    }}
+  >
+  Deprecated
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SummaryCodepage",
+      type: "string"
+    }}
+  >
+  The code page integer value or web name for summary info strings only. The default is 1252. See remarks for more information.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Patch",
+      link: "../patch"
+    },
+    {
+      title: "PatchCreation",
+      link: "../patchcreation"
+    }
+  ]}
+/>
+
+## Remarks
+
+You can specify any valid Windows code by by integer like 1252, or by web name like Windows-1252. See [Code pages](../../tools/codepage/) for more information.
+

@@ -1,0 +1,118 @@
+---
+title: "AdvertiseExecuteSequence element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "CostFinalize",
+      description: "Ends the internal installation costing process begun by the CostInitialize action.",
+      link: "../costfinalize"
+    },
+    {
+      title: "CostInitialize",
+      description: "Initiates the internal installation costing process.",
+      link: "../costinitialize"
+    },
+    {
+      title: "CreateShortcuts",
+      description: "Manages the creation of shortcuts.",
+      link: "../createshortcuts"
+    },
+    {
+      title: "Custom",
+      description: "Use to sequence a custom action. The only custom actions that are allowed in the AdvtExecuteSequence are type 19 (0x013) type 35 (0x023) and type 51 (0x033).",
+      link: "../custom"
+    },
+    {
+      title: "InstallFinalize",
+      description: "Marks the end of a sequence of actions that change the system.",
+      link: "../installfinalize"
+    },
+    {
+      title: "InstallInitialize",
+      description: "Marks the beginning of a sequence of actions that change the system.",
+      link: "../installinitialize"
+    },
+    {
+      title: "InstallValidate",
+      description: "Verifies that all costed volumes have enough space for the installation.",
+      link: "../installvalidate"
+    },
+    {
+      title: "MsiPublishAssemblies",
+      description: "Manages the advertisement of CLR and Win32 assemblies.",
+      link: "../msipublishassemblies"
+    },
+    {
+      title: "PublishComponents",
+      description: "Manages the advertisement of the components from the PublishComponent table.",
+      link: "../publishcomponents"
+    },
+    {
+      title: "PublishFeatures",
+      description: "Writes each feature's state into the system registry.",
+      link: "../publishfeatures"
+    },
+    {
+      title: "PublishProduct",
+      description: "Manages the advertisement of the product information with the system.",
+      link: "../publishproduct"
+    },
+    {
+      title: "RegisterClassInfo",
+      description: "Manages the registration of COM class information with the system.",
+      link: "../registerclassinfo"
+    },
+    {
+      title: "RegisterExtensionInfo",
+      description: "Manages the registration of extension related information with the system.",
+      link: "../registerextensioninfo"
+    },
+    {
+      title: "RegisterMIMEInfo",
+      description: "Registers MIME-related registry information with the system.",
+      link: "../registermimeinfo"
+    },
+    {
+      title: "RegisterProgIdInfo",
+      description: "Manages the registration of OLE ProgId information with the system.",
+      link: "../registerprogidinfo"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "AdvtExecuteSequence Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/advtexecutesequence-table"
+    }
+  ]}
+/>

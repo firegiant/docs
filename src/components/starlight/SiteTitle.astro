@@ -1,0 +1,53 @@
+---
+import logoDark from '@assets/firegiant-logo-black.svg?raw';
+import logoLight from '@assets/firegiant-logo-standard.svg?raw';
+import docs from '@assets/docs-logo.svg?raw';
+import { type Props } from '@astrojs/starlight/props';
+
+const { siteTitle, siteTitleHref } = Astro.props;
+const www = 'https://www.firegiant.com/';
+---
+
+<span class="site-title sl-flex">
+  <a class="firegiant-logo light:sl-hidden print:hidden" href={www} set:html={logoDark} aria-label="FireGiant" />
+  <a class="firegiant-logo dark:sl-hidden print:block" href={www} set:html={logoLight} aria-label="FireGiant" />
+  <a class="docs-logo" href={siteTitleHref} set:html={docs} aria-label="Docs" title={siteTitle} />
+</span>
+
+<style>
+  .site-title {
+    gap: 1rem;
+  }
+  .site-title a {
+    display: flex;
+  }
+  .firegiant-logo {
+    color: var(--sl-color-white);
+  }
+  .docs-logo {
+    color: var(--sl-color-text-accent);
+  }
+
+  /* On focus, outline <img> and <svg> rather than <a> */
+  .site-title a:focus-visible {
+    outline: 0;
+  }
+  .site-title a:focus-visible > :global(*) {
+    outline: auto;
+    outline-offset: 0.33rem;
+    border-radius: 1px;
+  }
+  /* Adjust svg sizes to full nav height */
+  .site-title :global(svg) {
+    --display-height: 1.75rem;
+    /* `auto` ensures the `<svg>` scales down on really narrow viewports */
+    width: auto;
+    height: auto;
+    margin-block: calc((var(--sl-nav-height) - var(--display-height)) / 2);
+    transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .site-title a:hover :global(svg) {
+    --hover-offset: 0.15rem;
+    transform: translateY(calc(var(--hover-offset) * -1));
+  }
+</style>

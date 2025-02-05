@@ -1,0 +1,37 @@
+---
+title: Install (and uninstall) your first package
+next:
+   label: WiX Tutorial
+   link: /wix/tutorial/
+sidebar:
+   label: Install your first package
+   order: 2
+---
+
+import { Code, Steps } from '@astrojs/starlight/components';
+
+You've created your first installation package, so let's take it out for a spin.
+
+<Steps>
+
+1. Install the MSI package you built.
+
+   <Code lang="cmd" title="C:\src\QuickStart>" code="msiexec /i bin\Debug\QuickStart.msi /l*v install_log.txt" />
+
+1. Check that your package installed the `example.txt` file as expected.
+
+   <Code lang="cmd" title="C:\src\QuickStart> " code='dir "C:\Program Files (x86)\ACME Corp QuickStart Example"' />
+
+1. Uninstall the MSI package to clean up.
+
+   <Code lang="cmd" title="C:\src\QuickStart>" code="msiexec /x bin\Debug\QuickStart.msi /l*v uninstall_log.txt" />
+
+</Steps>
+
+:::caution[Do as we say, not as we do]
+We don't generally recommend testing your package on your development machine. It's better to test in a virtual machine or the Windows Sandbox but this package is about as safe as it can get. YOLO!
+:::
+
+## What's next?
+
+Now that you've completed the most basic of setup development tasks, let's throw you on to a virtual team to build something a bit more realistic even if it is all pretend.

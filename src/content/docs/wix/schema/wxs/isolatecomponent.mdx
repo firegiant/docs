@@ -1,0 +1,47 @@
+---
+title: "IsolateComponent element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Shared Component to be privately replicated in folder of parent Component
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Shared",
+      type: "string",
+      required: true
+    }}
+  >
+  Shared Component for this application Component.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "IsolateComponent Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/isolatecomponent-table"
+    }
+  ]}
+/>

@@ -1,0 +1,89 @@
+---
+title: "SFPCatalog element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Adds a system file protection update catalog file
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Dependency",
+      type: "string"
+    }}
+  >
+  Used to define dependency outside of the package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Filename for catalog file when installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Path to catalog file in binary.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "SFPCatalog",
+      link: "../sfpcatalog"
+    },
+    {
+      title: "SFPFile",
+      link: "../sfpfile"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "SFPCatalog",
+      link: "../sfpcatalog"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "SFPCatalog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/sfpcatalog-table"
+    }
+  ]}
+/>

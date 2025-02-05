@@ -1,0 +1,90 @@
+---
+title: "DotNetCoreSdkFeatureBandSearch element (Netfx extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Searches for an installation of .NET Core SDK of the given platform.
+ The variable gets set to the latest version of the SDK that is in the feature band specified by Version.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Id of the search that this one should come after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition for evaluating the search. If this evaluates to false, the search is not executed at all.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the search. If the Id is not specified, one will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Platform",
+      type: "NetfxPreprocessorPlatformType",
+      typeLink: "../netfxpreprocessorplatformtype",
+      typeTitle: "Platform referencing the machine architecture."
+    }}
+  >
+  The platform to search for.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Variable",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the variable in which to place the result of the search.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "wxs:StrictThreePartVersionType"
+    }}
+  >
+  A specific .NET Core SDK feature band. For example, "6.0.400".
+   For more information about feature bands, see https://learn.microsoft.com/en-us/dotnet/core/releases-and-support#feature-bands-sdk-only.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

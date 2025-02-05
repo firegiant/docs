@@ -1,0 +1,32 @@
+
+@font-face {
+  font-family: 'Plex';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url('./IBMPlexSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plex';
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url('./IBMPlexSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plex';
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src: url('./IBMPlexSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plex';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url('./IBMPlexSans-Bold.woff2') format('woff2');
+}

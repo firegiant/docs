@@ -1,0 +1,80 @@
+---
+title: "ButtonHoverImage element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a button image that is used when the control is hovered over.
+ ButtonImage and ButtonSelectedImage are required with ButtonHoverImage.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ImageFile",
+      type: "string"
+    }}
+  >
+  Relative path to an image file for the control.
+   Mutually exclusive with ImageId and ImageResource and SourceX and SourceY attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageId",
+      type: "string"
+    }}
+  >
+  Identifier to the Image element that serves as the image for the control.
+   Mutually exclusive with ImageFile and ImageResource and SourceX and SourceY attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageResource",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references an image resource with type RT_RCDATA in the module for the control.
+   Mutually exclusive with ImageId and ImageFile and SourceX and SourceY attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceX",
+      type: "non-negative integer"
+    }}
+  >
+  X offset of the Theme/@ImageFile or Theme/@ImageResource.
+   Can only be specified with Theme/@ImageFile or Theme/@ImageResource.
+   Mutually exclusive with ImageId and ImageFile and ImageResource attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceY",
+      type: "non-negative integer"
+    }}
+  >
+  Y offset of the Theme/@ImageFile or Theme/@ImageResource.
+   Can only be specified with Theme/@ImageFile or Theme/@ImageResource.
+   Mutually exclusive with ImageId and ImageFile and ImageResource attributes.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Button",
+      link: "../button"
+    }
+  ]}
+/>

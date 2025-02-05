@@ -1,0 +1,103 @@
+---
+title: "Show element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Show the dialog after the specified action. Mutually exclusive with OnExit, Before, and Sequence attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Before",
+      type: "string"
+    }}
+  >
+  Show the dialog before the specified action. Mutually exclusive with OnExit, After, and Sequence attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Optional condition that determines whether the dialog should be displayed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Dialog",
+      type: "string",
+      required: true
+    }}
+  >
+  Reference to dialog to show.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnExit",
+      type: "ExitType",
+      typeLink: "../exittype",
+      typeTitle: "Value indicates that this action is executed if the installer returns the associated exit type. Each exit type can be used with no more than one action.\r\n Multiple actions can have exit types assigned, but every action and exit type must be different. Exit types are typically used with dialog boxes."
+    }}
+  >
+  Show the dialog Mutually exclusive with Before, After, and Sequence attributes. This attribute's value must be one of the following:
+  - *success*
+  - *cancel*
+  - *error*
+  - *suspend*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Overridable",
+      type: "yesno"
+    }}
+  >
+  If "yes", the sequencing of this dialog may be overridden by sequencing elsewhere. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sequence",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Show the dialog at the specified sequence. It is recommended to use one of the other mutually exclusive attributes: OnExit, After, and Before.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    }
+  ]}
+/>

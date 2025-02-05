@@ -1,0 +1,74 @@
+---
+title: "ApprovedExeForElevation element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Provides information about an .exe so that the BA can request the engine to run it elevated from any secure location.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Bitness",
+      type: "BitnessTypeUnion",
+      typeLink: "../bitnesstype",
+      typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
+    }}
+  >
+  Overrides the default registry to search. The value `always64` will force
+   the search to look in the 64-bit registry even when building for 32-bit.
+   Simliarly, the value `always32` will force the search to look in the 32-bit
+   registry even when building for 64-bit.
+   The default value is `default` where the search will look in the same registry
+   as the bitness of the package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the ApprovedExeForElevation element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string",
+      required: true
+    }}
+  >
+  The key path.
+   For security purposes, the root key will be HKLM and Variables are not supported.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The value name.
+   For security purposes, Variables are not supported.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    }
+  ]}
+/>

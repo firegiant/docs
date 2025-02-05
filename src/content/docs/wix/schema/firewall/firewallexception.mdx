@@ -1,0 +1,327 @@
+---
+title: "FirewallException element (Firewall extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Registers an exception for a program or a specific port and protocol in the Windows Firewall.
+ For more information about the Windows Firewall, see [Windows Firewall with Advanced Security](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ics/windows-firewall-advanced-security-start-page).
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Action",
+      type: "FirewallActionTypeUnion"
+    }}
+  >
+  The action for this firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Description for this firewall rule displayed in Windows Firewall manager.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EdgeTraversal",
+      type: "FirewallEdgeTraversalTypeUnion"
+    }}
+  >
+  Sets the edge traversal of the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Enabled",
+      type: "FirewallYesNoPropertyType",
+      typeLink: "../firewallyesnopropertytype",
+      typeTitle: "Allows \"yes\" or \"true\" or \"no\" or \"false\" or a Property reference."
+    }}
+  >
+  Indicates whether the firewall exception should be enabled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string"
+    }}
+  >
+  Identifier of a File to be granted access through the firewall. By default,
+   all incoming ports and protocols are allowed unless the Port and.or Protocol
+   attributes are specified.
+  
+   If you use File, you cannot also use Program.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Grouping",
+      type: "string"
+    }}
+  >
+  Grouping for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IcmpTypesAndCodes",
+      type: "string"
+    }}
+  >
+  ICMP types and codes for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique ID of this firewall exception. If the Id is not specified, one will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreFailure",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If "yes", failures to register this firewall exception will be silently
+   ignored. If "no" (the default), failures will cause rollback.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Interface",
+      type: "string"
+    }}
+  >
+  Interface for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InterfaceType",
+      type: "FirewallInterfaceTypeUnion"
+    }}
+  >
+  Interface type for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IPSecSecureFlags",
+      type: "FirewallIPSecSecureFlagsUnion"
+    }}
+  >
+  IPSec secure flags for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LocalAppPackageId",
+      type: "string"
+    }}
+  >
+  Local AppPackageId for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LocalScope",
+      type: "FirewallLocalScopeTypeUnion"
+    }}
+  >
+  Local scope for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LocalUserAuthorizedList",
+      type: "string"
+    }}
+  >
+  Local user authorized list for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LocalUserOwner",
+      type: "string"
+    }}
+  >
+  Local user owner for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of this firewall exception, visible to the user in the firewall
+   control panel.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnUpdate",
+      type: "FirewallOnUpdateTypeUnion"
+    }}
+  >
+  Installation instruction when updating the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Outbound",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  If "yes", registers an outbound firewall rule. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Port",
+      type: "string"
+    }}
+  >
+  Port to allow through the firewall for this exception. By default,
+   any program is allowed access through the port unless a File or
+   Program attribute is specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Profile",
+      type: "FirewallProfileTypeUnion"
+    }}
+  >
+  Profile type for this firewall exception. Default is "all".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Program",
+      type: "string"
+    }}
+  >
+  Path to a target program to be granted access through the firewall. By default,
+   all incoming ports and protocols are allowed unless the Port and.or Protocol
+   attributes are specified.
+  
+   Note that this is a formatted field, so you can use [#fileId]
+   syntax to refer to a file being installed. If you use Program, you cannot
+   also use File.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Protocol",
+      type: "FirewallProtocolTypeUnion"
+    }}
+  >
+  IP protocol used for this firewall exception. If Port is defined,
+   "tcp" is assumed if the protocol is not specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoteMachineAuthorizedList",
+      type: "string"
+    }}
+  >
+  Remote machine authorized list for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemotePort",
+      type: "string"
+    }}
+  >
+  Remote port for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoteUserAuthorizedList",
+      type: "string"
+    }}
+  >
+  Remote user authorized list for the firewall exception.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Scope",
+      type: "FirewallScopeTypeUnion"
+    }}
+  >
+  The scope of this firewall exception, which indicates whether incoming
+   connections can come from any computer including those on the Internet
+   or only those on the local network subnet. To more precisely specify
+   allowed remote address, specify a custom scope using RemoteAddress
+   child elements.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Service",
+      type: "string"
+    }}
+  >
+  Service for the firewall exception. Cannot be specified when the firewall exception is a child of a service element.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Interface",
+      link: "../interface"
+    },
+    {
+      title: "InterfaceType",
+      link: "../interfacetype"
+    },
+    {
+      title: "LocalAddress",
+      link: "../localaddress"
+    },
+    {
+      title: "RemoteAddress",
+      link: "../remoteaddress"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

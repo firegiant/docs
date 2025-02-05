@@ -1,0 +1,73 @@
+---
+title: "ExternalFile element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Contains information about specific files that are not part of a regular target image.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the File table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Order",
+      type: "integer",
+      required: true
+    }}
+  >
+  Specifies the order of the external files to use when creating the patch.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Source",
+      type: "string"
+    }}
+  >
+  Full path of the external file.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "IgnoreRange",
+      link: "../ignorerange"
+    },
+    {
+      title: "ProtectRange",
+      link: "../protectrange"
+    },
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Family",
+      link: "../family"
+    }
+  ]}
+/>

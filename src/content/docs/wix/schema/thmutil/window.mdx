@@ -1,0 +1,162 @@
+---
+title: "Window element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines the overall look of the main window.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AutoResize",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the ThmUtil default window proc should process WM_SIZE and WM_SIZING events.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Caption",
+      type: "string"
+    }}
+  >
+  Caption for the window.
+   This is required if not using the StringId attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FontId",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier to the Font element that serves as the default font for the window.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "xs:positiveInteger",
+      required: true
+    }}
+  >
+  Height of the window's client area.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HexStyle",
+      type: "hex"
+    }}
+  >
+  Hexadecimal window style. If this is not specified the default value is: WS_OVERLAPPED | WS_VISIBLE | WS_MINIMIZEBOX | WS_SYSMENU | WS_CAPTION.
+   If SourceX and SourceY are specified, then WS_OVERLAPPED is replaced with WS_POPUP.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconFile",
+      type: "string"
+    }}
+  >
+  Relative path to an icon file for the window. Mutually exclusive with IconResource attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconResource",
+      type: "string"
+    }}
+  >
+  Identifier that references an icon resource in the module for the icon for the window.
+   Mutually exclusive with IconFile attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinimumHeight",
+      type: "xs:positiveInteger"
+    }}
+  >
+  Minimum height of the window. Can only be specified if AutoResize is enabled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinimumWidth",
+      type: "xs:positiveInteger"
+    }}
+  >
+  Minimum width of the window. Can only be specified if AutoResize is enabled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceX",
+      type: "non-negative integer"
+    }}
+  >
+  X offset of the window background in the Theme/@ImageFile or Theme/@ImageResource.
+   Can only be specified with Theme/@ImageFile or Theme/@ImageResource.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceY",
+      type: "non-negative integer"
+    }}
+  >
+  Y offset of the window background in the Theme/@ImageFile or Theme/@ImageResource.
+   Can only be specified with Theme/@ImageFile or Theme/@ImageResource.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "StringId",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references a string resource in the module to define the window caption.
+   Mutually exclusive with the Caption attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "xs:positiveInteger",
+      required: true
+    }}
+  >
+  Width of the window's client area.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Page",
+      link: "../page"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Theme",
+      link: "../theme"
+    }
+  ]}
+/>

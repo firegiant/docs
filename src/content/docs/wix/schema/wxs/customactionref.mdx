@@ -1,0 +1,53 @@
+---
+title: "CustomActionRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This will cause the entire contents of the Fragment containing the referenced CustomAction to be
+ included in the installer database.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the CustomAction to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "PatchFamily",
+      link: "../patchfamily"
+    }
+  ]}
+/>
+
+## See also
+[CustomAction](../customaction)

@@ -1,0 +1,47 @@
+---
+title: "MultiString element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Use several of these elements to specify each registry value in a multiString registry value. This element
+ cannot be used if the Value attribute is specified unless the Type attribute is set to 'multiString'.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The multi-string value.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "RegistryValue",
+      link: "../registryvalue"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    }
+  ]}
+/>

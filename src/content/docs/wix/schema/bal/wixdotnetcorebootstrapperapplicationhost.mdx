@@ -1,0 +1,87 @@
+---
+title: "WixDotNetCoreBootstrapperApplicationHost element (Bal extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Uses WixDotNetCoreBootstrapperApplicationHost as the Bootstrapper Application for a Bundle.
+
+ _Available in WiX v4. Deprecated in WiX v5; use WixPrerequisiteBootstrapperApplication instead._
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AlwaysInstallPrereqs",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When not set or set to "no", the prereq BA is only used when the .NET Core runtime can't be loaded.
+   When set to "yes", the prereq BA will always run before the .NET Core runtime is attempted to be loaded.
+   If set to "yes" and all prereq packages are already installed, then the prereq BA's UI is not shown.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LocalizationFile",
+      type: "string"
+    }}
+  >
+  Source file of the theme localization .wxl file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogoFile",
+      type: "string"
+    }}
+  >
+  Source file of the logo graphic.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfContainedDeployment",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Whether the .NET Core BA was published as self-contained (SCD).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Theme",
+      type: ""
+    }}
+  >
+  The built-in theme to use. The default value is "standard". This attribute's value must be one of the following:
+  - *none*
+  - *standard*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ThemeFile",
+      type: "string"
+    }}
+  >
+  Source file of the theme XML.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BootstrapperApplication (Wxs extension)",
+      link: "../../wxs/bootstrapperapplication"
+    }
+  ]}
+/>

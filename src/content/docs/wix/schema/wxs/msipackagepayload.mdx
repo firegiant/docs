@@ -1,0 +1,91 @@
+---
+title: "MsiPackagePayload element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes information about the MsiPackage payload.
+ Cannot be specified if the owning MsiPackage specified any of SourceFile, Name, DownloadUrl, or Compressed.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Compressed",
+      type: "YesNoDefaultTypeUnion",
+      typeLink: "../yesnodefaulttype",
+      typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
+    }}
+  >
+  Whether the package payload should be embedded in a container or left as an external payload.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DownloadUrl",
+      type: "string"
+    }}
+  >
+  The URL to use to download the package. The following substitutions are supported:
+  
+  
+  - \{0} is replaced by the package Id.
+  - \{1} is replaced by the payload Id.
+  - \{2} is replaced by the payload file name.
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  The identifier of the package payload element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  The destination path and file name for this chain payload.
+   Use this attribute to rename the chain entry point or extract it into a subfolder.
+   The default value is the file name from the SourceFile attribute.
+   At a minimum, the Name or SourceFile attribute must be specified.
+   This must be a relative path ('\foo' or 'C:\foo' is not allowed).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Location of the package to add to the bundle.
+   The default value is the Name attribute, if provided.
+   At a minimum, the SourceFile or Name attribute must be specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "MsiPackage",
+      link: "../msipackage"
+    },
+    {
+      title: "PayloadGroup",
+      link: "../payloadgroup"
+    }
+  ]}
+/>

@@ -1,0 +1,37 @@
+---
+title: "RMCCPSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Uses file signatures to validate that qualifying products are installed on a system before an upgrade installation is performed. The RMCCPSearch action should be authored into the InstallUISequence table and InstallExecuteSequence table. The installer prevents RMCCPSearch from running in the InstallExecuteSequence sequence if the action has already run in InstallUISequence sequence. The RMCCPSearch action requires the CCP_DRIVE property to be set to the root path on the removable volume that has the installation for any of the qualifying products. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    }
+  ]}
+/>
+
+## See also
+[CCPSearch](../ccpsearch), [ComplianceCheck](../compliancecheck)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "RMCCPSearch Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/rmccpsearch-action"
+    }
+  ]}
+/>

@@ -1,0 +1,80 @@
+---
+title: "PayloadGroupRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Create a reference to PayloadGroup element that exists inside a Bundle or Fragment element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the PayloadGroup element to reference.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "BootstrapperApplication",
+      link: "../bootstrapperapplication"
+    },
+    {
+      title: "BootstrapperApplicationRef",
+      link: "../bootstrapperapplicationref"
+    },
+    {
+      title: "BootstrapperExtension",
+      link: "../bootstrapperextension"
+    },
+    {
+      title: "BundleExtension",
+      link: "../bundleextension"
+    },
+    {
+      title: "MsiPackage",
+      link: "../msipackage"
+    },
+    {
+      title: "MspPackage",
+      link: "../msppackage"
+    },
+    {
+      title: "MsuPackage",
+      link: "../msupackage"
+    },
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    },
+    {
+      title: "BundlePackage",
+      link: "../bundlepackage"
+    },
+    {
+      title: "PayloadGroup",
+      link: "../payloadgroup"
+    }
+  ]}
+/>
+
+## See also
+[PayloadGroup](../payloadgroup)

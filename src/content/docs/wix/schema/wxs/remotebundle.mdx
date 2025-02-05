@@ -1,0 +1,149 @@
+---
+title: "RemoteBundle element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes information about the referenced Bundle.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BundleId",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  The id of the bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  The display name of the bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EngineVersion",
+      type: "string"
+    }}
+  >
+  The version of the bundle's engine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InstallSize",
+      type: "string"
+    }}
+  >
+  The size this bundle will take on disk in bytes after it is installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ManifestNamespace",
+      type: "string",
+      required: true
+    }}
+  >
+  The namespace of the bundle's manifest.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PerMachine",
+      type: "yesno",
+      required: true
+    }}
+  >
+  Whether the bundle is per-machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProtocolVersion",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`.",
+      required: true
+    }}
+  >
+  The protocol version of the related bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProviderKey",
+      type: "string",
+      required: true
+    }}
+  >
+  The provider key of the bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpgradeCode",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  An upgrade code of the bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string",
+      required: true
+    }}
+  >
+  The version of the bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Win64",
+      type: "yesno",
+      required: true
+    }}
+  >
+  Whether the bundle is 64-bit.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "RemoteRelatedBundle",
+      link: "../remoterelatedbundle"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BundlePackagePayload",
+      link: "../bundlepackagepayload"
+    }
+  ]}
+/>

@@ -1,0 +1,36 @@
+---
+const { caption } = Astro.props;
+---
+
+<div class="block-code-caption wrapper">
+  <slot />
+</div>
+
+<style>
+  .wrapper {
+    border-radius: 0.25rem;
+    border: var(--ec-brdWd) solid var(--ec-brdCol);
+
+    .expressive-code {
+      pre {
+        border: 0;
+        border-radius: calc(var(--ec-brdRad) + var(--ec-brdWd))
+          calc(var(--ec-brdRad) + var(--ec-brdWd)) 0 0;
+      }
+      .frame {
+        box-shadow: none;
+      }
+    }
+  }
+
+  :global(.block-code-caption figcaption) {
+    border: none;
+    margin-top: 0;
+    padding: 0 0.75rem;
+    font-size: var(--sl-text-xs);
+    line-height: 1.5;
+  }
+  :global(.block-code-caption figure:last-of-type figcaption) {
+    padding-block-end: 1rem;
+  }
+</style>

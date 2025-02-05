@@ -1,0 +1,90 @@
+---
+title: "Extension element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Extension for a Component
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Advertise",
+      type: "yesno"
+    }}
+  >
+  Whether this extension is to be advertised. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ContentType",
+      type: "string"
+    }}
+  >
+  The MIME type that is to be written.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  This is simply the file extension, like "doc" or "xml". Do not include the preceding period.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "MIME",
+      link: "../mime"
+    },
+    {
+      title: "Verb",
+      link: "../verb"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ProgId",
+      link: "../progid"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MIME Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/mime-table"
+    },
+    {
+      title: "Verb Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/verb-table"
+    },
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    }
+  ]}
+/>

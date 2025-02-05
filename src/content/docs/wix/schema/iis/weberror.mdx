@@ -1,0 +1,75 @@
+---
+title: "WebError element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Custom Web Errors used by WebSites and Virtual Directories.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ErrorCode",
+      type: "wxs:Integer",
+      required: true
+    }}
+  >
+  HTTP 1.1 error code.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string"
+    }}
+  >
+  File to be sent to the client for this error code and sub code. This can be formatted. For example: [#FileId].
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SubCode",
+      type: "wxs:Integer",
+      required: true
+    }}
+  >
+  Error sub code. Set to 0 to get the wild card "*".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "URL",
+      type: "string"
+    }}
+  >
+  URL to be sent to the client for this error code and sub code. This can be formatted.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WebVirtualDir",
+      link: "../webvirtualdir"
+    },
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>
+
+## Remarks
+
+You can only use error code and sub code combinations which are supported by IIS. Attempting to set a custom error for
+ an error code and sub code combination that is not supported by IIS (in the default list of error codes) will result in
+ an installation failure.

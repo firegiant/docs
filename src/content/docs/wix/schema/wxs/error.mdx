@@ -1,0 +1,57 @@
+---
+title: "Error element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Number of the error for which a message is being provided. See MSI SDK for error definitions.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Message",
+      type: "string"
+    }}
+  >
+  Message to display for the specified error number.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Error Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/error-table"
+    }
+  ]}
+/>

@@ -1,0 +1,22 @@
+---
+const { storageId, propGuidHereId } = Astro.props;
+const guidHereId = propGuidHereId || 'PUT-GUID-HERE';
+---
+
+<script is:inline define:vars={{ storageId, guidHereId }}>
+document.addEventListener('DOMContentLoaded', (event) => {
+  let guid = localStorage.getItem(storageId);
+  if (!guid) {
+    guid = this.crypto.randomUUID();
+    localStorage.setItem(storageId, guid);
+  }
+
+  Array.from(document.getElementsByTagName('span'))
+       .filter(s => s.innerText.includes(guidHereId))
+       .forEach(s => s.innerText = s.innerText.replace(guidHereId, guid));
+
+  Array.from(document.querySelectorAll('button[data-code]'))
+       .filter(b => b.dataset.code.includes(guidHereId))
+       .forEach(b => { b.dataset.code = b.dataset.code.replace(guidHereId, guid); });
+});
+</script>

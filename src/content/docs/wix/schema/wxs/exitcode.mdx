@@ -1,0 +1,56 @@
+---
+title: "ExitCode element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes map of exit code returned from executable package to a bootstrapper behavior.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Behavior",
+      type: "",
+      required: true
+    }}
+  >
+  Choose one of the supported behaviors error codes: success, error, scheduleReboot, forceReboot, errorScheduleReboot, errorForceReboot. This attribute's value must be one of the following:
+  - *success*: The process completed successfully.
+  - *error*: The process failed.
+  - *scheduleReboot*: The process completed successfully and requires the machine to be restarted.
+  - *forceReboot*: The process completed successfully and initiated a restart.
+  - *errorScheduleReboot*: The process failed and requires the machine to be restarted.
+  - *errorForceReboot*: The process failed and initiated a restart.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "integer"
+    }}
+  >
+  Exit code returned from executable package. If no value is provided it means all values not explicitly set default to this behavior.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    },
+    {
+      title: "BundlePackage",
+      link: "../bundlepackage"
+    }
+  ]}
+/>

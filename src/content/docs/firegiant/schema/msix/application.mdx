@@ -1,0 +1,102 @@
+---
+title: "Application element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an Application in a package. Alternative to using the Application attribute on the File element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Overrides the calculated description of the Application. This attribute is intended to be used only when a Shortcut's description must be different from the MSIX Application description.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  Overrides the calculated display name of the Application. This attribute is intended to be used only when a Shortcut's name must be different from the MSIX Application display name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExecutableFile",
+      type: "string"
+    }}
+  >
+  The File/@Id of executable entry point for the MSIX Application. This attribute will default to the parent File element. Otherwise the attribute must be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identity of the Application in the MSIX package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Primary",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Application as the primary Application in the MSIX package. The primary Application's logo and name is visible at some places in Windows 10 instead of the MSIX package logo and name.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "PreInstalledConfigTask",
+      link: "../preinstalledconfigtask"
+    },
+    {
+      title: "Tile",
+      link: "../tile"
+    },
+    {
+      title: "UpdateTask",
+      link: "../updatetask"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

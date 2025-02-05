@@ -1,0 +1,46 @@
+---
+title: "Data element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used for a Custom Table. Specifies the data for the parent Row and specified Column.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Column",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies in which column to insert this data.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Specifies the optional data for this column.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Row",
+      link: "../row"
+    }
+  ]}
+/>

@@ -1,0 +1,108 @@
+---
+title: "EmbeddedChainer element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BinarySource",
+      type: "string"
+    }}
+  >
+  Reference to the Binary element that contains the chainer executable. Mutually exclusive with
+   the FileSource and PropertySource attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CommandLine",
+      type: "string"
+    }}
+  >
+  Value to append to the transaction handle and passed to the chainer executable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Value is the condition. It is important to note that each EmbeddedChainer element must have a mutually exclusive condition
+   to ensure that only one embedded chainer will execute at a time. If the conditions are not mutually exclusive the chainer
+   that executes is undeterministic.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FileSource",
+      type: "string"
+    }}
+  >
+  Reference to the File element that is the chainer executable. Mutually exclusive with
+   the BinarySource and PropertySource attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier for embedded chainer.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PropertySource",
+      type: "string"
+    }}
+  >
+  Reference to a Property that resolves to the full path to the chainer executable. Mutually exclusive with
+   the BinarySource and FileSource attributes.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[Binary](../binary), [File](../file), [Property](../property), [EmbeddedChainerRef](../embeddedchainerref)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiEmbeddedChainer  Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiembeddedchainer -table"
+    }
+  ]}
+/>

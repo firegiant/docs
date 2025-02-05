@@ -1,0 +1,30 @@
+---
+title: "SelfUnregModules element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Unregisters all modules listed in the SelfReg table that are scheduled to be uninstalled. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "SelfUnregModules Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/selfunregmodules-action"
+    }
+  ]}
+/>

@@ -1,0 +1,80 @@
+---
+title: "ComPlusInterface element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Represents an interface for a COM+ component.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IID",
+      type: "uuid",
+      typeLink: "../uuid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\".",
+      required: true
+    }}
+  >
+  IID of the interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "QueuingEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComPlusMethod",
+      link: "../complusmethod"
+    },
+    {
+      title: "ComPlusRoleForInterface",
+      link: "../complusroleforinterface"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ComPlusComponent",
+      link: "../compluscomponent"
+    }
+  ]}
+/>

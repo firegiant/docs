@@ -1,0 +1,182 @@
+---
+title: "Msix element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Metadata required to create a package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Capabilities",
+      type: "string"
+    }}
+  >
+  Whitespace-delimited list of required package capabilities. Valid values are:
+   internetClient,
+   internetClientServer,
+   privateNetworkClientServer,
+   allJoyn,
+   codeGeneration,
+   documentsLibrary,
+   picturesLibrary,
+   videosLibrary,
+   musicLibrary,
+   enterpriseAuthentication,
+   sharedUserCertificates,
+   userAccountInformation,
+   removableStorage,
+   appointments,
+   contacts,
+   phoneCall,
+   blockedChatMessages,
+   objects3D,
+   voipCall,
+   chat,
+   phoneCallHistoryPublic,
+   spatialPerception,
+   backgroundMediaPlayback,
+   userNotificationListener,
+   remoteSystem,
+   offlineMapsManagement,
+   userDataTasks,
+   location,
+   microphone,
+   proximity,
+   webcam
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Overrides the description provided by the 'ARPCOMMENTS' Property. It is recommended to use the 'ARPCOMMENTS' Property instead of using this attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  Overrides the display name provided by the Package/@Name. It is not recommended to use this attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identity of the MSIX package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogoFile",
+      type: "string"
+    }}
+  >
+  Overrides the package icon provided by the 'ARPPRODUCTICON' with a path to a image file. It is recommended to use the 'ARPPRODUCTICON' Property instead of using this attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MainPackage",
+      type: "string"
+    }}
+  >
+  The MSIX package name (aka: Msix/@Id) of the parent package. Use this only when this package is to be referenced by a sparse bundle.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Manufacturer",
+      type: "string"
+    }}
+  >
+  Overrides the manufacturer provided by the Package/@Manufacturer. It is not recommended to use this attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaximumTestedOS",
+      type: "OsVersionUnion",
+      typeLink: "../osversionunion",
+      typeTitle: "Values of this type will either be a version or well-known version name."
+    }}
+  >
+  Maximum OS version this package has been tested against. If not specified, it will default to the minimum OS supported.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinimumSupportedOS",
+      type: "OsVersionUnion",
+      typeLink: "../osversionunion",
+      typeTitle: "Values of this type will either be a version or well-known version name."
+    }}
+  >
+  Minimum OS version this package supports. If not specified, it will default to Windows 10 Anniversary Update for desktop packages and Windows Server 2016 for server packages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Publisher",
+      type: "string",
+      required: true
+    }}
+  >
+  Publisher of the MSIX package. Must be in the form of a certificate name, e.g. CN=FireGiant.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Target",
+      type: "TargetTypeUnion",
+      typeLink: "../targettype",
+      typeTitle: "Values of this type will either be \"desktop\" or \"server\"."
+    }}
+  >
+  Target device family for the MSIX package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string"
+    }}
+  >
+  Overrides the version provided by the Package/@Version. It is not recommended to use this attribute.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    }
+  ]}
+/>

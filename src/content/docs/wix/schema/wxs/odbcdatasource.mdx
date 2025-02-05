@@ -1,0 +1,100 @@
+---
+title: "ODBCDataSource element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+ODBCDataSource for a Component
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DriverName",
+      type: "string"
+    }}
+  >
+  Required if not found as child of ODBCDriver element
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier of the data source.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyPath",
+      type: "yesno"
+    }}
+  >
+  Set 'yes' to force this file to be key path for parent Component
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name for the data source.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Registration",
+      type: "",
+      required: true
+    }}
+  >
+  Scope for which the data source should be registered. This attribute's value must be one of the following:
+  - *machine*: Data source is registered per machine.
+  - *user*: Data source is registered per user.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Property",
+      link: "../property"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ODBCDriver",
+      link: "../odbcdriver"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ODBCDataSource Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/odbcdatasource-table"
+    }
+  ]}
+/>

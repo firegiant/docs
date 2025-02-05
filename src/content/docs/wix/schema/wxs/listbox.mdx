@@ -1,0 +1,69 @@
+---
+title: "ListBox element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Set of items for a particular ListBox control tied to an install Property
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string",
+      required: true
+    }}
+  >
+  Property tied to this group
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ListItem",
+      description: "entry for ListBox table",
+      link: "../listitem"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Control",
+      link: "../control"
+    },
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Control Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/control-table"
+    },
+    {
+      title: "Dialog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/dialog-table"
+    },
+    {
+      title: "ListView Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listview-table"
+    }
+  ]}
+/>

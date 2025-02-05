@@ -1,0 +1,46 @@
+---
+title: "Text element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+An alternative to using the Text attribute on the Control element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Instructs the text to be imported from a file instead of the element value during the binding process.
+   Cannot be specified with the Value attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The value of the control's text. Cannot be specified with the SourceFile attribute.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Control",
+      link: "../control"
+    }
+  ]}
+/>

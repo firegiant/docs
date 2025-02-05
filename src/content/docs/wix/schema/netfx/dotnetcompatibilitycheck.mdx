@@ -1,0 +1,105 @@
+---
+title: "DotNetCompatibilityCheck element (Netfx extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Validates whether the specified .NET is installed on the computer.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the compatibility check. If the Id is not specified, one will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Platform",
+      type: "NetfxPreprocessorPlatformType",
+      typeLink: "../netfxpreprocessorplatformtype",
+      typeTitle: "Platform referencing the machine architecture."
+    }}
+  >
+  The platform to use to validate.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the property in which to place the result of the compatibility check. The possible values are:
+   - 0 - Successful compatibility check.
+   - 13 - Requested platform is not compatible with OS. _Introduced in WiX v5.0._
+   - 12289 - No runtime is installed.
+   - 12290 - Required runtime is not installed.
+   - 12291 - Failed to get hostfxr exports.
+   - 12292 - Invalid arguments.
+   - 12293 - Failed to construct temp json file path.
+   - 12294 - Failed to create temp json file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RollForward",
+      type: ""
+    }}
+  >
+  The roll forward policy to use while validating. This attribute's value must be one of the following:
+  - *latestMajor*
+  - *major*
+  - *latestMinor*
+  - *minor*
+  - *latestPatch*
+  - *disable*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RuntimeType",
+      type: ""
+    }}
+  >
+  The .NET runtime to check against. This attribute's value must be one of the following:
+  - *aspnet*
+  - *core*
+  - *desktop*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "wxs:StrictThreePartVersionType"
+    }}
+  >
+  Version of .NET to check against.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    }
+  ]}
+/>

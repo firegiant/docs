@@ -1,0 +1,61 @@
+---
+title: "UrlAce element (Http extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The security principal and which rights to assign to them for the URL reservation.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique ID of this URL ACE.
+   If this attribute is not specified, an identifier will be generated automatically.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Rights",
+      type: ""
+    }}
+  >
+  Rights for this ACE. Default is "all". This attribute's value must be one of the following:
+  - *register*
+  - *delegate*
+  - *all*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SecurityPrincipal",
+      type: "string"
+    }}
+  >
+  The security principal for this ACE. When the UrlReservation is under a ServiceInstall element, this defaults to
+   "NT SERVICE\ServiceInstallName". This may be either a SID or an account name in a format that
+   [LookupAccountName](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountnamea)
+   supports. When using a SID, an asterisk must be prepended. For example, "*S-1-5-18".
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UrlReservation",
+      link: "../urlreservation"
+    }
+  ]}
+/>

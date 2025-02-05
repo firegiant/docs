@@ -1,0 +1,17 @@
+---
+const { caption } = Astro.props;
+---
+
+<aside class="wrapper">
+  <slot />
+</aside>
+
+<style>
+  .wrapper {
+    inline-size: 100%;
+    border-radius: 0.25rem;
+    border: var(--ec-brdWd) solid var(--ec-brdCol);
+    margin-top: 0;
+    padding: 1rem;
+  }
+</style>

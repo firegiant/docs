@@ -1,0 +1,51 @@
+---
+const { content } = Astro.props;
+---
+
+<section class="wrapper">
+  <dl>
+    {
+      content.map((item) => (
+        <div>
+          <dt>
+            <a href={item.link}>{item.title}</a>
+          </dt>
+          <>{item.description && <dd>{item.description}</dd>}</>
+        </div>
+      ))
+    }
+  </dl>
+</section>
+
+<style>
+  .wrapper {
+    --sl-text-xs: 0.75rem;
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 0.25rem;
+
+    div {
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+    }
+
+    div + div {
+      margin-block-start: 0;
+      border-block-start: 1px solid var(--sl-color-hairline-light);
+    }
+
+    dt {
+      a {
+        text-decoration: none;
+        font-family: var(--__sl-font-mono);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    dd {
+      padding-inline: 0;
+    }
+  }
+</style>

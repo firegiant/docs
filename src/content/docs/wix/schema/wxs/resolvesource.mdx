@@ -1,0 +1,38 @@
+---
+title: "ResolveSource element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Determines the location of the source and sets the SourceDir property if the source has not been resolved yet. Special actions don't have a built-in sequence number and thus must appear relative to another action. The suggested way to do this is by using the Before or After attribute. InstallExecute and InstallExecuteAgain can optionally appear anywhere between InstallInitialize and InstallFinalize.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ResolveSource Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/resolvesource-action"
+    }
+  ]}
+/>

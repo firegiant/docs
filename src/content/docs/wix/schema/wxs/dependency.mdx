@@ -1,0 +1,47 @@
+---
+title: "Dependency element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Declares a dependency on another merge module.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "RequiredId",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier of the merge module required by the merge module.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RequiredLanguage",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`.",
+      required: true
+    }}
+  >
+  Numeric language ID of the merge module in RequiredID.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RequiredVersion",
+      type: "string"
+    }}
+  >
+  Version of the merge module in RequiredID.
+  </BlockReference>
+
+</BlockWrapper>

@@ -1,0 +1,102 @@
+---
+title: "ComponentGroup element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Groups together multiple components to be used in other locations.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string"
+    }}
+  >
+  Sets the default directory identifier for child Component elements.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the ComponentGroup.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Source",
+      type: "string"
+    }}
+  >
+  Used to set the default file system source for child Component elements. For more information, see
+   [Specifying source files](../../tools/payloads/).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Subdirectory",
+      type: "string"
+    }}
+  >
+  This attribute defines one or more directories below the directory referenced by the Directory attribute or parent
+   Directory reference where the contained Components will be installed.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "ComponentGroupRef",
+      link: "../componentgroupref"
+    },
+    {
+      title: "ComponentRef",
+      link: "../componentref"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "PublicRegistry (Msix extension)",
+      link: "../../msix/publicregistry"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[ComponentGroupRef](../componentgroupref)

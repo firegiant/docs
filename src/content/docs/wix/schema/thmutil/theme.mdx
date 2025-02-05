@@ -1,0 +1,60 @@
+---
+title: "Theme element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This is the top-level container element for every thmutil Theme file.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ImageFile",
+      type: "string"
+    }}
+  >
+  Relative path to an image file that can serve as a single source for images in the rest of the theme.
+   This image is referenced by controls using the SourceX and SourceY attributes.
+   Mutually exclusive with the ImageResource attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageResource",
+      type: "string"
+    }}
+  >
+  Identifier that references an image resource in the module for the window.
+   This image is referenced by controls using the SourceX and SourceY attributes.
+   Mutually exclusive with the ImageFile attribute.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Font",
+      link: "../font"
+    },
+    {
+      title: "Image",
+      link: "../image"
+    },
+    {
+      title: "ImageList",
+      link: "../imagelist"
+    },
+    {
+      title: "Window",
+      link: "../window"
+    }
+  ]}
+/>

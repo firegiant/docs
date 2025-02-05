@@ -1,0 +1,65 @@
+---
+title: "HarvestPayloadFolder element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Harvest payloads from a folder.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this harvest configuration. This value will generated if not specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Source",
+      type: "string",
+      required: true
+    }}
+  >
+  Root of folder to harvest relative to the harvesting document. If no wildcards are specified all files under the root are harvested. If any wildcard
+   is specified only files matching the wildcard are included. For example, "content\*.dat" will include all .dat files from the "content" folder beside
+   the .wxs file.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Exclude",
+      link: "../exclude"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BootstrapperApplication (Wxs extension)",
+      link: "../../wxs/bootstrapperapplication"
+    },
+    {
+      title: "BootstrapperApplicationRef (Wxs extension)",
+      link: "../../wxs/bootstrapperapplicationref"
+    },
+    {
+      title: "PayloadGroup (Wxs extension)",
+      link: "../../wxs/payloadgroup"
+    }
+  ]}
+/>

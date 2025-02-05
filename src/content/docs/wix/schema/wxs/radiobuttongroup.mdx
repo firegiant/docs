@@ -1,0 +1,68 @@
+---
+title: "RadioButtonGroup element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Set of radio buttons tied to the specified Property
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string",
+      required: true
+    }}
+  >
+  Property tied to this group.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "RadioButton",
+      link: "../radiobutton"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Control",
+      link: "../control"
+    },
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "RadioButton Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/radiobutton-table"
+    },
+    {
+      title: "Control Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/control-table"
+    },
+    {
+      title: "Dialog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/dialog-table"
+    }
+  ]}
+/>

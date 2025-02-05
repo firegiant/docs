@@ -1,0 +1,66 @@
+---
+title: "Substitution element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Specifies the configurable fields of a module database and provides a template for the configuration of each field.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Column",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the target column in the row named in the Row column.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Row",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the primary keys of the target row in the table named in the Table column. If multiple keys, separated by semicolons.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Table",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the name of the table being modified in the module database.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Provides a formatting template for the data being substituted into the target field specified by Table, Row, and Column.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Module",
+      link: "../module"
+    }
+  ]}
+/>

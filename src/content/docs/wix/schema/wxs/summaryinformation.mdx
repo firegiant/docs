@@ -1,0 +1,82 @@
+---
+title: "SummaryInformation element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Properties about the package to be placed in the Summary Information Stream. These are
+ visible from COM through the IStream interface, and these properties can be seen on the package in Explorer.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Codepage",
+      type: "string"
+    }}
+  >
+  The code page integer value or web name for summary info strings only. See remarks for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Comments",
+      type: "string"
+    }}
+  >
+  Optional comments for browsing. _New in WiX v5: WiX v5 adds this attribute to the `SummaryInformation` element._
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  The product full name or description.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Keywords",
+      type: "string"
+    }}
+  >
+  Optional keywords for browsing.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Manufacturer",
+      type: "string"
+    }}
+  >
+  The vendor releasing the package. Defaults to the Package/@Manufacturer attribute's value.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    }
+  ]}
+/>
+
+## Remarks
+
+You can specify any valid Windows code by by integer like 1252, or by web name like Windows-1252. See [Code pages](../../tools/codepage/) for more information.
+

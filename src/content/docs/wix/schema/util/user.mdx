@@ -1,0 +1,205 @@
+---
+title: "User element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+User for all kinds of things. When it is not nested under a component it is included in the MSI so it can be referenced by other elements such as the User attribute in the AppPool element. When it is nested under a Component element, the User will be created on install and can also be used for reference.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "CanNotChangePassword",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  The user cannot change the account's password. Equivalent to UF_PASSWD_CANT_CHANGE.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Comment",
+      type: "string"
+    }}
+  >
+  Optional comment to set on the user.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateUser",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether or not to create the user. User creation can be skipped if all that is desired is to join a user to groups.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Disabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  The account is disabled. Equivalent to UF_ACCOUNTDISABLE.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Domain",
+      type: "string"
+    }}
+  >
+  A [Formatted])(https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that contains the local machine or Active Directory domain for the user.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FailIfExists",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates if the install should fail if the user already exists.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogonAsBatchJob",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether or not the user can logon as a batch job. User creation can be skipped if all that is desired is to set this access right on the user.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogonAsService",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether or not the user can logon as a serivce. User creation can be skipped if all that is desired is to set this access right on the user.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  A [Formatted])(https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that contains the name of the user account.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Password",
+      type: "string"
+    }}
+  >
+  Usually a Property that is passed in on the command-line to keep it more secure.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PasswordExpired",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether the user must change their password on their first login.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PasswordNeverExpires",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  The account's password never expires. Equivalent to UF_DONT_EXPIRE_PASSWD.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoveComment",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether remove the comment from the user. The default value is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoveOnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether the user account should be removed or left behind on uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpdateIfExists",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates if the user account properties should be updated if the user already exists.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Vital",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether failure to create the user or add the user to a group fails the installation. The default value is "yes".
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "GroupRef",
+      link: "../groupref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>
+
+## See also
+[Group](../group), [GroupRef](../groupref)

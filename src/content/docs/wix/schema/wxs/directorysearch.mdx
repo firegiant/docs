@@ -1,0 +1,137 @@
+---
+title: "DirectorySearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Searches for directory and assigns to value of parent Property.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AssignToProperty",
+      type: "yesno"
+    }}
+  >
+  Set the value of the outer Property to the result of this search. See remarks for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Depth",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Depth below the path that the installer searches for the file or directory specified by the search. See remarks for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier for the directory search.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Path",
+      type: "string"
+    }}
+  >
+  Path on the user's system. Either absolute, or relative to containing directories.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "FileSearch",
+      link: "../filesearch"
+    },
+    {
+      title: "FileSearchRef",
+      link: "../filesearchref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "ComponentSearch",
+      link: "../componentsearch"
+    },
+    {
+      title: "IniFileSearch",
+      link: "../inifilesearch"
+    },
+    {
+      title: "RegistrySearch",
+      link: "../registrysearch"
+    },
+    {
+      title: "ComplianceDrive",
+      link: "../compliancedrive"
+    },
+    {
+      title: "ComplianceCheck",
+      link: "../compliancecheck"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    }
+  ]}
+/>
+
+## Remarks
+
+Use the AssignToProperty attribute to search for a file but set the outer property to the directory containing the file. When this attribute is set to 'yes', you may only nest a FileSearch element with a unique Id or define no child element.
+ When the parent DirectorySearch/@Depth attribute is greater than 0, the FileSearch/@Id attribute must be absent or the same as the parent DirectorySearch/@Id attribute value, unless the parent DirectorySearch/@AssignToProperty attribute value is 'yes'.
+
+## See also
+[ComponentSearch](../componentsearch), [IniFileSearch](../inifilesearch), [RegistrySearch](../registrysearch)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "DrLocator Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/drlocator-table"
+    },
+    {
+      title: "Signature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/signature-table"
+    }
+  ]}
+/>

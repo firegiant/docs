@@ -1,0 +1,65 @@
+---
+title: "Group element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Finds user groups on the local machine or specified Active Directory domain. The local machine will be
+ searched for the group first then fallback to looking in Active Directory. This element is not capable
+ of creating new groups but can be used to add new or existing users to an existing group.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Domain",
+      type: "string"
+    }}
+  >
+  An optional [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that specifies the domain for the group.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier in your installation package for this group.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  A [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that contains the name of the group to be found.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>

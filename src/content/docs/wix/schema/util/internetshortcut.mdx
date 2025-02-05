@@ -1,0 +1,101 @@
+---
+title: "InternetShortcut element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Creates a shortcut to a URL.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string"
+    }}
+  >
+  Identifier reference to Directory element where shortcut is to be created. This attribute's value defaults to the parent Component directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconFile",
+      type: "string"
+    }}
+  >
+  Icon file that should be displayed. Note that this is a formatted field, so you can use
+   [#fileId] syntax to refer to a file being installed (using the file:
+   protocol).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconIndex",
+      type: "wxs:Integer"
+    }}
+  >
+  Index of the icon being referenced.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier in your installation package for this Internet shortcut.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the shortcut file, which is visible to the user. (The .lnk
+   extension is added automatically and by default, is not shown to the user.)
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Target",
+      type: "string",
+      required: true
+    }}
+  >
+  URL that should be opened when the user selects the shortcut. Windows
+   opens the URL in the appropriate handler for the protocol specified
+   in the URL. Note that this is a formatted field, so you can use
+   [#fileId] syntax to refer to a file being installed (using the file:
+   protocol).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: ""
+    }}
+  >
+  Which type of shortcut should be created. This attribute's value must be one of the following:
+  - *url*: Creates .url files using IUniformResourceLocatorW.
+  - *link*: Creates .lnk files using IShellLinkW (default).
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

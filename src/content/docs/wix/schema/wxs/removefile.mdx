@@ -1,0 +1,136 @@
+---
+title: "RemoveFile element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Remove a file(s) if the parent component is selected for installation or removal. Multiple files can be removed
+ by specifying a wildcard for the value of the Name attribute. By default, the source
+ directory of the file is the directory of the parent component. This can be overridden by specifying the
+ Directory attribute with a value corresponding to the Id of the source directory, or by specifying the Property
+ attribute with a value corresponding to a property that will have a value that resolves to the full path
+ to the source directory.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string"
+    }}
+  >
+  Overrides the directory of the parent component with a specific Directory. This Directory must exist in the
+   installer database at creation time. This attribute cannot be specified in conjunction with the Property attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Primary key used to identify this particular entry.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "WildCardLongFileNameType",
+      typeLink: "../wildcardlongfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File N?me.extension*\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ | {'>'} : / \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
+      required: true
+    }}
+  >
+  This value should be set to the localizable name of the file(s) to be removed. All of the files that
+   match the wild card will be removed from the specified directory. The value is a filename that may also
+   contain the wild card characters "?" for any single character or "*" for zero or more occurrences of any character.
+   In prior versions of the WiX toolset, this attribute specified the short file name.
+   This attribute's value may now be either a short or long file name.
+   If a short file name is specified, the ShortName attribute may not be specified.
+   Also, if this value is a long file name, the ShortName attribute may be omitted to
+   allow WiX to attempt to generate a unique short file name.
+   However, if you wish to manually specify the short file name, then the ShortName attribute may be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "On",
+      type: "InstallUninstallType",
+      typeLink: "../installuninstalltype",
+      typeTitle: "Specifies whether an action occur on install, uninstall or both.",
+      required: true
+    }}
+  >
+  This value determines the time at which the file(s) may be removed. For 'install', the file will
+   be removed only when the parent component is being installed (msiInstallStateLocal or
+   msiInstallStateSource); for 'uninstall', the file will be removed only when the parent component
+   is being removed (msiInstallStateAbsent); for 'both', the file will be removed in both cases. This attribute's value must be one of the following:
+  - *install*: The action should happen during install (msiInstallStateLocal or msiInstallStateSource).
+  - *uninstall*: The action should happen during uninstall (msiInstallStateAbsent).
+  - *both*: The action should happen during both install and uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string"
+    }}
+  >
+  Overrides the directory of the parent component with the value of the specified property. The property
+   should have a value that resolves to the full path of the source directory. The property does not have
+   to exist in the installer database at creation time; it could be created at installation time by a custom
+   action, on the command line, etc. This attribute cannot be specified in conjunction with the Directory attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortName",
+      type: "WildCardShortFileNameType",
+      typeLink: "../wildcardshortfilenametype",
+      typeTitle: "Values of this type will look like: \"File?.*\". Only one period is allowed. The following characters are not allowed: \\ | {'>'} : / \" + , ; = [ ] {'<'}, or whitespace. The name cannot be longer than 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short file name of the file in 8.3 format.
+   This attribute should only be set if you want to manually specify the short file name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Subdirectory",
+      type: "string"
+    }}
+  >
+  This attribute defines one or more directories below the directory referenced by the Directory attribute or parent
+   Directory reference for the file to be removed.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## See also
+[CopyFile](../copyfile)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "RemoveFile Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/removefile-table"
+    }
+  ]}
+/>

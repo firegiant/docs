@@ -1,0 +1,137 @@
+---
+title: "UpgradeVersion element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ExcludeLanguages",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to detect all languages, excluding the languages listed in the Language attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreRemoveFailure",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to continue installation upon failure to remove a product or application.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IncludeMaximum",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to make the range of versions detected include the value specified in Maximum.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IncludeMinimum",
+      type: "yesno"
+    }}
+  >
+  Set to "no" to make the range of versions detected exclude the value specified in Minimum. This attribute is "yes" by default.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Language",
+      type: "string"
+    }}
+  >
+  Specifies the set of languages detected by FindRelatedProducts. Enter a list of numeric language identifiers (LANGID) separated by commas (,). Leave this value null to specify all languages. Set ExcludeLanguages to "yes" in order detect all languages, excluding the languages listed in this value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Maximum",
+      type: "string"
+    }}
+  >
+  Specifies the upper boundary of the range of product versions detected by FindRelatedProducts.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MigrateFeatures",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to migrate feature states from upgraded products by enabling the logic in the MigrateFeatureStates action.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Minimum",
+      type: "string"
+    }}
+  >
+  Specifies the lower bound on the range of product versions to be detected by FindRelatedProducts.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnlyDetect",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to detect products and applications but do not uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string",
+      required: true
+    }}
+  >
+  When the FindRelatedProducts action detects a related product installed on the system, it appends the product code to the property specified in this field. Windows Installer documentation for the [Upgrade table](https://learn.microsoft.com/en-us/windows/win32/msi/upgrade-table) states that the property specified in this field must be a public property and must be added to the [SecureCustomProperties](http://msdn.microsoft.com/library/aa371571.aspx) property. WiX automatically appends the property specified in this field to the SecureCustomProperties property when creating an MSI. Each UpgradeVersion must have a unique Property value. After the FindRelatedProducts action is run, the value of this property is a list of product codes, separated by semicolons (;), detected on the system.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoveFeatures",
+      type: "string"
+    }}
+  >
+  The installer sets the REMOVE property to features specified in this column. The features to be removed can be determined at run time. The Formatted string entered in this field must evaluate to a comma-delimited list of feature names. For example: [Feature1],[Feature2],[Feature3]. No features are removed if the field contains formatted text that evaluates to an empty string. The installer sets REMOVE=ALL only if the Remove field is empty.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Upgrade",
+      link: "../upgrade"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Upgrade Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/upgrade-table"
+    }
+  ]}
+/>

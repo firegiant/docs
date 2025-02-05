@@ -1,0 +1,56 @@
+---
+title: "ServiceDependency element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Service or group of services that must start before the parent service.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Group",
+      type: "yesno"
+    }}
+  >
+  Set to 'yes' to indicate that the value in the Id attribute is the name of a group of services. If 'no' or not set, the Id attribute refers to another service by name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The name (not the display name) of a previously installed service or the name of a service group when the Group attribute is set to 'yes'.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ServiceInstall",
+      link: "../serviceinstall"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ServiceInstall Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/serviceinstall-table"
+    }
+  ]}
+/>

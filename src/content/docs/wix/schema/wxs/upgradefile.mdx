@@ -1,0 +1,74 @@
+---
+title: "UpgradeFile element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Specifies files to either ignore or to specify optional data about a file.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AllowIgnoreOnError",
+      type: "yesno"
+    }}
+  >
+  Specifies whether patching this file is vital.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the File table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Ignore",
+      type: "yesno",
+      required: true
+    }}
+  >
+  If yes, the file is ignored during patching, and the next two attributes are ignored.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WholeFile",
+      type: "yesno"
+    }}
+  >
+  Whether the whole file should be installed, rather than creating a binary patch.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UpgradeImage",
+      link: "../upgradeimage"
+    }
+  ]}
+/>

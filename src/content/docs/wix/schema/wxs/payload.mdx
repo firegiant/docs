@@ -1,0 +1,183 @@
+---
+title: "Payload element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a payload to a bootstrapper.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BAFactoryAssembly, from extension namespace http://wixtoolset.org/schemas/v4/wxs/bal",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes", WixDotNetCoreBootstrapperApplicationHost will load the DLL and instantiate the type with the BootstrapperApplicationFactoryAttribute.
+   The DLL must have been built referencing the WixToolset.Dnc.HostGenerator source generator NuGet package.
+   The .NET Core project must have been published, not just built.
+   Only one payload may be marked with this attribute set to "yes".
+  
+   _Available in WiX v4. Deprecated in WiX v5. Move the Payload/@SourceFile attribute to be the BootstrapperApplication/@SourceFile attribute and remove the Payload element._
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "BAFunctions, from extension namespace http://wixtoolset.org/schemas/v4/wxs/bal",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes", WixStdBA will load the DLL and work with it to handle BA messages.
+   Only one payload may be marked with this attribute set to "yes".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CertificatePublicKey",
+      type: "string"
+    }}
+  >
+  Optional public key of the certificate used to sign the payload. It is not recommended to use this attribute and rely on the Hash alone.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CertificateThumbprint",
+      type: "string"
+    }}
+  >
+  Optional thumbprint of the certificate used to sign the payload. It is not recommended to use this attribute and rely on the Hash alone.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Compressed",
+      type: "YesNoDefaultTypeUnion",
+      typeLink: "../yesnodefaulttype",
+      typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
+    }}
+  >
+  Whether the payload should be embedded in a container or left as an external payload.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DownloadUrl",
+      type: "string"
+    }}
+  >
+  The URL to use to download the package. The following substitutions are supported:
+  
+  
+  - \{0} is replaced by the package Id.
+  - \{1} is replaced by the payload Id.
+  - \{2} is replaced by the payload file name.
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hash",
+      type: "string"
+    }}
+  >
+  Optional SHA256 hash of the payload. Must be provided if the SourceFile attribute is not used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  The identifier of Payload element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  The destination path and file name for this payload.
+   The default is the source file name.
+   At a minimum, the Name or SourceFile attribute must be specified.
+   This must be a relative path ('\foo' or 'C:\foo' is not allowed).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Size",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Optional size of the payload in bytes. Required if Hash is specified, otherwise must not be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  Location of the source file.
+   The default value is the Name attribute, if provided.
+   At a minimum, the SourceFile or Name attribute must be specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BootstrapperApplication",
+      link: "../bootstrapperapplication"
+    },
+    {
+      title: "BootstrapperApplicationRef",
+      link: "../bootstrapperapplicationref"
+    },
+    {
+      title: "BootstrapperExtension",
+      link: "../bootstrapperextension"
+    },
+    {
+      title: "BundleExtension",
+      link: "../bundleextension"
+    },
+    {
+      title: "MsiPackage",
+      link: "../msipackage"
+    },
+    {
+      title: "MspPackage",
+      link: "../msppackage"
+    },
+    {
+      title: "MsuPackage",
+      link: "../msupackage"
+    },
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    },
+    {
+      title: "BundlePackage",
+      link: "../bundlepackage"
+    },
+    {
+      title: "PayloadGroup",
+      link: "../payloadgroup"
+    }
+  ]}
+/>

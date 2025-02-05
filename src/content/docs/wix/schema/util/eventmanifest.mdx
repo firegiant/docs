@@ -1,0 +1,54 @@
+---
+title: "EventManifest element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used to install Event Manifests.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "MessageFile",
+      type: "string"
+    }}
+  >
+  The message file (including path) of all the providers in the event manifest. Often the message file path cannot be determined until setup time. Put your MessageFile here and the messageFileName attribute of the all the providers in the manifest will be updated with the path before it is registered.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ParameterFile",
+      type: "string"
+    }}
+  >
+  The parameter file (including path) of all the providers in the event manifest. Often the parameter file path cannot be determined until setup time. Put your ParameterFile here and the parameterFileName attribute of the all the providers in the manifest will be updated with the path before it is registered.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ResourceFile",
+      type: "string"
+    }}
+  >
+  The resource file (including path) of all the providers in the event manifest. Often the resource file path cannot be determined until setup time. Put your ResourceFile here and the resourceFileName attribute of the all the providers in the manifest will be updated with the path before it is registered.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

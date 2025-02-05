@@ -1,0 +1,39 @@
+---
+title: "FormatFile element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Formats a file's contents at install time. The contents are formatted according to the rules of the
+ [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) data type.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BinaryRef",
+      type: "string",
+      required: true
+    }}
+  >
+  The id of a Binary row that contains a copy of the file. The file in the Binary table overwrites whatever
+   file is installed by the parent component.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

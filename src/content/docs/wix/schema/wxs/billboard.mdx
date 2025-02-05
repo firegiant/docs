@@ -1,0 +1,70 @@
+---
+title: "Billboard element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Billboard to display during install of a Feature
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Feature",
+      type: "string"
+    }}
+  >
+  Feature whose state determines if the Billboard is shown.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier for the Billboard.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Control",
+      description: "Only controls of static type such as: Text, Bitmap, Icon, or custom control can be placed on a billboard.",
+      link: "../control"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BillboardAction",
+      link: "../billboardaction"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Billboard Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/billboard-table"
+    },
+    {
+      title: "BBControl Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/bbcontrol-table"
+    }
+  ]}
+/>

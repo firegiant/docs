@@ -1,0 +1,351 @@
+---
+title: "ComPlusComponent element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Represents a COM+ component in an assembly.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AllowInprocSubscribers",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CLSID",
+      type: "uuid",
+      typeLink: "../uuid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\".",
+      required: true
+    }}
+  >
+  CLSID of the component.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ComponentAccessChecksEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ComponentTransactionTimeout",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ComponentTransactionTimeoutEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "COMTIIntrinsics",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ConstructionEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ConstructorString",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreationTimeout",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EventTrackingEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExceptionClass",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FireInParallel",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IISIntrinsics",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InitializesServerApplication",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IsEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IsPrivateComponent",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "JustInTimeActivation",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LoadBalancingSupported",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxPoolSize",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinPoolSize",
+      type: "integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MultiInterfacePublisherFilterCLSID",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MustRunInClientContext",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MustRunInDefaultContext",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ObjectPoolingEnabled",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PublisherID",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SoapAssemblyName",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SoapTypeName",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Synchronization",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *ignored*
+  - *none*
+  - *supported*
+  - *required*
+  - *requiresNew*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Transaction",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *ignored*
+  - *none*
+  - *supported*
+  - *required*
+  - *requiresNew*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TxIsolationLevel",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *any*
+  - *readUnCommitted*
+  - *readCommitted*
+  - *repeatableRead*
+  - *serializable*
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComPlusInterface",
+      link: "../complusinterface"
+    },
+    {
+      title: "ComPlusRoleForComponent",
+      link: "../complusroleforcomponent"
+    },
+    {
+      title: "ComPlusSubscription",
+      link: "../complussubscription"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ComPlusAssembly",
+      link: "../complusassembly"
+    }
+  ]}
+/>

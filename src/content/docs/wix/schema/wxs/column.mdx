@@ -1,0 +1,196 @@
+---
+title: "Column element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Column definition for a Custom Table
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Category",
+      type: ""
+    }}
+  >
+  Category of this column.
+   This attribute must be specified with a value of 'Binary' if the Type attribute's value is 'binary'. This attribute's value must be one of the following:
+  - *text*
+  - *upperCase*
+  - *lowerCase*
+  - *integer*
+  - *doubleInteger*
+  - *timeDate*
+  - *identifier*
+  - *property*
+  - *filename*
+  - *wildCardFilename*
+  - *path*
+  - *paths*
+  - *anyPath*
+  - *defaultDir*
+  - *regPath*
+  - *formatted*
+  - *formattedSddl*
+  - *template*
+  - *condition*
+  - *guid*
+  - *version*
+  - *language*
+  - *binary*
+  - *customSource*
+  - *cabinet*
+  - *shortcut*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Description of this column.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the column.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyColumn",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Column in the table in KeyTable attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyTable",
+      type: "string"
+    }}
+  >
+  Table in which this column is an external key. Can be semicolon delimited.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Localizable",
+      type: "yesno"
+    }}
+  >
+  Whether this column can be localized.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxValue",
+      type: "xs:long"
+    }}
+  >
+  Maximum value for a numeric value, date or version in this column.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinValue",
+      type: "xs:long"
+    }}
+  >
+  Minimum value for a numeric value, date or version in this column.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Modularize",
+      type: ""
+    }}
+  >
+  How this column should be modularized, if at all. This attribute's value must be one of the following:
+  - *none*: Column should not be modularized. This is the default value.
+  - *column*: Column should be modularized.
+  - *condition*: Column is a condition and should be modularized.
+  - *icon*: When the column is an primary or foreign key to the Icon table it should be modularized special.
+  - *property*: Any Properties in the column should be modularized.
+  - *semicolonDelimited*: Semi-colon list of keys, all of which need to be modularized.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Nullable",
+      type: "yesno"
+    }}
+  >
+  Whether this column can be left null.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PrimaryKey",
+      type: "yesno"
+    }}
+  >
+  Whether this column is a primary key.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Set",
+      type: "string"
+    }}
+  >
+  Semicolon delimited list of permissible values.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "",
+      required: true
+    }}
+  >
+  The type of this column. This attribute's value must be one of the following:
+  - *binary*: Column contains a path to a file that will be inserted into the column as a binary object.
+     If this value is set, the Category attribute must also be set with a value of 'Binary' to pass ICE validation.
+  - *int*: Column contains an integer or datetime value (the MinValue and MaxValue attributes should also be set).
+  - *string*: Column contains a non-localizable string value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Width of this column.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "CustomTable",
+      link: "../customtable"
+    }
+  ]}
+/>

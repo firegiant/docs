@@ -1,0 +1,127 @@
+---
+title: "HarvestProjectOutput element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Harvest files from a project's output groups.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier of the project to harvest as displayed by Visual Studio. Typically this is the filename of the referenced project but can be overridden using the HarvestId metadata on the project reference. The project must be referenced by this setup project.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OutputGroups",
+      type: "string"
+    }}
+  >
+  By default all files from the project reference are harvested. A semicolon, comma or space delimited list of project output groups can reduce the files harvested. Common output groups include:
+   BuiltProjectOutputGroup,
+   BuiltProjectOutputGroupDependencies,
+   DebugSymbolsProjectOutputGroup,
+   DebugSymbolsProjectOutputGroupDependencies,
+   DocumentationProjectOutputGroup,
+   DocumentationProjectOutputGroupDependencies,
+   SatelliteDllsProjectOutputGroup,
+   SatelliteDllsProjectOutputGroupDependencies,
+   SGenFilesOutputGroup,
+   SGenFilesOutputGroupDependencies,
+   SourceFilesProjectOutputGroup,
+   and ContentFilesProjectOutputGroup
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfReg",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Capture self-registration for executable files during harvesting. Self-reg is only attempted when the attribute is set to 'yes'. The default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegExecutableArguments",
+      type: "string"
+    }}
+  >
+  Command-line arguments to pass to an executable when capturing self-registration. Ignored unless SelfReg attribute is 'yes'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegExtensions",
+      type: "string"
+    }}
+  >
+  Whitespace separated list of file extensions to capture self-registration. Ignored unless SelfReg attribute is 'yes'. Default set of extensions is: .exe, .com, .dll, .ocx, .tlb, .olb
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegWarnOnError",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Downgrade error messages encountered during self-registration capture to warnings. Ignored unless SelfReg attribute is 'yes'. The default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Strategy",
+      type: "HarvestStrategyTypeUnion",
+      typeLink: "../harveststrategytype",
+      typeTitle: "Values of this type will either be \"default\", \"singleFileComponents\" or \"contentFileComponentsWithGeneratedKeyPath\"."
+    }}
+  >
+  Harvest strategy to apply.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressFont",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Prevent automatically marking ".ttf" files as a font. The default is 'no'.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Exclude",
+      link: "../exclude"
+    },
+    {
+      title: "ExcludeRegistry",
+      link: "../excluderegistry"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

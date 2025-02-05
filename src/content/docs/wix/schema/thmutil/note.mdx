@@ -1,0 +1,38 @@
+---
+title: "Note element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines note text for a command link control based on an optional condition.
+ If multiple Note elements are given for one control, the conditions should be mutually exclusive (when multiple conditions are true, the behavior is undefined and may be changed at any time).
+ If none of the conditions of a control's Note elements are true, then it uses the text of the Note element without the Condition attribute.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition that determines when the parent control will use this note text.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "CommandLink",
+      link: "../commandlink"
+    }
+  ]}
+/>

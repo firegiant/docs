@@ -1,0 +1,215 @@
+---
+title: "Feature element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+A feature for the Feature table. Features are the smallest installable unit. See msi.chm for more
+ detailed information on the myriad installation options for a feature.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AllowAbsent",
+      type: "yesno"
+    }}
+  >
+  This attribute determines if a user will have the option to set a feature to absent in the user interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AllowAdvertise",
+      type: "yesno"
+    }}
+  >
+  This attribute determines the possible advertise states for this feature. The default is 'yes'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ConfigurableDirectory",
+      type: "string"
+    }}
+  >
+  Specify the Id of a Directory that can be configured by the user at installation time. This identifier
+   must be a public property and therefore completely uppercase.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Longer string of text describing the feature. This localizable string is displayed by the
+   Text Control of the Selection Dialog.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Display",
+      type: "string"
+    }}
+  >
+  Determines the initial display of this feature in the feature tree.
+   This attribute's value should be one of the following:
+  
+   - `collapse`: Initially shows the feature collapsed. This is the default value.
+   - `expand`: Initially shows the feature expanded.
+   - `hidden`: Prevents the feature from displaying in the user interface.
+   - an explicit integer value: For advanced users only, it is possible to directly set the integer value of the display value that will appear in the Feature row.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier of the feature. The id must be shorter than 38 characters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InstallDefault",
+      type: ""
+    }}
+  >
+  This attribute determines the default install/run location of a feature. This attribute cannot be specified
+   if the value of the FollowParent attribute is 'yes' since that would ask the installer to force this feature
+   to follow the parent installation state and simultaneously favor a particular installation state just for this feature. This attribute's value must be one of the following:
+  - *followParent*: Forces the feature to follow the same installation state as its parent feature.
+  - *local*: Favors installing this feature locally by setting the msidbFeatureAttributesFavorLocal attribute.
+  - *source*: Favors running this feature from source by setting the msidbFeatureAttributesFavorSource attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Level",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Sets the install level of this feature. A value of 0 will disable the feature. This value
+   can be modified at install time using the Level element as a child of the Feature.
+   The default value is "1".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Title",
+      type: "string"
+    }}
+  >
+  Short string of text identifying the feature. This string is listed as an item by the
+   SelectionTree control of the Selection Dialog.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TypicalDefault",
+      type: ""
+    }}
+  >
+  This attribute determines the default advertise state of the feature. This attribute's value must be one of the following:
+  - *advertise*: Sets the feature to be advertised by setting the msidbFeatureAttributesFavorAdvertise attribute.
+     This value cannot be set if the value of the AllowAdvertise attribute is 'no' since that would ask the installer to
+     disallow the advertised state for this feature while at the same time favoring it.
+  - *install*: Sets the feature to the default non-advertised installation option.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "ComponentGroupRef",
+      link: "../componentgroupref"
+    },
+    {
+      title: "ComponentRef",
+      link: "../componentref"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroupRef",
+      link: "../featuregroupref"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "Level",
+      link: "../level"
+    },
+    {
+      title: "MergeRef",
+      link: "../mergeref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    }
+  ]}
+/>
+
+## See also
+[FeatureRef](../featureref)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Feature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/feature-table"
+    }
+  ]}
+/>

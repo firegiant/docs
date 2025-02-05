@@ -1,0 +1,281 @@
+---
+title: "WebDirProperties element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+WebDirProperties used by one or more WebSites. Lists properties common to IIS web sites and vroots. Corresponding properties can be viewed through the IIS Manager snap-in. One property entry can be reused by multiple sites or vroots using the Id field as a reference, using WebVirtualDir.DirProperties, WebSite.DirProperties, or WebDir.DirProperties.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AccessSSL",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  A value of true indicates that file access requires SSL file permission processing, with or without a client certificate. This corresponds to AccessSSL flag for AccessSSLFlags IIS metabase property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AccessSSL128",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  A value of true indicates that file access requires SSL file permission processing with a minimum key size of 128 bits, with or without a client certificate. This corresponds to AccessSSL128 flag for AccessSSLFlags IIS metabase property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AccessSSLMapCert",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  This corresponds to AccessSSLMapCert flag for AccessSSLFlags IIS metabase property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AccessSSLNegotiateCert",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  This corresponds to AccessSSLNegotiateCert flag for AccessSSLFlags IIS metabase property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AccessSSLRequireCert",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  This corresponds to AccessSSLRequireCert flag for AccessSSLFlags IIS metabase property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AnonymousAccess",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Enable Anonymous Access checkbox, which maps anonymous users to a Windows user account. When setting this to 'yes' you should also provide the user account using the AnonymousUser attribute, and determine what setting to use for the IIsControlledPassword attribute. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AnonymousUser",
+      type: "string"
+    }}
+  >
+  Reference to the Id attribute on the User element to be used as the anonymous user for the directory. See the User element for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AspDetailedError",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the option for whether to send detailed ASP errors back to the client on script error. Default is 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AuthenticationProviders",
+      type: "string"
+    }}
+  >
+  Comma delimited list, in order of precedence, of Windows authentication providers that IIS will attempt to use: NTLM, Kerberos, Negotiate, and others.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "BasicAuthentication",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Basic Authentication option, which allows clients to provide credentials in plaintext over the wire. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CacheControlCustom",
+      type: "string"
+    }}
+  >
+  Custom HTTP 1.1 cache control directives.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CacheControlMaxAge",
+      type: "non-negative integer"
+    }}
+  >
+  Integer value specifying the cache control maximum age value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ClearCustomError",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether IIs will return custom errors for this directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultDocuments",
+      type: "string"
+    }}
+  >
+  The list of default documents to set for this web directory, in comma-delimited format.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DigestAuthentication",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Digest Authentication option, which allows using digest authentication with domain user accounts. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Execute",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HttpExpires",
+      type: "string"
+    }}
+  >
+  Value to set the HttpExpires attribute to for a Web Dir in the metabase.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the WebDirProperties. The Id is required when the parent is a Fragment, Module, or Package. Otherwise, Id is optional and if not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IIsControlledPassword",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets whether IIS should control the password used for the Windows account specified in the AnonymousUser attribute. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Index",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Index Resource option, which specifies whether this web directory should be indexed. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogVisits",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets whether visits to this site should be logged. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PassportAuthentication",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Passport Authentication option, which allows clients to provide credentials via a .Net Passport account. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Read",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Script",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WindowsAuthentication",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Sets the Windows Authentication option, which enables integrated Windows authentication to be used on the site. Defaults to 'no.'
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Write",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "WebVirtualDir",
+      link: "../webvirtualdir"
+    },
+    {
+      title: "WebDir",
+      link: "../webdir"
+    },
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>

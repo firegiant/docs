@@ -1,0 +1,37 @@
+---
+title: "RecycleTime element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+IIS6 Application Pool Recycle Times on 24 hour clock.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "WebAppPool",
+      link: "../webapppool"
+    }
+  ]}
+/>

@@ -1,0 +1,611 @@
+---
+title: "File element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a file to be installed by the package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Application, from extension namespace http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools/msix",
+      type: ""
+    }}
+  >
+  Allows you to specify the MSIX Application identitiy for an executable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ApplicationRef, from extension namespace http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools/msix",
+      type: ""
+    }}
+  >
+  Allows you to specify the file should contribute to an existing MSIX Application by identity.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Assembly",
+      type: ""
+    }}
+  >
+  Specifies if this File is a Win32 Assembly or .NET Assembly that needs to be installed into the
+   Global Assembly Cache (GAC). If the value is '.net' or 'win32', this file must also be the key path of the Component. This attribute's value must be one of the following:
+  - *.net*: The file is a .NET Framework assembly.
+  - *no*: The file is not a .NET Framework or Win32 assembly. This is the default value.
+  - *win32*: The file is a Win32 assembly.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AssemblyApplication",
+      type: "string"
+    }}
+  >
+  Specifies the file identifier of the application file. This assembly will be isolated
+   to the same directory as the application file.
+   If this attribute is absent, the assembly will be installed to the Global Assembly Cache (GAC).
+   This attribute may only be specified if the Assembly attribute is set to '.net' or 'win32'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "AssemblyManifest",
+      type: "string"
+    }}
+  >
+  Specifies the file identifier of the manifest file that describes this assembly.
+   The manifest file should be in the same component as the assembly it describes.
+   This attribute may only be specified if the Assembly attribute is set to '.net' or 'win32'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "BindPath",
+      type: "string"
+    }}
+  >
+  A list of paths, separated by semicolons, that represent the paths to be searched to find the imported DLLs. The list is usually a list of properties, with each property enclosed inside square brackets. The value may be set to an empty string. Including this attribute will cause an entry to be generated for the file in the BindImage table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Bitness",
+      type: "BitnessTypeUnion",
+      typeLink: "../bitnesstype",
+      typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
+    }}
+  >
+  [WiX v5] Only valid when the File element is not a child of the Component element.
+   Overrides the default File bitness. Only a 64-bit File can install to 64-bit locations such
+   as `ProgramFiles64Folder` and the 64-bit registry. The value `always64` will force the File
+   bitness to be 64-bit and cannot be included in 32-bit packages.
+   Simliarly, the value `always32` will force the File bitness to 32-bit and can be included in
+   32-bit or 64-bit packages.
+   The default value is `default` where the File will be installed using the
+   same bitness as the package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Checksum",
+      type: "yesno"
+    }}
+  >
+  This attribute should be set to "yes" for every executable file in the installation that has a valid checksum stored in the Portable Executable (PE) file header. Only those files that have this attribute set will be verified for valid checksum during a reinstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CompanionFile",
+      type: "string"
+    }}
+  >
+  Set this attribute to make this file a companion child of another file. The installation
+   state of a companion file depends not on its own file versioning information, but on the versioning of its
+   companion parent. A file that is the key path for its component can not be a companion file (that means
+   this attribute cannot be set if KeyPath="yes" for this file). The Version attribute cannot be set along
+   with this attribute since companion files are not installed based on their own version.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Compressed",
+      type: "YesNoDefaultTypeUnion",
+      typeLink: "../yesnodefaulttype",
+      typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
+    }}
+  >
+  Sets the file's source type compression. A setting of "yes"/"true", or "no"/"false" will override the setting in the Word Count Summary Property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  [WiX v5] Only valid when the File element is not a child of the Component element.
+   The condition expression to be evaluated at install time. When false the File will not be installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultLanguage",
+      type: "string"
+    }}
+  >
+  This is the default language of this file. The linker will replace this value from the value in the file if the suppress files option is not used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultSize",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  This is the default size of this file. The linker will replace this value from the value in the file if the suppress files option is not used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultVersion",
+      type: "string"
+    }}
+  >
+  This is the default version of this file. The linker will replace this value from the value in the file if the suppress files option is not used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string"
+    }}
+  >
+  [WiX v5] Only valid when the File element is not a child of the Component element.
+   This attribute specifies a reference to a Directory element with matching Id attribute containing a directory path.
+   If not provided, the value will default to "INSTALLFOLDER".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DiskId",
+      type: "DiskIdType",
+      typeLink: "../diskidtype",
+      typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The value of this attribute should correspond to the Id attribute of a Media
+   element authored elsewhere. By creating this connection between a file and
+   its media, you set the packaging options to the values specified in the Media
+   element (values such as compression level, cab embedding, etc...). Specifying
+   the DiskId attribute on the File element overrides the default DiskId attribute
+   from the parent Component element. If no DiskId attribute is specified,
+   the default is "1". This DiskId attribute is ignored when creating a merge module
+   because merge modules do not have media.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExternalApplicationRef, from extension namespace http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools/msix",
+      type: ""
+    }}
+  >
+  Allows you to specify the file should contribute to an existing MSIX Application by identity that is not part of this package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FontTitle",
+      type: "string"
+    }}
+  >
+  Causes an entry to be generated for the file in the Font table with the specified FontTitle. This attribute is intended to be used to register the file as a non-TrueType font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hidden",
+      type: "yesno"
+    }}
+  >
+  Set to yes in order to have the file's hidden attribute set when it is installed on the target machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  The unique identifier for this File element. If you omit Id, a stable identifier is generated for you.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyPath",
+      type: "yesno"
+    }}
+  >
+  Set to yes in order to force this file to be the key path for the parent component.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  Specifies the name of the installed file. If this attribute is omitted, then
+   its default value is the file name portion of the Source attribute. If the
+   Source attribute is omitted, you must specify a Name attribute. For more
+   information, see [Specifying source files](../../tools/payloads/).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PatchAllowIgnoreOnError",
+      type: "yesno"
+    }}
+  >
+  Set to indicate that the patch is non-vital.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PatchGroup",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  This attribute must be set for patch-added files. Each patch should be assigned a different patch group number. Patch groups
+   numbers must be greater 0 and should be assigned consecutively. For example, the first patch should use PatchGroup='1', the
+   second patch will have PatchGroup='2', etc...
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PatchIgnore",
+      type: "yesno"
+    }}
+  >
+  Prevents the updating of the file that is in fact changed in the upgraded image relative to the target images.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PatchWholeFile",
+      type: "yesno"
+    }}
+  >
+  Set if the entire file should be installed rather than creating a binary patch.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProcessorArchitecture",
+      type: ""
+    }}
+  >
+  Specifies the architecture for this assembly. This attribute should only be used on .NET Framework 2.0 or higher assemblies. This attribute's value must be one of the following:
+  - *msil*: The file is a .NET Framework assembly that is processor-neutral.
+  - *x86*: The file is a .NET Framework assembly for the x86 processor.
+  - *x64*: The file is a .NET Framework assembly for the x64 processor.
+  - *ia64*: The file is a .NET Framework assembly for the ia64 processor.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadOnly",
+      type: "yesno"
+    }}
+  >
+  Set to yes in order to have the file's read-only attribute set when it is installed on the target machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SelfRegCost",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The cost of registering the file in bytes. This must be a non-negative number. Including this attribute will cause an entry to be generated for the file in the SelfReg table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortName",
+      type: "ShortFileNameType",
+      typeLink: "../shortfilenametype",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short file name of the file in 8.3 format.
+   This attribute should only be set if there is a conflict between generated short file names
+   or the user wants to manually specify the short file name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Source",
+      type: "string"
+    }}
+  >
+  Specifies the path to the file in the build process. Overrides default source
+   path set by parent directories and Name attribute. This attribute must be set
+   if no source information can be gathered from parent directories. For more
+   information, see [Specifying source files](../../tools/payloads/).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Subdirectory",
+      type: "string"
+    }}
+  >
+  [WiX v5] Only valid when the File element is not a child of the Component element.
+   This attribute defines one or more directories below the directory referenced by the Directory attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressApplication, from extension namespace http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools/msix",
+      type: ""
+    }}
+  >
+  Allows you to specify the executable should not be published as an Application in the MSIX package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SuppressPackagedCom, from extension namespace http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools/msix",
+      type: ""
+    }}
+  >
+  Allows you to specify the executable should not publish any of its COM registration to MSIX Packaged COM.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "System",
+      type: "yesno"
+    }}
+  >
+  Set to yes in order to have the file's system attribute set when it is installed on the target machine.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TrueType",
+      type: "yesno"
+    }}
+  >
+  Causes an entry to be generated for the file in the Font table with no FontTitle specified. This attribute is intended to be used to register the file as a TrueType font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Vital",
+      type: "yesno"
+    }}
+  >
+  If a file is vital, then installation cannot proceed unless the file is successfully installed. The user will have no option to ignore an error installing this file. If an error occurs, they can merely retry to install the file or abort the installation. The default is "yes," unless the -sfdvital switch (candle.exe) or SuppressFileDefaultVital property (.wixproj) is used.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ActivatableClass (Msix extension)",
+      link: "../../msix/activatableclass"
+    },
+    {
+      title: "AppId",
+      link: "../appid"
+    },
+    {
+      title: "Application (Msix extension)",
+      link: "../../msix/application"
+    },
+    {
+      title: "AppPrinter (Msix extension)",
+      link: "../../msix/appprinter"
+    },
+    {
+      title: "AppService (Msix extension)",
+      link: "../../msix/appservice"
+    },
+    {
+      title: "AppUriHandler (Msix extension)",
+      link: "../../msix/appurihandler"
+    },
+    {
+      title: "AssemblyName",
+      link: "../assemblyname"
+    },
+    {
+      title: "BackgroundTask (Msix extension)",
+      link: "../../msix/backgroundtask"
+    },
+    {
+      title: "Class",
+      link: "../class"
+    },
+    {
+      title: "CopyFile",
+      description: "Used to create a duplicate of this file elsewhere.",
+      link: "../copyfile"
+    },
+    {
+      title: "DesktopAppMigration (Msix extension)",
+      link: "../../msix/desktopappmigration"
+    },
+    {
+      title: "EventManifest (Util extension)",
+      link: "../../util/eventmanifest"
+    },
+    {
+      title: "FirewallException (Firewall extension)",
+      link: "../../firewall/firewallexception"
+    },
+    {
+      title: "FormatFile (Util extension)",
+      link: "../../util/formatfile"
+    },
+    {
+      title: "FormatsFile (Powershell extension)",
+      link: "../../powershell/formatsfile"
+    },
+    {
+      title: "FullTrustProcess (Msix extension)",
+      link: "../../msix/fulltrustprocess"
+    },
+    {
+      title: "NativeImage (Netfx extension)",
+      link: "../../netfx/nativeimage"
+    },
+    {
+      title: "ODBCDriver",
+      link: "../odbcdriver"
+    },
+    {
+      title: "ODBCTranslator",
+      link: "../odbctranslator"
+    },
+    {
+      title: "OutOfProcessServer (Msix extension)",
+      link: "../../msix/outofprocessserver"
+    },
+    {
+      title: "PerfCounter (Util extension)",
+      link: "../../util/perfcounter"
+    },
+    {
+      title: "PerfCounterManifest (Util extension)",
+      link: "../../util/perfcountermanifest"
+    },
+    {
+      title: "Permission",
+      description: "Used to configure the ACLs for this file.",
+      link: "../permission"
+    },
+    {
+      title: "PermissionEx (Util extension)",
+      link: "../../util/permissionex"
+    },
+    {
+      title: "PreInstalledConfigTask (Msix extension)",
+      link: "../../msix/preinstalledconfigtask"
+    },
+    {
+      title: "Shortcut",
+      description: "Target of the shortcut will be set to this file.",
+      link: "../shortcut"
+    },
+    {
+      title: "SnapIn (Powershell extension)",
+      link: "../../powershell/snapin"
+    },
+    {
+      title: "StartupTask (Msix extension)",
+      link: "../../msix/startuptask"
+    },
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    },
+    {
+      title: "TypeLib",
+      link: "../typelib"
+    },
+    {
+      title: "TypesFile (Powershell extension)",
+      link: "../../powershell/typesfile"
+    },
+    {
+      title: "UpdateTask (Msix extension)",
+      link: "../../msix/updatetask"
+    },
+    {
+      title: "VsixPackage (Vs extension)",
+      link: "../../vs/vsixpackage"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "ComponentGroup",
+      link: "../componentgroup"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "StandardDirectory",
+      link: "../standarddirectory"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "File Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/file-table"
+    }
+  ]}
+/>

@@ -1,0 +1,37 @@
+---
+title: "CCPSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Uses file signatures to validate that qualifying products are installed on a system before an upgrade installation is performed. The CCPSearch action should be authored into the InstallUISequence table and InstallExecuteSequence table. The installer prevents the CCPSearch action from running in the InstallExecuteSequence sequence if the action has already run in InstallUISequence sequence. The CCPSearch action must come before the RMCCPSearch action. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    }
+  ]}
+/>
+
+## See also
+[RMCCPSearch](../rmccpsearch), [ComplianceCheck](../compliancecheck)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "CCPSearch Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/ccpsearch-action"
+    }
+  ]}
+/>

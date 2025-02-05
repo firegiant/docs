@@ -1,0 +1,76 @@
+---
+title: "MIME element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+MIME content-type for an Extension
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Advertise",
+      type: "yesno"
+    }}
+  >
+  Whether this MIME is to be advertised. The default is to match whatever the parent extension element uses. If the parent element is not advertised, then this element cannot be advertised either.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Class",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  Class ID for the COM server that is to be associated with the MIME content.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ContentType",
+      type: "string",
+      required: true
+    }}
+  >
+  This is the identifier for the MIME content. It is commonly written in the form of type/format.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Default",
+      type: "yesno"
+    }}
+  >
+  If 'yes', become the content type for the parent Extension. The default value is 'no'.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Extension",
+      link: "../extension"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MIME Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/mime-table"
+    }
+  ]}
+/>

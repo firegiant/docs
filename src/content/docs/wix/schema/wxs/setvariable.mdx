@@ -1,0 +1,93 @@
+---
+title: "SetVariable element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Schedules a "search" that sets a variable to the given value.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Id of the search that this one should come after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition for evaluating the search. If this evaluates to false, the search is not executed at all.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Id of the search for ordering and dependency.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "VariableType",
+      typeLink: "../variabletype",
+      typeTitle: "Indicates the type of a Variable."
+    }}
+  >
+  Type of the variable, inferred from the value if not specified. This attribute's value must be one of the following:
+  - *string*: A literal string.
+  - *formatted*: A string that may contain Variables.
+  - *numeric*
+  - *version*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  New value for the variable. This string gets formatted, then converted to the specified type, then assigned to the variable.
+   Leaving Value and Type unspecified will clear the variable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Variable",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the variable in which to place the result of the search.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>

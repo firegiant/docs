@@ -1,0 +1,194 @@
+---
+title: "PerformanceCategory element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used to create performance categories and configure performance counters.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Close",
+      type: "string"
+    }}
+  >
+  Function entry point in to the Library DLL called when closing the performance counter. The default is "ClosePerformanceData" which should be used for all managed code performance counters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Collect",
+      type: "string"
+    }}
+  >
+  Function entry point in to the Library DLL called when collecting data from the performance counter. The default is "CollectPerformanceData" which should be used for all managed code performance counters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultLanguage",
+      type: "PerformanceCounterLanguageType",
+      typeLink: "../performancecounterlanguagetype",
+      typeTitle: "Enumeration of valid languages for performance counters."
+    }}
+  >
+  Default language for the performance category and contained counters' names and help text. This attribute's value must be one of the following:
+  - *afrikaans*
+  - *albanian*
+  - *arabic*
+  - *armenian*
+  - *assamese*
+  - *azeri*
+  - *basque*
+  - *belarusian*
+  - *bengali*
+  - *bulgarian*
+  - *catalan*
+  - *chinese*
+  - *croatian*
+  - *czech*
+  - *danish*
+  - *divehi*
+  - *dutch*
+  - *english*
+  - *estonian*
+  - *faeroese*
+  - *farsi*
+  - *finnish*
+  - *french*
+  - *galician*
+  - *georgian*
+  - *german*
+  - *greek*
+  - *gujarati*
+  - *hebrew*
+  - *hindi*
+  - *hungarian*
+  - *icelandic*
+  - *indonesian*
+  - *italian*
+  - *japanese*
+  - *kannada*
+  - *kashmiri*
+  - *kazak*
+  - *konkani*
+  - *korean*
+  - *kyrgyz*
+  - *latvian*
+  - *lithuanian*
+  - *macedonian*
+  - *malay*
+  - *malayalam*
+  - *manipuri*
+  - *marathi*
+  - *mongolian*
+  - *nepali*
+  - *norwegian*
+  - *oriya*
+  - *polish*
+  - *portuguese*
+  - *punjabi*
+  - *romanian*
+  - *russian*
+  - *sanskrit*
+  - *serbian*
+  - *sindhi*
+  - *slovak*
+  - *slovenian*
+  - *spanish*
+  - *swahili*
+  - *swedish*
+  - *syriac*
+  - *tamil*
+  - *tatar*
+  - *telugu*
+  - *thai*
+  - *turkish*
+  - *ukrainian*
+  - *urdu*
+  - *uzbek*
+  - *vietnamese*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Help",
+      type: "string"
+    }}
+  >
+  Optional help text for the performance counter category.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier in your installation package for this performance counter category.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Library",
+      type: "string"
+    }}
+  >
+  DLL that contains the performance counter. The default is "netfxperf.dll" which should be used for all managed code performance counters.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MultiInstance",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Flag that specifies whether the performance counter category is multi or single instanced. Default is single instance.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Name for the performance counter category. If this attribute is not provided the Id attribute is used as the name of the performance counter category.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Open",
+      type: "string"
+    }}
+  >
+  Function entry point in to the Library DLL called when opening the performance counter. The default is "OpenPerformanceData" which should be used for all managed code performance counters.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "PerformanceCounter",
+      link: "../performancecounter"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

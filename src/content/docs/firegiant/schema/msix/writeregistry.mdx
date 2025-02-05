@@ -1,0 +1,100 @@
+---
+title: "WriteRegistry element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Writes a registry key to the package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Optional key to identify the registry value. If not specified, the id will be generated with a stable value based on the root, key, and name values.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string",
+      required: true
+    }}
+  >
+  Identity of the RegistryKey or RegistryValue element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  The localizable registry value name. If this attribute is not provided the default value for the registry key will
+   be set instead.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Root",
+      type: "",
+      required: true
+    }}
+  >
+  Root key for the registry value. This attribute's value must be one of the following:
+  - *HKCR*: HKEY_CLASSES_ROOT
+  - *HKCU*: HKEY_CURRENT_USER
+  - *HKLM*: HKEY_LOCAL_MACHINE
+  - *HKU*: HKEY_USERS
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "",
+      required: true
+    }}
+  >
+  Set this attribute to the type of the desired registry key. This attribute's value must be one of the following:
+  - *string*: The value is interpreted and stored as a string (REG_SZ).
+  - *integer*: The value is interpreted and stored as an integer (REG_DWORD).
+  - *expandable*: The value is interpreted and stored as an expandable string (REG_EXPAND_SZ).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Set this attribute to the localizable registry value.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    }
+  ]}
+/>

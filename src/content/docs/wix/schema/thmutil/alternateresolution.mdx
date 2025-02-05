@@ -1,0 +1,47 @@
+---
+title: "AlternateResolution element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an alternate resolution to avoid scaling in different DPIs.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ImageFile",
+      type: "string"
+    }}
+  >
+  Relative path to an image file for the control.
+   Mutually exclusive with ImageResource attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageResource",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references an image resource with type RT_RCDATA in the module for the control.
+   Mutually exclusive with ImageFile attribute.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Image",
+      link: "../image"
+    }
+  ]}
+/>

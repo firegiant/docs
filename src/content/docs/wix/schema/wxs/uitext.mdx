@@ -1,0 +1,56 @@
+---
+title: "UIText element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Text associated with certain controls.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  An optional identifier for the text style in the database. If one is not specified,
+   one will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The UI text.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "UIText Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/uitext-table"
+    }
+  ]}
+/>

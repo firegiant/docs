@@ -1,0 +1,88 @@
+---
+title: "ComPlusPartitionRole element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a COM+ partition role. Partition roles can not be
+ created; this element can only be used as a locater to reference an existing
+ role.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the partition role.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Partition",
+      type: "string"
+    }}
+  >
+  The id of a ComPlusPartition element representing the partition
+   the role belongs to.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ComPlusGroupInPartitionRole",
+      link: "../complusgroupinpartitionrole"
+    },
+    {
+      title: "ComPlusUserInPartitionRole",
+      link: "../complususerinpartitionrole"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "ComPlusPartition",
+      link: "../compluspartition"
+    }
+  ]}
+/>

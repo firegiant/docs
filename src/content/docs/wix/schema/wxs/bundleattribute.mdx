@@ -1,0 +1,46 @@
+---
+title: "BundleAttribute element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Used for BundleCustomData. Specifies a BundleAttributeDefinition and its value for the parent BundleElement.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the BundleAttributeDefinition associated with this value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  An attribute's value.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "BundleElement",
+      link: "../bundleelement"
+    }
+  ]}
+/>

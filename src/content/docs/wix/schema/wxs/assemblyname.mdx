@@ -1,0 +1,57 @@
+---
+title: "AssemblyName element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The MsiAssemblyName table specifies the schema for the elements of a strong assembly cache name for a .NET Framework or Win32 assembly.
+ Consider using the Assembly attribute on File element to have the toolset populate these entries automatically.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the attribute associated with the value specified in the Value column.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Value associated with the name specified in the Name column.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiAssemblyName Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiassemblyname-table"
+    }
+  ]}
+/>

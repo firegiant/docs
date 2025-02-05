@@ -1,0 +1,61 @@
+---
+title: "Wix element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This is the top-level container element for every wxs file. Among the possible children,
+ the Bundle, Package, Module, Patch elements are analogous to the main function in a C program.
+ There can only be one of these present when linking occurs. Package compiles into an MSI file,
+ Module compiles into an MSM file, Patch compiles into an MSP file. The Fragment element is an atomic
+ unit which ultimately links into either a Package, Module. The Fragment can either be completely included or excluded during linking.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "RequiredVersion",
+      type: "WixVersionType",
+      typeLink: "../wixversiontype",
+      typeTitle: "Values of this type will be a 1-part, 2-part, 3-part or 4-part version number or a semantic version."
+    }}
+  >
+  Required version of the WiX toolset to compile this input file.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Patch",
+      link: "../patch"
+    },
+    {
+      title: "PatchCreation",
+      link: "../patchcreation"
+    }
+  ]}
+/>

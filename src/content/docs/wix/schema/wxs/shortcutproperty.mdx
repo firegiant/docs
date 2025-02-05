@@ -1,0 +1,68 @@
+---
+title: "ShortcutProperty element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Property values for a shortcut. This element's functionality is available starting with MSI 5.0.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for MsiShortcutProperty table. If omitted, a stable identifier will be generated from the parent shortcut identifier and Key value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string",
+      required: true
+    }}
+  >
+  A formatted string identifying the property to be set.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  A formatted string supplying the value of the property.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Shortcut",
+      link: "../shortcut"
+    }
+  ]}
+/>
+
+## See also
+[Shortcut](../shortcut)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiShortcutProperty Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msishortcutproperty-table"
+    }
+  ]}
+/>

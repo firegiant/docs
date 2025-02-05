@@ -1,0 +1,63 @@
+---
+title: "FileTypeMask element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+FileType data for class Id registration.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Mask",
+      type: "HexType",
+      typeLink: "../hextype",
+      typeTitle: "This type supports any hexadecimal number. Both upper and lower case are supported for letters appearing in the number. This type also includes the empty string: \"\".",
+      required: true
+    }}
+  >
+  Hex value that is AND'd against the bytes in the file at Offset.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Offset",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`.",
+      required: true
+    }}
+  >
+  Offset into file. If positive, offset is from the beginning; if negative, offset is from the end.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "HexType",
+      typeLink: "../hextype",
+      typeTitle: "This type supports any hexadecimal number. Both upper and lower case are supported for letters appearing in the number. This type also includes the empty string: \"\".",
+      required: true
+    }}
+  >
+  If the result of the AND'ing of Mask with the bytes in the file is Value, the file is a match for this File Type.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Class",
+      link: "../class"
+    }
+  ]}
+/>

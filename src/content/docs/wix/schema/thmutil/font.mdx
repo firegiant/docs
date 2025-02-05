@@ -1,0 +1,93 @@
+---
+title: "Font element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a font including the size and color.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Background",
+      type: "FontColorType",
+      typeLink: "../fontcolortype",
+      typeTitle: "Indicates the foreground or background color of a font."
+    }}
+  >
+  A system color id or a hexadecimal value representing BGR background color of the font.
+   "ffffff" is white, "ff0000" is pure blue, "00ff00" is pure green, "0000ff" is pure red, and "000000" is black.
+   If this attribute is absent the background will be transparent.
+   Supported system color ids are: btnface, btntext, graytext, highlight, highlighttext, hotlight, window, and windowtext.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Foreground",
+      type: "FontColorType",
+      typeLink: "../fontcolortype",
+      typeTitle: "Indicates the foreground or background color of a font."
+    }}
+  >
+  A system color id or a hexadecimal value representing BGR foreground color of the font.
+   "ffffff" is white, "ff0000" is pure blue, "00ff00" is pure green, "0000ff" is pure red, and "000000" is black.
+   If this attribute is absent the foreground will be transparent.
+   Supported system color ids are: btnface, btntext, graytext, highlight, highlighttext, hotlight, window, and windowtext.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "integer",
+      required: true
+    }}
+  >
+  Font size. Use negative numbers to specify the font in pixels.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Underline",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the font is underlined.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Weight",
+      type: "non-negative integer"
+    }}
+  >
+  Font weight.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Theme",
+      link: "../theme"
+    }
+  ]}
+/>

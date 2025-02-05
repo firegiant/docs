@@ -1,0 +1,47 @@
+---
+title: "AppPrinter element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an application printer.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string",
+      required: true
+    }}
+  >
+  The name for the printer queue.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Parameters",
+      type: "string",
+      required: true
+    }}
+  >
+  The file to print.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

@@ -1,0 +1,231 @@
+---
+title: "Dialog element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a dialog box in the Dialog Table.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "CustomPalette",
+      type: "yesno"
+    }}
+  >
+  Used to specify if pictures in the dialog box are rendered with a custom palette.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ErrorDialog",
+      type: "yesno"
+    }}
+  >
+  Specifies this dialog as an error dialog.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`.",
+      required: true
+    }}
+  >
+  The height of the dialog box in dialog units.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hidden",
+      type: "yesno"
+    }}
+  >
+  Used to hide the dialog.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Unique identifier for the dialog.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeepModeless",
+      type: "yesno"
+    }}
+  >
+  Keep modeless dialogs alive when this dialog is created through DoAction.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LeftScroll",
+      type: "yesno"
+    }}
+  >
+  Used to align the scroll bar on the left.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Modeless",
+      type: "yesno"
+    }}
+  >
+  Used to set the dialog as modeless.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NoMinimize",
+      type: "yesno"
+    }}
+  >
+  Used to specify if the dialog can be minimized.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RightAligned",
+      type: "yesno"
+    }}
+  >
+  Align text on the right.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RightToLeft",
+      type: "yesno"
+    }}
+  >
+  Used to specify if the text in the dialog should be displayed in right to left reading order.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SystemModal",
+      type: "yesno"
+    }}
+  >
+  Used to set the dialog as system modal.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Title",
+      type: "string"
+    }}
+  >
+  The title of the dialog box.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TrackDiskSpace",
+      type: "yesno"
+    }}
+  >
+  Have the dialog periodically call the installer to check if available disk space has changed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`.",
+      required: true
+    }}
+  >
+  The width of the dialog box in dialog units.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "X",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Horizontal placement of the dialog box as a percentage of screen width. The default value is 50.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Y",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Vertical placement of the dialog box as a percentage of screen height. The default value is 50.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Control",
+      description: "Control elements belonging to this dialog.",
+      link: "../control"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Control Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/control-table"
+    },
+    {
+      title: "ComboBox Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/combobox-table"
+    },
+    {
+      title: "Dialog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/dialog-table"
+    },
+    {
+      title: "ListBox Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listbox-table"
+    },
+    {
+      title: "ListView Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listview-table"
+    },
+    {
+      title: "RadioButton Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/radiobutton-table"
+    }
+  ]}
+/>

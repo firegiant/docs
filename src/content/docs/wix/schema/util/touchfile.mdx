@@ -1,0 +1,82 @@
+---
+title: "TouchFile element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Updates the last modified date/time of a file.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the touch file operation. If the identifier is not specified it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Nonvital",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates the installation will succeed even if the modified time of the file cannot be updated. The default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnInstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether or not the modified time of the file should be updated on install. If the OnInstall, OnReinstall and OnUninstall attributes are all absent the default is 'yes'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnReinstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether or not the modified time of the file should be updated on reinstall. If the OnInstall, OnReinstall and OnUninstall attributes are all absent the default is 'yes'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies whether or not the modified time of the file should be updated on uninstall. If the OnInstall, OnReinstall and OnUninstall attributes are all absent the default is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Path",
+      type: "string",
+      required: true
+    }}
+  >
+  Path of the file to update. This value is formatted.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

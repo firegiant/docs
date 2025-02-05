@@ -1,0 +1,394 @@
+---
+title: "Module element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The Module element is analogous to the main function in a C program. When linking, only
+ one Module section can be given to the linker to produce a successful result. Using this
+ element creates an msm file.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Codepage",
+      type: "string"
+    }}
+  >
+  The code page integer value or web name for the resulting MSM. You can specify any valid Windows
+   code by by integer like 1252, or by web name like Windows-1252. See [Code pages](../../tools/codepage/)
+   for more information.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Guid",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  The GUID of the Merge Module that will be appended to primary keys in the database.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the merge module (not the file name).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InstallerVersion",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The minimum version of the Windows Installer required to install this package. Take the major version of the required Windows Installer
+   and multiply by a 100 then add the minor version of the Windows Installer. For example, "200" would represent Windows Installer 2.0 and
+   "405" would represent Windows Installer 4.5. This value is defaulted to "500" which is the latest version of the Windows Installer and
+   present in Windows 7 and later.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Language",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  The decimal language ID (LCID) of the merge module.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string",
+      required: true
+    }}
+  >
+  The major and minor versions of the merge module.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    },
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    },
+    {
+      title: "AdvertiseExecuteSequence",
+      link: "../advertiseexecutesequence"
+    },
+    {
+      title: "AppId",
+      link: "../appid"
+    },
+    {
+      title: "Application (Msix extension)",
+      link: "../../msix/application"
+    },
+    {
+      title: "Binary",
+      link: "../binary"
+    },
+    {
+      title: "BroadcastEnvironmentChange (Util extension)",
+      link: "../../util/broadcastenvironmentchange"
+    },
+    {
+      title: "BroadcastSettingChange (Util extension)",
+      link: "../../util/broadcastsettingchange"
+    },
+    {
+      title: "CheckRebootRequired (Util extension)",
+      link: "../../util/checkrebootrequired"
+    },
+    {
+      title: "CloseApplication (Util extension)",
+      link: "../../util/closeapplication"
+    },
+    {
+      title: "ComPlusApplication (Complus extension)",
+      link: "../../complus/complusapplication"
+    },
+    {
+      title: "ComPlusApplicationRole (Complus extension)",
+      link: "../../complus/complusapplicationrole"
+    },
+    {
+      title: "ComPlusPartition (Complus extension)",
+      link: "../../complus/compluspartition"
+    },
+    {
+      title: "ComPlusPartitionRole (Complus extension)",
+      link: "../../complus/compluspartitionrole"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "ComponentGroupRef",
+      link: "../componentgroupref"
+    },
+    {
+      title: "ComponentRef",
+      link: "../componentref"
+    },
+    {
+      title: "Configuration",
+      link: "../configuration"
+    },
+    {
+      title: "CustomAction",
+      link: "../customaction"
+    },
+    {
+      title: "CustomActionRef",
+      link: "../customactionref"
+    },
+    {
+      title: "CustomTable",
+      link: "../customtable"
+    },
+    {
+      title: "CustomTableRef",
+      link: "../customtableref"
+    },
+    {
+      title: "Dependency (Msix extension)",
+      link: "../../msix/dependency"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "DotNetCompatibilityCheck (Netfx extension)",
+      link: "../../netfx/dotnetcompatibilitycheck"
+    },
+    {
+      title: "DotNetCompatibilityCheckRef (Netfx extension)",
+      link: "../../netfx/dotnetcompatibilitycheckref"
+    },
+    {
+      title: "EmbeddedChainer",
+      link: "../embeddedchainer"
+    },
+    {
+      title: "EmbeddedChainerRef",
+      link: "../embeddedchainerref"
+    },
+    {
+      title: "EnsureTable",
+      link: "../ensuretable"
+    },
+    {
+      title: "Exclusion",
+      link: "../exclusion"
+    },
+    {
+      title: "ExitEarlyWithSuccess (Util extension)",
+      link: "../../util/exitearlywithsuccess"
+    },
+    {
+      title: "FailWhenDeferred (Util extension)",
+      link: "../../util/failwhendeferred"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "FindVisualStudio (Vs extension)",
+      link: "../../vs/findvisualstudio"
+    },
+    {
+      title: "GetCapabilities (Directx extension)",
+      link: "../../directx/getcapabilities"
+    },
+    {
+      title: "Group (Util extension)",
+      link: "../../util/group"
+    },
+    {
+      title: "Icon",
+      link: "../icon"
+    },
+    {
+      title: "IgnoreTable",
+      link: "../ignoretable"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "Msix (Msix extension)",
+      link: "../../msix/msix"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    },
+    {
+      title: "PropertyRef",
+      link: "../propertyref"
+    },
+    {
+      title: "PublicRegistry (Msix extension)",
+      link: "../../msix/publicregistry"
+    },
+    {
+      title: "QueryNativeMachine (Util extension)",
+      link: "../../util/querynativemachine"
+    },
+    {
+      title: "QueryWindowsDirectories (Util extension)",
+      link: "../../util/querywindowsdirectories"
+    },
+    {
+      title: "QueryWindowsDriverInfo (Util extension)",
+      link: "../../util/querywindowsdriverinfo"
+    },
+    {
+      title: "QueryWindowsSuiteInfo (Util extension)",
+      link: "../../util/querywindowssuiteinfo"
+    },
+    {
+      title: "QueryWindowsWellKnownSIDs (Util extension)",
+      link: "../../util/querywindowswellknownsids"
+    },
+    {
+      title: "Requires",
+      link: "../requires"
+    },
+    {
+      title: "RestartResource (Util extension)",
+      link: "../../util/restartresource"
+    },
+    {
+      title: "SetDirectory",
+      link: "../setdirectory"
+    },
+    {
+      title: "SetProperty",
+      link: "../setproperty"
+    },
+    {
+      title: "SFPCatalog",
+      link: "../sfpcatalog"
+    },
+    {
+      title: "SqlDatabase (Sql extension)",
+      link: "../../sql/sqldatabase"
+    },
+    {
+      title: "StandardDirectory",
+      link: "../standarddirectory"
+    },
+    {
+      title: "Substitution",
+      link: "../substitution"
+    },
+    {
+      title: "SummaryInformation",
+      link: "../summaryinformation"
+    },
+    {
+      title: "UI",
+      link: "../ui"
+    },
+    {
+      title: "UIRef",
+      link: "../uiref"
+    },
+    {
+      title: "User (Util extension)",
+      link: "../../util/user"
+    },
+    {
+      title: "WaitForEvent (Util extension)",
+      link: "../../util/waitforevent"
+    },
+    {
+      title: "WaitForEventDeferred (Util extension)",
+      link: "../../util/waitforeventdeferred"
+    },
+    {
+      title: "WebApplication (Iis extension)",
+      link: "../../iis/webapplication"
+    },
+    {
+      title: "WebAppPool (Iis extension)",
+      link: "../../iis/webapppool"
+    },
+    {
+      title: "WebDirProperties (Iis extension)",
+      link: "../../iis/webdirproperties"
+    },
+    {
+      title: "WebLog (Iis extension)",
+      link: "../../iis/weblog"
+    },
+    {
+      title: "WebSite (Iis extension)",
+      link: "../../iis/website"
+    },
+    {
+      title: "WixUI (Ui extension)",
+      link: "../../ui/wixui"
+    },
+    {
+      title: "WixVariable",
+      link: "../wixvariable"
+    },
+    {
+      title: "WriteRegistry (Msix extension)",
+      link: "../../msix/writeregistry"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Wix",
+      link: "../wix"
+    }
+  ]}
+/>

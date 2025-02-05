@@ -1,0 +1,136 @@
+---
+title: "TextStyle element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Blue",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  A value from 0 to 255 to indicate the amount of blue in the font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Bold",
+      type: "yesno"
+    }}
+  >
+  Indicates whether the font should be bold. Default is 'false'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FaceName",
+      type: "string",
+      required: true
+    }}
+  >
+  The face name of the font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Green",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  A value from 0 to 255 to indicate the amount of green in the font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  An optional identifier for the text style in the database. If one is not specified,
+   one will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Italic",
+      type: "yesno"
+    }}
+  >
+  Indicates whether the font should be italic. Default is 'false'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Red",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  A value from 0 to 255 to indicate the amount of red in the font.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Size",
+      type: "string",
+      required: true
+    }}
+  >
+  The font's size.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Strike",
+      type: "yesno"
+    }}
+  >
+  Indicates whether the font should be strikethrough. Default is 'false'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Underline",
+      type: "yesno"
+    }}
+  >
+  Indicates whether the font should be underline. Default is 'false'.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "TextStyle Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/textstyle-table"
+    }
+  ]}
+/>

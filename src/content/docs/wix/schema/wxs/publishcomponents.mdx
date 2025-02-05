@@ -1,0 +1,34 @@
+---
+title: "PublishComponents element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Manages the advertisement of the components from the PublishComponent table. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdvertiseExecuteSequence",
+      link: "../advertiseexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "PublishComponents Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/publishcomponents-action"
+    }
+  ]}
+/>

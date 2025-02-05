@@ -1,0 +1,120 @@
+---
+title: "Interface element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+COM Interface registration for parent TypeLib.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "BaseInterface",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  Identifies the interface from which the current interface is derived.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  GUID identifier for COM Interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name for COM Interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NumMethods",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Number of methods implemented on COM Interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProxyStubClassId",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  GUID CLSID for proxy stub to COM Interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProxyStubClassId32",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  GUID CLSID for 32-bit proxy stub to COM Interface.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Versioned",
+      type: "yesno"
+    }}
+  >
+  Determines whether a Typelib version entry should be created with the other COM Interface registry keys. Default is 'yes'.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "TypeLib",
+      link: "../typelib"
+    },
+    {
+      title: "Class",
+      link: "../class"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    }
+  ]}
+/>

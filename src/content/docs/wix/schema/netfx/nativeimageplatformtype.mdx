@@ -1,0 +1,19 @@
+---
+title: "NativeImagePlatformType type (Netfx extension)"
+---
+
+
+
+## Enumeration values
+
+  - *32bit*: Attempt to generate native images only for the 32-bit version of the .NET Framework
+     on the target machine. If the 32-bit version of the .NET Framework 2.0 or newer is not
+     present on the target machine, native image custom actions will not be scheduled.
+     This is the default value.
+  - *64bit*: Attempt to generate native images only for the 64-bit version of the .NET Framework
+     on the target machine. If a 64-bit version of the .NET Framework 2.0 or newer is not
+     present on the target machine, native image custom actions will not be scheduled.
+  - *all*: Attempt to generate native images for the 32-bit and 64-bit versions of the .NET Framework
+     on the target machine. If a version of the .NET Framework 2.0 or newer is not present on the
+     target machine for a processor architecture, native image custom actions will not be
+     scheduled for that processor architecture.

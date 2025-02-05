@@ -1,0 +1,130 @@
+---
+title: "PatchFamily element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Collection of items that should be kept from the differences between two products.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier which indicates a sequence family to which this patch belongs.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProductCode",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  Specifies the ProductCode of the product that this family applies to.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Supersede",
+      type: "yesno"
+    }}
+  >
+  Set this value to 'yes' to indicate that this patch will supersede all previous patches in this patch family.
+   The default value is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string",
+      required: true
+    }}
+  >
+  Used to populate the sequence column of the MsiPatchSequence table in the final MSP file.
+   Specified in x.x.x.x format. See documentation for Sequence column of MsiPatchSequence table in MSI SDK.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "All",
+      link: "../all"
+    },
+    {
+      title: "BinaryRef",
+      link: "../binaryref"
+    },
+    {
+      title: "ComponentRef",
+      link: "../componentref"
+    },
+    {
+      title: "CustomActionRef",
+      link: "../customactionref"
+    },
+    {
+      title: "DigitalCertificateRef",
+      link: "../digitalcertificateref"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    },
+    {
+      title: "IconRef",
+      link: "../iconref"
+    },
+    {
+      title: "PropertyRef",
+      link: "../propertyref"
+    },
+    {
+      title: "SoftwareTagRef",
+      link: "../softwaretagref"
+    },
+    {
+      title: "UIRef",
+      link: "../uiref"
+    },
+    {
+      title: "WixUI (Ui extension)",
+      link: "../../ui/wixui"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Patch",
+      link: "../patch"
+    },
+    {
+      title: "PatchFamilyGroup",
+      link: "../patchfamilygroup"
+    }
+  ]}
+/>

@@ -1,0 +1,42 @@
+---
+title: "IgnoreTable element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Specifies a table from the merge module that is not merged into an .msi file.
+ If the table already exists in an .msi file, it is not modified by the merge.
+ The specified table can therefore contain data that is unneeded after the merge.
+ To minimize the size of the .msm file, it is recommended that developers remove
+ unused tables from modules intended for redistribution rather than creating
+ IgnoreTable elements for those tables.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the table in the merge module that is not to be merged into the .msi file.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Module",
+      link: "../module"
+    }
+  ]}
+/>

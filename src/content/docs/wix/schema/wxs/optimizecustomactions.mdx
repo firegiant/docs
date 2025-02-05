@@ -1,0 +1,68 @@
+---
+title: "OptimizeCustomActions element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Indicates whether custom actions can be skipped when applying the patch.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "SkipAssignment",
+      type: "yesno"
+    }}
+  >
+  Skip property (type 51) and directory (type 35) assignment custom actions.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SkipDeferred",
+      type: "yesno"
+    }}
+  >
+  Skip custom actions that run within the script.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SkipImmediate",
+      type: "yesno"
+    }}
+  >
+  Skip immediate custom actions that are not property or directory assignment custom actions.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Patch",
+      link: "../patch"
+    },
+    {
+      title: "PatchMetadata",
+      link: "../patchmetadata"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiPatchMetadata Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msipatchmetadata-table"
+    }
+  ]}
+/>

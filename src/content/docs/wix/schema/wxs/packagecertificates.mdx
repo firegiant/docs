@@ -1,0 +1,43 @@
+---
+title: "PackageCertificates element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Digital signatures that identify installation packages in a multi-product transaction.
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DigitalCertificate",
+      link: "../digitalcertificate"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiPackageCertificate Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msipackagecertificate-table"
+    }
+  ]}
+/>

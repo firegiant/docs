@@ -1,0 +1,85 @@
+---
+title: "UrlReservation element (Http extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Makes a reservation record for the HTTP Server API configuration store on Windows XP SP2,
+ Windows Server 2003, and later. For more information about the HTTP Server API, see
+ [HTTP Server API](https://learn.microsoft.com/en-us/windows/win32/http/http-api-start-page).
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "HandleExisting",
+      type: ""
+    }}
+  >
+  Specifies the behavior when trying to install a URL reservation and it already exists. This attribute's value must be one of the following:
+  - *replace*: Replaces the existing URL reservation (the default).
+  - *ignore*: Keeps the existing URL reservation.
+  - *fail*: The installation fails.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique ID of this URL reservation.
+   If this attribute is not specified, an identifier will be generated automatically.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sddl",
+      type: "string"
+    }}
+  >
+  Security descriptor to apply to the URL reservation.
+   Can't be specified when using children UrlAce elements.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Url",
+      type: "string",
+      required: true
+    }}
+  >
+  The [UrlPrefix](https://learn.microsoft.com/en-us/windows/win32/http/urlprefix-strings)
+   string that defines the portion of the URL namespace to which this reservation pertains.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "UrlAce",
+      link: "../urlace"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ServiceInstall (Wxs extension)",
+      link: "../../wxs/serviceinstall"
+    }
+  ]}
+/>

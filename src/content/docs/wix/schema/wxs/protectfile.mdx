@@ -1,0 +1,46 @@
+---
+title: "ProtectFile element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Specifies a file to be protected.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the File table.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ProtectRange",
+      link: "../protectrange"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Family",
+      link: "../family"
+    }
+  ]}
+/>

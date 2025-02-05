@@ -1,0 +1,117 @@
+---
+title: "FeatureRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Create a reference to a Feature element in another Fragment.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the Feature element to reference.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreParent",
+      type: "yesno"
+    }}
+  >
+  Normally feature references that are nested under a parent element create a connection to that
+   parent. This behavior is undesirable when trying to simply reference a Feature in a different
+   Fragment. Specify 'yes' to have this feature reference not create a connection to its parent.
+   The default is 'no'.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    },
+    {
+      title: "ComponentGroupRef",
+      link: "../componentgroupref"
+    },
+    {
+      title: "ComponentRef",
+      link: "../componentref"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureGroupRef",
+      link: "../featuregroupref"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Files",
+      link: "../files"
+    },
+    {
+      title: "MergeRef",
+      link: "../mergeref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "PatchFamily",
+      link: "../patchfamily"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    }
+  ]}
+/>
+
+## See also
+[Feature](../feature)

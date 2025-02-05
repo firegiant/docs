@@ -1,0 +1,149 @@
+---
+title: "MessageQueue element (Msmq extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Installs an MSMQ message queue.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Authenticate",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  The default value is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "BasePriority",
+      type: "wxs:Integer"
+    }}
+  >
+  The base priority of the queue.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the message queue. If the Id is not specified, one will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Journal",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  The default value is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "JournalQuota",
+      type: "wxs:Integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Label",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MulticastAddress",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PathName",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PrivLevel",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *none*
+  - *optional*
+  - *body*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Quota",
+      type: "wxs:Integer"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceTypeGuid",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Transactional",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  The default value is "no".
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "MessageQueuePermission",
+      link: "../messagequeuepermission"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

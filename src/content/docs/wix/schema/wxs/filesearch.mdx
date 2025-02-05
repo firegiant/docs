@@ -1,0 +1,166 @@
+---
+title: "FileSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Searches for file and assigns to fullpath value of parent Property
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for the file search and external key into the Signature table. If this attribute value is not set then the parent element's @Id attribute is used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Languages",
+      type: "string"
+    }}
+  >
+  The languages supported by the file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxDate",
+      type: "xs:dateTime"
+    }}
+  >
+  The maximum modification date and time of the file. Formatted as YYYY-MM-DDTHH:mm:ss, where YYYY is the year, MM is month, DD is day, 'T' is literal, HH is hour, mm is minute and ss is second.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxSize",
+      type: "integer"
+    }}
+  >
+  The maximum size of the file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaxVersion",
+      type: "string"
+    }}
+  >
+  The maximum version of the file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinDate",
+      type: "xs:dateTime"
+    }}
+  >
+  The minimum modification date and time of the file. Formatted as YYYY-MM-DDTHH:mm:ss, where YYYY is the year, MM is month, DD is day, 'T' is literal, HH is hour, mm is minute and ss is second.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinSize",
+      type: "integer"
+    }}
+  >
+  The minimum size of the file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinVersion",
+      type: "string"
+    }}
+  >
+  The minimum version of the file.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  In prior versions of the WiX toolset, this attribute specified the short file name.
+   This attribute's value may now be either a short or long file name.
+   If a short file name is specified, the ShortName attribute may not be specified.
+   If you wish to manually specify the short file name, then the ShortName
+   attribute may be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortName",
+      type: "ShortFileNameType",
+      typeLink: "../shortfilenametype",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short file name of the file in 8.3 format.
+   There is a Windows Installer bug which prevents the FileSearch functionality from working
+   if both a short and long file name are specified. Since the Name attribute allows either
+   a short or long name to be specified, it is the only attribute related to file names which
+   should be specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "ComponentSearch",
+      link: "../componentsearch"
+    },
+    {
+      title: "IniFileSearch",
+      link: "../inifilesearch"
+    },
+    {
+      title: "RegistrySearch",
+      link: "../registrysearch"
+    }
+  ]}
+/>
+
+## Remarks
+
+When the parent DirectorySearch/@Depth attribute is greater than 0, the FileSearch/@Id attribute must be absent or the same as the parent DirectorySearch/@Id attribute value, unless the parent DirectorySearch/@AssignToProperty attribute value is 'yes'.
+
+## See also
+[ComponentSearch](../componentsearch), [DirectorySearch](../directorysearch), [DirectorySearchRef](../directorysearchref), [FileSearchRef](../filesearchref), [IniFileSearch](../inifilesearch), [RegistrySearch](../registrysearch)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "DrLocator Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/drlocator-table"
+    },
+    {
+      title: "Signature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/signature-table"
+    }
+  ]}
+/>

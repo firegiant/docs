@@ -1,0 +1,68 @@
+---
+title: "ComPlusUserInApplicationRole element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+This element represents a user membership in an
+ application role. When the parent component of this element is installed, the
+ user will be added to the associated application role. This element must be a descendent
+ of a Component element; it can not be a child of a ComPlusApplicationRole
+ locater element. To reference a locater element use the ApplicationRole
+ attribute.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ApplicationRole",
+      type: "string"
+    }}
+  >
+  If the element is not a child of a ComPlusApplicationRole
+   element, this attribute should be provided with the id of a
+   ComPlusApplicationRole element representing the application role the user is
+   to be added to.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string",
+      required: true
+    }}
+  >
+  Foreign key into the User table.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ComPlusApplicationRole",
+      link: "../complusapplicationrole"
+    }
+  ]}
+/>

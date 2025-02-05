@@ -1,0 +1,59 @@
+---
+title: "PermissionEx element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, this cannot be used
+ if the Action attribute's value is remove or removeKeyOnInstall. This element is only available
+ when installing with MSI 5.0. For downlevel support, see the PermissionEx element from the
+ WixUtilExtension.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Optional condition that controls whether the permissions are applied.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Primary key used to identify this particular entry. If this is not specified the parent element's Id attribute
+   will be used instead.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sddl",
+      type: "string",
+      required: true
+    }}
+  >
+  Security descriptor to apply to parent object.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiLockPermissionsEx Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msilockpermissionsex-table"
+    }
+  ]}
+/>

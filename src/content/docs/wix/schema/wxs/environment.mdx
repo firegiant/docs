@@ -1,0 +1,121 @@
+---
+title: "Environment element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Environment variables added or removed for the parent component.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Action",
+      type: ""
+    }}
+  >
+  Specfies whether the environmental variable should be created, set or removed when the parent component is installed. This attribute's value must be one of the following:
+  - *create*: Creates the environment variable if it does not exist, then set it during installation. This has no effect on the value of the environment variable if it already exists.
+  - *set*: Creates the environment variable if it does not exist, and then set it during installation. If the environment variable exists, set it during the installation.
+  - *remove*: Removes the environment variable during an installation.
+     The installer only removes an environment variable during an installation if the name and value
+     of the variable match the entries in the Name and Value attributes.
+     If you want to remove an environment variable, regardless of its value, do not set the Value attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for environment entry.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the environment variable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Part",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *all*: This value is the entire environmental variable. This is the default.
+  - *first*: This value is prefixed.
+  - *last*: This value is appended.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Permanent",
+      type: "yesno"
+    }}
+  >
+  Specifies that the environment variable should not be removed on uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Separator",
+      type: "string"
+    }}
+  >
+  Optional attribute to change the separator used between values. By default a semicolon is used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "System",
+      type: "yesno"
+    }}
+  >
+  Specifies that the environment variable should be added to the system environment space. The default
+   is 'no' which indicates the environment variable is added to the user environment space.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The value to set into the environment variable.
+   If this attribute is not set, the environment variable is removed during installation if it exists on the machine.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Environment Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/environment-table"
+    }
+  ]}
+/>

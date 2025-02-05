@@ -1,0 +1,643 @@
+---
+title: "Component element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Component for parent Directory
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Bitness",
+      type: "BitnessTypeUnion",
+      typeLink: "../bitnesstype",
+      typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
+    }}
+  >
+  Overrides the default Component bitness. Only 64-bit Components can install to 64-bit locations such
+   as `ProgramFiles64Folder` and the 64-bit registry. The value `always64` will force the Component
+   bitness to be 64-bit and cannot be included in 32-bit packages.
+   Simliarly, the value `always32` will force the Component bitness to 32-bit and can be included in
+   32-bit or 64-bit packages.
+   The default value is `default` where the Component will be installed using the
+   same bitness as the package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ComPlusFlags",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  Set this attribute to create a ComPlus entry. The value should be the export flags used
+   during the generation of the .msi file. For more information see the COM+ documentation
+   in the Platform SDK.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition expression to be evaluated at install time. When false the Component will not be installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Directory",
+      type: "string"
+    }}
+  >
+  Sets the Directory of the Component. If this element is nested under a Directory element,
+   this value defaults to the value of the parent Directory/@Id.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisableRegistryReflection",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to 'yes' in order to disable registry reflection on all existing and
+   new registry keys affected by this component.
+   When set to 'yes', the Windows Installer calls the RegDisableReflectionKey on each key
+   being accessed by the component.
+   This bit is available with Windows Installer version 4.0 and is ignored on 32-bit systems.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DiskId",
+      type: "DiskIdType",
+      typeLink: "../diskidtype",
+      typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  This attribute provides a default DiskId attribute for all child File elements. Specifying
+   the DiskId on a Component element will override any DiskId attributes set by parent Directory
+   or DirectoryRef elements. See the File element's DiskId attribute for more information about
+   the purpose of the DiskId.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Feature",
+      type: "string"
+    }}
+  >
+  Identifies a feature to which this component belongs, as a shorthand for a child
+   ComponentRef element of the Feature element. The value of this attribute should
+   correspond to the Id attribute of a Feature element authored elsewhere. Note that
+   a single component can belong to multiple features but this attribute allows you
+   to specify only a single feature.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Guid",
+      type: "ComponentGuid",
+      typeLink: "../componentguid",
+      typeTitle: "Values of this type must be a GUID, with or without braces: `01234567-89AB-CDEF-0123-456789ABCDEF` or `{01234567-89AB-CDEF-0123-456789ABCDEF}`. `PUT-GUID-HERE` can be used for sample code. Empty values are also supported."
+    }}
+  >
+  This value should be a guid that uniquely identifies this component's contents, language, platform, and version.
+   If omitted, the default value is '*' which indicates that the linker should generate a stable guid.
+   Generatable guids are supported only for components with a single file as the component's keypath
+   or no files and a registry value as the keypath.
+   It's also possible to set the value to an empty string to specify an unmanaged component.
+   Unmanaged components are a security vulnerability because the component cannot be removed or repaired
+   by Windows Installer (it is essentially an unpatchable, permanent component). Therefore, a guid should
+   always be specified for any component which contains resources that may need to be patched in the future.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Component identifier; this is the primary key for identifying components. If omitted,
+   the compiler defaults the identifier to the identifier of the resource that is the
+   explicit or default keypath of the component (for example, a child File element).
+   In WiX v4 and WiX v5, such a default identifier is private to the section where it is
+   defined. To make it public (and therefore accessible from other sections and usable
+   in references like ComponentRef), give the component an explicit value for Id.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "KeyPath",
+      type: "yesno"
+    }}
+  >
+  If this attribute's value is set to 'yes', then the Directory of this Component is used
+   as the KeyPath. To set a Registry value or File as the KeyPath of a component, set the
+   KeyPath attribute to 'yes' on one of those child elements. If KeyPath is not set to 'yes' for the
+   Component or for a child Registry value or File, WiX will look at the child elements under the
+   Component in sequential order and try to automatically select one of them as a key path. Allowing
+   WiX to automatically select a key path can be dangerous because adding or removing child elements
+   under the Component can inadvertantly cause the key path to change, which can lead to
+   installation problems.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Location",
+      type: ""
+    }}
+  >
+  Optional value that specifies the location that the component can be run from. This attribute's value must be one of the following:
+  - *local*: Prevents the component from running from the source or the network (this is the default behavior if this attribute is not set).
+  - *source*: Enforces that the component can only be run from the source (it cannot be run from the user's computer).
+  - *either*: Allows the component to run from source or locally.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MultiInstance",
+      type: "yesno"
+    }}
+  >
+  If this attribute is set to 'yes', a new Component/@Guid will be generated for each
+   instance transform. Ensure that all of the resources contained in a multi-instance
+   Component will be installed to different paths based on the instance Property; otherwise,
+   the Component Rules will be violated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NeverOverwrite",
+      type: "yesno"
+    }}
+  >
+  If this attribute is set to 'yes', the installer does not install or reinstall the
+   component if a key path file or a key path registry entry for the component already
+   exists. The application does register itself as a client of the component. Use this
+   flag only for components that are being registered by the Registry table. Do not use
+   this flag for components registered by the AppId, Class, Extension, ProgId, MIME, and
+   Verb tables.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Permanent",
+      type: "yesno"
+    }}
+  >
+  If this attribute is set to 'yes', the installer does not remove the component during
+   an uninstall. The installer registers an extra system client for the component in
+   the Windows Installer registry settings (which basically just means that at least one
+   product is always referencing this component). Note that this option differs from the
+   behavior of not setting a guid because although the component is permanent, it is still
+   patchable (because Windows Installer still tracks it), it's just not uninstallable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Shared",
+      type: "yesno"
+    }}
+  >
+  If this attribute's value is set to 'yes', enables advanced patching semantics for
+   Components that are shared across multiple MSI packages. Specifically, the Windows Installer
+   will cache the shared files to improve patch uninstall. This functionality is available
+   in Windows Installer 4.5 and later.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SharedDllRefCount",
+      type: "yesno"
+    }}
+  >
+  If this attribute's value is set to 'yes', the installer increments the reference count
+   in the shared DLL registry of the component's key file. If this bit is not set, the
+   installer increments the reference count only if the reference count already exists.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Subdirectory",
+      type: "string"
+    }}
+  >
+  This attribute defines one or more directories below the directory referenced by the Directory attribute or parent
+   Directory reference where the Component will be installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Transitive",
+      type: "yesno"
+    }}
+  >
+  If this attribute is set to 'yes', the installer reevaluates the value of the statement
+   in the Condition upon a reinstall. If the value was previously False and has changed to
+   True, the installer installs the component. If the value was previously True and has
+   changed to False, the installer removes the component even if the component has other
+   products as clients.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UninstallWhenSuperseded",
+      type: "yesno"
+    }}
+  >
+  If this attribute is set to 'yes', the installer will uninstall the Component's files
+   and registry keys when it is superseded by a patch. This functionality is available in
+   Windows Installer 4.5 and later.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "AppId",
+      link: "../appid"
+    },
+    {
+      title: "Category",
+      link: "../category"
+    },
+    {
+      title: "Certificate (Iis extension)",
+      link: "../../iis/certificate"
+    },
+    {
+      title: "Class",
+      link: "../class"
+    },
+    {
+      title: "ComPlusApplication (Complus extension)",
+      link: "../../complus/complusapplication"
+    },
+    {
+      title: "ComPlusApplicationRole (Complus extension)",
+      link: "../../complus/complusapplicationrole"
+    },
+    {
+      title: "ComPlusAssembly (Complus extension)",
+      link: "../../complus/complusassembly"
+    },
+    {
+      title: "ComPlusGroupInApplicationRole (Complus extension)",
+      link: "../../complus/complusgroupinapplicationrole"
+    },
+    {
+      title: "ComPlusGroupInPartitionRole (Complus extension)",
+      link: "../../complus/complusgroupinpartitionrole"
+    },
+    {
+      title: "ComPlusPartition (Complus extension)",
+      link: "../../complus/compluspartition"
+    },
+    {
+      title: "ComPlusPartitionRole (Complus extension)",
+      link: "../../complus/compluspartitionrole"
+    },
+    {
+      title: "ComPlusPartitionUser (Complus extension)",
+      link: "../../complus/compluspartitionuser"
+    },
+    {
+      title: "ComPlusRoleForComponent (Complus extension)",
+      link: "../../complus/complusroleforcomponent"
+    },
+    {
+      title: "ComPlusRoleForInterface (Complus extension)",
+      link: "../../complus/complusroleforinterface"
+    },
+    {
+      title: "ComPlusRoleForMethod (Complus extension)",
+      link: "../../complus/complusroleformethod"
+    },
+    {
+      title: "ComPlusSubscription (Complus extension)",
+      link: "../../complus/complussubscription"
+    },
+    {
+      title: "ComPlusUserInApplicationRole (Complus extension)",
+      link: "../../complus/complususerinapplicationrole"
+    },
+    {
+      title: "ComPlusUserInPartitionRole (Complus extension)",
+      link: "../../complus/complususerinpartitionrole"
+    },
+    {
+      title: "CopyFile",
+      link: "../copyfile"
+    },
+    {
+      title: "CreateFolder",
+      link: "../createfolder"
+    },
+    {
+      title: "Driver (Buildtools extension)",
+      link: "../../buildtools/driver"
+    },
+    {
+      title: "Environment",
+      link: "../environment"
+    },
+    {
+      title: "EventSource (Util extension)",
+      link: "../../util/eventsource"
+    },
+    {
+      title: "Extension",
+      link: "../extension"
+    },
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "FileShare (Util extension)",
+      link: "../../util/fileshare"
+    },
+    {
+      title: "FirewallException (Firewall extension)",
+      link: "../../firewall/firewallexception"
+    },
+    {
+      title: "HarvestFile (Buildtools extension)",
+      link: "../../buildtools/harvestfile"
+    },
+    {
+      title: "HarvestFolder (Buildtools extension)",
+      link: "../../buildtools/harvestfolder"
+    },
+    {
+      title: "HarvestProjectOutput (Buildtools extension)",
+      link: "../../buildtools/harvestprojectoutput"
+    },
+    {
+      title: "IniFile",
+      link: "../inifile"
+    },
+    {
+      title: "Interface",
+      link: "../interface"
+    },
+    {
+      title: "InternetShortcut (Util extension)",
+      link: "../../util/internetshortcut"
+    },
+    {
+      title: "IsolateComponent",
+      link: "../isolatecomponent"
+    },
+    {
+      title: "MessageQueue (Msmq extension)",
+      link: "../../msmq/messagequeue"
+    },
+    {
+      title: "MessageQueuePermission (Msmq extension)",
+      link: "../../msmq/messagequeuepermission"
+    },
+    {
+      title: "ODBCDataSource",
+      link: "../odbcdatasource"
+    },
+    {
+      title: "ODBCDriver",
+      link: "../odbcdriver"
+    },
+    {
+      title: "ODBCTranslator",
+      link: "../odbctranslator"
+    },
+    {
+      title: "PerformanceCategory (Util extension)",
+      link: "../../util/performancecategory"
+    },
+    {
+      title: "ProgId",
+      link: "../progid"
+    },
+    {
+      title: "ProtectedService (Buildtools extension)",
+      link: "../../buildtools/protectedservice"
+    },
+    {
+      title: "Provides",
+      link: "../provides"
+    },
+    {
+      title: "PublicRegistry (Msix extension)",
+      link: "../../msix/publicregistry"
+    },
+    {
+      title: "RegistryKey",
+      link: "../registrykey"
+    },
+    {
+      title: "RegistryValue",
+      link: "../registryvalue"
+    },
+    {
+      title: "RemoveFile",
+      link: "../removefile"
+    },
+    {
+      title: "RemoveFolder",
+      link: "../removefolder"
+    },
+    {
+      title: "RemoveFolderEx (Util extension)",
+      link: "../../util/removefolderex"
+    },
+    {
+      title: "RemoveRegistryKey",
+      link: "../removeregistrykey"
+    },
+    {
+      title: "RemoveRegistryValue",
+      link: "../removeregistryvalue"
+    },
+    {
+      title: "ReserveCost",
+      link: "../reservecost"
+    },
+    {
+      title: "RestartResource (Util extension)",
+      link: "../../util/restartresource"
+    },
+    {
+      title: "ServiceConfig (Util extension)",
+      link: "../../util/serviceconfig"
+    },
+    {
+      title: "ServiceConfigFailureActions",
+      link: "../serviceconfigfailureactions"
+    },
+    {
+      title: "ServiceControl",
+      link: "../servicecontrol"
+    },
+    {
+      title: "ServiceInstall",
+      link: "../serviceinstall"
+    },
+    {
+      title: "Shortcut",
+      link: "../shortcut"
+    },
+    {
+      title: "SniSslCertificate (Http extension)",
+      link: "../../http/snisslcertificate"
+    },
+    {
+      title: "SqlDatabase (Sql extension)",
+      link: "../../sql/sqldatabase"
+    },
+    {
+      title: "SqlScript (Sql extension)",
+      link: "../../sql/sqlscript"
+    },
+    {
+      title: "SqlString (Sql extension)",
+      link: "../../sql/sqlstring"
+    },
+    {
+      title: "SymbolPath",
+      link: "../symbolpath"
+    },
+    {
+      title: "TouchFile (Util extension)",
+      link: "../../util/touchfile"
+    },
+    {
+      title: "TypeLib",
+      link: "../typelib"
+    },
+    {
+      title: "UrlReservation (Http extension)",
+      link: "../../http/urlreservation"
+    },
+    {
+      title: "User (Util extension)",
+      link: "../../util/user"
+    },
+    {
+      title: "VsixPackage (Vs extension)",
+      link: "../../vs/vsixpackage"
+    },
+    {
+      title: "WebAppPool (Iis extension)",
+      link: "../../iis/webapppool"
+    },
+    {
+      title: "WebDir (Iis extension)",
+      link: "../../iis/webdir"
+    },
+    {
+      title: "WebFilter (Iis extension)",
+      link: "../../iis/webfilter"
+    },
+    {
+      title: "WebProperty (Iis extension)",
+      link: "../../iis/webproperty"
+    },
+    {
+      title: "WebServiceExtension (Iis extension)",
+      link: "../../iis/webserviceextension"
+    },
+    {
+      title: "WebSite (Iis extension)",
+      link: "../../iis/website"
+    },
+    {
+      title: "WebVirtualDir (Iis extension)",
+      link: "../../iis/webvirtualdir"
+    },
+    {
+      title: "XmlConfig (Util extension)",
+      link: "../../util/xmlconfig"
+    },
+    {
+      title: "XmlFile (Util extension)",
+      link: "../../util/xmlfile"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "ComponentGroup",
+      link: "../componentgroup"
+    },
+    {
+      title: "Directory",
+      link: "../directory"
+    },
+    {
+      title: "DirectoryRef",
+      link: "../directoryref"
+    },
+    {
+      title: "StandardDirectory",
+      link: "../standarddirectory"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    }
+  ]}
+/>
+
+## See also
+[ComponentRef](../componentref)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Component Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/component-table"
+    },
+    {
+      title: "Condition Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/condition-table"
+    },
+    {
+      title: "Directory Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/directory-table"
+    }
+  ]}
+/>

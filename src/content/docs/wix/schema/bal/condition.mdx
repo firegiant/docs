@@ -1,0 +1,51 @@
+---
+title: "Condition element (Bal extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Conditions for a bundle using WixStdBA.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string",
+      required: true
+    }}
+  >
+  The condition that must evaluate to true for the installation to continue.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Message",
+      type: "string",
+      required: true
+    }}
+  >
+  Set the value to the text to display when the condition fails and the installation must be terminated.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

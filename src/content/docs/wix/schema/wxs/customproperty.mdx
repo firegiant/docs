@@ -1,0 +1,57 @@
+---
+title: "CustomProperty element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+A custom property for the PatchMetadata table.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Company",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the company.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string",
+      required: true
+    }}
+  >
+  The name of the metadata property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string",
+      required: true
+    }}
+  >
+  Value of the metadata property.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchMetadata",
+      link: "../patchmetadata"
+    }
+  ]}
+/>

@@ -1,0 +1,91 @@
+---
+title: "WebDir element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a subdirectory within an IIS web site. When this element is a child of WebSite, the web directory is defined within that web site. Otherwise the web directory must reference a WebSite element via the WebSite attribute.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DirProperties",
+      type: "string"
+    }}
+  >
+  References the Id attribute for a WebDirProperties element that specifies the security and access properties for this web directory.
+   This attribute may not be specified if a WebDirProperties element is directly nested in this element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the web application. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Path",
+      type: "string",
+      required: true
+    }}
+  >
+  Specifies the name of this web directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WebApplication",
+      type: "string"
+    }}
+  >
+  References the Id attribute for a WebApplication element in which this directory belongs.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WebSite",
+      type: "string"
+    }}
+  >
+  References the Id attribute for a WebSite element in which this directory belongs. Required when this element is not a child of a WebSite element.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "WebApplication",
+      link: "../webapplication"
+    },
+    {
+      title: "WebDirProperties",
+      link: "../webdirproperties"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "WebSite",
+      link: "../website"
+    }
+  ]}
+/>

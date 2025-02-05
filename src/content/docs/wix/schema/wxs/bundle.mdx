@@ -1,0 +1,441 @@
+---
+title: "Bundle element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The root element for creating bundled packages.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "AboutUrl",
+      type: "string"
+    }}
+  >
+  A URL for more information about the bundle to display in Programs and Features (also
+   known as Add/Remove Programs).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CommandLineVariables, from extension namespace http://wixtoolset.org/schemas/v4/wxs/bal",
+      type: ""
+    }}
+  >
+  This value determines whether case sensitivity is used to match overridable variables specified on the command line. The default is "caseSensitive". This attribute's value must be one of the following:
+  - *caseSensitive*
+  - *caseInsensitive*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Compressed",
+      type: "YesNoDefaultTypeUnion",
+      typeLink: "../yesnodefaulttype",
+      typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
+    }}
+  >
+  Whether Packages and Payloads not assigned to a container should be added to the default attached container or if they should be external. The default is yes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition of the bundle. If the condition is not met, the bundle will
+   refuse to run. Conditions are checked before the bootstrapper application is loaded
+   (before detect), and thus can only reference built-in variables such as
+   variables which indicate the version of the OS.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Copyright",
+      type: "string"
+    }}
+  >
+  The legal copyright found in the version resources of final bundle executable. If
+   this attribute is not provided the copyright will be set to "Copyright (c) [Bundle/@Manufacturer]. All rights reserved.".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisableModify",
+      type: "YesNoButtonTypeUnion",
+      typeLink: "../yesnobuttontype",
+      typeTitle: "Values of this type will either be \"button\", \"yes\"/\"true\", or \"no\"/\"false\"."
+    }}
+  >
+  Determines whether the bundle can be modified via the Programs and Features (also known as
+   Add/Remove Programs). If the value is "button" then Programs and Features will show a single
+   "Uninstall/Change" button. If the value is "yes" then Programs and Features will only show
+   the "Uninstall" button". If the value is "no", the default, then a "Change" button is shown.
+   See the DisableRemove attribute for information how to not display the bundle in Programs
+   and Features.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisableRemove",
+      type: "yesno"
+    }}
+  >
+  Determines whether the bundle can be removed via the Programs and Features (also
+   known as Add/Remove Programs). If the value is "yes" then the "Uninstall" button will
+   not be displayed. The default is "no" which ensures there is an "Uninstall" button to
+   remove the bundle. If the "DisableModify" attribute is also "yes" or "button" then the
+   bundle will not be displayed in Progams and Features and another mechanism (such as
+   registering as a related bundle addon) must be used to ensure the bundle can be removed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HelpTelephone",
+      type: "string"
+    }}
+  >
+  A telephone number for help to display in Programs and Features (also known as
+   Add/Remove Programs).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HelpUrl",
+      type: "string"
+    }}
+  >
+  A URL to the help for the bundle to display in Programs and Features (also known as
+   Add/Remove Programs).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconSourceFile",
+      type: "string"
+    }}
+  >
+  Path to an icon that will replace the default icon in the final Bundle executable.
+   This icon will also be displayed in Programs and Features (also known as Add/Remove
+   Programs).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "InProgressName",
+      type: "string"
+    }}
+  >
+  Optional name to display in Add/Remove Programs while the bundle is being installed, uninstalled, repaired.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Manufacturer",
+      type: "string"
+    }}
+  >
+  The publisher of the bundle to display in Programs and Features (also known as
+   Add/Remove Programs).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  The name of the bundle to display in Programs and Features (also known as Add/Remove
+   Programs). This name can be accessed and overwritten by a BootstrapperApplication
+   using the WixBundleName bundle variable.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ParentName",
+      type: "string"
+    }}
+  >
+  The name of the parent bundle to display in Installed Updates (also known as Add/Remove
+   Programs). This name is used to nest or group bundles that will appear as updates.
+   If the parent name does not actually exist, a virtual parent is created automatically.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProviderKey",
+      type: "string"
+    }}
+  >
+  Optional attribute to explicitly author the provider key for the entire bundle.This provider key is designed to persist throughout compatible upgrades so that dependent bundles do not have to be reinstalled
+   and will not prevent your product from being upgraded. If this attribute is not authored, the value is the
+   automatically-generated bundle ID and will not automatically support upgrades.
+  
+  Only a single provider key is supported for bundles. To author that your bundle provides additional features via
+   packages, author different provider keys for your packages.
+  
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SplashScreenSourceFile",
+      type: "string"
+    }}
+  >
+  Path to a bitmap that will be shown as the bootstrapper application is being loaded. If this attribute is not specified, no splash screen will be displayed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Tag",
+      type: "string"
+    }}
+  >
+  Set this string to uniquely identify this bundle to its own BA, and to related bundles. The value of this string only matters to the BA, and its value has no direct effect on engine functionality.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpdateUrl",
+      type: "string"
+    }}
+  >
+  A URL for updates of the bundle to display in Programs and Features (also
+   known as Add/Remove Programs).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpgradeCode",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  Unique identifier for a family of bundles. If two bundles have the same UpgradeCode the
+   bundle with the highest version will be installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string",
+      required: true
+    }}
+  >
+  The version of the bundle. Newer versions upgrade earlier versions of the bundles
+   with matching UpgradeCodes. If the bundle is registered in Programs and Features
+   then this attribute will be displayed in the Programs and Features user interface.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ApprovedExeForElevation",
+      link: "../approvedexeforelevation"
+    },
+    {
+      title: "BootstrapperApplication",
+      link: "../bootstrapperapplication"
+    },
+    {
+      title: "BootstrapperApplicationPrerequisiteInformation (Bal extension)",
+      link: "../../bal/bootstrapperapplicationprerequisiteinformation"
+    },
+    {
+      title: "BootstrapperApplicationRef",
+      link: "../bootstrapperapplicationref"
+    },
+    {
+      title: "BootstrapperExtension",
+      link: "../bootstrapperextension"
+    },
+    {
+      title: "BootstrapperExtensionRef",
+      link: "../bootstrapperextensionref"
+    },
+    {
+      title: "BundleCustomData",
+      link: "../bundlecustomdata"
+    },
+    {
+      title: "BundleCustomDataRef",
+      link: "../bundlecustomdataref"
+    },
+    {
+      title: "BundleExtension",
+      link: "../bundleextension"
+    },
+    {
+      title: "BundleExtensionRef",
+      link: "../bundleextensionref"
+    },
+    {
+      title: "Chain",
+      link: "../chain"
+    },
+    {
+      title: "CloseApplication (Util extension)",
+      link: "../../util/closeapplication"
+    },
+    {
+      title: "ComponentSearch (Util extension)",
+      link: "../../util/componentsearch"
+    },
+    {
+      title: "ComponentSearchRef (Util extension)",
+      link: "../../util/componentsearchref"
+    },
+    {
+      title: "Condition (Bal extension)",
+      link: "../../bal/condition"
+    },
+    {
+      title: "Container",
+      link: "../container"
+    },
+    {
+      title: "ContainerRef",
+      link: "../containerref"
+    },
+    {
+      title: "DirectorySearch (Util extension)",
+      link: "../../util/directorysearch"
+    },
+    {
+      title: "DirectorySearchRef (Util extension)",
+      link: "../../util/directorysearchref"
+    },
+    {
+      title: "DotNetCoreSdkFeatureBandSearch (Netfx extension)",
+      link: "../../netfx/dotnetcoresdkfeaturebandsearch"
+    },
+    {
+      title: "DotNetCoreSdkFeatureBandSearchRef (Netfx extension)",
+      link: "../../netfx/dotnetcoresdkfeaturebandsearchref"
+    },
+    {
+      title: "DotNetCoreSdkSearch (Netfx extension)",
+      link: "../../netfx/dotnetcoresdksearch"
+    },
+    {
+      title: "DotNetCoreSdkSearchRef (Netfx extension)",
+      link: "../../netfx/dotnetcoresdksearchref"
+    },
+    {
+      title: "DotNetCoreSearch (Netfx extension)",
+      link: "../../netfx/dotnetcoresearch"
+    },
+    {
+      title: "DotNetCoreSearchRef (Netfx extension)",
+      link: "../../netfx/dotnetcoresearchref"
+    },
+    {
+      title: "FileSearch (Util extension)",
+      link: "../../util/filesearch"
+    },
+    {
+      title: "FileSearchRef (Util extension)",
+      link: "../../util/filesearchref"
+    },
+    {
+      title: "Log",
+      link: "../log"
+    },
+    {
+      title: "ManagedBootstrapperApplicationPrereqInformation (Bal extension)",
+      link: "../../bal/managedbootstrapperapplicationprereqinformation"
+    },
+    {
+      title: "OptionalUpdateRegistration",
+      link: "../optionalupdateregistration"
+    },
+    {
+      title: "PayloadGroup",
+      link: "../payloadgroup"
+    },
+    {
+      title: "PayloadGroupRef",
+      link: "../payloadgroupref"
+    },
+    {
+      title: "ProductSearch (Util extension)",
+      link: "../../util/productsearch"
+    },
+    {
+      title: "ProductSearchRef (Util extension)",
+      link: "../../util/productsearchref"
+    },
+    {
+      title: "RegistrySearch (Util extension)",
+      link: "../../util/registrysearch"
+    },
+    {
+      title: "RegistrySearchRef (Util extension)",
+      link: "../../util/registrysearchref"
+    },
+    {
+      title: "RelatedBundle",
+      link: "../relatedbundle"
+    },
+    {
+      title: "Requires",
+      link: "../requires"
+    },
+    {
+      title: "SetVariable",
+      link: "../setvariable"
+    },
+    {
+      title: "SetVariableRef",
+      link: "../setvariableref"
+    },
+    {
+      title: "SoftwareTag",
+      link: "../softwaretag"
+    },
+    {
+      title: "Update",
+      link: "../update"
+    },
+    {
+      title: "Variable",
+      link: "../variable"
+    },
+    {
+      title: "WindowsFeatureSearch (Util extension)",
+      link: "../../util/windowsfeaturesearch"
+    },
+    {
+      title: "WindowsFeatureSearchRef (Util extension)",
+      link: "../../util/windowsfeaturesearchref"
+    },
+    {
+      title: "WixVariable",
+      link: "../wixvariable"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Wix",
+      link: "../wix"
+    }
+  ]}
+/>

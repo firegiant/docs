@@ -1,0 +1,123 @@
+---
+title: "Provides element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes the information for this product or feature that serves as a dependency of other products or features.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Check, from extension namespace http://wixtoolset.org/schemas/v4/wxs/dependency",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes", adds a custom action to prompt the user when dependencies are still on the computer. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisplayName",
+      type: "string"
+    }}
+  >
+  Optional display name of the package. For MSI packages, the ProductName will be used by default.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Dependency provider identity. If this attribute is not specified, an identifier will be generated automatically.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string"
+    }}
+  >
+  Optional unique registry key name that identifies a product version range on which other products can depend.
+   This attribute is required in package authoring, but optional for components.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "WixVersionType",
+      typeLink: "../wixversiontype",
+      typeTitle: "Values of this type will be a 1-part, 2-part, 3-part or 4-part version number or a semantic version."
+    }}
+  >
+  The version of the package. For MSI packages, the ProductVersion will be used by default
+   and this attribute should not be specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Requires",
+      link: "../requires"
+    },
+    {
+      title: "RequiresRef",
+      link: "../requiresref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "MsiPackage",
+      link: "../msipackage"
+    },
+    {
+      title: "MspPackage",
+      link: "../msppackage"
+    },
+    {
+      title: "MsuPackage",
+      link: "../msupackage"
+    },
+    {
+      title: "ExePackage",
+      link: "../exepackage"
+    },
+    {
+      title: "BundlePackage",
+      link: "../bundlepackage"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Remarks
+
+This element is required for any product, feature, or bundle that will use the Dependency feature to properly reference count
+ other products or features. It should be authored into a component that is always installed and removed with the
+ product or features that contain it. This guarantees that product dependencies are not removed before those products that
+ depend on them.
+
+ The @Key attribute should identify a version range for your product that you guarantee will be backward compatible.
+ This key is designed to persist throughout compatible upgrades so that dependent products do not have to be reinstalled
+ and will not prevent your product from being upgraded. If this attribute is not authored, the value is the ProductCode
+ and will not automatically support upgrades.
+
+ By default this uses the Package/@ProductCode attribute value, which may be automatically generated.

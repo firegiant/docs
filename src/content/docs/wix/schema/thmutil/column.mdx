@@ -1,0 +1,56 @@
+---
+title: "Column element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+A column of a list.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Expands",
+      type: "yesno"
+    }}
+  >
+  Whether or not this column can grow to fill available width of the listview.
+   More than one column can be marked with yes - all expandable columns will share available extra space.
+   This is especially useful if the Window/@AutoResize is yes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "StringId",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references a string resource in the module to define the text for the column header.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "integer"
+    }}
+  >
+  Width of the column.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ListView",
+      link: "../listview"
+    }
+  ]}
+/>

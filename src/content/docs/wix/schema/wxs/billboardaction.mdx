@@ -1,0 +1,61 @@
+---
+title: "BillboardAction element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Billboard action during which child Billboards are displayed
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Action name that determines when the Billboard should be shown.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Billboard",
+      description: "Order of Billboard elements determines order of display",
+      link: "../billboard"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Billboard Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/billboard-table"
+    },
+    {
+      title: "BBControl Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/bbcontrol-table"
+    }
+  ]}
+/>

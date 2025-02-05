@@ -1,0 +1,63 @@
+---
+title: "WebProperty element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+IIS Properties
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "",
+      required: true
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *ETagChangeNumber*
+  - *IIs5IsolationMode*
+  - *MaxGlobalBandwidth*
+  - *LogInUTF8*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The value to be used for the WebProperty specified in the Id attribute. See
+   the remarks section for information on acceptable values for each Id.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>
+
+## Remarks
+
+Here is an explanation of the acceptable values for each property and their meaning:
+- For the Ids IIs5IsolationMode and LogInUTF8, no value should be specified since
+ the presence of this property indicates that the setting should be set.
+- For the MaxGlobalBandwidth Id, the value should be specified in kilobytes. The
+ value should be a base 10 number.
+- ETagChangeNumber sets the machine-specific portion of ETag as a number. This value,
+ when synchronized across servers in a web farm, allows the web farm to return an
+ identical ETag for a given resource regardless of the server that handled the
+ request. The value should be a base 10 number.

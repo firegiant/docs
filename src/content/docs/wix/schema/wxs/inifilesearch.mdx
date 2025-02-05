@@ -1,0 +1,152 @@
+---
+title: "IniFileSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Searches for file, directory or registry key and assigns to value of parent Property
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Field",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The field in the .ini line. If field is Null or 0, the entire line is read.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  External key into the Signature table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string",
+      required: true
+    }}
+  >
+  The key value within the section.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
+      required: true
+    }}
+  >
+  In prior versions of the WiX toolset, this attribute specified the short name.
+   This attribute's value may now be either a short or long name.
+   If a short name is specified, the ShortName attribute may not be specified.
+   Also, if this value is a long name, the ShortName attribute may be omitted to
+   allow WiX to attempt to generate a unique short name.
+   However, if you wish to manually specify the short name, then the ShortName
+   attribute may be specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Section",
+      type: "string",
+      required: true
+    }}
+  >
+  The localizable .ini file section.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShortName",
+      type: "ShortFileNameType",
+      typeLink: "../shortfilenametype",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The short name of the file in 8.3 format.
+   This attribute should only be set if the user wants to manually specify the short name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: ""
+    }}
+  >
+  Must be file if last child is FileSearch element and must be directory if last child is DirectorySearch element. This attribute's value must be one of the following:
+  - *directory*: A directory location.
+  - *file*: A file location. This is the default value.
+  - *raw*: A raw .ini value.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DirectorySearch",
+      link: "../directorysearch"
+    },
+    {
+      title: "DirectorySearchRef",
+      link: "../directorysearchref"
+    },
+    {
+      title: "FileSearch",
+      link: "../filesearch"
+    },
+    {
+      title: "FileSearchRef",
+      link: "../filesearchref"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ComplianceCheck",
+      link: "../compliancecheck"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    }
+  ]}
+/>
+
+## See also
+[ComponentSearch](../componentsearch), [RegistrySearch](../registrysearch)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "IniLocator Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/inilocator-table"
+    },
+    {
+      title: "Signature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/signature-table"
+    }
+  ]}
+/>

@@ -1,0 +1,53 @@
+---
+title: "TypesFile element (Powershell extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Identifies the parent File as a types XML file for the referenced PowerShell snap-in.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "FileId",
+      type: "string"
+    }}
+  >
+  Reference to the types File ID. This is required when nested under the SnapIn element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SnapIn",
+      type: "string"
+    }}
+  >
+  Reference to the PowerShell snap-in ID for which this types file is associated. This is required when nested under the File element.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    },
+    {
+      title: "SnapIn",
+      link: "../snapin"
+    }
+  ]}
+/>
+
+## Remarks
+
+A types XML file used by the extensible type system.

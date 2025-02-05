@@ -1,0 +1,126 @@
+---
+title: "Requires element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a dependency on a provider for the current component or package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Enforce, from extension namespace http://wixtoolset.org/schemas/v4/wxs/dependency",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  When set to "yes", adds a custom action to prompt the user when dependencies are missing from the computer. The default is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Dependency requirement identity. If this attribute is not specified, an identifier will be generated automatically.
+   If this element is not authored under a Provides element, this attribute is required.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IncludeMaximum",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to make the range of dependency provider versions required include the value specified in Maximum.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IncludeMinimum",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to make the range of dependency provider versions required include the value specified in Minimum.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Maximum",
+      type: "WixVersionType",
+      typeLink: "../wixversiontype",
+      typeTitle: "Values of this type will be a 1-part, 2-part, 3-part or 4-part version number or a semantic version."
+    }}
+  >
+  The maximum version of the dependency provider required to be installed. The default is unbound.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Minimum",
+      type: "WixVersionType",
+      typeLink: "../wixversiontype",
+      typeTitle: "Values of this type will be a 1-part, 2-part, 3-part or 4-part version number or a semantic version."
+    }}
+  >
+  The minimum version of the dependency provider required to be installed. The default is unbound.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProviderKey",
+      type: "string",
+      required: true
+    }}
+  >
+  The unique registry key name for the dependency provider to require during installation of this product.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle",
+      link: "../bundle"
+    },
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    },
+    {
+      title: "Provides",
+      link: "../provides"
+    }
+  ]}
+/>
+
+## Remarks
+
+This element declares a dependency on any product that uses the Provides element. If that product is uninstalled
+ before a product that requires it, the uninstall will err or warn the user that other products are installed
+ which depend on that product. This behavior can be modified by changing the attribute values on the Requires element.
+
+If you do not nest this element under a Provides element, you must specify the @Id attribute
+ so that it can be referenced by a RequiresRef element nested under a Provides element.
+
+
+
+## See also
+[RequiresRef](../requiresref)

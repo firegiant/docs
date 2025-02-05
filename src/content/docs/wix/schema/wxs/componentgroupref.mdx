@@ -1,0 +1,77 @@
+---
+title: "ComponentGroupRef element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Create a reference to a ComponentGroup in another Fragment.
+ _New in WiX v5: Can be a child of the `Package` element._
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  The identifier of the ComponentGroup to reference.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Primary",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to 'yes' in order to make the parent feature of this component
+   the primary feature for this component. Components may belong to multiple features.
+   By designating a feature as the primary feature of a component, you ensure that
+   whenever a component is selected for install-on-demand (IOD), the primary feature
+   will be the one to install it. This attribute should only be set if a component
+   actually nests under multiple features. If a component nests under only one feature,
+   that feature is the primary feature for the component. You cannot set more than one
+   feature as the primary feature of a given component.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "ComponentGroup",
+      link: "../componentgroup"
+    },
+    {
+      title: "Feature",
+      link: "../feature"
+    },
+    {
+      title: "FeatureGroup",
+      link: "../featuregroup"
+    },
+    {
+      title: "FeatureRef",
+      link: "../featureref"
+    }
+  ]}
+/>
+
+## See also
+[ComponentGroup](../componentgroup)

@@ -1,0 +1,72 @@
+---
+title: "RollbackBoundary element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a rollback boundary in the chain.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for this rollback boundary, for ordering and cross-referencing. If this attribute is
+   not provided a stable identifier will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LogPathVariable",
+      type: "string"
+    }}
+  >
+  Name of a Variable that will hold the path to the log file when the rollback boundary is a MSI package transaction.
+   An empty value will cause the variable to not be set. The default is "WixBundleLog_[RollbackBoundaryId]".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Transaction",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the rollback boundary is wrapped in an MSI transaction. The default is "no".
+   Only MsiPackages and MspPackages may be inside of a rollback boundary with Transaction set to "yes".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Vital",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the rollback boundary aborts the chain. The default "yes" indicates that if
+   the rollback boundary is encountered then the chain will fail and roll back or stop. If "no"
+   is specified then the chain should continue successfuly at the next rollback boundary.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Chain",
+      link: "../chain"
+    },
+    {
+      title: "PackageGroup",
+      link: "../packagegroup"
+    }
+  ]}
+/>

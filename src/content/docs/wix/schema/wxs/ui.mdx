@@ -1,0 +1,184 @@
+---
+title: "UI element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Enclosing element to compartmentalize UI specifications.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    },
+    {
+      title: "BillboardAction",
+      link: "../billboardaction"
+    },
+    {
+      title: "Binary",
+      link: "../binary"
+    },
+    {
+      title: "BroadcastEnvironmentChange (Util extension)",
+      link: "../../util/broadcastenvironmentchange"
+    },
+    {
+      title: "BroadcastSettingChange (Util extension)",
+      link: "../../util/broadcastsettingchange"
+    },
+    {
+      title: "CheckRebootRequired (Util extension)",
+      link: "../../util/checkrebootrequired"
+    },
+    {
+      title: "ComboBox",
+      link: "../combobox"
+    },
+    {
+      title: "Dialog",
+      link: "../dialog"
+    },
+    {
+      title: "DialogRef",
+      link: "../dialogref"
+    },
+    {
+      title: "EmbeddedUI",
+      link: "../embeddedui"
+    },
+    {
+      title: "Error",
+      link: "../error"
+    },
+    {
+      title: "ExitEarlyWithSuccess (Util extension)",
+      link: "../../util/exitearlywithsuccess"
+    },
+    {
+      title: "FailWhenDeferred (Util extension)",
+      link: "../../util/failwhendeferred"
+    },
+    {
+      title: "GetCapabilities (Directx extension)",
+      link: "../../directx/getcapabilities"
+    },
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "ListBox",
+      link: "../listbox"
+    },
+    {
+      title: "ListView",
+      link: "../listview"
+    },
+    {
+      title: "ProgressText",
+      link: "../progresstext"
+    },
+    {
+      title: "Property",
+      link: "../property"
+    },
+    {
+      title: "PropertyRef",
+      link: "../propertyref"
+    },
+    {
+      title: "Publish",
+      link: "../publish"
+    },
+    {
+      title: "QueryNativeMachine (Util extension)",
+      link: "../../util/querynativemachine"
+    },
+    {
+      title: "QueryWindowsDirectories (Util extension)",
+      link: "../../util/querywindowsdirectories"
+    },
+    {
+      title: "QueryWindowsDriverInfo (Util extension)",
+      link: "../../util/querywindowsdriverinfo"
+    },
+    {
+      title: "QueryWindowsSuiteInfo (Util extension)",
+      link: "../../util/querywindowssuiteinfo"
+    },
+    {
+      title: "QueryWindowsWellKnownSIDs (Util extension)",
+      link: "../../util/querywindowswellknownsids"
+    },
+    {
+      title: "RadioButtonGroup",
+      link: "../radiobuttongroup"
+    },
+    {
+      title: "TextStyle",
+      link: "../textstyle"
+    },
+    {
+      title: "UIRef",
+      link: "../uiref"
+    },
+    {
+      title: "UIText",
+      link: "../uitext"
+    },
+    {
+      title: "WaitForEvent (Util extension)",
+      link: "../../util/waitforevent"
+    },
+    {
+      title: "WaitForEventDeferred (Util extension)",
+      link: "../../util/waitforeventdeferred"
+    },
+    {
+      title: "WixUI (Ui extension)",
+      link: "../../ui/wixui"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## See also
+[UIRef](../uiref)

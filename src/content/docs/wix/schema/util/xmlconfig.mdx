@@ -1,0 +1,156 @@
+---
+title: "XmlConfig element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Adds or removes .xml file entries. If you use the XmlConfig element you must reference WixUtilExtension.dll as it contains the XmlConfig custom actions.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Action",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *create*
+  - *delete*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ElementId",
+      type: "string"
+    }}
+  >
+  The Id of another XmlConfig to add attributes to. In this case, the 'ElementPath', 'Action', 'Node', and 'On' attributes must be omitted.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ElementPath",
+      type: "string"
+    }}
+  >
+  The XPath of the parent element being modified. Note that this is a formatted field and therefore, square brackets in the XPath must be escaped. In addition, XPaths allow backslashes to be used to escape characters, so if you intend to include literal backslashes, you must escape them as well by doubling them in this attribute. The string is formatted by MSI first, and the result is consumed as the XPath.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string",
+      required: true
+    }}
+  >
+  Path of the .xml file to configure.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for xml file modification.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string"
+    }}
+  >
+  Name of XML node to set/add to the specified element. Not setting this attribute causes the element's text value to be set. Otherwise this specified the attribute name that is set.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Node",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *element*
+  - *value*
+  - *document*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "On",
+      type: ""
+    }}
+  >
+   This attribute's value must be one of the following:
+  - *install*
+  - *uninstall*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PreserveModifiedDate",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Specifies wheter or not the modification should preserve the modified date. Preserving the modified date will allow the file to be patched if no other modifications have been made.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sequence",
+      type: "wxs:Integer"
+    }}
+  >
+  Specifies the order in which the modification is to be attempted on the XML file. It is important to ensure that new elements are created before you attempt to add an attribute to them.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  The value to be written. See the [Formatted topic](https://docs.microsoft.com/en-us/windows/win32/msi/formatted) for information how to escape square brackets in the value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "VerifyPath",
+      type: "string"
+    }}
+  >
+  The XPath to the element being modified. This is required for 'delete' actions. For 'create' actions, VerifyPath is used to decide if the element already exists. Note that this is a formatted field and therefore, square brackets in the XPath must be escaped. In addition, XPaths allow backslashes to be used to escape characters, so if you intend to include literal backslashes, you must escape them as well by doubling them in this attribute. The string is formatted by MSI first, and the result is consumed as the XPath.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "XmlConfig",
+      link: "../xmlconfig"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "XmlConfig",
+      link: "../xmlconfig"
+    }
+  ]}
+/>

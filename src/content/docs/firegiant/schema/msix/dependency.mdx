@@ -1,0 +1,83 @@
+---
+title: "Dependency element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Metadata required to add a dependency on a package.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identity of the MSIX package to depend upon.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MaximumMajorVersionTested",
+      type: "integer"
+    }}
+  >
+  An integer indicating the highest major version of the dependency tested with this package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Optional",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether the dependency is optional (yes) or required (no).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Publisher",
+      type: "string",
+      required: true
+    }}
+  >
+  Publisher of the MSIX package to depend upon.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Version",
+      type: "string",
+      required: true
+    }}
+  >
+  Version of the MSIX package to depend upon.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    }
+  ]}
+/>

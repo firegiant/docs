@@ -1,0 +1,607 @@
+---
+title: "Control element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Contains the controls that appear on each dialog.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Bitmap",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for RadioButton and PushButton Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Cancel",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause this Control to be invoked by the escape key.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CDROM",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Volume and Directory Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CheckBoxPropertyRef",
+      type: "string"
+    }}
+  >
+  This attribute is only valid for CheckBox controls. The value is the name of a Property that was already used as the Property for another CheckBox control. The Property attribute cannot be specified. The attribute exists to support multiple checkboxes on different dialogs being tied to the same property.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CheckBoxValue",
+      type: "string"
+    }}
+  >
+  This attribute is only valid for CheckBox Controls. When set, the linked Property will be set to this value when the check box is checked.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ComboList",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for ComboBox Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Default",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause this Control to be invoked by the return key.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DefaultCondition",
+      type: ""
+    }}
+  >
+  When the condition expression evaluates to true, set the Control as the default.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DisableCondition",
+      type: ""
+    }}
+  >
+  When the condition expression evaluates to true, disable the Control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Disabled",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to be disabled.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ElevationShield",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for PushButton controls.
+   Set this attribute to "yes" to add the User Account Control (UAC) elevation icon (shield icon) to the PushButton control.
+   If this attribute's value is "yes" and the installation is not yet running with elevated privileges,
+   the pushbutton control is created using the User Account Control (UAC) elevation icon (shield icon).
+   If this attribute's value is "yes" and the installation is already running with elevated privileges,
+   the pushbutton control is created using the other icon attributes.
+   Otherwise, the pushbutton control is created using the other icon attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EnableCondition",
+      type: ""
+    }}
+  >
+  When the condition expression evaluates to true, enable the Control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Fixed",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Volume and Directory Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FixedSize",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for RadioButton, PushButton, and Icon Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Floppy",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Volume and Directory Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FormatSize",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Text Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HasBorder",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for RadioButton Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Height",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  Height of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Help",
+      type: "string"
+    }}
+  >
+  This attribute is reserved for future use. There is no need to use this until Windows Installer uses it for something.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hidden",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to be hidden.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HideCondition",
+      type: ""
+    }}
+  >
+  When the condition expression evaluates to true, hide the Control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Icon",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for RadioButton and PushButton Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IconSize",
+      type: ""
+    }}
+  >
+  This attribute is only valid for RadioButton, PushButton, and Icon Controls. This attribute's value must be one of the following:
+  - *16*
+  - *32*
+  - *48*
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Combined with the Dialog Id to make up the primary key of the Control table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Image",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for RadioButton, PushButton, and Icon Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Indirect",
+      type: "yesno"
+    }}
+  >
+  Specifies whether the value displayed or changed by this control is referenced indirectly. If this bit is set, the control displays or changes the value of the property that has the identifier listed in the Property column of the Control table.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Integer",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the linked Property value for the Control to be treated as an integer. Otherwise, the Property will be treated as a string.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "LeftScroll",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the scroll bar to display on the left side of the Control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Multiline",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Edit Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NoPrefix",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Text Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "NoWrap",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Text Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Password",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Edit Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProgressBlocks",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for ProgressBar Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Property",
+      type: "string"
+    }}
+  >
+  The name of a defined property to be linked to this control. This column is required for active controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PushLike",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for RadioButton and Checkbox Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RAMDisk",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Volume and Directory Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Remote",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Volume and Directory Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Removable",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Volume and Directory Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RightAligned",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to be right aligned.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RightToLeft",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to display from right to left.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShowCondition",
+      type: ""
+    }}
+  >
+  When the condition expression evaluates to true, show the Control.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ShowRollbackCost",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for VolumeCostList Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sorted",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for ListBox, ListView, and ComboBox Controls. Set
+   the value of this attribute to "yes" to have entries appear in the order specified under the Control.
+   If the attribute value is "no" or absent the entries in the control will appear in alphabetical order.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sunken",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause the Control to be sunken.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TabSkip",
+      type: "yesno"
+    }}
+  >
+  Set this attribute to "yes" to cause this Control to be skipped in the tab sequence.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Text",
+      type: "string"
+    }}
+  >
+  A localizable string used to set the initial text contained in a control. This attribute can contain a formatted string that is processed at install time to insert the values of properties using [PropertyName] syntax. Also supported are environment variables, file installation paths, and component installation directories; see [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) for details.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ToolTip",
+      type: "string"
+    }}
+  >
+  The string used for the Tooltip.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Transparent",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Text Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Type",
+      type: "string",
+      required: true
+    }}
+  >
+  The type of the control. Could be one of the following: Billboard, Bitmap, CheckBox, ComboBox, DirectoryCombo, DirectoryList, Edit, GroupBox, Hyperlink, Icon, Line, ListBox, ListView, MaskedEdit, PathEdit, ProgressBar, PushButton, RadioButtonGroup, ScrollableText, SelectionTree, Text, VolumeCostList, VolumeSelectCombo
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UserLanguage",
+      type: "yesno"
+    }}
+  >
+  This attribute is only valid for Text Controls.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Width",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  Width of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "X",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  Horizontal coordinate of the upper-left corner of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Y",
+      type: "LocalizableInteger",
+      typeLink: "../localizableinteger",
+      typeTitle: "Values of this type must be a non-negative integer or a localization variable with the format `!(loc.Variable)` where `Variable` is the name of the localization variable.",
+      required: true
+    }}
+  >
+  Vertical coordinate of the upper-left corner of the rectangular boundary of the control. This must be a non-negative number.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "Binary",
+      description: "Icon referenced in icon column of row",
+      link: "../binary"
+    },
+    {
+      title: "ComboBox",
+      link: "../combobox"
+    },
+    {
+      title: "ListBox",
+      link: "../listbox"
+    },
+    {
+      title: "ListView",
+      link: "../listview"
+    },
+    {
+      title: "Property",
+      description: "Property table entry for the Property table column associated with this control",
+      link: "../property"
+    },
+    {
+      title: "Publish",
+      link: "../publish"
+    },
+    {
+      title: "RadioButtonGroup",
+      link: "../radiobuttongroup"
+    },
+    {
+      title: "Subscribe",
+      link: "../subscribe"
+    },
+    {
+      title: "Text",
+      description: "Alternative to Text attribute.",
+      link: "../text"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Billboard",
+      link: "../billboard"
+    },
+    {
+      title: "Dialog",
+      link: "../dialog"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Control Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/control-table"
+    },
+    {
+      title: "ComboBox Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/combobox-table"
+    },
+    {
+      title: "Dialog Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/dialog-table"
+    },
+    {
+      title: "ListBox Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listbox-table"
+    },
+    {
+      title: "ListView Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/listview-table"
+    },
+    {
+      title: "RadioButton Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/radiobutton-table"
+    }
+  ]}
+/>

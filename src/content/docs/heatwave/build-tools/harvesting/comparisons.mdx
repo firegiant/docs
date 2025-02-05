@@ -1,0 +1,89 @@
+---
+title: Harvesting Technology Comparisons
+sidebar:
+  order: 7
+---
+
+import { Icon } from '@astrojs/starlight/components';
+
+There are a few options for harvesting files in the WiX Toolset. The following table compares the capabilities of each.
+
+<table class="comparison">
+  <tr>
+    <th>Feature</th>
+    <th>Advanced&nbsp;Harvesting</th>
+    <th>heat.exe</th>
+    <th>Files&nbsp;element</th>
+  </tr>
+  <tr>
+    <td><a href="../harvestfolder/">Include files in .wxs code</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+  </tr>
+  <tr>
+    <td><a href="../exclude-files/">Exclude files</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"><sup><a href="#xslt">1</a></sup></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+  </tr>
+  <tr>
+    <td><a href="../harvestfile/">Simplified single-file harvesting</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../">ProjectReference harvesting</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../">ProjectReference OutputGroup filtering</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"><sup><a href="#xslt">1</a></sup></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../selfreg/">Capture DLL/OCX self-registration</a></td>
+    <td class="text-center">x86, x64, arm64</td>
+    <td class="text-center">x86 only</td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../selfreg/">Capture .NET assembly self-registration</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../selfreg/">Capture TypeLib self-registration</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../selfreg/">Capture EXE self-registration</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../selfreg/">Capture Font registration</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+    <td class="text-center"></td>
+  </tr>
+  <tr>
+    <td><a href="../strategies/">Optimized harvesting strategies</a></td>
+    <td class="text-center"><Icon name="approve-check" /></td>
+    <td class="text-center"></td>
+    <td class="text-center"></td>
+  </tr>
+</table>
+
+<div id="xslt">
+<p><small>Notes</small></p>
+<small>1. Requires use of an <a href="https://en.wikipedia.org/wiki/XSLT">XSLT file</a> to filter out files to exclude.</small>
+</div>

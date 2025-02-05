@@ -1,0 +1,252 @@
+---
+title: "EmbeddedUI element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for embedded UI. If this attribute is not specified the Name attribute or the file name
+   portion of the SourceFile attribute will be used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreActionData",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_ACTIONDATA messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreActionStart",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_ACTIONSTART messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreCommonData",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_COMMONDATA messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreError",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_ERROR messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreFatalExit",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_FATALEXIT messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreFilesInUse",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_FILESINUSE messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreInfo",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_INFO messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreInitialize",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_INITIALIZE messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreInstallEnd",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_INSTALLEND messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreInstallStart",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_INSTALLSTART messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreOutOfDiskSpace",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_OUTOFDISKSPACE messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreProgress",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_PROGRESS messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreResolveSource",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_RESOLVESOURCE messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreRMFilesInUse",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_RMFILESINUSE messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreShowDialog",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_SHOWDIALOG messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreTerminate",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_TERMINATE messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreUser",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_USER messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IgnoreWarning",
+      type: "yesno"
+    }}
+  >
+  Embedded UI will not recieve any INSTALLLOGMODE_WARNING messages.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "LongFileNameType",
+      typeLink: "../longfilenametype",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+    }}
+  >
+  The name for the embedded UI DLL when it is extracted from the MSI package and executed. (Windows Installer
+   does not support the typical short filename and long filename combination for embedded UI files as it
+   does for other kinds of files.) If this attribute is not specified the file name portion of the SourceFile
+   attribute will be used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string",
+      required: true
+    }}
+  >
+  Path to the binary file that is the embedded UI. This must be a DLL that exports the following
+   three entry points: InitializeEmbeddedUI, EmbeddedUIHandler and ShutdownEmbeddedUI.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SupportBasicUI",
+      type: "yesno"
+    }}
+  >
+  Set yes to allow the Windows Installer to display the embedded UI during basic UI level installation.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "EmbeddedUIResource",
+      link: "../embeddeduiresource"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "UI",
+      link: "../ui"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiEmbeddedUI Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiembeddedui-table"
+    }
+  ]}
+/>

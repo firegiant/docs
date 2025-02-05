@@ -1,0 +1,49 @@
+---
+title: "CostInitialize element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Initiates the internal installation costing process. Any standard or custom actions that affect costing should be sequenced before the CostInitialize action. Call the FileCost action immediately following the CostInitialize action. Then call the CostFinalize action following the CostInitialize action to make all final cost calculations available to the installer through the Component table. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallUISequence",
+      link: "../installuisequence"
+    },
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    },
+    {
+      title: "AdminUISequence",
+      link: "../adminuisequence"
+    },
+    {
+      title: "AdminExecuteSequence",
+      link: "../adminexecutesequence"
+    },
+    {
+      title: "AdvertiseExecuteSequence",
+      link: "../advertiseexecutesequence"
+    }
+  ]}
+/>
+
+## See also
+[FileCost](../filecost), [CostFinalize](../costfinalize)
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "CostInitialize Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/costinitialize-action"
+    }
+  ]}
+/>

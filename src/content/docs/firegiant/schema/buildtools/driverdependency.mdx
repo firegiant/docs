@@ -1,0 +1,49 @@
+---
+title: "DriverDependency element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Driver or load ordering group that must start before the parent driver.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Group",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Set to 'yes' to indicate that the value in the Name attribute is the name of a load ordering group.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  The value of this attribute should be one of the following:
+  - The name (not the display name) of a previously installed driver.
+  - The name of a load ordering group (in which case the Group attribute must be set to 'yes').
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Driver",
+      link: "../driver"
+    }
+  ]}
+/>

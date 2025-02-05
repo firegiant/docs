@@ -1,0 +1,79 @@
+---
+title: "RestartResource element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Registers a resource with the Restart Manager.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  The unique identifier for this resource. A unique identifier will
+   be generated automatically if not specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Path",
+      type: "string"
+    }}
+  >
+  The full path to the process module to register with the Restart Manager.
+   This can be a formatted value that resolves to a full path.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProcessName",
+      type: "string"
+    }}
+  >
+  The name of a process to register with the Restart Manager.
+   This can be a formatted value that resolves to a process name.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceName",
+      type: "string"
+    }}
+  >
+  The name of a Windows service to register with the Restart Manager.
+   This can be a formatted value that resolves to a service name.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    },
+    {
+      title: "Module (Wxs extension)",
+      link: "../../wxs/module"
+    },
+    {
+      title: "Package (Wxs extension)",
+      link: "../../wxs/package"
+    }
+  ]}
+/>

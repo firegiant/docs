@@ -1,0 +1,208 @@
+---
+title: "TypeLib element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Register a type library (TypeLib). Please note that in order to properly use this
+ non-advertised, you will need use this element with Advertise='no' and also author the
+ appropriate child Interface elements by extracting them from the type library itself.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Advertise",
+      type: "yesno"
+    }}
+  >
+  Value of 'yes' will create a row in the TypeLib table.
+   Value of 'no' will create rows in the Registry table.
+   The default value is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Control",
+      type: "yesno"
+    }}
+  >
+  Value of 'yes' means the type library describes controls, and should not be displayed in type browsers intended for nonvisual objects.
+   This attribute can only be set if Advertise='no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Cost",
+      type: "integer"
+    }}
+  >
+  The cost associated with the registration of the type library in bytes. This attribute cannot be set if Advertise='no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  The localizable description of the type library.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HasDiskImage",
+      type: "yesno"
+    }}
+  >
+  Value of 'yes' means the type library exists in a persisted form on disk. This attribute can only be set if Advertise='no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HelpDirectory",
+      type: "string"
+    }}
+  >
+  The identifier of the Directory element for the help directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "HelpSubirectory",
+      type: "string"
+    }}
+  >
+  This attribute defines one or more directories below the directory referenced by the HelpDirectory attribute
+   for the typelib's help directory.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Hidden",
+      type: "yesno"
+    }}
+  >
+  Value of 'yes' means the type library should not be displayed to users, although its use is not restricted.
+   Should be used by controls. Hosts should create a new type library that wraps the control with extended properties.
+   This attribute can only be set if Advertise='no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  The GUID that identifes the type library.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Language",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`.",
+      required: true
+    }}
+  >
+  The language of the type library. This must be a non-negative integer.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MajorVersion",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The major version of the type library. The value should be an integer from 0 - 255.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "MinorVersion",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The minor version of the type library. The value should be an integer from 0 - 255.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ResourceId",
+      type: "Integer",
+      typeLink: "../integer",
+      typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
+    }}
+  >
+  The resource id of a typelib. The value is appended to the end of the typelib path in the registry.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Restricted",
+      type: "yesno"
+    }}
+  >
+  Value of 'yes' means the type library is restricted, and should not be displayed to users. This attribute can only be set if Advertise='no'.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "AppId",
+      link: "../appid"
+    },
+    {
+      title: "Class",
+      link: "../class"
+    },
+    {
+      title: "Interface",
+      link: "../interface"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "TypeLib Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/typelib-table"
+    },
+    {
+      title: "Registry Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/registry-table"
+    }
+  ]}
+/>

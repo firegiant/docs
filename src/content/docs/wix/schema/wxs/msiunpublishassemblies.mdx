@@ -1,0 +1,30 @@
+---
+title: "MsiUnpublishAssemblies element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Manages the unadvertisement of CLR and Win32 assemblies that are being removed. The condition for this action may be specified in the element's inner text.
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "InstallExecuteSequence",
+      link: "../installexecutesequence"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiUnpublishAssemblies Action",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiunpublishassemblies-action"
+    }
+  ]}
+/>

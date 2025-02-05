@@ -1,0 +1,83 @@
+---
+title: "WebServiceExtension element (Iis extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+The WebServiceExtension property is used by the Web server to determine whether a Web service extension is permitted to run.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Allow",
+      type: "wxs:YesNoTypeUnion",
+      required: true
+    }}
+  >
+  Indicates if the extension is allowed or denied.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Description",
+      type: "string"
+    }}
+  >
+  Description of the extension.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string",
+      required: true
+    }}
+  >
+  Usually a Property that resolves to short file name path
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Group",
+      type: "string"
+    }}
+  >
+  String used to identify groups of extensions.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Identifier for the web service extension. Used within the MSI package only. If the Id is not specified, it will be generated.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UIDeletable",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates if the UI is allowed to delete the extension from the list of not. Default: Not deletable.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    }
+  ]}
+/>

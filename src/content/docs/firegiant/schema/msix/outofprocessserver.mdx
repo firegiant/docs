@@ -1,0 +1,67 @@
+---
+title: "OutOfProcessServer element (Msix extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an out-of-process activatable class server.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Arguments",
+      type: "string"
+    }}
+  >
+  Command-line arguments for server process.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Instancing",
+      type: "InstancingTypeUnion",
+      typeLink: "../instancingtype",
+      typeTitle: "Values of this type will either be \"singleInstance\" or \"multipleInstances\".",
+      required: true
+    }}
+  >
+  Instancing model for server process: singleInstance or multipleInstances.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServerName",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of server.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "ActivatableClass",
+      link: "../activatableclass"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    }
+  ]}
+/>

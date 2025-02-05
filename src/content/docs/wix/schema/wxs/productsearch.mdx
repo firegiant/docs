@@ -1,0 +1,103 @@
+---
+title: "ProductSearch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ExcludeLanguages",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to detect all languages, excluding the languages listed in the Language attribute.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IncludeMaximum",
+      type: "yesno"
+    }}
+  >
+  Set to "yes" to make the range of versions detected include the value specified in Maximum.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "IncludeMinimum",
+      type: "yesno"
+    }}
+  >
+  Set to "no" to make the range of versions detected exclude the value specified in Minimum. This attribute is "yes" by default.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Language",
+      type: "string"
+    }}
+  >
+  Specifies the set of languages detected by FindRelatedProducts. Enter a list of numeric language identifiers (LANGID) separated by commas (,). Leave this value null to specify all languages. Set ExcludeLanguages to "yes" in order detect all languages, excluding the languages listed in this value.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Maximum",
+      type: "string"
+    }}
+  >
+  Specifies the upper boundary of the range of product versions detected by FindRelatedProducts.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Minimum",
+      type: "string"
+    }}
+  >
+  Specifies the lower bound on the range of product versions to be detected by FindRelatedProducts.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpgradeCode",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      required: true
+    }}
+  >
+  This value specifies the upgrade code for the products that are to be detected by the FindRelatedProducts action.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Property",
+      link: "../property"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "Upgrade Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/upgrade-table"
+    }
+  ]}
+/>

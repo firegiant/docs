@@ -1,0 +1,99 @@
+---
+title: "ComponentSearch element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a component search.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Id of the search that this one should come after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition for evaluating the search. If this evaluates to false, the search is not executed at all.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Guid",
+      type: "string",
+      required: true
+    }}
+  >
+  Component to search for.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Id of the search for ordering and dependency.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProductCode",
+      type: "string"
+    }}
+  >
+  Optional ProductCode to determine if the component is installed.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Result",
+      type: ""
+    }}
+  >
+  Rather than saving the matching key path into the variable, a ComponentSearch can save an attribute of the component instead. This attribute's value must be one of the following:
+  - *directory*: Saves the parent directory for the component's file key path; other types of key path are returned unmodified.
+  - *keyPath*: Saves the key path of the component if installed. This is the default.
+  - *state*: Saves the state of the component: absent (2), locally installed (3), will run from source (4), or installed in default location (either local or from source) (5)
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Variable",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the variable in which to place the result of the search.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

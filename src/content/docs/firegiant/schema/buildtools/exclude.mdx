@@ -1,0 +1,45 @@
+---
+title: "Exclude element (Buildtools extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Exclude files from a harvesting.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Files",
+      type: "string",
+      required: true
+    }}
+  >
+  Full path or wildcard of files to exclude from a harvesting. For example, to exclude all .pdb files from harvesting use: Files="**\*.pdb"
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "HarvestFolder",
+      link: "../harvestfolder"
+    },
+    {
+      title: "HarvestPayloadFolder",
+      link: "../harvestpayloadfolder"
+    },
+    {
+      title: "HarvestProjectOutput",
+      link: "../harvestprojectoutput"
+    }
+  ]}
+/>

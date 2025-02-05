@@ -1,0 +1,103 @@
+---
+title: "AdminExecuteSequence element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "CostFinalize",
+      description: "Ends the internal installation costing process begun by the CostInitialize action.",
+      link: "../costfinalize"
+    },
+    {
+      title: "CostInitialize",
+      description: "Initiates the internal installation costing process.",
+      link: "../costinitialize"
+    },
+    {
+      title: "Custom",
+      description: "Use to sequence a custom action.",
+      link: "../custom"
+    },
+    {
+      title: "FileCost",
+      description: "Initiates dynamic costing of standard installation actions.",
+      link: "../filecost"
+    },
+    {
+      title: "InstallAdminPackage",
+      description: "Copies the product database to the administrative installation point.",
+      link: "../installadminpackage"
+    },
+    {
+      title: "InstallFiles",
+      description: "Copies files specified in the File table from the source directory to the destination directory.",
+      link: "../installfiles"
+    },
+    {
+      title: "InstallFinalize",
+      description: "Marks the end of a sequence of actions that change the system.",
+      link: "../installfinalize"
+    },
+    {
+      title: "InstallInitialize",
+      description: "Marks the beginning of a sequence of actions that change the system.",
+      link: "../installinitialize"
+    },
+    {
+      title: "InstallValidate",
+      description: "Verifies that all costed volumes have enough space for the installation.",
+      link: "../installvalidate"
+    },
+    {
+      title: "LaunchConditions",
+      description: "Queries the LaunchCondition table and evaluates each conditional statement recorded there.",
+      link: "../launchconditions"
+    },
+    {
+      title: "PatchFiles",
+      description: "Queries the Patch table to determine which patches are to be applied.",
+      link: "../patchfiles"
+    },
+    {
+      title: "ResolveSource",
+      description: "Determines the location of the source and sets the SourceDir property if the source has not been resolved yet.",
+      link: "../resolvesource"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Module",
+      link: "../module"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "AdminExecuteSequence Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/adminexecutesequence-table"
+    }
+  ]}
+/>

@@ -1,0 +1,135 @@
+---
+title: "RegistrySearch element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Describes a registry search.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "After",
+      type: "string"
+    }}
+  >
+  Id of the search that this one should come after.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Bitness",
+      type: "wxs:BitnessTypeUnion"
+    }}
+  >
+  Overrides the default registry to search. The value `always64` will force
+   the search to look in the 64-bit registry even when building for 32-bit.
+   Simliarly, the value `always32` will force the search to look in the 32-bit
+   registry even when building for 64-bit.
+   The default value is `default` where the search will look in the same registry
+   as the bitness of the package.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  Condition for evaluating the search. If this evaluates to false, the search is not executed at all.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ExpandEnvironmentVariables",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Whether to expand any environment variables in REG_SZ, REG_EXPAND_SZ, or REG_MULTI_SZ values.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Id of the search for ordering and dependency.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Key",
+      type: "string",
+      required: true
+    }}
+  >
+  Key to search for.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Result",
+      type: ""
+    }}
+  >
+  Rather than saving the matching registry value into the variable, a RegistrySearch can save an attribute of the matching entry instead. This attribute's value must be one of the following:
+  - *exists*: Saves true if a matching registry entry is found; false otherwise.
+  - *value*: Saves the value of the registry key in the variable. This is the default.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Root",
+      type: "",
+      required: true
+    }}
+  >
+  Registry root hive to search under. This attribute's value must be one of the following:
+  - *HKLM*: HKEY_LOCAL_MACHINE
+  - *HKCU*: HKEY_CURRENT_USER
+  - *HKCR*: HKEY_CLASSES_ROOT
+  - *HKU*: HKEY_USERS
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  Optional value to search for under the given Key.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Variable",
+      type: "string",
+      required: true
+    }}
+  >
+  Name of the variable in which to place the result of the search.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Bundle (Wxs extension)",
+      link: "../../wxs/bundle"
+    },
+    {
+      title: "Fragment (Wxs extension)",
+      link: "../../wxs/fragment"
+    }
+  ]}
+/>

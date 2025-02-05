@@ -1,0 +1,63 @@
+---
+title: "ComPlusRoleForMethod element (Complus extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Represents a role assignment to a COM+ method.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ApplicationRole",
+      type: "string",
+      required: true
+    }}
+  >
+  Id of the ComPlusApplicationRole element representing the
+   role that shall be granted access to the method.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Method",
+      type: "string"
+    }}
+  >
+  If the element is not a child of a ComPlusMethod element,
+   this attribute should be provided with the id of a ComPlusMethod element
+   representing the method the role is to be added to.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component"
+    },
+    {
+      title: "ComPlusMethod",
+      link: "../complusmethod"
+    }
+  ]}
+/>

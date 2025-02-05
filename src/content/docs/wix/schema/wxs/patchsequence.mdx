@@ -1,0 +1,97 @@
+---
+title: "PatchSequence element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Sequence information for this patch database. Sequence information is generated automatically in most cases, and rarely needs to be set explicitly.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "PatchFamily",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier which indicates a sequence family to which this patch belongs.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ProductCode",
+      type: "Guid",
+      typeLink: "../guid",
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+    }}
+  >
+  Specifies the ProductCode of the product that this family applies to.
+   This attribute cannot the specified if the TargetImage attribute is specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Sequence",
+      type: "string"
+    }}
+  >
+  Used to populate the sequence column of the MsiPatchSequence table in the final MSP file. Specified in x.x.x.x format. See documentation for Sequence column of MsiPatchSequence table in MSI SDK.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Supersede",
+      type: "yesno"
+    }}
+  >
+  Set this value to 'yes' to indicate that this patch will supersede all previous patches in this patch family.
+   The default value is 'no'.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Target",
+      type: "string"
+    }}
+  >
+  Deprecated: Use the TargetImage attribute instead.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TargetImage",
+      type: "string"
+    }}
+  >
+  Specifies the TargetImage that this family applies to.
+   This attribute cannot the specified if the ProductCode attribute is specified.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "PatchCreation",
+      link: "../patchcreation"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiPatchSequence Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msipatchsequence-table"
+    }
+  ]}
+/>

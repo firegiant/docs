@@ -1,0 +1,81 @@
+---
+title: "ProgressbarImage element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines a progress bar image.
+ The image must be 4 pixels wide: left pixel is the left side of progress bar, left middle pixel is progress used, right middle pixel is progress unused, right pixel is right side of progress bar.
+ If multiple ProgressbarImages are given, each is assigned an index in document order and can be selected programmatically with ThemeSetProgressControlColor.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ImageFile",
+      type: "string"
+    }}
+  >
+  Relative path to an image file for the control.
+   Mutually exclusive with ImageId and ImageResource and SourceX and SourceY attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageId",
+      type: "string"
+    }}
+  >
+  Identifier to the Image element that serves as the image for the control.
+   Mutually exclusive with ImageFile and ImageResource and SourceX and SourceY attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageResource",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references an image resource with type RT_RCDATA in the module for the control.
+   Mutually exclusive with ImageId and ImageFile and SourceX and SourceY attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceX",
+      type: "non-negative integer"
+    }}
+  >
+  X offset of the Theme/@ImageFile or Theme/@ImageResource.
+   Can only be specified with Theme/@ImageFile or Theme/@ImageResource.
+   Mutually exclusive with ImageId and ImageFile and ImageResource attributes.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SourceY",
+      type: "non-negative integer"
+    }}
+  >
+  Y offset of the Theme/@ImageFile or Theme/@ImageResource.
+   Can only be specified with Theme/@ImageFile or Theme/@ImageResource.
+   Mutually exclusive with ImageId and ImageFile and ImageResource attributes.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Progressbar",
+      link: "../progressbar"
+    }
+  ]}
+/>

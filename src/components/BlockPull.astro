@@ -1,0 +1,67 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+
+const { status } = Astro.props;
+---
+
+<aside class="wrapper" class:list={[{ "has-status": status }]}>
+  {
+    status === "information" && (
+      <span class="icon">
+        <Icon name="information" color="var(--sl-color-blue)" size="1em" />
+      </span>
+    )
+  }
+
+  {
+    status === "warning" && (
+      <span class="icon">
+        <Icon name="warning" color="var(--sl-color-orange)" size="1em" />
+      </span>
+    )
+  }
+
+  {
+    status === "error" && (
+      <span class="icon">
+        <Icon name="error" color="var(--sl-color-red)" size="1em" />
+      </span>
+    )
+  }
+
+  <slot />
+</aside>
+
+<style>
+  .wrapper {
+    inline-size: 100%;
+    background-color: var(--sl-color-bg);
+    border-radius: 0.25rem;
+    border: var(--ec-brdWd) solid var(--ec-brdCol);
+    margin-top: 0;
+    padding: 0.5rem 0.75rem ;
+    font-size: var(--sl-text-xs);
+    line-height: 1.5;
+    position: relative;
+
+    @media screen and (min-width: 1024px) {
+      float: right;
+      max-inline-size: 300px;
+      margin-inline-start: 2rem;
+      margin-block-end: 1rem;
+    }
+
+    &.has-status {
+      padding: 0.5rem 0.75rem 0.5rem 1.5rem;
+    }
+  }
+
+  .icon {
+    float: left;
+    display: inline-block;
+    padding: 0.25rem;
+    position: absolute;
+    inset-inline-start: 0.17rem;
+    inset-block-start: 0.45rem;
+  }
+</style>

@@ -1,0 +1,313 @@
+---
+title: "Permission element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, this cannot be used
+ if the Action attribute's value is remove or removeKeyOnInstall. This element has no Id attribute.
+ The table and key are taken from the parent element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Append",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ChangePermission",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateChild",
+      type: "yesno"
+    }}
+  >
+  For a directory, the right to create a subdirectory. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateFile",
+      type: "yesno"
+    }}
+  >
+  For a directory, the right to create a file in the directory. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateLink",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateSubkeys",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Delete",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DeleteChild",
+      type: "yesno"
+    }}
+  >
+  For a directory, the right to delete a directory and all the files it contains, including read-only files. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Domain",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EnumerateSubkeys",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Execute",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FileAllRights",
+      type: "yesno"
+    }}
+  >
+  Bit mask for FILE_ALL_ACCESS from WinNT.h (0x001F01FF).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericAll",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericExecute",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericRead",
+      type: "yesno"
+    }}
+  >
+  specifying this will fail to grant read access
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericWrite",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Notify",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Read",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadAttributes",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadExtendedAttributes",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadPermission",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SpecificRightsAll",
+      type: "yesno"
+    }}
+  >
+  Bit mask for SPECIFIC_RIGHTS_ALL from WinNT.h (0x0000FFFF).
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Synchronize",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TakeOwnership",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Traverse",
+      type: "yesno"
+    }}
+  >
+  For a directory, the right to traverse the directory. By default, users are assigned the BYPASS_TRAVERSE_CHECKING privilege, which ignores the FILE_TRAVERSE access right. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Write",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WriteAttributes",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WriteExtendedAttributes",
+      type: "yesno"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "RegistryKey",
+      link: "../registrykey"
+    },
+    {
+      title: "RegistryValue",
+      link: "../registryvalue"
+    },
+    {
+      title: "CreateFolder",
+      link: "../createfolder"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "LockPermissions Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/lockpermissions-table"
+    }
+  ]}
+/>

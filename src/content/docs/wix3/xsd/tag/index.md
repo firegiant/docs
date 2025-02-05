@@ -1,0 +1,20 @@
+---
+title: Tag Schema
+pagefind: false
+---
+<p>             The source code schema for the WiX Toolset Software Id Tag Extension.         </p>
+<dl>
+  <dt>Target Namespace</dt>
+  <dd>http://schemas.microsoft.com/wix/TagExtension</dd>
+  <dt>Child Elements</dt>
+  <dd>
+    <ul>
+      <li>
+        <a href="./tag" class="extension">Tag</a>
+      </li>
+      <li>
+        <a href="./tagref" class="extension">TagRef</a>
+      </li>
+    </ul>
+  </dd>
+</dl>

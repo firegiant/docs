@@ -1,0 +1,66 @@
+---
+title: "Text element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines text for the parent control based on an optional condition.
+ If multiple Text elements are given for one control, the conditions should be mutually exclusive (when multiple conditions are true, the behavior is undefined and may be changed at any time).
+ If none of the conditions of a control's Text elements are true, then it uses the text of the Text element without the Condition attribute.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string"
+    }}
+  >
+  The condition that determines when the parent control will use this text.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Button",
+      link: "../button"
+    },
+    {
+      title: "Checkbox",
+      link: "../checkbox"
+    },
+    {
+      title: "CommandLink",
+      link: "../commandlink"
+    },
+    {
+      title: "Hyperlink",
+      link: "../hyperlink"
+    },
+    {
+      title: "Hypertext",
+      link: "../hypertext"
+    },
+    {
+      title: "Label",
+      link: "../label"
+    },
+    {
+      title: "RadioButton",
+      link: "../radiobutton"
+    },
+    {
+      title: "Richedit",
+      link: "../richedit"
+    }
+  ]}
+/>

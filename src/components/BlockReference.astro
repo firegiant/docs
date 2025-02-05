@@ -1,0 +1,109 @@
+---
+const { content, border } = Astro.props;
+---
+
+<section
+  class:list={[{ wrapper: border }]}
+  style={content.deprecated ? "opacity: .7; filter: grayscale(.8)" : ""}
+>
+  <header class="not-content">
+    <!-- Title -->
+    {
+      content.title && content.titleLink && (
+        <h3>
+          <a href={content.titleLink} class="tag title">
+            {content.title}
+          </a>
+        </h3>
+      )
+    }
+    {
+      content.title && !content.titleLink && (
+        <h3 class="tag title">{content.title}</h3>
+      )
+    }
+    <!-- Type -->
+    {
+      content.type && content.typeLink && (
+        <a href={content.typeLink} class="tag type" title={content.typeTitle}>
+          {content.type}
+        </a>
+      )
+    }
+    {
+      content.type && !content.typeLink && (
+        <span class="tag type" title={content.typeTitle}>
+          {content.type}
+        </span>
+      )
+    }
+
+    <!-- deprecated -->
+    {content.deprecated && <span class="tag deprecated">deprecated</span>}
+
+    <!-- Required -->
+    {content.required && <span class="tag required">required</span>}
+
+    <!-- version -->
+    {content.version && <span class="tag version">v{content.version}</span>}
+  </header>
+
+  <slot />
+</section>
+
+<style>
+  .wrapper {
+    --sl-text-xs: 0.75rem;
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 0.25rem;
+    padding: 1rem;
+  }
+
+  header {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: var(--__sl-font-mono);
+    padding: .3rem;
+    line-height: 1;
+    font-weight: 700;
+    font-size: var(--sl-text-xs);
+    display: flex;
+    align-items: center;
+    align-self: center;
+    border-radius: 0.2rem;
+  }
+
+  .title {
+    background-color: var(--sl-color-purple-low);
+    color: var(--sl-color-purple-high);
+    font-size: var(--sl-text-base);
+    padding-inline: 0.5rem;
+    padding-block: 0.3rem;
+    border-radius: 0.3rem;
+    margin-inline-end: auto;
+  }
+
+  .type {
+    background-color: var(--sl-color-blue-low);
+    color: var(--sl-color-blue-high);
+  }
+
+  .required {
+    background-color: var(--sl-color-red-low);
+    color: var(--sl-color-red-high);
+  }
+
+  .version {
+    background-color: var(--sl-color-orange-low);
+    color: var(--sl-color-orange-high);
+  }
+
+  .deprecated {
+    font-size: var(--sl-text-xs);
+    background-color: var(--sl-color-gray-6);
+    color: var(--sl-color-gray-3);
+  }
+</style>

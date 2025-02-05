@@ -1,0 +1,55 @@
+---
+title: "DigitalSignature element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Adds a digital signature.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "SourceFile",
+      type: "string"
+    }}
+  >
+  The path to signature's optional hash file.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "DigitalCertificate",
+      link: "../digitalcertificate"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Media",
+      link: "../media"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiDigitalSignature Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msidigitalsignature-table"
+    }
+  ]}
+/>

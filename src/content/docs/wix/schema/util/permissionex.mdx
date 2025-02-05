@@ -1,0 +1,379 @@
+---
+title: "PermissionEx element (Util extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Registry element, this cannot be used
+ if the Action attribute's value is remove or removeKeyOnInstall. This element has no Id attribute.
+ The table and key are taken from the parent element.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Append",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ChangePermission",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateChild",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  For a directory, the right to create a subdirectory. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateFile",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  For a directory, the right to create a file in the directory. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateLink",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateSubkeys",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Delete",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "DeleteChild",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  For a directory, the right to delete a directory and all the files it contains, including read-only files. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Domain",
+      type: "string"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "EnumerateSubkeys",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Execute",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericAll",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericExecute",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericRead",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  specifying this will fail to grant read access
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "GenericWrite",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Inheritable",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Whether the permissions are inheritable. The default is "yes".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Notify",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Read",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadAttributes",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadExtendedAttributes",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ReadPermission",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceChangeConfig",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the ChangeServiceConfig or ChangeServiceConfig2 function to change the service configuration. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceEnumerateDependents",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the EnumDependentServices function to enumerate all the services dependent on the service. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceInterrogate",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the ControlService function to ask the service to report its status immediately. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServicePauseContinue",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the ControlService function to pause or continue the service. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceQueryConfig",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the QueryServiceConfig and QueryServiceConfig2 functions to query the service configuration. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceQueryStatus",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the QueryServiceStatus function to ask the service control manager about the status of the service. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceStart",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the StartService function to start the service. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceStop",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the ControlService function to stop the service. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceUserDefinedControl",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Required to call the ControlService function to specify a user-defined control code. Only valid under a 'ServiceInstall' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Synchronize",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "TakeOwnership",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Traverse",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  For a directory, the right to traverse the directory. By default, users are assigned the BYPASS_TRAVERSE_CHECKING privilege, which ignores the FILE_TRAVERSE access right. Only valid under a 'CreateFolder' parent.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "User",
+      type: "string",
+      required: true
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Write",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WriteAttributes",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "WriteExtendedAttributes",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "CreateFolder (Wxs extension)",
+      link: "../../wxs/createfolder"
+    },
+    {
+      title: "File (Wxs extension)",
+      link: "../../wxs/file"
+    },
+    {
+      title: "RegistryKey (Wxs extension)",
+      link: "../../wxs/registrykey"
+    },
+    {
+      title: "RegistryValue (Wxs extension)",
+      link: "../../wxs/registryvalue"
+    },
+    {
+      title: "ServiceInstall (Wxs extension)",
+      link: "../../wxs/serviceinstall"
+    }
+  ]}
+/>

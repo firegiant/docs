@@ -1,0 +1,61 @@
+---
+title: "Launch element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Launch conditions for MSI packages.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Condition",
+      type: "string",
+      required: true
+    }}
+  >
+  The condition expression to be evaluated at install time.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Message",
+      type: "string",
+      required: true
+    }}
+  >
+  Set the value to the text to display when the condition fails and the installation must be terminated.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Package",
+      link: "../package"
+    },
+    {
+      title: "Fragment",
+      link: "../fragment"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "LaunchCondition Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/launchcondition-table"
+    }
+  ]}
+/>

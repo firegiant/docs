@@ -1,0 +1,45 @@
+---
+title: "ImageListItem element (Thmutil extension)"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Defines an image for an ImageList.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ImageFile",
+      type: "string"
+    }}
+  >
+  Relative path to an image file. Mutually exclusive with ImageResource.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ImageResource",
+      type: "non-negative integer"
+    }}
+  >
+  Identifier that references an image resource in the module. Mutually exclusive with ImageFile.
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "ImageList",
+      link: "../imagelist"
+    }
+  ]}
+/>

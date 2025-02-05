@@ -1,0 +1,132 @@
+---
+title: "ServiceConfig element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+Configures a service being installed or one that already exists. This element's functionality is available starting with MSI 5.0. However, a
+ [remark indicating the functionality does not work correctly](https://learn.microsoft.com/en-us/windows/win32/msi/msiconfigureservices-action) was added later.
+ Consider using the [util:ServiceConfig element](../../schema/util/serviceconfig/) instead.
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "DelayedAutoStart",
+      type: "string"
+    }}
+  >
+  This attribute specifies whether an auto-start service should delay its start until after all other auto-start
+   services. This attribute only affects auto-start services. Allowed values are "yes", "no" or a Formatted property that
+   resolves to "1" (for "yes") or "0" (for "no"). If this attribute is not present the setting is not configured.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FailureActionsWhen",
+      type: "string"
+    }}
+  >
+  This attribute specifies when failure actions should be applied. Allowed values are "failedToStop", "failedToStopOrReturnedError"
+   or a Formatted property that resolves to "1" (for "failedToStopOrReturnedError") or "0" (for "failedToStop"). If this attribute
+   is not present the setting is not configured.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  Unique identifier for this service configuration. This value will default to the ServiceName attribute if not
+   specified.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnInstall",
+      type: "yesno"
+    }}
+  >
+  Specifies whether to configure the service when the parent Component is installed. This attribute may be combined with OnReinstall
+   and OnUninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnReinstall",
+      type: "yesno"
+    }}
+  >
+  Specifies whether to configure the service when the parent Component is reinstalled. This attribute may be combined with OnInstall
+   and OnUninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "OnUninstall",
+      type: "yesno"
+    }}
+  >
+  Specifies whether to configure the service when the parent Component is uninstalled. This attribute may be combined with OnInstall
+   and OnReinstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "PreShutdownDelay",
+      type: "string"
+    }}
+  >
+  This attribute specifies time in milliseconds that the Service Control Manager (SCM) waits after notifying the service of a system
+   shutdown. If this attribute is not present the default value, 3 minutes, is used.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceName",
+      type: "string"
+    }}
+  >
+  Specifies the name of the service to configure. This value will default to the ServiceInstall/@Name attribute when nested under
+   a ServiceInstall element.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "ServiceSid",
+      type: "string"
+    }}
+  >
+  Specifies the service SID to apply to the service. Valid values are "none", "restricted", "unrestricted" or a Formatted property
+   that resolves to "0" (for "none"), "3" (for "restricted") or "1" (for "unrestricted"). If this attribute is not present the
+   setting is not configured.
+  </BlockReference>
+
+</BlockWrapper>
+
+## Children
+
+<BlockDefList content={[
+    {
+      title: "RequiredPrivilege",
+      description: "List of privileges to apply to service.",
+      link: "../requiredprivilege"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "MsiServiceConfig Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/msiserviceconfig-table"
+    }
+  ]}
+/>

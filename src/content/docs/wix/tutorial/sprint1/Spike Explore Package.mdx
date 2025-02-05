@@ -1,0 +1,144 @@
+---
+title: "Spike: What's in Package.wxs?"
+sidebar:
+  order: 5
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import BlockPull from '@components/BlockPull.astro';
+import BlockAside from '@components/BlockAside.astro';
+import ReplacePutGuidHere from '@components/ReplacePutGuidHere.astro';
+
+The first file we're going to look at is Package.wxs.
+
+```xml title=Package.wxs
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+```
+
+The source code you write for WiX to build packages from is XML. (Back in the olden days, the `X` in WiX stood for `XML`. These days WiX just stands for WiX.) WiX loading XML files has two consequences we can see right here:
+
+- Every XML file has a [root element](https://en.wikipedia.org/wiki/Root_element) and for WiX source files, that root element is [Wix](https://wixtoolset.org/docs/schema/wxs/wix/).
+- Every XML element has a [namespace](https://en.wikipedia.org/wiki/XML_namespace) and for WiX elements, that namespace is `http://wixtoolset.org/schemas/v4/wxs`.
+
+The root element and namespace are the same for all WiX _source_ files. There are other WiX file types that have different root elements and namespaces.
+
+:::note[Did you know?]
+XML namespaces are [uniform resource identifiers (URIs)](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) and may look like [uniform resource locators (URLs)](https://en.wikipedia.org/wiki/URL) but are not, in actual fact, URLs. WiX uses several namespaces, all of which start with `http://wixtoolset.org/schemas/`. However, the namespace names aren't valid URLs. You might expect the WiX schema documentation to live at the URLs matching the namespace URIs, but it lives at https://wixtoolset.org/docs/schema/ instead.
+:::
+
+## Package
+
+```xml
+<Package
+```
+
+The WiX element that describes an MSI package is...wait for it...[`Package`](https://wixtoolset.org/docs/schema/wxs/package/). `Package` has attributes and child elements that define everything about an MSI package.
+
+{/*
+<BlockPull status="information">
+For the pedantic among you, three of the attributes must be present and if any are not, WiX throws errors. The fourth attribute, if missing, results in a warning, not an error, so technically it's not _required_ but rest assured, the warning message is _scathing_ and it's best to not risk it.
+</BlockPull>
+*/}
+
+```xml
+Name="WixTutorialPackage"
+Manufacturer="TODO Manufacturer"
+Version="1.0.0.0"
+UpgradeCode="PUT-GUID-HERE">
+```
+
+So let's start with the attributes. The HeatWave template fills out the attributes that are _required_ for all MSI packages. In this case, _required_ means that without them, WiX will complain.
+
+- <BlockPull status="information">
+  The `Installed apps` list has gone by many names. If you've been doing setup for long enough, you remember `Add/Remove Programs` back in Windows 95. If you hear someone say `ARP`, you know you're dealing with a wizened elder of the setup world.
+  </BlockPull>
+  The `Name` attribute sets the name of the package, which is used, among other places, as the name shown in the `Installed apps` list. The HeatWave template sets the `Name` to the name of the project you created. That's a reasonable default, but often visible product names are heavily influenced by marketing types. We'll revisit this attribute in a bit.
+
+- <BlockPull status="information">
+  It's surprisingly common for different teams to provide different `Manufacturer` values, especially in big companies. (Without naming names, we currently see `Foo`, `Foo Corporation`, and `Foo(R) Corporation` in Programs & Features.) You might want to check with a lawyer to make sure what the actual name of your company is.
+  </BlockPull>
+  The `Manufacturer` attribute sets the name of the company (usually) that created the software included in the installer. This string is also shown in `Installed Apps`...and that's really it. There's nothing magical about the `Manufacturer` value; it's just a string.
+
+- <BlockPull status="information">
+  Windows Installer has some weird rules about the version of a package. First, don't expect any fancy [Semantic Versioning](https://semver.org/). MSI was built in the late 90s (1990s, to be clear), so it has similarly old-fashioned ideas about versions. Versions typically have four parts -- `major.minor.build.patch` -- and can be in the range 0..65535. MSI enforces even more stringent rules for package versions: They have **three** parts -- `major.minor.build` -- and the `major` and `minor` parts can only be in the range 0..255. There's no explanation in the Windows Installer SDK for those limitations but it's worth pointing out that if you were hypervigilant about individual bytes back in the 90s when your computer had _megabytes_ of RAM and _gigabytes_ of spinning rust disk space, squeezing two 8-bit integers (0..255) and one 16-bit integer (0..65535) into a single 32-bit integer saves 32 _whole_ bits over four 16-bit integers.
+  </BlockPull>
+  The `Version` attribute sets the version of the package. The package version is, as the other attributes we've looked at, typically shown in ARP, but is also used for more than painting a pretty picture. Package versions are an important part of managing (for example) upgrades between packages. We'll definitely revisit package versions.
+
+- <BlockPull status="information">
+  An important note: The best way to pronounce _GUID_ is `goo'-id`, because it contains the word "goo." Some people who don't like to have fun with their words might prefer to say "gwid." Windows Installer uses GUIDs because there are clear rules for generating them randomly and uniquely. They're also relatively compact for unique identifiers. If humans had to make their own unique identifiers, they'd probably end up with long strings but a GUID is always exactly 38 characters, in the form `{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}`. Granted, the trade-off is that these important unique identifiers are inconvenient to pronounce and tough to visually scan.
+  </BlockPull>
+  The `UpgradeCode` attribute...is interesting. First, it's important to recognize that a package's upgrade code is a GUID -- a "[globally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)." Windows Installer uses GUIDs frequently, though WiX does what it can to hide them from you. The upgrade code identifies packages that are "related" to each other. A typical relationship is packages of the same software product with different versions. (Remember in the previous bullet how "we'll definitely revisit package versions"?) For now, we'll just take the upgrade code that the HeatWave template gave us -- which is a freshly-generated GUID.
+
+## MajorUpgrade
+
+```xml
+<MajorUpgrade
+  DowngradeErrorMessage="!(loc.DowngradeError)" />
+```
+
+Remember way back when we talked about the `UpgradeCode` attribute? The `MajorUpgrade` element wires up the upgrade code so that when you install a later version, the prior version is removed first so that at the end of the install, the newer version is the one that's left. The `DowngradeErrorMessage` attribute lets you specify a message to be shown if the user attempts to downgrade the product -- trying to install a lower version than the version that's already installed. The `!(loc.DowngradeError)` syntax is a reference to a _localization string_. Localization strings let you create multiple packages for all the languages you support without having to change your WiX authoring. HeatWave gave you your very own file chock full of localization strings; we'll talk about it in a bit.
+> Windows Installer has extensive support for upgrades. The `MajorUpgrade` element has a bunch of attributes you can use to control the upgrade behavior. The defaults provide typical upgrade behavior: Downgrades are blocked with an error message, product languages have to match to upgrade, and upgrades happen early to provide the most flexibility in changing components and features.
+
+
+## Feature
+
+```xml
+<Feature Id="Main">
+```
+
+MSI lets you have a hierarchy of features in a package to control what gets installed. These days, features aren't commonly shown, but MSI still requires at least one feature. The HeatWave template gives you that one feature.
+> The canonical example of features was from Microsoft Office, back in the day (just after we all survived Y2K), which had a feature tree with many branches. At the top level, you can control which of many apps that came with Office got installed. If you had a small hard drive and never did presentations, you might choose to not install PowerPoint, for example. These days, hard drives are spacious and fewer options make for easier testing, so many developers don't bother exposing features.
+
+```xml
+<ComponentGroupRef Id="ExampleComponents" />
+```
+
+Here we have our first XML parent/child relationship: The `ComponentGroupRef` element is a child of the `Feature` element.
+> In addition to parent/child terminology, you'll hear about elements being _under_ or _nested under_ other elements. It's all the same.
+
+In WiX (and in general in XML), nested elements indicate some kind of relationship between the parent and child elements. In this case, the `ComponentGroupRef` element is used to "fill" the feature described by the `Feature` element.
+
+So how does a feature get filled? To answer that, we need to talk about components, references, and groups.
+
+
+### Components
+
+MSI doesn't track individual "resources" -- like files and registry values. Instead, it groups them into **components**. A component can group multiple files and registry values (and a few other things) so MSI can treat them as one thing. It requires a bit of bookkeeping on your part but has one nice advantage: MSI always installs and uninstalls all the resources of a component at once, so if you keep related resources in the same component, a machine will never be in the state of having only part of what it needs.
+
+WiX uses the XML parent/child relationship to assemble components: There's a `Component` element that acts as a parent to child elements like `File` and `RegistryValue`. More to come on that topic later.
+
+
+### References
+
+When you write code, it might end up in a (potentially large) single .exe file but you generally break up the source code into multiple files using some logic or rules. A million lines of source code is unwieldy no matter how you slice it, but separating those millions lines into a few hundred files helps.
+
+The same is true of WiX code: An MSI package can be a (potentially large) single file that can install an almost arbitrarily-complex product but separating the WiX code into multiple files helps reduce the mental load.
+
+> WiX code is source code even though it's written in XML and not in a typical, procedural programming language. Sometimes you'll see it called "WiX authoring" to distinguish between code written in the WiX language and the code that makes up WiX itself. Don't call it "WiX script" because it's not a script and it misrepresents the code. If anyone around you calls it script, block them and get that negativity out of your life.
+
+In a typical programming language, you hook up separate source code files by having code in one file call a function in another. The (very rough) equivalent in WiX is to use an element that _references_ an element elsewhere. It could be in the same source file or maybe hidden away in a library somewhere. References tell WiX to go grab the referenced "thing" and pull it into the place where the reference lives. In this case, `ComponentGroupRef` tells WiX to go find the `ComponentGroup` with the same `Id` and as the parent element is `Feature`, all the components in the specified component group are assigned to the feature. (That component group is in another file that HeatWave created for us; we'll talk about it in a bit.)
+
+> Generally, references in WiX are expressed with elements with names that end in `Ref`, like `ComponentGroupRef` and `DirectoryRef`, and attributes with names that end in `Ref`, like `BinaryRef` and `FileRef`. References are always explicit, even if the names don't end in `Ref`. For example, the `Component` element has a `Directory` _attribute_ that is a reference to a `Directory` _element_ defined elsewhere.
+
+And what is a component group?
+
+
+### Groups
+
+In addition to being able to break up your WiX code in different files, the WiX language has elements that let you structure your code in ways beyond what MSI itself supports. For example, MSI lets you group components into features but that's it -- there are no other mechanisms to group components. WiX says you should have lots of ways of grouping your components, so it has _component groups_ that you define with `ComponentGroup` and reference with `ComponentGroupRef`. In some advanced scenarios, you can avoid a lot of code duplication using component groups. When WiX builds your code, it flattens all those references into, for example, a list of components in a feature.
+
+> It probably won't surprise you to hear that WiX has a number of grouping constructs, because the developers of WiX _love_ flexibility.
+
+
+## Wrapping up
+
+```xml
+    </Feature>
+  </Package>
+</Wix>
+```
+
+Because the WiX language is expressed in XML, you have to follow XML rules. Here, that rule is that elements need to be _closed_ with an _end tag_ (the `</Element>` syntax).
+
+
+<ReplacePutGuidHere storageId='sprint1_upgrade_code' />

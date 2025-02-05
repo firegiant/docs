@@ -1,0 +1,79 @@
+---
+title: "ODBCTranslator element"
+---
+
+import BlockWrapper from '@components/BlockWrapper.astro';
+import BlockReference from '@components/BlockReference.astro';
+import BlockDefList from '@components/BlockDefList.astro';
+
+ODBCTranslator for a Component
+
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "File",
+      type: "string"
+    }}
+  >
+  Required if not found as child of File element
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Id",
+      type: "string",
+      required: true
+    }}
+  >
+  Identifier for the translator.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Name",
+      type: "string",
+      required: true
+    }}
+  >
+  Name for the translator.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "SetupFile",
+      type: "string"
+    }}
+  >
+  Required if not found as child of File element or different from File attribute above
+  </BlockReference>
+
+</BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "File",
+      link: "../file"
+    },
+    {
+      title: "Component",
+      link: "../component"
+    }
+  ]}
+/>
+
+## Windows Installer references
+
+<BlockDefList content={[
+    {
+      title: "ODBCTranslator Table",
+      link: "https://docs.microsoft.com/en-us/windows/win32/msi/odbctranslator-table"
+    }
+  ]}
+/>
