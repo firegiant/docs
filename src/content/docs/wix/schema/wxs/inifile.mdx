@@ -60,8 +60,8 @@ Adds or removes .ini file entries.
     content={{
       title: "Name",
       type: "LongFileNameType",
-      typeLink: "../longfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
+      typeLink: "../longfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | > : / * \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
       required: true
     }}
   >
@@ -88,8 +88,8 @@ Adds or removes .ini file entries.
     content={{
       title: "ShortName",
       type: "ShortFileNameType",
-      typeLink: "../shortfilenametype",
-      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../shortfilenametype/",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | > : / * \" + , ; = [ ] \\<, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The short name of the in 8.3 format.
@@ -115,7 +115,7 @@ Adds or removes .ini file entries.
 <BlockDefList content={[
     {
       title: "Component",
-      link: "../component"
+      link: "../component/"
     }
   ]}
 />

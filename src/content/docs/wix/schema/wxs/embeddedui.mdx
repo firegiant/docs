@@ -189,8 +189,8 @@ import BlockDefList from '@components/BlockDefList.astro';
     content={{
       title: "Name",
       type: "LongFileNameType",
-      typeLink: "../longfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../longfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | > : / * \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The name for the embedded UI DLL when it is extracted from the MSI package and executed. (Windows Installer
@@ -226,7 +226,7 @@ import BlockDefList from '@components/BlockDefList.astro';
 <BlockDefList content={[
     {
       title: "EmbeddedUIResource",
-      link: "../embeddeduiresource"
+      link: "../embeddeduiresource/"
     }
   ]}
 />
@@ -236,7 +236,7 @@ import BlockDefList from '@components/BlockDefList.astro';
 <BlockDefList content={[
     {
       title: "UI",
-      link: "../ui"
+      link: "../ui/"
     }
   ]}
 />

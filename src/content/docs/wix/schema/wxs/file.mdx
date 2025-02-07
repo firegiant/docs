@@ -80,7 +80,7 @@ Defines a file to be installed by the package.
     content={{
       title: "Bitness",
       type: "BitnessTypeUnion",
-      typeLink: "../bitnesstype",
+      typeLink: "../bitnesstype/",
       typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
     }}
   >
@@ -120,7 +120,7 @@ Defines a file to be installed by the package.
     content={{
       title: "Compressed",
       type: "YesNoDefaultTypeUnion",
-      typeLink: "../yesnodefaulttype",
+      typeLink: "../yesnodefaulttype/",
       typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
     }}
   >
@@ -150,7 +150,7 @@ Defines a file to be installed by the package.
     content={{
       title: "DefaultSize",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -181,7 +181,7 @@ Defines a file to be installed by the package.
     content={{
       title: "DiskId",
       type: "DiskIdType",
-      typeLink: "../diskidtype",
+      typeLink: "../diskidtype/",
       typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -244,14 +244,14 @@ Defines a file to be installed by the package.
     content={{
       title: "Name",
       type: "LongFileNameType",
-      typeLink: "../longfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../longfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | > : / * \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   Specifies the name of the installed file. If this attribute is omitted, then
    its default value is the file name portion of the Source attribute. If the
    Source attribute is omitted, you must specify a Name attribute. For more
-   information, see [Specifying source files](../../tools/payloads/).
+   information, see [Specifying source files](../../tools/payloads.md).
   </BlockReference>
 
   <BlockReference
@@ -267,7 +267,7 @@ Defines a file to be installed by the package.
     content={{
       title: "PatchGroup",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -320,7 +320,7 @@ Defines a file to be installed by the package.
     content={{
       title: "SelfRegCost",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -331,8 +331,8 @@ Defines a file to be installed by the package.
     content={{
       title: "ShortName",
       type: "ShortFileNameType",
-      typeLink: "../shortfilenametype",
-      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../shortfilenametype/",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | > : / * \" + , ; = [ ] \\<, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The short file name of the file in 8.3 format.
@@ -349,7 +349,7 @@ Defines a file to be installed by the package.
   Specifies the path to the file in the build process. Overrides default source
    path set by parent directories and Name attribute. This attribute must be set
    if no source information can be gathered from parent directories. For more
-   information, see [Specifying source files](../../tools/payloads/).
+   information, see [Specifying source files](../../tools/payloads.md).
   </BlockReference>
 
   <BlockReference
@@ -414,138 +414,138 @@ Defines a file to be installed by the package.
 <BlockDefList content={[
     {
       title: "ActivatableClass (Msix extension)",
-      link: "../../msix/activatableclass"
+      link: "../../msix/activatableclass/"
     },
     {
       title: "AppId",
-      link: "../appid"
+      link: "../appid/"
     },
     {
       title: "Application (Msix extension)",
-      link: "../../msix/application"
+      link: "../../msix/application/"
     },
     {
       title: "AppPrinter (Msix extension)",
-      link: "../../msix/appprinter"
+      link: "../../msix/appprinter/"
     },
     {
       title: "AppService (Msix extension)",
-      link: "../../msix/appservice"
+      link: "../../msix/appservice/"
     },
     {
       title: "AppUriHandler (Msix extension)",
-      link: "../../msix/appurihandler"
+      link: "../../msix/appurihandler/"
     },
     {
       title: "AssemblyName",
-      link: "../assemblyname"
+      link: "../assemblyname/"
     },
     {
       title: "BackgroundTask (Msix extension)",
-      link: "../../msix/backgroundtask"
+      link: "../../msix/backgroundtask/"
     },
     {
       title: "Class",
-      link: "../class"
+      link: "../class/"
     },
     {
       title: "CopyFile",
       description: "Used to create a duplicate of this file elsewhere.",
-      link: "../copyfile"
+      link: "../copyfile/"
     },
     {
       title: "DesktopAppMigration (Msix extension)",
-      link: "../../msix/desktopappmigration"
+      link: "../../msix/desktopappmigration/"
     },
     {
       title: "EventManifest (Util extension)",
-      link: "../../util/eventmanifest"
+      link: "../../util/eventmanifest/"
     },
     {
       title: "FirewallException (Firewall extension)",
-      link: "../../firewall/firewallexception"
+      link: "../../firewall/firewallexception/"
     },
     {
       title: "FormatFile (Util extension)",
-      link: "../../util/formatfile"
+      link: "../../util/formatfile/"
     },
     {
       title: "FormatsFile (Powershell extension)",
-      link: "../../powershell/formatsfile"
+      link: "../../powershell/formatsfile/"
     },
     {
       title: "FullTrustProcess (Msix extension)",
-      link: "../../msix/fulltrustprocess"
+      link: "../../msix/fulltrustprocess/"
     },
     {
       title: "NativeImage (Netfx extension)",
-      link: "../../netfx/nativeimage"
+      link: "../../netfx/nativeimage/"
     },
     {
       title: "ODBCDriver",
-      link: "../odbcdriver"
+      link: "../odbcdriver/"
     },
     {
       title: "ODBCTranslator",
-      link: "../odbctranslator"
+      link: "../odbctranslator/"
     },
     {
       title: "OutOfProcessServer (Msix extension)",
-      link: "../../msix/outofprocessserver"
+      link: "../../msix/outofprocessserver/"
     },
     {
       title: "PerfCounter (Util extension)",
-      link: "../../util/perfcounter"
+      link: "../../util/perfcounter/"
     },
     {
       title: "PerfCounterManifest (Util extension)",
-      link: "../../util/perfcountermanifest"
+      link: "../../util/perfcountermanifest/"
     },
     {
       title: "Permission",
       description: "Used to configure the ACLs for this file.",
-      link: "../permission"
+      link: "../permission/"
     },
     {
       title: "PermissionEx (Util extension)",
-      link: "../../util/permissionex"
+      link: "../../util/permissionex/"
     },
     {
       title: "PreInstalledConfigTask (Msix extension)",
-      link: "../../msix/preinstalledconfigtask"
+      link: "../../msix/preinstalledconfigtask/"
     },
     {
       title: "Shortcut",
       description: "Target of the shortcut will be set to this file.",
-      link: "../shortcut"
+      link: "../shortcut/"
     },
     {
       title: "SnapIn (Powershell extension)",
-      link: "../../powershell/snapin"
+      link: "../../powershell/snapin/"
     },
     {
       title: "StartupTask (Msix extension)",
-      link: "../../msix/startuptask"
+      link: "../../msix/startuptask/"
     },
     {
       title: "SymbolPath",
-      link: "../symbolpath"
+      link: "../symbolpath/"
     },
     {
       title: "TypeLib",
-      link: "../typelib"
+      link: "../typelib/"
     },
     {
       title: "TypesFile (Powershell extension)",
-      link: "../../powershell/typesfile"
+      link: "../../powershell/typesfile/"
     },
     {
       title: "UpdateTask (Msix extension)",
-      link: "../../msix/updatetask"
+      link: "../../msix/updatetask/"
     },
     {
       title: "VsixPackage (Vs extension)",
-      link: "../../vs/vsixpackage"
+      link: "../../vs/vsixpackage/"
     }
   ]}
 />
@@ -555,47 +555,47 @@ Defines a file to be installed by the package.
 <BlockDefList content={[
     {
       title: "Package",
-      link: "../package"
+      link: "../package/"
     },
     {
       title: "Module",
-      link: "../module"
+      link: "../module/"
     },
     {
       title: "Fragment",
-      link: "../fragment"
+      link: "../fragment/"
     },
     {
       title: "Component",
-      link: "../component"
+      link: "../component/"
     },
     {
       title: "ComponentGroup",
-      link: "../componentgroup"
+      link: "../componentgroup/"
     },
     {
       title: "Directory",
-      link: "../directory"
+      link: "../directory/"
     },
     {
       title: "DirectoryRef",
-      link: "../directoryref"
+      link: "../directoryref/"
     },
     {
       title: "StandardDirectory",
-      link: "../standarddirectory"
+      link: "../standarddirectory/"
     },
     {
       title: "Feature",
-      link: "../feature"
+      link: "../feature/"
     },
     {
       title: "FeatureGroup",
-      link: "../featuregroup"
+      link: "../featuregroup/"
     },
     {
       title: "FeatureRef",
-      link: "../featureref"
+      link: "../featureref/"
     }
   ]}
 />

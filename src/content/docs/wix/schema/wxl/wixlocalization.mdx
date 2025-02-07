@@ -35,7 +35,7 @@ import BlockDefList from '@components/BlockDefList.astro';
     content={{
       title: "ExtensionDefaultCulture",
       type: "LocalizationYesNoType",
-      typeLink: "../localizationyesnotype",
+      typeLink: "../localizationyesnotype/",
       typeTitle: "Values of this type will either be \"yes\"/\"true\" or \"no\"/\"false\"."
     }}
   >
@@ -50,7 +50,7 @@ import BlockDefList from '@components/BlockDefList.astro';
     content={{
       title: "Language",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be an integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)."
     }}
   >
@@ -73,16 +73,16 @@ import BlockDefList from '@components/BlockDefList.astro';
 <BlockDefList content={[
     {
       title: "String",
-      link: "../string"
+      link: "../string/"
     },
     {
       title: "UI",
-      link: "../ui"
+      link: "../ui/"
     }
   ]}
 />
 
 ## Remarks
 
-You can specify any valid Windows code page by integer like 1252, or by web name like Windows-1252 or iso-8859-1. See [Code pages](../../tools/codepage/) for more information.
+You can specify any valid Windows code page by integer like 1252, or by web name like Windows-1252 or iso-8859-1. See [Code pages](../../tools/codepage.md) for more information.
 

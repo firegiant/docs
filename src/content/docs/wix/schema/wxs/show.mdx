@@ -54,7 +54,7 @@ import BlockDefList from '@components/BlockDefList.astro';
     content={{
       title: "OnExit",
       type: "ExitType",
-      typeLink: "../exittype",
+      typeLink: "../exittype/",
       typeTitle: "Value indicates that this action is executed if the installer returns the associated exit type. Each exit type can be used with no more than one action.\r\n Multiple actions can have exit types assigned, but every action and exit type must be different. Exit types are typically used with dialog boxes."
     }}
   >
@@ -78,7 +78,7 @@ import BlockDefList from '@components/BlockDefList.astro';
     content={{
       title: "Sequence",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -93,11 +93,11 @@ import BlockDefList from '@components/BlockDefList.astro';
 <BlockDefList content={[
     {
       title: "InstallUISequence",
-      link: "../installuisequence"
+      link: "../installuisequence/"
     },
     {
       title: "AdminUISequence",
-      link: "../adminuisequence"
+      link: "../adminuisequence/"
     }
   ]}
 />

@@ -66,7 +66,7 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
     content={{
       title: "DescriptionResourceId",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -106,7 +106,7 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
     content={{
       title: "DisplayResourceId",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -122,7 +122,7 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
     content={{
       title: "Hotkey",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -148,7 +148,7 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
     content={{
       title: "IconIndex",
       type: "Integer",
-      typeLink: "../integer",
+      typeLink: "../integer/",
       typeTitle: "Values of this type must be a non-negative integer or a preprocessor variable with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -168,8 +168,8 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
     content={{
       title: "Name",
       type: "LongFileNameType",
-      typeLink: "../longfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
+      typeLink: "../longfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | > : / * \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE).",
       required: true
     }}
   >
@@ -184,8 +184,8 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
     content={{
       title: "ShortName",
       type: "ShortFileNameType",
-      typeLink: "../shortfilenametype",
-      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../shortfilenametype/",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | > : / * \" + , ; = [ ] \\<, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The short name of the shortcut in 8.3 format.
@@ -255,11 +255,11 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
 <BlockDefList content={[
     {
       title: "Icon",
-      link: "../icon"
+      link: "../icon/"
     },
     {
       title: "ShortcutProperty",
-      link: "../shortcutproperty"
+      link: "../shortcutproperty/"
     }
   ]}
 />
@@ -269,15 +269,15 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
 <BlockDefList content={[
     {
       title: "File",
-      link: "../file"
+      link: "../file/"
     },
     {
       title: "CreateFolder",
-      link: "../createfolder"
+      link: "../createfolder/"
     },
     {
       title: "Component",
-      link: "../component"
+      link: "../component/"
     }
   ]}
 />

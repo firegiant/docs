@@ -17,7 +17,7 @@ Directory layout for the product. Also specifies the mappings between source and
     content={{
       title: "ComponentGuidGenerationSeed",
       type: "Guid",
-      typeLink: "../guid",
+      typeLink: "../guid/",
       typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
     }}
   >
@@ -33,7 +33,7 @@ Directory layout for the product. Also specifies the mappings between source and
     content={{
       title: "DiskId",
       type: "DiskIdType",
-      typeLink: "../diskidtype",
+      typeLink: "../diskidtype/",
       typeTitle: "Values of this type must be an integer or the value of one or more preprocessor variables with the format `$(Variable)` or `$(var.Variable)`."
     }}
   >
@@ -50,7 +50,7 @@ Directory layout for the product. Also specifies the mappings between source and
     }}
   >
   Used to set the file system source for this directory's child elements.
-   For more information, see [Specifying source files](../../tools/payloads/).
+   For more information, see [Specifying source files](../../tools/payloads.md).
   </BlockReference>
 
   <BlockReference
@@ -95,8 +95,8 @@ Directory layout for the product. Also specifies the mappings between source and
     content={{
       title: "ShortName",
       type: "ShortFileNameType",
-      typeLink: "../shortfilenametype",
-      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../shortfilenametype/",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | > : / * \" + , ; = [ ] \\<, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The short name of the directory in 8.3 format.
@@ -108,8 +108,8 @@ Directory layout for the product. Also specifies the mappings between source and
     content={{
       title: "ShortSourceName",
       type: "ShortFileNameType",
-      typeLink: "../shortfilenametype",
-      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../shortfilenametype/",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | > : / * \" + , ; = [ ] \\<, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The short name of the directory on the source media in 8.3 format.
@@ -121,8 +121,8 @@ Directory layout for the product. Also specifies the mappings between source and
     content={{
       title: "SourceName",
       type: "LongFileNameType",
-      typeLink: "../longfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../longfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | > : / * \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The name of the directory on the source media.
@@ -145,27 +145,27 @@ Directory layout for the product. Also specifies the mappings between source and
 <BlockDefList content={[
     {
       title: "Component",
-      link: "../component"
+      link: "../component/"
     },
     {
       title: "Directory",
-      link: "../directory"
+      link: "../directory/"
     },
     {
       title: "File",
-      link: "../file"
+      link: "../file/"
     },
     {
       title: "Files",
-      link: "../files"
+      link: "../files/"
     },
     {
       title: "Merge",
-      link: "../merge"
+      link: "../merge/"
     },
     {
       title: "SymbolPath",
-      link: "../symbolpath"
+      link: "../symbolpath/"
     }
   ]}
 />
@@ -175,33 +175,33 @@ Directory layout for the product. Also specifies the mappings between source and
 <BlockDefList content={[
     {
       title: "Package",
-      link: "../package"
+      link: "../package/"
     },
     {
       title: "Module",
-      link: "../module"
+      link: "../module/"
     },
     {
       title: "Fragment",
-      link: "../fragment"
+      link: "../fragment/"
     },
     {
       title: "Directory",
-      link: "../directory"
+      link: "../directory/"
     },
     {
       title: "DirectoryRef",
-      link: "../directoryref"
+      link: "../directoryref/"
     },
     {
       title: "StandardDirectory",
-      link: "../standarddirectory"
+      link: "../standarddirectory/"
     }
   ]}
 />
 
 ## See also
-[DirectoryRef](../directoryref)
+[DirectoryRef](../directoryref/)
 
 ## Windows Installer references
 

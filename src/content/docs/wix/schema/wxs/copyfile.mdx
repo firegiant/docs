@@ -47,8 +47,8 @@ Copy or move an existing file on the target machine, or copy a file that is bein
     content={{
       title: "DestinationName",
       type: "LongFileNameType",
-      typeLink: "../longfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | {'>'} : / * \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../longfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File Name.extension\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ ? | > : / * \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   In prior versions of the WiX toolset, this attribute specified the short file name.
@@ -76,8 +76,8 @@ Copy or move an existing file on the target machine, or copy a file that is bein
     content={{
       title: "DestinationShortName",
       type: "ShortFileNameType",
-      typeLink: "../shortfilenametype",
-      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | {'>'} : / * \" + , ; = [ ] {'<'}, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../shortfilenametype/",
+      typeTitle: "Values of this type will look like: \"FileName.ext\". Only one period is allowed. The following characters are not allowed: \\ ? | > : / * \" + , ; = [ ] \\<, or whitespace. The name cannot exceed 8 characters and the extension cannot exceed 3 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   The short file name of the file in 8.3 format.
@@ -120,8 +120,8 @@ Copy or move an existing file on the target machine, or copy a file that is bein
     content={{
       title: "SourceName",
       type: "WildCardLongFileNameType",
-      typeLink: "../wildcardlongfilenametype",
-      typeTitle: "Values of this type will look like: \"Long File N?me.extension*\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ | {'>'} : / \" or {'<'}. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
+      typeLink: "../wildcardlongfilenametype/",
+      typeTitle: "Values of this type will look like: \"Long File N?me.extension*\". Legal long names contain no more than 260 characters and must contain at least one non-period character. The following characters are not allowed: \\ | > : / \" or \\<. The name must be shorter than 260 characters. The value could also be a localization variable with the format !(loc.VARIABLE)."
     }}
   >
   This attribute cannot be specified if the element is nested under a File element or the FileId attribute is specified. Set
@@ -155,17 +155,17 @@ Copy or move an existing file on the target machine, or copy a file that is bein
 <BlockDefList content={[
     {
       title: "File",
-      link: "../file"
+      link: "../file/"
     },
     {
       title: "Component",
-      link: "../component"
+      link: "../component/"
     }
   ]}
 />
 
 ## See also
-[RemoveFile](../removefile)
+[RemoveFile](../removefile/)
 
 ## Windows Installer references
 

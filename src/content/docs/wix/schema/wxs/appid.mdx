@@ -58,7 +58,7 @@ Application ID containing DCOM information for the associated application GUID.
     content={{
       title: "Id",
       type: "Guid",
-      typeLink: "../guid",
+      typeLink: "../guid/",
       typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
       required: true
     }}
@@ -113,7 +113,7 @@ Application ID containing DCOM information for the associated application GUID.
 <BlockDefList content={[
     {
       title: "Class",
-      link: "../class"
+      link: "../class/"
     }
   ]}
 />
@@ -123,27 +123,27 @@ Application ID containing DCOM information for the associated application GUID.
 <BlockDefList content={[
     {
       title: "Package",
-      link: "../package"
+      link: "../package/"
     },
     {
       title: "Module",
-      link: "../module"
+      link: "../module/"
     },
     {
       title: "Fragment",
-      link: "../fragment"
+      link: "../fragment/"
     },
     {
       title: "File",
-      link: "../file"
+      link: "../file/"
     },
     {
       title: "TypeLib",
-      link: "../typelib"
+      link: "../typelib/"
     },
     {
       title: "Component",
-      link: "../component"
+      link: "../component/"
     }
   ]}
 />
@@ -151,7 +151,7 @@ Application ID containing DCOM information for the associated application GUID.
 ## Remarks
 
 When being used in unadvertised mode, the attributes in the AppId element correspond to registry values
- under the `[HKCR\AppID\\{Id}]` key, as follows:
+ under the `[HKCR\AppID\\\{Id}]` key, as follows:
 
  - `Id`: [HKCR\AppID\`Id`]
  - `ActivateAtStorage`: [HKCR\AppID\`Id`]/ActivateAtStorage="Y"
