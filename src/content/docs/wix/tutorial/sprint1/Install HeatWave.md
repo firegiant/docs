@@ -5,7 +5,7 @@ sidebar:
 ---
 We're building our app and its installer in Visual Studio, so we need a Visual Studio extension that knows all about WiX. Luckily, we friendly folks at FireGiant have just the thing: [HeatWave](/heatwave/).
 
-![HeatWave logo](/src/assets/heatwave-logo-full-256.png)
+![HeatWave logo](../../../../../assets/heatwave-logo-full-256.png)
 
 HeatWave is available from the Visual Studio Marketplace.
 

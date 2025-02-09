@@ -1,0 +1,3 @@
+/*
+  Referrer-Policy: no-referrer-when-downgrade
+  X-Frame-Options: DENY

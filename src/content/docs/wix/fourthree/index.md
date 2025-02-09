@@ -16,7 +16,7 @@ The WiX v4 language has some simplifications and uses a new namespace, so WiX v3
 
 ## Convert WiX authoring from the command line
 
-To convert WiX v3 authoring to WiX v4 from the command line, first install the [WiX .NET tool](intro.md#nettool). Then you can run `wix convert`:
+To convert WiX v3 authoring to WiX v4 from the command line, first install the [WiX .NET tool](/wix/using-wix/#command-line-net-tool). Then you can run `wix convert`:
 
 :::tip
 By default, `wix convert` converts the files in place, overwriting the original files. You can add the `--dry-run` switch to have `wix convert` report on what changes it would make without actually making them. Of course, your setup source code is in version control, so you can always easily revert the changes `wix convert` makes. I mean, it is in version control, right?!
