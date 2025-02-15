@@ -9,7 +9,7 @@ Although the WixUI interface libraries can handle most usual setup scenarios, mo
 
 In our [sample](/system/files/samples/SampleWixUIAddDlg.zip), we will modify the *WixUI_Mondo* library, adding a new dialog to collect registration information (name, organization, serial number) from the user. The new dialog will appear between the License Agreement and Setup Type dialogs.
 
-To achieve this, we have to provide a new `UserRegistrationDlg.wxs` file describing this new dialog. You can start with an existing dialog, modifying it, or writing your dialog from scratch. A [later lesson](/docs/wix/v3/tutorial/user-interface-revisited) describes how to create dialogs and use various interface elements in WiX. Here we only mention a few remarks:
+To achieve this, we have to provide a new `UserRegistrationDlg.wxs` file describing this new dialog. You can start with an existing dialog, modifying it, or writing your dialog from scratch. A [later lesson](/wix3/tutorial/user-interface-revisited) describes how to create dialogs and use various interface elements in WiX. Here we only mention a few remarks:
 
     <?xml version='1.0' encoding='windows-1252'?>
     <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">

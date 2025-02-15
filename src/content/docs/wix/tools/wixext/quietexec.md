@@ -7,7 +7,7 @@ The WixQuietExec custom action family allows you to run an arbitrary command lin
 
 ## Architecture-specific custom action DLLs
 
-[As noted in _Frequently-asked questions about upgrading from WiX v3 to WiX v4_](../../fourthree/faqs.md#customactionids), some extra effort is sometimes required due to WiX v4's support for architecture-specific custom actions. That effort for WixQuietExec and friends is a little bit different:
+[As noted in _Frequently-asked questions about upgrading from WiX v3 to WiX v4_](../../../fourthree/faqs/#converting-custom-action-ids-customactionids), some extra effort is sometimes required due to WiX v4's support for architecture-specific custom actions. That effort for WixQuietExec and friends is a little bit different:
 
 - The custom action ids are architecture-neutral (that is, they don't have architecture-specific suffixes).
 - The custom action DLLs have architecture-specific ids.

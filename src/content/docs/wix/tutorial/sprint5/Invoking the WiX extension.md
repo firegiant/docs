@@ -4,7 +4,7 @@ sidebar:
   order: 4
 ---
 
-[Our witty and charming friends at FireGiant](https://www.firegiant.com/services/) have told us that we need to use the `QueryNativeMachine` element available in the `WixToolset.Util.wixext` extension. The [very brief documentation](https://wixtoolset.org/docs/tools/wixext/wininfo/#querynativemachine) tells us that `QueryNativeMachine` sets a property named `WIX_NATIVE_MACHINE` to:
+[Our witty and charming friends at FireGiant](https://www.firegiant.com/services/) have told us that we need to use the `QueryNativeMachine` element available in the `WixToolset.Util.wixext` extension. The [very brief documentation](/wix/tools/wixext/wininfo/#querynativemachine-properties) tells us that `QueryNativeMachine` sets a property named `WIX_NATIVE_MACHINE` to:
 
 > ...an [Image File Machine](https://learn.microsoft.com/en-us/windows/win32/sysinfo/image-file-machine-constants) value representing the native architecture of the machine. This property is set only on Windows 10 version 1511 (TH2) and later.
 

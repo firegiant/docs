@@ -90,4 +90,4 @@ The WIP process is designed to add value with as little overhead as possible. Of
 Finally, this is not a college writing assignment. Use as many -- or as few -- words as necessary to capture the idea. No need to write a book. Also, feel free to enlist others to help you write the document. Start with a rough draft and have someone help flesh out the missing details.
 
 
-[issue tracker]: gethelp.md#bugs
+[issue tracker]: https://github.com/wixtoolset/issues/issues

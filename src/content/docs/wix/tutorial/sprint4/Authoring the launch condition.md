@@ -4,7 +4,7 @@ sidebar:
   order: 4
 ---
 
-OK, so we know what condition we need to check for, so let's write some WiX code! Launch conditions are represented by the [`Launch` element](https://wixtoolset.org/docs/schema/wxs/launch/), which typically lives as a child element of your `Package` element. You can start typing `<Launch` inside Visual Studio and Intellisense will helpfully list matching elements -- of which there is one that starts with `L` and is allowed under `Package`. Intellisense also shows you available attributes, making it easy to get this snippet:
+OK, so we know what condition we need to check for, so let's write some WiX code! Launch conditions are represented by the [`Launch` element](/wix/schema/wxs/launch/), which typically lives as a child element of your `Package` element. You can start typing `<Launch` inside Visual Studio and Intellisense will helpfully list matching elements -- of which there is one that starts with `L` and is allowed under `Package`. Intellisense also shows you available attributes, making it easy to get this snippet:
 
 ```xml
 <Launch Condition="" Message="" />

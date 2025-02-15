@@ -54,7 +54,7 @@ The pseudocode `X64Machine` is equivalent to `WIX_NATIVE_MACHINE = 34404`:
 
 `IsX64Package IMP WIX_NATIVE_MACHINE = 34404`
 
-How do we replace `IsX64Package`? You might think there'd be a built-in property to determine the platform a package supports. Unfortunately, your thinking would be wrong. But no worries, because WiX has us covered. Without getting into too much detail, the WiX _preprocessor_ has a built-in variable named [`BUILDARCH` that contains "the platform (x86, x64, arm64) this package is compiled for"](https://wixtoolset.org/docs/tools/preprocessor/#built-in-system-variables).
+How do we replace `IsX64Package`? You might think there'd be a built-in property to determine the platform a package supports. Unfortunately, your thinking would be wrong. But no worries, because WiX has us covered. Without getting into too much detail, the WiX _preprocessor_ has a built-in variable named [`BUILDARCH` that contains "the platform (x86, x64, arm64) this package is compiled for"](/wix/tools/preprocessor/#built-in-system-variables).
 
 > We'll cover the preprocessor in more depth in future sprints. Would you believe the preprocessor could have entirely avoided the need to dredge up memories of esoteric logical operators? It's true...but surely you wouldn't trade all that fun?
 

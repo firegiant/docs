@@ -9,7 +9,7 @@ To use WixToolset.VisualStudio.wixext properties or custom actions, you need to 
 
 ## Using WixToolset.VisualStudio.wixext for Visual Studio 2003-2015
 
-To use WixToolset.VisualStudio.wixext properties or custom actions for Visual Studio versions on end-user machines prior to Visual Studio 2017, add [`PropertyRef`](../../schema/wxs/propertyref/) or [`CustomActionRef`](../../schema/wxs/customactionref/) elements for properties or custom actions listed in the following tables that you want to use in your MSI. For example:
+To use WixToolset.VisualStudio.wixext properties or custom actions for Visual Studio versions on end-user machines prior to Visual Studio 2017, add [`PropertyRef`](../../../schema/wxs/propertyref/) or [`CustomActionRef`](../../../schema/wxs/customactionref/) elements for properties or custom actions listed in the following tables that you want to use in your MSI. For example:
 
 ```xml
 <PropertyRef Id="VS2005_ROOT_FOLDER" />
@@ -22,8 +22,8 @@ To use WixToolset.VisualStudio.wixext properties or custom actions for Visual St
 To use WixToolset.VisualStudio.wixext properties or custom actions for Visual Studio 2017 and later on end-user machines:
 
 - Add the `http://wixtoolset.org/schemas/v4/wxs/vs` namespace to your WiX authoring.
-- Add a [`FindVisualStudio` element](../../schema/vs/findvisualstudio/) to your authoring.
-- Add [`PropertyRef`](../../schema/wxs/propertyref/) or [`CustomActionRef`](../../schema/wxs/customactionref/) elements for properties or custom actions listed in the following tables that you want to use in your MSI.
+- Add a [`FindVisualStudio` element](../../../schema/vs/findvisualstudio/) to your authoring.
+- Add [`PropertyRef`](../../../schema/wxs/propertyref/) or [`CustomActionRef`](../../../schema/wxs/customactionref/) elements for properties or custom actions listed in the following tables that you want to use in your MSI.
 
 For example:
 

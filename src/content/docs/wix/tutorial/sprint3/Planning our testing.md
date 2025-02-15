@@ -14,7 +14,7 @@ Because Windows Installer works off descriptions of how we want the machine to l
 
 OK, so we can test install and uninstall. Is there anything else? Oh my, yes -- wait until we want to test patch uninstall failure rollback -- but for now, let's stick with those two scenarios.
 
-The steps in the test plan need to cover how to install and uninstall and which directories and files to check. We know from [Sprint 1](/docs/wix/tutorial/sprint1/spike-explore-folders/) and our update during [Sprint 2](/docs/wix/tutorial/sprint2/fix-our-company-name/), where our package will install the placeholder app: `C:\Program Files (x86)\Edgerock Concepts WixTutorialPackage\App.exe`.
+The steps in the test plan need to cover how to install and uninstall and which directories and files to check. We know from [Sprint 1](/wix/tutorial/sprint1/spike-explore-folders/) and our update during [Sprint 2](/wix/tutorial/sprint2/fix-our-company-name/), where our package will install the placeholder app: `C:\Program Files (x86)\Edgerock Concepts WixTutorialPackage\App.exe`.
 
 So our test plan looks something like this:
 

@@ -91,10 +91,10 @@ WiX v4.0.5, released on Friday, 22-Mar-2024, contains fixes for two security vul
 - Building patches is much easier (one command!) and can use MSI packages as the source of target and updated files.
 - The WiX extensibility model and pipeline integration has been dramatically enhanced.
 - The WiX language has been further simplified. For example:
-  - [The `Package` element](./schema/wxs/package/) combines what was two elements (`Product` and `Package`) in WiX v3 .
-  - The [`StandardDirectory` element](./schema/wxs/standarddirectory/) simplifies the use of standard Windows Installer directories.
-  - The `Subdirectory` attribute on, for example, [the `Component` element](./schema/wxs/component/), lets you create subdirectories without nested [`Directory` elements](./schema/wxs/directory/).
-  - WiX supplies a default [`MediaTemplate` element](./schema/wxs/mediatemplate/) if you don't specify one in your authoring.
+  - [The `Package` element](../schema/wxs/package/) combines what was two elements (`Product` and `Package`) in WiX v3 .
+  - The [`StandardDirectory` element](../schema/wxs/standarddirectory/) simplifies the use of standard Windows Installer directories.
+  - The `Subdirectory` attribute on, for example, [the `Component` element](../schema/wxs/component/), lets you create subdirectories without nested [`Directory` elements](../schema/wxs/directory/).
+  - WiX supplies a default [`MediaTemplate` element](../schema/wxs/mediatemplate/) if you don't specify one in your authoring.
 - WiX warns when mixing authoring meant for MSI packages in bundles and vice versa.
 
 
@@ -102,12 +102,12 @@ WiX v4.0.5, released on Friday, 22-Mar-2024, contains fixes for two security vul
 
 - The Burn engine is platform-specific, so you can build an x64 bundle that contains only x64 code and doesn't rely on WoW64.
 - .NET 6 and later are supported platforms for writing managed-code bootstrapper applications. .NET Framework is also supported.
-- ThmUtil, the native-code UI library used by the WixStdBA bootstrapper application, supports new controls and authored conditions and actions that let themes add functionality without having to write custom C++ code. For details, see [Thmutil schema](./schema/thmutil/).
+- ThmUtil, the native-code UI library used by the WixStdBA bootstrapper application, supports new controls and authored conditions and actions that let themes add functionality without having to write custom C++ code. For details, see [Thmutil schema](../schema/thmutil/).
 - ThmUtil (and therefore WixStdBA) supports high DPI display settings.
-- The new [`WixInternalUIBootstrapperApplication`](./schema/bal/wixinternaluibootstrapperapplication/) BA supports showing only the internal or embedded UI of an MSI package.
-- Burn support other bundles in the chain via [`BundlePackage`](./schema/wxs/bundlepackage/) to automatically handle detection and uninstall command lines. Likewise, the [`ArpEntry` element](./schema/wxs/arpentry/) provides the same functionality for arbitrary executable packages in the chain.
+- The new [`WixInternalUIBootstrapperApplication`](../schema/bal/wixinternaluibootstrapperapplication/) BA supports showing only the internal or embedded UI of an MSI package.
+- Burn support other bundles in the chain via [`BundlePackage`](../schema/wxs/bundlepackage/) to automatically handle detection and uninstall command lines. Likewise, the [`ArpEntry` element](../schema/wxs/arpentry/) provides the same functionality for arbitrary executable packages in the chain.
 - Burn supports SemVer-style versions.
-- WixStdBA supports bundle update feeds as specified in an [`Update` element](./schema/wxs/update/).
+- WixStdBA supports bundle update feeds as specified in an [`Update` element](../schema/wxs/update/).
 - Burn now upgrades bundles with the same version numbers.
 - When a user requires elevation to restart (common on Windows Server machines), Burn handles restart through the elevated engine.
 - Custom bootstrapper applications can change the `REINSTALLMODE` used when applying MSI packages.
@@ -228,4 +228,4 @@ WiX v4 Release Candidate 1 contains fixes for bugs that were reported during Pre
 
 WiX v4 is a major release of the WiX Toolset, years in the making. [More than 500 issues were closed in WiX v4](https://github.com/wixtoolset/issues/issues?q=is%3Aissue+milestone%3Av4.0+is%3Aclosed)!
 
-If you're familiar with WiX v3, [WiX v4 for WiX v3 users](./fourthree/) has details about how WiX v4 works.
+If you're familiar with WiX v3, [WiX v4 for WiX v3 users](../fourthree/) has details about how WiX v4 works.

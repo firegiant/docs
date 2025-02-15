@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="hu-hu" Language="1038" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="Caption">[WixBundleName] Telepítő</String>
+  <String Id="Title">[WixBundleName]</String>
+  <String Id="ConfirmCancelMessage">Biztosan meg akarja szakítani?</String>
+  <String Id="HelpHeader">Súgó a telepítéshez</String>
+  <String Id="HelpText">/install | /repair | /uninstall | /layout [directory] - telepíti, kijavítja, eltávolítja vagy 
+   helyi másolatot készít a programról. Alapértelmezett választás a telepítés.
+
+/passive | /quiet -  csökkentett felhasználói felület vagy felhasználói felület nékül. Alapértelmezett választás
+   a teljes felhasználói felület.
+
+/norestart   - megtiltja a számítógé újraindítását. Alapértelmezett választás szerint figyelmeztetés után
+   újraindítja a számítógépet.
+/log log.txt - a megadott fájlba írja a jegyzőkönyvvet. Alapértelmezett választásként a %TEMP% mappába ír.</String>
+  <String Id="HelpCloseButton">&amp;Vége</String>
+  <String Id="InstallAcceptCheckbox">&amp;Elfogadom a licencszerződés feltételeit</String>
+  <String Id="InstallOptionsButton">&amp;Beállítások</String>
+  <String Id="InstallInstallButton">&amp;Telepítés</String>
+  <String Id="InstallCloseButton">&amp;Vége</String>
+  <String Id="OptionsHeader">Telepítés beállításai</String>
+  <String Id="OptionsLocationLabel">A kiválasztott célmappa:</String>
+  <String Id="OptionsBrowseButton">&amp;Tallózás</String>
+  <String Id="OptionsOkButton">&amp;Rendben</String>
+  <String Id="OptionsCancelButton">&amp;Vissza</String>
+  <String Id="ProgressHeader">A telepítési folyamat</String>
+  <String Id="ProgressLabel">Feldolgozás:</String>
+  <String Id="OverallProgressPackageText">Kezdeti beállítás...</String>
+  <String Id="ProgressCancelButton">&amp;Vissza</String>
+  <String Id="ModifyHeader">Telepítés módosítása</String>
+  <String Id="ModifyRepairButton">&amp;Javítás</String>
+  <String Id="ModifyUninstallButton">&amp;Eltávolítás</String>
+  <String Id="ModifyCloseButton">&amp;Kilépés</String>
+  <String Id="SuccessHeader">A telepítés sikeres volt</String>
+  <String Id="SuccessLaunchButton">&amp;Elindítás</String>
+  <String Id="SuccessRestartText">A program használatához újra kell indítani a számítógépet.</String>
+  <String Id="SuccessRestartButton">&amp;Újraindítás</String>
+  <String Id="SuccessCloseButton">&amp;Kilépés</String>
+  <String Id="FailureHeader">A telepítés nem volt sikeres</String>
+  <String Id="FailureHyperlinkLogText">A telepítés során hiba lépett fel. Kérjük, javítsa ki a hibákat és ismételje meg a telepítést. További segítséget a &lt;a href="#"&gt;jegyzőkönyvben&lt;/a&gt; találhat.</String>
+  <String Id="FailureRestartText">A telepítés előtti állapot visszaállításához újra kell indítani a számítógépet.</String>
+  <String Id="FailureRestartButton">&amp;Újraindítás</String>
+  <String Id="FailureCloseButton">&amp;Kilépés</String>
+</WixLocalization>

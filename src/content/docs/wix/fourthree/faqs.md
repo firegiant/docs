@@ -52,24 +52,24 @@ This table maps WiX v3 extensions to their WiX v4 equivalents:
 
 | WiX v3 Extension | WiX v4 Extension | Documentation |
 | ---------------- | ---------------- | ------------- |
-| WixBalExtension | WixToolset.Bal.wixext | [Bal schema](../schema/bal/) |
-| WixComPlusExtension | WixToolset.ComPlus.wixext | [Complus schema](../schema/complus/) |
-| WixDependencyExtension | WixToolset.Dependency.wixext | [Dependency schema](../schema/dependency/) |
-| WixDifxAppExtension | WixToolset.DifxApp.wixext | [Difxapp schema](../schema/difxapp/) |
-| WixDirectXExtension | WixToolset.DirectX.wixext | [Directx schema](../schema/directx/) |
-| WixFirewallExtension | WixToolset.Firewall.wixext | [Firewall schema](../schema/firewall/) |
+| WixBalExtension | WixToolset.Bal.wixext | [Bal schema](../../schema/bal/) |
+| WixComPlusExtension | WixToolset.ComPlus.wixext | [Complus schema](../../schema/complus/) |
+| WixDependencyExtension | WixToolset.Dependency.wixext | [Dependency schema](../../schema/dependency/) |
+| WixDifxAppExtension | WixToolset.DifxApp.wixext | [Difxapp schema](../../schema/difxapp/) |
+| WixDirectXExtension | WixToolset.DirectX.wixext | [Directx schema](../../schema/directx/) |
+| WixFirewallExtension | WixToolset.Firewall.wixext | [Firewall schema](../../schema/firewall/) |
 | WixGamingExtension | n/a | Removed because the Windows feature is obsolete. |
-| WixHttpExtension | WixToolset.Http.wixext | [Http schema](../schema/http/) |
-| WixIIsExtension | WixToolset.Iis.wixext | [Iis schema](../schema/iis/) |
+| WixHttpExtension | WixToolset.Http.wixext | [Http schema](../../schema/http/) |
+| WixIIsExtension | WixToolset.Iis.wixext | [Iis schema](../../schema/iis/) |
 | WixLuxExtension | n/a | Lux was not brought forward to WiX v4. |
-| WixMsmqExtension | WixToolset.Msmq.wixext | [Msmq schema](../schema/msmq/) |
-| WixNetFxExtension | WixToolset.Netfx.wixext | [Netfx schema](../schema/netfx/) |
-| WixPSExtension | WixToolset.PowerShell.wixext | [Powershell schema](../schema/powershell/) |
-| WixSqlExtension | WixToolset.Sql.wixext | [Sql schema](../schema/sql/) |
+| WixMsmqExtension | WixToolset.Msmq.wixext | [Msmq schema](../../schema/msmq/) |
+| WixNetFxExtension | WixToolset.Netfx.wixext | [Netfx schema](../../schema/netfx/) |
+| WixPSExtension | WixToolset.PowerShell.wixext | [Powershell schema](../../schema/powershell/) |
+| WixSqlExtension | WixToolset.Sql.wixext | [Sql schema](../../schema/sql/) |
 | WixTagExtension | n/a | Software tag functionality now is built into the core toolset. |
-| WixUIExtension | WixToolset.UI.wixext | [UI schema](../schema/ui/) |
-| WixUtilExtension | WixToolset.Util.wixext | [Util schema](../schema/util/) |
-| WixVSExtension | WixToolset.VisualStudio.wixext | [Vs schema](../schema/vs/) |
+| WixUIExtension | WixToolset.UI.wixext | [UI schema](../../schema/ui/) |
+| WixUtilExtension | WixToolset.Util.wixext | [Util schema](../../schema/util/) |
+| WixVSExtension | WixToolset.VisualStudio.wixext | [Vs schema](../../schema/vs/) |
 
 
 ### Converting custom action ids {#customactionids}
@@ -101,7 +101,7 @@ Some custom actions already have a `Wix` prefix. For those, the new prefix repla
 - `Wix4FailWhenDeferred_X64`
 - `Wix4FailWhenDeferred_A64`
 
-Generally, this change is invisible because the extension handles the prefix and suffix for you. That was also true in WiX v3, but several custom actions, like `WixFailWhenDeferred` did not have a custom element in the extension. Usually, this was because there was no additional information required. In WiX v4, there's always at least one bit of additional information required: the platform the package is being built for. So WiX v4 includes custom elements like [FailWhenDeferred](../schema/util/failwhendeferred/) to include custom actions in your package so you don't have to worry about prefixes and suffixes.
+Generally, this change is invisible because the extension handles the prefix and suffix for you. That was also true in WiX v3, but several custom actions, like `WixFailWhenDeferred` did not have a custom element in the extension. Usually, this was because there was no additional information required. In WiX v4, there's always at least one bit of additional information required: the platform the package is being built for. So WiX v4 includes custom elements like [FailWhenDeferred](../../schema/util/failwhendeferred/) to include custom actions in your package so you don't have to worry about prefixes and suffixes.
 
 Other references to WiX custom actions must use the full id, including prefix and suffix.
 
@@ -139,7 +139,7 @@ For example:
 
 ### Converting custom WixUI dialog sets
 
-Because of [WiX v4's support for platform-specific custom actions](#customactionids), customizing WixUI dialog sets, especially when adding and removing dialogs, requires some care. [The WixUI documentation describes what to do when creating a new custom dialog set.](../tools/wixext/wixui.md#addingremovingdialogs) You'll want to make the same kind of change when converting a custom dialog set you created using WiX v3 to WiX v4. The key point is to isolate any `DoAction` control events that call custom actions to create platform-specific variants. WixUI itself does this using a preprocessor `?foreach?` processing instruction to create three fragments, one each for x86, x64, and Arm64 platforms. Each of those fragments references the platform-neutral `UI`. You can see the WixUI definitions [on GitHub](https://github.com/wixtoolset/wix4/tree/HEAD/src/ext/UI/wixlib). Here's what a customized dialog set based on WixUI_InstallDir looks like:
+Because of [WiX v4's support for platform-specific custom actions](#customactionids), customizing WixUI dialog sets, especially when adding and removing dialogs, requires some care. [The WixUI documentation describes what to do when creating a new custom dialog set.](../../tools/wixext/wixui/#adding-and-removing-dialogs-from-a-dialog-set-addingremovingdialogs) You'll want to make the same kind of change when converting a custom dialog set you created using WiX v3 to WiX v4. The key point is to isolate any `DoAction` control events that call custom actions to create platform-specific variants. WixUI itself does this using a preprocessor `?foreach?` processing instruction to create three fragments, one each for x86, x64, and Arm64 platforms. Each of those fragments references the platform-neutral `UI`. You can see the WixUI definitions [on GitHub](https://github.com/wixtoolset/wix4/tree/HEAD/src/ext/UI/wixlib). Here's what a customized dialog set based on WixUI_InstallDir looks like:
 
 ```xml
 <?foreach WIXUIARCH in X86;X64;A64 ?>
@@ -176,7 +176,7 @@ Because of [WiX v4's support for platform-specific custom actions](#customaction
 
 You can see the authoring and test code for this customized dialog set [on GitHub](https://github.com/wixtoolset/wix4/tree/HEAD/src/ext/UI/test/WixToolsetTest.UI/TestData/InstallDir_SpecialDlg).
 
-When you use the [`WixUI` element](../schema/ui/wixui/) to reference a WixUI dialog set or a customized dialog set derived from WixUI, it adds a reference to the platform-specific `UI` for the platform of the package being built. The platform-specific `UI` then adds a reference to the platform-neutral `UI`.
+When you use the [`WixUI` element](../../schema/ui/wixui/) to reference a WixUI dialog set or a customized dialog set derived from WixUI, it adds a reference to the platform-specific `UI` for the platform of the package being built. The platform-specific `UI` then adds a reference to the platform-neutral `UI`.
 
 
 ## Converting bundles
@@ -344,7 +344,7 @@ Here are some subtle changes:
 
 v3 bundles are always DPI unaware.
 In v4, the default DPI awareness is Per-Monitor V2.
-See the [`BootstrapperApplicationDll`](../schema/wxs/bootstrapperapplicationdll/) element's `DpiAwareness` attribute for more information.
+See the [`BootstrapperApplicationDll`](../../schema/wxs/bootstrapperapplicationdll/) element's `DpiAwareness` attribute for more information.
 
 This may cause changes for how images are shown in a custom wixstdba theme, or the bundle's splash screen.
 This may also cause problems if a bundle claims it supports a level of DPI awareness that the BA's UI framework doesn't support.
@@ -495,7 +495,7 @@ All BA requests received after it starts to process the `Quit` are rejected.
 
 In v3, all versions in the engine were represented as Major.Minor.Patch.Revision in a 64-bit value, where the max of each component was 65535.
 In v4, all versions are represented as strings.
-When the engine needs to compare strings, it uses a [WiX version](https://wixtoolset.org/docs/development/wips/burn-engine-semantic-versioning/) of SemVer 2.0.
+When the engine needs to compare strings, it uses a [WiX version](https://github.com/wixtoolset/issues/issues/6210) of SemVer 2.0.
 
 util:ProductSearch will no longer ignore products that have versions that can't be parsed to the 64-bit representation.
 

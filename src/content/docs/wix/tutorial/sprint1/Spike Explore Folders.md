@@ -31,7 +31,7 @@ You can have multiple `Fragment`s in a single .wxs file. You can also have multi
 <StandardDirectory Id="ProgramFiles6432Folder">
 ```
 
-The `StandardDirectory` element lets you use one of the so-called standard directories as the parent directory of your package's directories. [There are a large number of possible parent directories](https://wixtoolset.org/docs/schema/wxs/standarddirectorytype/). Most of them are the [MSI system folder property ids](https://learn.microsoft.com/en-us/windows/win32/msi/property-reference#system-folder-properties). The rest are the WiX standard directories:
+The `StandardDirectory` element lets you use one of the so-called standard directories as the parent directory of your package's directories. [There are a large number of possible parent directories](/wix/schema/wxs/standarddirectorytype/). Most of them are the [MSI system folder property ids](https://learn.microsoft.com/en-us/windows/win32/msi/property-reference#system-folder-properties). The rest are the WiX standard directories:
 
 - CommonFiles6432Folder
 - ProgramFiles6432Folder

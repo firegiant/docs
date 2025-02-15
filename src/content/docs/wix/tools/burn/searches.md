@@ -6,12 +6,12 @@ Searches are used to detect if the target machine meets certain conditions. The 
 
 The following searches are available:
 
-- [ComponentSearch](../../schema/util/componentsearch/)
-- [DirectorySearch](../../schema/util/directorysearch/)
-- [FileSearch](../../schema/util/filesearch/)
-- [ProductSearch](../../schema/util/productsearch/)
-- [RegistrySearch](../../schema/util/registrysearch/)
-- [WindowsFeatureSearch](../../schema/util/windowsfeaturesearch/)
+- [ComponentSearch](../../../schema/util/componentsearch/)
+- [DirectorySearch](../../../schema/util/directorysearch/)
+- [FileSearch](../../../schema/util/filesearch/)
+- [ProductSearch](../../../schema/util/productsearch/)
+- [RegistrySearch](../../../schema/util/registrysearch/)
+- [WindowsFeatureSearch](../../../schema/util/windowsfeaturesearch/)
 
 A search can be dependent on the result of another search. To order searches, use the `After` attribute to schedule a search to take place after another search, when the variable from the first search has a value with the results of that search.
 

@@ -2,7 +2,7 @@
 title: Utility custom actions
 ---
 
-WiX includes a number of utility custom actions in the WixToolset.Util.wixext WiX extension. To use them, add a package reference to WixToolset.Util.wixext in your .wixproj or use [`wix extension`](../wixexe.md#extension) and [`wix build -ext`](../wixexe.md#build) at the command line.
+WiX includes a number of utility custom actions in the WixToolset.Util.wixext WiX extension. To use them, add a package reference to WixToolset.Util.wixext in your .wixproj or use [`wix extension`](../../wixexe/#wix-extension-command-extension) and [`wix build -ext`](../../wixexe/#wix-build-command-build) at the command line.
 
 
 ## WixShellExec custom actions
@@ -50,7 +50,7 @@ The WixUnelevatedShellExec custom action lets you launch a process with "normal"
 
 ## BroadcastEnvironmentChange and BroadcastSettingChange custom actions
 
-The [BroadcastEnvironmentChange](../../schema/util/broadcastenvironmentchange/) and [BroadcastSettingChange](../../schema/util/broadcastsettingchange/) elements in the [Util schema](../../schema/util/) schedule custom actions that send a WM_SETTINGCHANGE message to all top-level windows indicating that settings have changed. BroadcastEnvironmentChange indicates that environment variables have changed. BroadcastSettingChange indicates that unspecified settings have changed.
+The [BroadcastEnvironmentChange](../../../schema/util/broadcastenvironmentchange/) and [BroadcastSettingChange](../../../schema/util/broadcastsettingchange/) elements in the [Util schema](../../../schema/util/) schedule custom actions that send a WM_SETTINGCHANGE message to all top-level windows indicating that settings have changed. BroadcastEnvironmentChange indicates that environment variables have changed. BroadcastSettingChange indicates that unspecified settings have changed.
 
 Other programs can listen for WM_SETTINGCHANGE and update any internal state with the new setting.
 
@@ -59,12 +59,12 @@ Windows Installer itself sends the WM_SETTINGCHANGE message for settings it chan
 
 ## CheckRebootRequired custom actions
 
-The [CheckRebootRequired](../../schema/util/checkrebootrequired/) element in the [Util schema](../../schema/util/) schedules a custom action that schedules a reboot based on a deferred custom action that called the WixToolset.WcaUtil function `WcaDeferredActionRequiresReboot`. The approach is necessary because a deferred custom action cannot directly schedule a reboot.
+The [CheckRebootRequired](../../../schema/util/checkrebootrequired/) element in the [Util schema](../../../schema/util/) schedules a custom action that schedules a reboot based on a deferred custom action that called the WixToolset.WcaUtil function `WcaDeferredActionRequiresReboot`. The approach is necessary because a deferred custom action cannot directly schedule a reboot.
 
 
 ## ExitEarlyWithSuccess custom actions
 
-The [ExitEarlyWithSuccess](../../schema/util/exitearlywithsuccess/) element in the [Util schema](../../schema/util/) schedules a custom action that does nothing except return the value ERROR_NO_MORE_ITEMS. This return value causes Windows Installer to skip all remaining actions in the package and return a process exit code that indicates a successful installation.
+The [ExitEarlyWithSuccess](../../../schema/util/exitearlywithsuccess/) element in the [Util schema](../../../schema/util/) schedules a custom action that does nothing except return the value ERROR_NO_MORE_ITEMS. This return value causes Windows Installer to skip all remaining actions in the package and return a process exit code that indicates a successful installation.
 
 This custom action is useful in cases where you want setup to exit without actually installing anything, but want it to return success to the calling process. A common scenario where this type of behavior is useful is in an out-of-order installation scenario for an .msi that implements major upgrades. When a user has version 2 of an .msi installed and then attempts to install version 1, this custom action can be used in conjunction with the Upgrade table to detect that version 2 is already installed to cause setup to exit without installing anything and return success. If any applications redistribute version 1 of the .msi, their installation processes will continue to work even if the user has version 2 of the .msi installed on their system.
 
@@ -77,7 +77,7 @@ The failure cases are often difficult to simulate by unit testing the custom act
 
 WiX includes a simple deferred custom action to help make it easier to test rollback custom actions in an MSI. The FailWhenDeferred custom action always fails when it is executed, making it easy to inject a failure into your MSI to test your rollback custom actions.
 
-The [FailWhenDeferred](../../schema/util/failwhendeferred/) element in the [Util schema](../../schema/util/) schedules the FailWhenDeferred custom action with a condition of `WIXFAILWHENDEFERRED=1`. To inject a failure during installation rollback, for example, use a command line like this:
+The [FailWhenDeferred](../../../schema/util/failwhendeferred/) element in the [Util schema](../../../schema/util/) schedules the FailWhenDeferred custom action with a condition of `WIXFAILWHENDEFERRED=1`. To inject a failure during installation rollback, for example, use a command line like this:
 
 ```sh
 msiexec.exe /i MyProduct.msi /qb /l*vx %temp%\MyProductInstallFailure.log WIXFAILWHENDEFERRED=1
@@ -93,4 +93,4 @@ If you have scenarios you want to test where a package or bundle takes a while t
 
 This is especially useful in test cases when you don't want or need to build your entire product and only want small test packages.
 
-The [WaitForEvent](../../schema/util/waitforevent/) and [WaitForEventDeferred](../../schema/util/waitforeventdeferred/) elements in the [Util schema](../../schema/util/) schedule the WaitForEvent custom actions.
+The [WaitForEvent](../../../schema/util/waitforevent/) and [WaitForEventDeferred](../../../schema/util/waitforeventdeferred/) elements in the [Util schema](../../../schema/util/) schedule the WaitForEvent custom actions.

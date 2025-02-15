@@ -17,13 +17,13 @@ The first file we're going to look at is Package.wxs.
 
 The source code you write for WiX to build packages from is XML. (Back in the olden days, the `X` in WiX stood for `XML`. These days WiX just stands for WiX.) WiX loading XML files has two consequences we can see right here:
 
-- Every XML file has a [root element](https://en.wikipedia.org/wiki/Root_element) and for WiX source files, that root element is [Wix](https://wixtoolset.org/docs/schema/wxs/wix/).
+- Every XML file has a [root element](https://en.wikipedia.org/wiki/Root_element) and for WiX source files, that root element is [Wix](/wix/schema/wxs/wix/).
 - Every XML element has a [namespace](https://en.wikipedia.org/wiki/XML_namespace) and for WiX elements, that namespace is `http://wixtoolset.org/schemas/v4/wxs`.
 
 The root element and namespace are the same for all WiX _source_ files. There are other WiX file types that have different root elements and namespaces.
 
 :::note[Did you know?]
-XML namespaces are [uniform resource identifiers (URIs)](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) and may look like [uniform resource locators (URLs)](https://en.wikipedia.org/wiki/URL) but are not, in actual fact, URLs. WiX uses several namespaces, all of which start with `http://wixtoolset.org/schemas/`. However, the namespace names aren't valid URLs. You might expect the WiX schema documentation to live at the URLs matching the namespace URIs, but it lives at https://wixtoolset.org/docs/schema/ instead.
+XML namespaces are [uniform resource identifiers (URIs)](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) and may look like [uniform resource locators (URLs)](https://en.wikipedia.org/wiki/URL) but are not, in actual fact, URLs. WiX uses several namespaces, all of which start with `http://wixtoolset.org/schemas/`. However, the namespace names aren't valid URLs. You might expect the WiX schema documentation to live at the URLs matching the namespace URIs, but it lives at /wix/schema/ instead.
 :::
 
 ## Package
@@ -32,7 +32,7 @@ XML namespaces are [uniform resource identifiers (URIs)](https://en.wikipedia.or
 <Package
 ```
 
-The WiX element that describes an MSI package is...wait for it...[`Package`](https://wixtoolset.org/docs/schema/wxs/package/). `Package` has attributes and child elements that define everything about an MSI package.
+The WiX element that describes an MSI package is...wait for it...[`Package`](/wix/schema/wxs/package/). `Package` has attributes and child elements that define everything about an MSI package.
 
 {/*
 <BlockPull status="information">

@@ -4,7 +4,7 @@ title: Validation
 
 [Package validation](https://learn.microsoft.com/en-us/windows/win32/msi/package-validation) checks the content of MSI packages to, among other things, ensure the internal database structure follows (at least some of) the rules for MSI packages.
 
-Building a package using [MSBuild](msbuild/) automatically runs validation using the stock MSI SDK [ICEs](https://learn.microsoft.com/en-us/windows/win32/msi/ice-reference). To run validation when using the Wix.exe .NET tool, use the [`wix msi validate` subcommand](https://wixtoolset.org/docs/tools/wixexe/#msivalidate).
+Building a package using [MSBuild](../msbuild/) automatically runs validation using the stock MSI SDK [ICEs](https://learn.microsoft.com/en-us/windows/win32/msi/ice-reference). To run validation when using the Wix.exe .NET tool, use the [`wix msi validate` subcommand](/wix/tools/wixexe/#wix-msi-validate-subcommand).
 
 
 ## Errors running validation

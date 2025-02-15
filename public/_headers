@@ -1,3 +1,15 @@
 /*
   Referrer-Policy: no-referrer-when-downgrade
   X-Frame-Options: DENY
+
+/system/*.c
+  Content-Type: text/plain
+
+/system/*.zip
+  Content-Type: application/zip
+
+/system/*.vbs
+  Content-Type: text/plain
+
+/*.wxl
+  Content-Type: text/xml

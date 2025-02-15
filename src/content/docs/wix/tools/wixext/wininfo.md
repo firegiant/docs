@@ -2,7 +2,7 @@
 title: Windows information custom actions
 ---
 
-The [QueryWindowsDirectories](../../schema/util/querywindowsdirectories/), [QueryWindowsDriverInfo](../../schema/util/querywindowsdriverinfo/), [QueryWindowsSuiteInfo](../../schema/util/querywindowssuiteinfo/), and [QueryWindowsWellKnownSIDs](../../schema/util/querywindowswellknownsids/) elements in the [Util schema](../../schema/util/) schedule custom actions that query the system and set properties based on those queries.
+The [QueryWindowsDirectories](../../../schema/util/querywindowsdirectories/), [QueryWindowsDriverInfo](../../../schema/util/querywindowsdriverinfo/), [QueryWindowsSuiteInfo](../../../schema/util/querywindowssuiteinfo/), and [QueryWindowsWellKnownSIDs](../../../schema/util/querywindowswellknownsids/) elements in the [Util schema](../../../schema/util/) schedule custom actions that query the system and set properties based on those queries.
 
 
 ## QueryWindowsDirectories properties {#querywindowsdirectories}

@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-To create an SQL database, we first need a user with the proper credentials. The user name and password are stored in properties, you can use any usual UI elements or custom actions to set them. Note that this is the same `User` tag we used to [create a new user account](/docs/wix/v3/tutorial/com-expression-syntax-miscellanea/new-user-on-the-block) but it was used inside a `Component` tag then. Outside any component, it will not create the user, it only will define the credentials for other operations to use. As the tags, as well as the SQL functionality, are present in extension modules, we have to mention them in the opening tag of the source file:
+To create an SQL database, we first need a user with the proper credentials. The user name and password are stored in properties, you can use any usual UI elements or custom actions to set them. Note that this is the same `User` tag we used to [create a new user account](/wix3/tutorial/com-expression-syntax-miscellanea/new-user-on-the-block) but it was used inside a `Component` tag then. Outside any component, it will not create the user, it only will define the credentials for other operations to use. As the tags, as well as the SQL functionality, are present in extension modules, we have to mention them in the opening tag of the source file:
 
     <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'
       xmlns:util='http://schemas.microsoft.com/wix/UtilExtension'

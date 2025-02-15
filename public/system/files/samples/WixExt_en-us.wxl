@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) Microsoft Corporation.  All rights reserved.
+    
+    The use and distribution terms for this software are covered by the
+    Common Public License 1.0 (http://opensource.org/licenses/cpl.php)
+    which can be found in the file CPL.TXT at the root of this distribution.
+    By using this software in any fashion, you are agreeing to be bound by
+    the terms of this license.
+    
+    You must not remove this notice, or any other, from this software.
+-->
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <!--ComPlusExtension-->
+  <String Id="msierrComPlusCannotConnect" Overridable="yes">Cannot connect to the COM+ admin catalog.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionReadFailed" Overridable="yes">Failed to read COM+ partitions.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionRoleReadFailed" Overridable="yes">Failed to read COM+ partition roles.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusUserInPartitionRoleReadFailed" Overridable="yes">Failed to read COM+ users in partition roles.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionUserReadFailed" Overridable="yes">Failed to read COM+ partition users.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationReadFailed" Overridable="yes">Failed to read COM+ applications.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationRoleReadFailed" Overridable="yes">Failed to read COM+ application roles.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusUserInApplicationRoleReadFailed" Overridable="yes">Failed to read COM+ users in application roles.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusAssembliesReadFailed" Overridable="yes">Failed to read COM+ assemblies.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusSubscriptionReadFailed" Overridable="yes">Failed to read COM+ event subscriptions.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionDependency" Overridable="yes">Another entity is dependent on a COM+ partition that is not being installed.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionNotFound" Overridable="yes">The COM+ partition was not found.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionIdConflict" Overridable="yes">A COM+ partition with the same id already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusPartitionNameConflict" Overridable="yes">A COM+ partition with the same name already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationDependency" Overridable="yes">Another entity is dependent on a COM+ application that is not being installed.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationNotFound" Overridable="yes">The COM+ application was not found.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationIdConflict" Overridable="yes">A COM+ application with the same id already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationNameConflict" Overridable="yes">A COM+ application with the same name already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationRoleDependency" Overridable="yes">Another entity is dependent on a COM+ application role that is not being installed.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationRoleNotFound" Overridable="yes">The COM+ application role was not found.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusApplicationRoleConflict" Overridable="yes">A COM+ application role with the same name already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusAssemblyDependency" Overridable="yes">Another entity is dependent on a COM+ assembly that is not being installed.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusSubscriptionIdConflict" Overridable="yes">A COM+ component event subscription with the same id already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusSubscriptionNameConflict" Overridable="yes">A COM+ component event subscription with the same name already exists.  ([2]   [3]   [4]   [5])</String>
+  <String Id="msierrComPlusFailedLookupNames" Overridable="yes">Failed to lookup user account names.  ([2]   [3]   [4]   [5])</String>
+
+  <String Id="ComPlusInstallExecute" Overridable="yes">Registering COM+ components</String>
+  <String Id="ComPlusUninstallExecute" Overridable="yes">Unregistering COM+ components</String>
+
+  <String Id="CreateComPlusPartitions" Overridable="yes">Creating COM+ partitions</String>
+  <String Id="CreateComPlusPartitionsTemplate" Overridable="yes">Partition: [1]</String>
+  <String Id="RemoveComPlusPartitions" Overridable="yes">Removing COM+ partitions</String>
+  <String Id="RemoveComPlusPartitionsTemplate" Overridable="yes">Partition: [1]</String>
+  <String Id="AddUsersToComPlusPartitionRoles" Overridable="yes">Adding users to COM+ partition roles</String>
+  <String Id="AddUsersToComPlusPartitionRolesTemplate" Overridable="yes">Role: [1]</String>
+  <String Id="RemoveUsersFromComPlusPartitionRoles" Overridable="yes">Removing users from COM+ partition roles</String>
+  <String Id="RemoveUsersFromComPlusPartitionRolesTemplate" Overridable="yes">Role: [1]</String>
+  <String Id="AddComPlusPartitionUsers" Overridable="yes">Setting default COM+ partitions for users</String>
+  <String Id="AddComPlusPartitionUsersTemplate" Overridable="yes">User: [1]</String>
+  <String Id="RemoveComPlusPartitionUsers" Overridable="yes">Removing default COM+ partitions for users</String>
+  <String Id="RemoveComPlusPartitionUsersTemplate" Overridable="yes">User: [1]</String>
+  <String Id="CreateComPlusApplications" Overridable="yes">Creating COM+ applications</String>
+  <String Id="CreateComPlusApplicationsTemplate" Overridable="yes">Application: [1]</String>
+  <String Id="RemoveComPlusApplications" Overridable="yes">Removing COM+ applications</String>
+  <String Id="RemoveComPlusApplicationsTemplate" Overridable="yes">Application: [1]</String>
+  <String Id="CreateComPlusApplicationRoles" Overridable="yes">Creating COM+ application roles</String>
+  <String Id="CreateComPlusApplicationRolesTemplate" Overridable="yes">Role: [1]</String>
+  <String Id="RemoveComPlusApplicationRoles" Overridable="yes">Removing COM+ application roles</String>
+  <String Id="RemoveComPlusApplicationRolesTemplate" Overridable="yes">Role: [1]</String>
+  <String Id="AddUsersToComPlusApplicationRoles" Overridable="yes">Adding users to COM+ application roles</String>
+  <String Id="AddUsersToComPlusApplicationRolesTemplate" Overridable="yes">User: [1]</String>
+  <String Id="RemoveUsersFromComPlusApplicationRoles" Overridable="yes">Removing users from COM+ application roles</String>
+  <String Id="RemoveUsersFromComPlusApplicationRolesTemplate" Overridable="yes">User: [1]</String>
+  <String Id="RegisterComPlusAssemblies" Overridable="yes">Registering COM+ components</String>
+  <String Id="RegisterComPlusAssembliesTemplate" Overridable="yes">DLL: [1]</String>
+  <String Id="UnregisterComPlusAssemblies" Overridable="yes">Unregistering COM+ components</String>
+  <String Id="UnregisterComPlusAssembliesTemplate" Overridable="yes">DLL: [1]</String>
+  <String Id="AddComPlusRoleAssignments" Overridable="yes">Assigning roles to COM+ components</String>
+  <String Id="AddComPlusRoleAssignmentsTemplate" Overridable="yes">Component: [1]</String>
+  <String Id="RemoveComPlusRoleAssignments" Overridable="yes">Removing role assignments from COM+ components</String>
+  <String Id="RemoveComPlusRoleAssignmentsTemplate" Overridable="yes">Component: [1]</String>
+  <String Id="CreateSubscriptionsComPlusComponents" Overridable="yes">Creating subscriptions for COM+ components</String>
+  <String Id="CreateSubscriptionsComPlusComponentsTemplate" Overridable="yes">Subscription: [1]</String>
+  <String Id="RemoveSubscriptionsComPlusComponents" Overridable="yes">Removing subscriptions for COM+ components</String>
+  <String Id="RemoveSubscriptionsComPlusComponentsTemplate" Overridable="yes">Subscription: [1]</String>
+
+    <!--FirewallExtension-->
+    <String Id="msierrFirewallCannotConnect" Overridable="yes">Cannot connect to Windows Firewall.  ([2]   [3]   [4]   [5])</String>
+    
+    <String Id="WixSchedFirewallExceptionsInstall" Overridable="yes">Configuring Windows Firewall</String>
+    <String Id="WixSchedFirewallExceptionsUninstall" Overridable="yes">Configuring Windows Firewall</String>
+    <String Id="WixRollbackFirewallExceptionsInstall" Overridable="yes">Rolling back Windows Firewall configuration</String>
+    <String Id="WixExecFirewallExceptionsInstall" Overridable="yes">Installing Windows Firewall configuration</String>
+    <String Id="WixRollbackFirewallExceptionsUninstall" Overridable="yes">Rolling back Windows Firewall configuration</String>
+    <String Id="WixExecFirewallExceptionsUninstall" Overridable="yes">Uninstalling Windows Firewall configuration</String>
+
+  <!--IIsExtension-->
+    <String Id="msierrIISCannotConnect" Overridable="yes">Cannot connect to Internet Information Server.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadWebSite" Overridable="yes">Failed while processing WebSites.   ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadWebDirs" Overridable="yes">Failed while processing WebDirs.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadVDirs" Overridable="yes">Failed while processing WebVirtualDirs.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadFilters" Overridable="yes">Failed while processing WebFilters.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadMimeMap" Overridable="yes">Failed while processing MimeMaps. ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadAppPool" Overridable="yes">Failed while processing WebAppPools. ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadProp" Overridable="yes">Failed while processing WebProperties. ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadWebSvcExt" Overridable="yes">Failed while processing WebServiceExtensions. ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadWebError" Overridable="yes">Failed while processing WebErrors. ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedReadHttpHeader" Overridable="yes">Failed while processing HttpHeaders. ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrIISFailedSchedTransaction" Overridable="yes">Failed to schedule transaction for changes to IIS.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallWebs" Overridable="yes">Failed to schedule install of IIS Web Sites.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallWebDirs" Overridable="yes">Failed to schedule install of IIS Web Directories.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallVDirs" Overridable="yes">Failed to schedule install of IIS Virtual Directories.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallFilters" Overridable="yes">Failed to schedule install of IIS Filters.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallAppPool" Overridable="yes">Failed to schedule install of IIS AppPools.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallProp" Overridable="yes">Failed to schedule install of IIS Properties.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedInstallWebSvcExt" Overridable="yes">Failed to schedule install of IIS Web Service Extensions.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrIISFailedSchedUninstallWebs" Overridable="yes">Failed to schedule uninstall of IIS Web Sites.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedUninstallWebDirs" Overridable="yes">Failed to schedule uninstall of IIS Web Directories.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedUninstallVDirs" Overridable="yes">Failed to schedule uninstall of IIS Virtual Directories.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedUninstallFilters" Overridable="yes">Failed to schedule uninstall of IIS Filters.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedUninstallAppPool" Overridable="yes">Failed to schedule uninstall of IIS AppPools.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedUninstallProp" Overridable="yes">Failed to schedule uninstall of IIS Properties.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedSchedUninstallWebSvcExt" Overridable="yes">Failed to schedule uninstall of IIS Web Service Extensions.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrIISFailedStartTransaction" Overridable="yes">Failed to start IIS transaction. ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedOpenKey" Overridable="yes">Failed to open metabase key.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedCreateKey" Overridable="yes">Failed to create metabase key.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedWriteData" Overridable="yes">Failed to write data to metabase key.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedCreateApp" Overridable="yes">Failed to create web application.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedDeleteKey" Overridable="yes">Failed to delete metabase key.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrIISFailedDeleteValue" Overridable="yes">Failed to delete metabase value.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="ConfigureIIs" Overridable="yes">Configuring IIS</String>
+    <String Id="StartMetabaseTransaction" Overridable="yes">Starting IIS Metabase Transaction</String>
+    <String Id="RollbackMetabaseTransaction" Overridable="yes">Rolling back IIS Metabase Transaction</String>
+    <String Id="CommitMetabaseTransaction" Overridable="yes">Committing IIS Metabase Transaction</String>
+    <String Id="WriteMetabaseChanges" Overridable="yes">Installing Metabase Keys and Values</String>
+
+  <!--MsmqExtension-->
+  <String Id="MessageQueuingExecuteInstall" Overridable="yes">Configuring message queues</String>
+  <String Id="MessageQueuingExecuteInstallTemplate" Overridable="yes">Queue: [1]</String>
+  <String Id="MessageQueuingExecuteUninstall" Overridable="yes">Configuring message queues</String>
+  <String Id="MessageQueuingExecuteUninstallTemplate" Overridable="yes">Queue: [1]</String>
+
+    <!--SqlExtension-->
+    <String Id="msierrSQLFailedCreateDatabase" Overridable="yes">Error [2]: failed to create SQL database: [3], error detail: [4].</String>
+    <String Id="msierrSQLFailedDropDatabase" Overridable="yes">Error [2]: failed to drop SQL database: [3], error detail: [4].</String>
+    <String Id="msierrSQLFailedConnectDatabase" Overridable="yes">Failed to connect to SQL database.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrSQLFailedExecString" Overridable="yes">Error [2]: failed to execute SQL string, error detail: [3], SQL key: [4] SQL string: [5]</String>
+    <String Id="msierrSQLDatabaseAlreadyExists" Overridable="yes">The database [3] already exists. Do you want to continue?</String>
+
+    <String Id="ConfigureSql" Overridable="yes">Configuring SQL Server</String>
+    <String Id="CreateDatabase" Overridable="yes">Creating Databases</String>
+    <String Id="DropDatabase" Overridable="yes">Dropping Databases</String>
+    <String Id="ExecuteSqlStrings" Overridable="yes">Executing SQL Strings</String>
+    <String Id="RollbackExecuteSqlStrings" Overridable="yes">Rolling back SQL Strings</String>
+
+    <!--UtilExtension-->
+    <String Id="msierrUSRFailedUserCreate" Overridable="yes">Failed to create user.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUSRFailedUserCreatePswd" Overridable="yes">Failed to create user due to invalid password.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUSRFailedUserGroupAdd" Overridable="yes">Failed to add user to group.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUSRFailedUserCreateExists" Overridable="yes">Failed to create user because it already exists.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrSMBFailedCreate" Overridable="yes">Failed to create network share.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrSMBFailedDrop" Overridable="yes">Failed to drop network share.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrPERFMONFailedRegisterDLL" Overridable="yes">Failed to register DLL with PerfMon.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrPERFMONFailedUnregisterDLL" Overridable="yes">Failed to unregister DLL with PerfMon.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrInstallPerfCounterData" Overridable="yes">Failed to install performance counters.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUninstallPerfCounterData" Overridable="yes">Failed to uninstall performance counters.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrSecureObjectsFailedCreateSD" Overridable="yes">Failed to create security descriptor for [3]\[4], system error: [2]</String>
+    <String Id="msierrSecureObjectsFailedSet" Overridable="yes">Failed to set security descriptor on object [3], system error: [2]</String>
+    <String Id="msierrSecureObjectsUnknownType" Overridable="yes">Unknown Object Type [3], system error: [2]</String>
+
+    <String Id="msierrXmlFileFailedRead" Overridable="yes">There was a failure while configuring XML files.</String>
+    <String Id="msierrXmlFileFailedOpen" Overridable="yes">Failed to open XML file [3], system error: [2]</String>
+    <String Id="msierrXmlFileFailedSelect" Overridable="yes">Failed to find node: [3] in XML file: [4], system error: [2]</String>
+    <String Id="msierrXmlFileFailedSave" Overridable="yes">Failed to save changes to XML file [3], system error: [2]</String>
+
+    <String Id="msierrXmlConfigFailedRead" Overridable="yes">There was a failure while configuring XML files.</String>
+    <String Id="msierrXmlConfigFailedOpen" Overridable="yes">Failed to open XML file [3], system error: [2]</String>
+    <String Id="msierrXmlConfigFailedSelect" Overridable="yes">Failed to find node: [3] in XML file: [4], system error: [2]</String>
+    <String Id="msierrXmlConfigFailedSave" Overridable="yes">Failed to save changes to XML file [3], system error: [2]</String>
+</WixLocalization>
+

@@ -17,7 +17,7 @@ WixStdBA includes several themes to choose between RTF and hyperlinks for licens
 - WixStandardBootstrapperApplication.RtfLargeLicense: A large dialog with the RTF license and optional version number shown in the welcome dialog
 - WixStandardBootstrapperApplication.HyperlinkLargeLicense: A small dialog with an optional hyperlink to the license agreement and optional version number on the welcome dialog
 
-You can specify WixStdBA and a WixStdBA theme using the [`WixStandardBootstrapperApplication` element](../../schema/bal/wixstandardbootstrapperapplication/) under your bundle's [`BootstrapperApplication` element](../../schema/wxs/bootstrapperapplication/):
+You can specify WixStdBA and a WixStdBA theme using the [`WixStandardBootstrapperApplication` element](../../../schema/bal/wixstandardbootstrapperapplication/) under your bundle's [`BootstrapperApplication` element](../../../schema/wxs/bootstrapperapplication/):
 
 ```xml
 <Wix
@@ -33,7 +33,7 @@ You can specify WixStdBA and a WixStdBA theme using the [`WixStandardBootstrappe
         </BootstrapperApplication>
 ```
 
-Here are a few of the more interesting attributes available on the [`WixStandardBootstrapperApplication` element](../../schema/bal/wixstandardbootstrapperapplication/):
+Here are a few of the more interesting attributes available on the [`WixStandardBootstrapperApplication` element](../../../schema/bal/wixstandardbootstrapperapplication/):
 
 | Attribute | Description |
 | --------- | ----------- |
@@ -69,7 +69,7 @@ WixStdBA sets the following bundle variables, which you can use in theme files (
 | WixBundleFileVersion | The file version of the bundle .exe |
 | WixStdBALanguageId | The language in effect for the user interface |
 | WixStdBARestartRequired | Set to `1` if a reboot is required (after the setup operation is complete). |
-| WixStdBAShowVersion | Set to `1` if [`WixStandardBootstrapperApplication/@ShowVersion`](../../schema/bal/wixstandardbootstrapperapplication/) was set to `yes`. |
-| WixStdBASuppressOptionsUI | Set to `1` if [`WixStandardBootstrapperApplication/@SuppressOptionsUI`](../../schema/bal/wixstandardbootstrapperapplication/) was set to `yes`. |
-| WixStdBAUpdateAvailable | Set to the highest version of an avalable update specified in the feed pointed to by [`Bundle/@UpdateURL`](../../schema/wxs/bundle/). |
+| WixStdBAShowVersion | Set to `1` if [`WixStandardBootstrapperApplication/@ShowVersion`](../../../schema/bal/wixstandardbootstrapperapplication/) was set to `yes`. |
+| WixStdBASuppressOptionsUI | Set to `1` if [`WixStandardBootstrapperApplication/@SuppressOptionsUI`](../../../schema/bal/wixstandardbootstrapperapplication/) was set to `yes`. |
+| WixStdBAUpdateAvailable | Set to the highest version of an avalable update specified in the feed pointed to by [`Bundle/@UpdateURL`](../../../schema/wxs/bundle/). |
 

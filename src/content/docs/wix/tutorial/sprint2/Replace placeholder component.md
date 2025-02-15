@@ -4,7 +4,7 @@ sidebar:
   order: 3
 ---
 
-As you might [recall from last sprint](/docs/wix/tutorial/sprint1/spike-explore-examplecomponents/), the HeatWave template gave us a component to be packaged into the installer...but it was just a placeholder. So let's replace it with something real. Well, not really real, yet -- we'll be replacing the template placeholder with _our_ app placeholder. It's ours and that makes it special.
+As you might [recall from last sprint](/wix/tutorial/sprint1/spike-explore-examplecomponents/), the HeatWave template gave us a component to be packaged into the installer...but it was just a placeholder. So let's replace it with something real. Well, not really real, yet -- we'll be replacing the template placeholder with _our_ app placeholder. It's ours and that makes it special.
 
 To further refresh your memory, this is what the component looks like:
 

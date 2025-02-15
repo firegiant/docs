@@ -75,5 +75,5 @@ List of commonly available output groups:
 * DocumentationProjectOutputGroupDependencies
 * SGenFilesOutputGroupDependencies
 
-[add]: /docs/heatwave/extensions/
+[add]: /heatwave/adding-wix-extensions/
 [strategies]: /heatwave/build-tools/harvesting/strategies/
