@@ -36,6 +36,18 @@ The Package element is analogous to the main function in a C program. When linki
 
   <BlockReference
     content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  _New in WiX v6: WiX v6 adds this attribute to the `Package` element._
+   A globally unique identiifer for the package in the world. It is recommended to use a prefix such as "CompanyName." to
+   create a namespace of sorts. By default, higher versioned upgrade lower versioned packages with the same Id. Use this
+   attibute instead of the UpgradeCode attribute in new development.
+  </BlockReference>
+
+  <BlockReference
+    content={{
       title: "InstallerVersion",
       type: "Integer",
       typeLink: "../integer/",
@@ -99,7 +111,7 @@ The Package element is analogous to the main function in a C program. When linki
       typeTitle: "Use this attribute to specify the installation scope of this package: per-machine, per-user, or a choice of either."
     }}
   >
-  Use this attribute to specify the installation scope of this package: per-machine, per-user, or a choice of either.
+  Use this attribute to specify the installation scope of this package: per-machine, per-user, or a choice of either. The default is per-machine.
   </BlockReference>
 
   <BlockReference
@@ -108,7 +120,7 @@ The Package element is analogous to the main function in a C program. When linki
       type: "yesno"
     }}
   >
-  Indicates whether the package files are installed using 8.3 filenames.
+  Indicates whether the package files are installed using 8.3 filenames. The default is no.
   </BlockReference>
 
   <BlockReference
@@ -119,7 +131,9 @@ The Package element is analogous to the main function in a C program. When linki
       typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
     }}
   >
-  The upgrade code GUID for the package. Sets the UpgradeCode property.
+  For new packages, it is recommended to use the Id attribute instead. This attribute exists for
+   backwards compatibility scenarios. Use this attribute to provide a specific upgrade code GUID
+   for a MSI package. See [UpgradeCode](https://learn.microsoft.com/en-us/windows/win32/msi/upgradecode) for more information.
   </BlockReference>
 
   <BlockReference
@@ -130,10 +144,11 @@ The Package element is analogous to the main function in a C program. When linki
       typeTitle: "Use this attribute to specify the upgrade strategy of this package: major upgrade or none."
     }}
   >
-  The upgrade strategy for the package. If "none," no major upgrade is expected.
+  _New in WiX v5: WiX v5 adds this attribute to the `Package` element._
+   The upgrade strategy for the package. If "none," no major upgrade is expected.
    If "majorUpgrade," the UpgradeCode attribute is required and a major upgrade is expected.
+   The default is "majorUpgrade."
    A default major upgrade is automatically provided if none is authored.
-   _New in WiX v5: WiX v5 adds this attribute to the `Package` element._
   </BlockReference>
 
   <BlockReference

@@ -6,13 +6,23 @@ import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
-References a WixUI dialog set, either one that's included in WixToolset.UI.wixext or a 
+References a WixUI dialog set, either one that's included in WixToolset.UI.wixext or a
  custom dialog set included in your authoring.
 
 
 ## Attributes
 
 <BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "ExtendedPathValidation",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Enable checks to test whether the package is being installed to a network share or removable
+   disk. The default is no.
+  </BlockReference>
 
   <BlockReference
     content={{

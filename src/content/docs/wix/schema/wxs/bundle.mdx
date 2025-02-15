@@ -130,6 +130,18 @@ The root element for creating bundled packages.
 
   <BlockReference
     content={{
+      title: "Id",
+      type: "string"
+    }}
+  >
+  _New in WiX v6: WiX v6 adds this attribute to the `Package` element._
+   A globally unique identiifer for the bundle in the world. It is recommended to use a prefix such as "CompanyName." to
+   create a namespace of sorts. By default, higher versioned upgrade lower versioned bundles with the same Id. Use this
+   attribute instead of the UpgradeCode attribute in new development.
+  </BlockReference>
+
+  <BlockReference
+    content={{
       title: "InProgressName",
       type: "string"
     }}
@@ -218,12 +230,13 @@ The root element for creating bundled packages.
       title: "UpgradeCode",
       type: "Guid",
       typeLink: "../guid/",
-      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
-      required: true
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
     }}
   >
-  Unique identifier for a family of bundles. If two bundles have the same UpgradeCode the
-   bundle with the highest version will be installed.
+  For new bundles, it is recommended to use the Id attribute instead. This attribute exists for
+   backwards compatibility scenarios. Use this attribute to provide a specific unique identifier
+   for a family of bundles. If two bundles have the same UpgradeCode the bundle with the highest
+   version will be installed.
   </BlockReference>
 
   <BlockReference
