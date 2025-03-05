@@ -10,18 +10,53 @@ WiX v6 is the second annual release since WiX v4. WiX v6 continues in the tradit
 
 | Issue | Description |
 | ----- | ----------- |
+| [1520](https://github.com/wixtoolset/issues/issues/1520) | Address a **16**-year-old feature request to support more stores for SSL certificates. |
+| [2691](https://github.com/wixtoolset/issues/issues/2691) | Address a **14**-year-old WixUI prettiness bug. |
+| [7622](https://github.com/wixtoolset/issues/issues/7622) | Adds support "normal," non-SNI SSL certificates in http.sys. |
 | [8101](https://github.com/wixtoolset/issues/issues/8101) | Add PerUserProgramFilesFolder standard directory for per-user packages and use it as the root of the default INSTALLFOLDER. |
+| [8135](https://github.com/wixtoolset/issues/issues/8135) | Fixes a bug in WixInternalUIBootstrapperApplication so now the dialogs appear as buttons on the taskbar. |
 | [8577](https://github.com/wixtoolset/issues/issues/8577) | Create local and domain user groups. In WiX v5 and before, you could _reference_ existing groups | 
 | [8584](https://github.com/wixtoolset/issues/issues/8584) | Replace upgrade code GUIDs with human-readable strings. The `Package` and `Bundle` elements now have an `Id` attribute that turns a human-readable string into the equivalent of an upgrade code GUID. You need to provide a value that identifies the "product family," just like it were an old-school upgrade code GUID. But `WixToolset.CommandLineTools.Package` is certainly easier to think about than `{2e85dc76-769f-46d2-82a7-46cb3a0c9d50}`, I think you'd agree. |
 | [8663](https://github.com/wixtoolset/issues/issues/8663) | Allow component GUIDs for registry keys to be compatible with those created in WiX v3. Something we discovered while helping a FireGiant customer is that there's a scenario where a generated component GUID for a registry value changed in WiX v4. That same thing happened in WiX v3 (for different reasons), which is why the `-bcgg` (backward-compatible GUID generation) command-line switch was born. Well, now it's back, if you need to maintain the generated v3 GUID. | 
+| [8685](https://github.com/wixtoolset/issues/issues/8685) | Uses the new MSTest executable test runner and MSBuild traversal projects to build more WiX code in parallel. Faster builds make happy devs, especially when their name is Bob. |
 | [8718](https://github.com/wixtoolset/issues/issues/8718), [8580](https://github.com/wixtoolset/issues/issues/8580) | Reduce the use of custom actions in WixUI to minimize the [amount of extra work necessary to work around platform-specific custom actions](https://docs.firegiant.com/wix/fourthree/faqs/#converting-custom-wixui-dialog-sets). The custom action to print the EULA&mdash;for those who not only _read_ the EULA but print a copy for their records&mdash;was entirely replaced by built-in MSI functionality. Similarly, the "extra" checking on paths done by custom action is now done with built-in functionality, though you can opt in to the old functionality using `ExtendedPathValidation="yes"` on the `WixUI` element. | 
+| [8882](https://github.com/wixtoolset/issues/issues/8882), [8939](https://github.com/wixtoolset/issues/issues/8939) | Use a different approach to construct the default feature and add components to it. |
 | [8913](https://github.com/wixtoolset/issues/issues/8913) | Using Heat now shows a deprecation warning. It's still present and works with WiX v6, mostly by nature of the WiX v6 language not changing. But we plan to remove Heat in WiX v7, so this serves as eviction notice. | https://github.com/wixtoolset/issues/issues/ |
 | [8914](https://github.com/wixtoolset/issues/issues/8914) | Lock files extracted from Burn bundles as additional mitigation against attacks. No protection is perfect but locking files as read-only helps prevent malware from overwriting temporary files used during bundle installation. | 
+
+
+### Get started 
+
+Get started with an SDK-style .wixproj project:
+
+```xml
+<Project Sdk="WixToolset.Sdk/6.0.0-rc.2">
+</Project>
+```
+
+and simple package code in a .wxs file:
+
+```xml
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+    <Package Id="Acme.HelloWorld" Name="HelloWorld" Version="6.0.0" Manufacturer="Acme">
+        <Files Include="*" />
+    </Package>
+</Wix>
+```
+
+and run 
+
+```sh
+dotnet build
+```
+
+to build it.
 
 
 ### WiX v6 releases
 
 - WiX v6.0.0-rc.1 was published 12-Feb-2025.
+- WiX v6.0.0-rc.2 was published 05-Mar-2025.
 
 
 ## WiX v5
