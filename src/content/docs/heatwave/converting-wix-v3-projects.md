@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-With HeatWave, you can convert WiX v3 .wixproj projects to modern WiX using the `Upgrade to WiX v4` command on the Project menu or context menu in Solution Explorer.
+With HeatWave, you can convert WiX v3 .wixproj projects to modern WiX using the `Upgrade to latest WiX version...` command on the Project menu or context menu in Solution Explorer.
 
 ![HeatWave converter screenshot](/images/docs/converter0.png)
 
