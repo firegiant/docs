@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import remarkHeadingId from 'remark-heading-id';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
@@ -8,6 +9,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   site: 'https://docs.firegiant.com',
   trailingSlash: "always",
+  markdown: {
+    remarkPlugins: [remarkHeadingId],
+  },
   integrations: [
     sitemap({
       filter: (page) => !page.startsWith('https://docs.firegiant.com/wix3/')
