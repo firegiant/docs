@@ -11,13 +11,13 @@ Harvesting is controlled by extension elements, `<HarvestProjectOutput/>` and `<
 The parent element will act as the template for the harvesting. Let's look at a very simple example. Consider a *SetupProject1.wixproj* with a project reference to *ConsoleApplication1.csproj* which in turn has a project reference to *ClassLibrary1.csproj*. In *SetupProject1.wixproj*, list the outputs we want to harvest from the project by adding `HarvestOutputGroup` metadata. In this example, we'll harvest the build outputs and dependencies of *ConsoleApplication1.csproj*:
 
 ```xml title=SetupProject1.wixproj
-<Project Sdk="WixToolset.Sdk/5.0.1">
+<Project Sdk="WixToolset.Sdk/5.0.2">
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication1\ConsoleApplication1.csproj" HarvestOutputGroup="BuiltProjectOutputGroup;BuiltProjectOutputGroupDependencies" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FireGiant.HeatWave.BuildTools.wixext" Version="5.0.1" />
+    <PackageReference Include="FireGiant.HeatWave.BuildTools.wixext" Version="5.0.2" />
   </ItemGroup>
 </Project>
 ```
