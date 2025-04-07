@@ -1,5 +1,5 @@
 ---
-title: Out-of-process bootstrapper applications in WiX v5
+title: Out-of-process bootstrapper applications
 ---
 
 In WiX v5, Burn launches bootstrapper applications as separate processes rather than loading them as DLLs inside the Burn process. If using the WiX Standard Bootstrapper Application or WiX Internal UI Bootstrapper Application, the move to out-of-process bootstrapper applications is abstracted away and should not introduce any breaking changes or required authoring changes.

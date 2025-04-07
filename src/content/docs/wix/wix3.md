@@ -3,8 +3,8 @@ title: WiX v3 Overview
 ---
 
 :::caution[Going out of service]
-All WiX v3 versions will be out of community service on February 6th, 2025.
-After that date, there will be no additional fixes, even for security issues for consumers of WiX v3.
+All WiX v3 versions are out of community service as of February 6th, 2025.
+There will be no additional fixes, even for security issues for consumers of WiX v3.
 
 Note: [FireGiant support customers](https://www.firegiant.com/services/) do receive bug and security fixes
 in WiX v3, as per their contract.
