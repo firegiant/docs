@@ -55,9 +55,11 @@ export default defineConfig({
 
         { label: 'WiX Toolset', collapsed: true, items: [
           'wix',
+
+          { label: 'What\'s new in WiX', collapsed: true, autogenerate: { directory: '/wix/whatsnew' } },
+
           'wix/using-wix',
           'wix/gethelp',
-          'wix/releasenotes',
 
           { label: 'Tutorial', collapsed: true, items: [
             { label: 'Tutorial Introduction', link: 'wix/tutorial/' },
@@ -87,8 +89,6 @@ export default defineConfig({
           { label: 'WiX extensions and custom actions', collapsed: true, autogenerate: { directory: '/wix/tools/wixext' } },
           { label: 'Burn', collapsed: true, autogenerate: { directory: '/wix/tools/burn' } },
 
-          { label: 'WiX v5 for WiX v4 users', collapsed: true, autogenerate: { directory: '/wix/fivefour' } },
-          { label: 'WiX v4 for WiX v3 users', collapsed: true, autogenerate: { directory: '/wix/fourthree' } },
           { label: 'Development', collapsed: true, autogenerate: { directory: '/wix/development' } },
           { label: 'WiX v3', badge: { text: 'deprecated', variant: 'danger' }, collapsed: true, items: [
             'wix/wix3',

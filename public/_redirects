@@ -1,3 +1,11 @@
 /releases /wix/releasenotes/
 /wix/release /wix/releasenotes/
 /wix/releases /wix/releasenotes/
+/wix/fivefour/ /wix/whatsnew/
+/wix/fivefour/oopbas/ /wix/whatsnew/oopbas/
+/wix/fourthree/ /wix/whatsnew/
+/wix/fourthree/faqs/ /wix/whatsnew/faqs/
+/wix/releasenotes/ /wix/whatsnew/releasenotes/
+/wix/releasenotes /wix/whatsnew/releasenotes/
+/wixtoolset/ /wix/
+/wixtoolset /wix/

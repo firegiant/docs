@@ -28,7 +28,7 @@ SDK-style projects have smart defaults that make for simple .wixproj project aut
 For example, here's a minimal .wixproj that builds an MSI from the .wxs source files in the project directory:
 
 ```xml
-<Project Sdk="WixToolset.Sdk/5.0.1">
+<Project Sdk="WixToolset.Sdk/6.0.0">
 </Project>
 ```
 
@@ -37,7 +37,7 @@ For example, here's a minimal .wixproj that builds an MSI from the .wxs source f
 To update your .wixproj MSBuild projects from previous WiX releases, update the `Project` element's `Sdk` attribute:
 
 ```xml
-<Project Sdk="WixToolset.Sdk/5.0.1">
+<Project Sdk="WixToolset.Sdk/6.0.0">
 ```
 
 For `PackageReference`s to WiX extensions, update their `Version` attribute. For example:
@@ -112,7 +112,7 @@ dotnet nuget add source https://nuget.pkg.github.com/wixtoolset/index.json -n wi
 You need to use exact versions for those packages. For example:
 
 ```xml
-<Project Sdk="WixToolset.Sdk/6.0.0-rc.1-build.42">
+<Project Sdk="WixToolset.Sdk/6.0.1-build.47">
 </Project>
 ```
 
