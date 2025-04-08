@@ -81,9 +81,15 @@ Used to install and uninstall certificates.
       required: true
     }}
   >
-   This attribute's value must be one of the following:
+  This attribute controls which Certificate Store Location will be used for the Certificate.
+   See [MSDN documentation](https://learn.microsoft.com/en-us/windows/win32/seccrypto/system-store-locations) for more information. This attribute's value must be one of the following:
   - *currentUser*
   - *localMachine*
+  - *services*
+  - *users*
+  - *userPolicy*
+  - *localMachinePolicy*
+  - *localMachineEnterprise*
   </BlockReference>
 
   <BlockReference

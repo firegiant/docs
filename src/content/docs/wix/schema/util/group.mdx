@@ -6,9 +6,7 @@ import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
-Finds user groups on the local machine or specified Active Directory domain. The local machine will be
- searched for the group first then fallback to looking in Active Directory. This element is not capable
- of creating new groups but can be used to add new or existing users to an existing group.
+Group for all kinds of (usergroup) things. When it is not nested under a component it is included in the MSI so it can be referenced by other elements such as the GroupRef element under a User element (to add the User to the Group). When it is nested under a Component element, the Group will be created on install and can also be used for reference.
 
 
 ## Attributes
@@ -17,11 +15,38 @@ Finds user groups on the local machine or specified Active Directory domain. The
 
   <BlockReference
     content={{
+      title: "Comment",
+      type: "string"
+    }}
+  >
+  Optional comment to set on the group.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "CreateGroup",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether or not to create the group. Group creation can be skipped if all that is desired is to add group memberships.
+  </BlockReference>
+
+  <BlockReference
+    content={{
       title: "Domain",
       type: "string"
     }}
   >
   An optional [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that specifies the domain for the group.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "FailIfExists",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates if the install should fail if the group already exists.
   </BlockReference>
 
   <BlockReference
@@ -40,15 +65,64 @@ Finds user groups on the local machine or specified Active Directory domain. The
       required: true
     }}
   >
-  A [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that contains the name of the group to be found.
+  A [Formatted](https://learn.microsoft.com/en-us/windows/win32/msi/formatted) string that contains the name of the group.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoveComment",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether remove the comment from the group. The default value is "no".
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "RemoveOnUninstall",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether the group should be removed or left behind on uninstall.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "UpdateIfExists",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates if the group properties should be updated if the group already exists.
+  </BlockReference>
+
+  <BlockReference
+    content={{
+      title: "Vital",
+      type: "wxs:YesNoTypeUnion"
+    }}
+  >
+  Indicates whether failure to create the group or add the group to another group fails the installation. The default value is "yes".
   </BlockReference>
 
 </BlockWrapper>
 
+## Children
+
+<BlockDefList content={[
+    {
+      title: "GroupRef",
+      link: "../groupref/"
+    }
+  ]}
+/>
 
 ## Parents
 
 <BlockDefList content={[
+    {
+      title: "Component (Wxs extension)",
+      link: "../../wxs/component/"
+    },
     {
       title: "Fragment (Wxs extension)",
       link: "../../wxs/fragment/"
@@ -63,3 +137,6 @@ Finds user groups on the local machine or specified Active Directory domain. The
     }
   ]}
 />
+
+## See also
+[GroupRef](../groupref/)

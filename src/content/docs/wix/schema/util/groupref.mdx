@@ -6,7 +6,7 @@ import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
-Used to join a user to a group
+Used to join a user / group to a group
 
 
 ## Attributes
@@ -29,6 +29,10 @@ Used to join a user to a group
 ## Parents
 
 <BlockDefList content={[
+    {
+      title: "Group",
+      link: "../group/"
+    },
     {
       title: "User",
       link: "../user/"
