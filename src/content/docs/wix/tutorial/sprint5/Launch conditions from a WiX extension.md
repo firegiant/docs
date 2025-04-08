@@ -14,7 +14,7 @@ Remember the product backlog item and its summary:
 
 > Require a matching platform in the installer. That means the x64 package can only be installed on an x64 machine and likewise for Arm64.
 
-Technically, that presupposes that we have (at least) packages: one for x64 and one for Arm64. So far, we have only one. That means we have to do the following:
+Technically, that presupposes that we have (at least) two packages: one for x64 and one for Arm64. So far, we have only one. That means we have to do the following:
 
 1. Make sure our current package installs only on an x64 machine.
 2. Theoretically ensure a future Arm64 package installs only on an Arm64 machine.
