@@ -22,9 +22,12 @@ export default defineConfig({
         dark: './src/assets/firegiant-logo-black.svg',
         light: './src/assets/firegiant-logo-standard.svg',
       },
-      social: {
-        github: 'https://github.com/firegiant/docs/',
-      },
+      social: [
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/firegiant/docs/' },
+        { icon: 'youtube', label: 'YouTube', href: 'https://youtube.com/@firegiantco/' },
+        { icon: 'email', label: 'Contact', href: 'https://www.firegiant.com/contact/' },
+        { icon: 'rss', label: 'RSS', href: 'https://www.firegiant.com/blog/rss.xml' },
+      ],
       customCss: [
         './src/styles/custom.css',
         './src/fonts/font-face.css',

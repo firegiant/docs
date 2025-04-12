@@ -9,14 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.2.1",
-    "@astrojs/starlight": "0.31.1",
-    "astro": "5.3.0",
+    "@astrojs/sitemap": "3.3.0",
+    "@astrojs/starlight": "0.33.1",
+    "astro": "5.6.1",
     "astro-broken-link-checker": "github:firegiant/astro-broken-link-checker",
     "remark-heading-id": "1.0.1",
-    "sharp": "0.33.5"
+    "sharp": "0.34.1"
   },
   "devDependencies": {
-    "esbuild": ">=0.25.0"
+    "esbuild": "0.25.2"
   }
 }
