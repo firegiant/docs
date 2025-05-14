@@ -24,6 +24,10 @@ HeatWave is available from the Visual Studio Marketplace.
 
 Double-click the downloaded .vsix file to install HeatWave.
 
+:::caution[Supported Visual Studio Versions]
+HeatWave supports [the latest Visual Studio Long-Term Servicing Channel (LTSC)](https://learn.microsoft.com/en-us/visualstudio/productinfo/vs-servicing#long-term-servicing-channel-ltsc-support) and newer versions. If your Visual Studio is an older version than the latest LTSC version, HeatWave will fail to install. Upgrade your Visual Studio to install HeatWave.
+:::
+
 ## Upgrading HeatWave
 
 When new versions of HeatWave are released, you can update from within Visual Studio:
