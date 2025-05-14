@@ -7,7 +7,7 @@ WixStandardBootstrapperApplication (WixStdBA) is the "stock" bootstrapper applic
 
 ## WixStdBA themes
 
-WixStdBA is included in the WixToolset.Bal.wixext WiX extension NuGet package. You need a reference to that package to use WixStdBA.
+WixStdBA is included in the WixToolset.BootstrapperApplications.wixext WiX extension NuGet package. You need a reference to that package to use WixStdBA.
 
 WixStdBA includes several themes to choose between RTF and hyperlinks for licenses and small or large dialogs:
 
