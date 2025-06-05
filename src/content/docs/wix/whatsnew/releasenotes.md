@@ -55,6 +55,12 @@ to build it.
 
 ### WiX v6 releases
 
+- WiX v6.0.1 was published 5-Jun-2025 on nuget.org for the [MSBuild SDK](https://www.nuget.org/packages/WixToolset.Sdk) and [.NET tool](https://www.nuget.org/packages/wix) and as a [GitHub release](https://github.com/wixtoolset/wix/releases/tag/v6.0.1) to fix the following bugs:
+  * [Bundle splash screen showing on removal of previous base version during upgrade](https://github.com/wixtoolset/issues/issues/7969), from [@yuvnith](https://github.com/yuvnith), [fixed](https://github.com/wixtoolset/wix/pull/635) by [@barnson](https://github.com/barnson)
+  * [Upgrading to Wix Toolset v6 Causes Build Exception](https://github.com/wixtoolset/issues/issues/9028), from [@oollie34](https://github.com/oollie34), [fixed](https://github.com/wixtoolset/wix/pull/634) by [@barnson](https://github.com/barnson)
+  * [WixBundleSourceProcessPath and WixBundleSourceProcessFolder should be resurrected](https://github.com/wixtoolset/issues/issues/9029), from [@barnson](https://github.com/barnson), [fixed](https://github.com/wixtoolset/wix/pull/633) by [@barnson](https://github.com/barnson)
+  * [Extension decompilers support only their extension's own tables](https://github.com/wixtoolset/issues/issues/9070), from [@barnson](https://github.com/barnson), [fixed](https://github.com/wixtoolset/wix/pull/640) by [@barnson](https://github.com/barnson)
+  * [Update registration disappears during upgrade.](https://github.com/wixtoolset/issues/issues/9075), from [@barnson](https://github.com/barnson), [fixed](https://github.com/wixtoolset/wix/pull/622) by [@barnson](https://github.com/barnson)
 - WiX v6.0.0 was published 7-Apr-2025.
 - WiX v6.0.0-rc.2 was published 05-Mar-2025.
 - WiX v6.0.0-rc.1 was published 12-Feb-2025.
