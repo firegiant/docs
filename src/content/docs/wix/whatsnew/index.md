@@ -15,7 +15,7 @@ WiX v6 contains a number of bug fixes and new features, including these favorite
 Windows Installer uses GUIDs at the drop of a hat...any hat. It's hard to complain because GUIDs are perfect as unique identifiers (it's right in the name). But they're definitely awkward and WiX has been on a 20+-year-fight to get rid of them where feasible. This year, we got rid of the last "mandatory" GUID: The upgrade code.
 
 :::note[Well, actually...]
-Upgrade codes in MSI packates aren't _technically_ mandatory, but omitting them is a bad idea. So bad, in fact, that they _are_ mandatory for bundles.
+Upgrade codes in MSI packages aren't _technically_ mandatory, but omitting them is a bad idea. So bad, in fact, that they _are_ mandatory for bundles.
 :::
 
 The _concept_ of an upgrade code is still needed: MSI and Burn need a way to identify a "family" of product versions that can upgrade each other. But now you can use a human-readable string in its `Id` attribute rather than a GUID in an `UpgradeCode` attribute:
