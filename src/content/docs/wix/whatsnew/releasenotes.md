@@ -23,6 +23,7 @@ WiX v6 is the second annual release since WiX v4. WiX v6 continues in the tradit
 | [8882](https://github.com/wixtoolset/issues/issues/8882), [8939](https://github.com/wixtoolset/issues/issues/8939) | Use a different approach to construct the default feature and add components to it. |
 | [8913](https://github.com/wixtoolset/issues/issues/8913) | Using Heat now shows a deprecation warning. It's still present and works with WiX v6, mostly by nature of the WiX v6 language not changing. But we plan to remove Heat in WiX v7, so this warning serves as eviction notice. | https://github.com/wixtoolset/issues/issues/ |
 | [8914](https://github.com/wixtoolset/issues/issues/8914) | Lock files extracted from Burn bundles as additional mitigation against attacks. No protection is perfect but locking files as read-only helps prevent malware from overwriting temporary files used during bundle installation. | 
+| [8974](https://github.com/wixtoolset/issues/issues/8974) | Introduce the Open Source Maintenance Fee. | 
 
 
 ### Get started 

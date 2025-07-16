@@ -8,7 +8,19 @@ sidebar:
 
 WiX v6 continues to be highly compatible in its language syntax with WiX v5 and even v4. We're liking how easy it is to pick up new versions of WiX without worrying about code conversion.
 
-WiX v6 contains a number of bug fixes and new features, including these favorites:
+WiX v6 contains a number of bug fixes and new features, and introduces an Open Source Maintenance Fee:
+
+
+### Open Source Maintenance Fee
+
+<a href="https://opensourcemaintenancefee.org/"><img src='/images/osmf-logo-square-dark.png' width='146' align='right' /></a>
+
+To ensure the long-term sustainability of the WiX Toolset, starting in WiX v6, use of the project requires an [Open Source Maintenance Fee](https://opensourcemaintenancefee.org). While the source code is freely available under the terms of the [LICENSE](https://github.com/wixtoolset/wix/blob/main/LICENSE.TXT), other aspects of the project--including opening issues and downloading releases--require adherence to the Maintenance Fee.
+
+In short, if you use this project to generate revenue, the [Open Source Maintenance Fee is required](https://opensourcemaintenancefee.org).
+
+To pay the Maintenance Fee, [become a Sponsor](https://github.com/sponsors/wixtoolset).
+
 
 ### GUIDs are now optional for upgrade codes
 
