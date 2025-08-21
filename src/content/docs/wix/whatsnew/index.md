@@ -85,6 +85,14 @@ WiX v5 addressed one of the custom actions and WiX v6 addresses the other, so no
   ExtendedPathValidation="yes" />
 ```
 
+:::caution[Breaking change for customized dialog sets]
+As part of the effort to remove custom actions from WixUI, the `BrowseDlg` dialog, which lets the user browse for a directory, has its behavior moved out of the `BrowseDlg` dialog itself and into the dialog set. If you create a customized dialog set, you need to do likewise. For example:
+
+```xml
+<Publish Dialog="BrowseDlg" Control="OK" Event="SetTargetPath" Value="[_BrowseProperty]" Order="3" />
+<Publish Dialog="BrowseDlg" Control="OK" Event="EndDialog" Value="Return" Order="4" />
+```
+:::
 
 ### Burn locks extracted payloads
 
