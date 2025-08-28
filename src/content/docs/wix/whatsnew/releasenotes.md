@@ -31,7 +31,7 @@ WiX v6 is the second annual release since WiX v4. WiX v6 continues in the tradit
 Get started with an SDK-style .wixproj project:
 
 ```xml
-<Project Sdk="WixToolset.Sdk/6.0.0">
+<Project Sdk="WixToolset.Sdk/6.0.2">
 </Project>
 ```
 
@@ -56,6 +56,8 @@ to build it.
 
 ### WiX v6 releases
 
+- WiX v6.0.2 was published 28-Aug-2025 on nuget.org for the [MSBuild SDK](https://www.nuget.org/packages/WixToolset.Sdk) and [.NET tool](https://www.nuget.org/packages/wix) and as a [GitHub release](https://github.com/wixtoolset/wix/releases/tag/v6.0.2) to fix a lone bug:
+  * [Scale bundle splash screens better](https://github.com/wixtoolset/issues/issues/9148), opened by [@barnson](https://github.com/barnson), [also fixed](https://github.com/wixtoolset/wix/pull/656) by [@barnson](https://github.com/barnson)
 - WiX v6.0.1 was published 5-Jun-2025 on nuget.org for the [MSBuild SDK](https://www.nuget.org/packages/WixToolset.Sdk) and [.NET tool](https://www.nuget.org/packages/wix) and as a [GitHub release](https://github.com/wixtoolset/wix/releases/tag/v6.0.1) to fix the following bugs:
   * [Bundle splash screen showing on removal of previous base version during upgrade](https://github.com/wixtoolset/issues/issues/7969), from [@yuvnith](https://github.com/yuvnith), [fixed](https://github.com/wixtoolset/wix/pull/635) by [@barnson](https://github.com/barnson)
   * [Upgrading to Wix Toolset v6 Causes Build Exception](https://github.com/wixtoolset/issues/issues/9028), from [@oollie34](https://github.com/oollie34), [fixed](https://github.com/wixtoolset/wix/pull/634) by [@barnson](https://github.com/barnson)
