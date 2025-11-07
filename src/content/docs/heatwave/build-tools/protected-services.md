@@ -12,6 +12,10 @@ During installation, the FireGiant protected service extension:
 - Installs the ELAM driver private certificate.
 - Configures the service to launch as a protected service.
 
+:::caution[Licensed feature]
+Like the other features in HeatWave Build Tools, a license file is required to use FireGiant Protected Services Extension. See the [FireGiant licensing documentation for more information](../firegiant-licensing/).
+:::
+
 To use the protected service extension, add a reference to the `FireGiant.HeatWave.BuildTools.wixext` and access the extension by adding the following namespace to your .wxs code:
 
 ```xml title=ProtectedService.wxs

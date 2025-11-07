@@ -8,6 +8,10 @@ sidebar:
 The FireGiant Driver Extension can install, repair, upgrade, uninstall, and roll back kernel and file system drivers.
 This WiX Extension is very lightweight and robust and avoids all the complexity DifxApp requires to install plug and play (PnP) drivers. All you need is your system driver, FG-WiX and one line of XML.
 
+:::caution[Licensed feature]
+Like the other features in HeatWave Build Tools, a license file is required to use FireGiant Driver Extension. See the [FireGiant licensing documentation for more information](../firegiant-licensing/).
+:::
+
 Here is a snippet of .wxs code that can install a simple kernel driver:
 
 ```xml title=FooDriver.wxs

@@ -5,7 +5,7 @@ title: About HeatWave Build Tools
 The HeatWave Build Tools extend the WiX Toolset by providing extensions and APIs that improve the development experience of installation packages and bundles.
 
 * [Advanced Harvesting](harvesting/) - the most flexible tooling to gather and organize files from project references and folders.
-* [BundleApplication Framework]() - managed and native libraries to simplify the development of custom Burn-based bootstrapper applications.
+* [Bundle Application Framework]() - managed and native libraries to simplify the development of custom Burn-based bootstrapper applications.
 * [MSIX Extension](msix/) - create MSIX packages from .wxs code.
 * [Driver Extension](driver/) - enhances MSI to install non-PnP, system-level drivers.
 

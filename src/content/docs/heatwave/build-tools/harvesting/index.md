@@ -6,6 +6,10 @@ sidebar:
 
 Advanced Harvesting gathers resources from MSBuild project references, folders and self-registration to generate .wxs code that installs those resources. Advanced Harvesting takes great care to organize the harvested resources according to the Windows Installer's best practices.
 
+:::caution[Licensed feature]
+Like the other features in HeatWave Build Tools, a license file is required to use FireGiant Advanced Harvesting. See the [FireGiant licensing documentation for more information](../firegiant-licensing/).
+:::
+
 Harvesting is controlled by extension elements, `<HarvestProjectOutput/>` and `<HarvestFolder/>`. To get started with Advanced Harvesting add a package reference to the `FireGiant.HeatWave.BuildTools.wixext` extension--via [Manage NuGet Packages][add] in your .wixproj.
 
 The parent element will act as the template for the harvesting. Let's look at a very simple example. Consider a *SetupProject1.wixproj* with a project reference to *ConsoleApplication1.csproj* which in turn has a project reference to *ClassLibrary1.csproj*. In *SetupProject1.wixproj*, list the outputs we want to harvest from the project by adding `HarvestOutputGroup` metadata. In this example, we'll harvest the build outputs and dependencies of *ConsoleApplication1.csproj*:

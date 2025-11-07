@@ -4,7 +4,7 @@ sidebar:
   order: 1
 ---
 
-The HeatWave Build Tools require a license file, a .fglic file, to be available on developer and build machines. The license file is only used by the build tools and does **not** need to be distributed with the built installation packages. You can download your license file from [your FireGiant Account's License page][lp].
+The HeatWave Build Tools require a license file, a `.fglic`, to be available on developer and build machines. The license file is only used by the build tools and does **not** need to be distributed with the built installation packages. You can download your license file from [your FireGiant Account's License page][lp].
 
 
 ## License file placement
