@@ -116,7 +116,10 @@ export default defineConfig({
           ] },
         ] },
 
-        { label: 'API Reference', collapsed: true, autogenerate: { directory: '/wix/api' } },
+        { label: 'API Reference', collapsed: true, items: [
+          { label: 'FireGiant Bundle Application Framework API', collapsed: true, autogenerate: { directory: '/firegiant/api/firegiantbundleapplicationframework' } },
+          { label: 'WiX Toolset API', collapsed: true, autogenerate: { directory: '/wix/api' } },
+          ] },
         { label: 'Schema Reference', collapsed: true, items: [
           { label: 'WiX Core Schema', collapsed: true, autogenerate: { directory: '/wix/schema/wxs' } },
           { label: 'Localization Schema', collapsed: true, autogenerate: { directory: '/wix/schema/wxl' } },
