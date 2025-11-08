@@ -53,6 +53,7 @@ export default defineConfig({
             'heatwave/build-tools',
             'heatwave/build-tools/firegiant-licensing',
             { label: 'Advanced Harvesting', collapsed: true, autogenerate: { directory: '/heatwave/build-tools/harvesting' } },
+            { label: 'Bundle Application Framework', collapsed: true, autogenerate: { directory: '/heatwave/build-tools/fgba' } },
             { label: 'MSIX', collapsed: true, autogenerate: { directory: '/heatwave/build-tools/msix' } },
             'heatwave/build-tools/driver',
             'heatwave/build-tools/protected-services',
