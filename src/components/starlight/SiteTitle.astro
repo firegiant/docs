@@ -2,16 +2,15 @@
 import logoDark from '@assets/firegiant-logo-black.svg?raw';
 import logoLight from '@assets/firegiant-logo-standard.svg?raw';
 import docs from '@assets/docs-logo.svg?raw';
-import { type Props } from '@astrojs/starlight/props';
 
-const { siteTitle, siteTitleHref } = Astro.props;
-const www = 'https://www.firegiant.com/';
+const wwwHref = 'https://www.firegiant.com/';
+const docsHref = 'https://docs.firegiant.com/';
 ---
 
 <span class="site-title sl-flex">
-  <a class="firegiant-logo light:sl-hidden print:hidden" href={www} set:html={logoDark} aria-label="FireGiant" />
-  <a class="firegiant-logo dark:sl-hidden print:block" href={www} set:html={logoLight} aria-label="FireGiant" />
-  <a class="docs-logo" href={siteTitleHref} set:html={docs} aria-label="Docs" title={siteTitle} />
+  <a class="firegiant-logo light:sl-hidden print:hidden" href={wwwHref} set:html={logoDark} aria-label="FireGiant" />
+  <a class="firegiant-logo dark:sl-hidden print:block" href={wwwHref} set:html={logoLight} aria-label="FireGiant" />
+  <a class="docs-logo" href={docsHref} set:html={docs} aria-label="Docs" title="FireGiant Docs" />
 </span>
 
 <style>
