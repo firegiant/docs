@@ -63,11 +63,10 @@ export default defineConfig({
 
         { label: 'WiX Toolset', collapsed: true, items: [
           'wix',
-
-          { label: 'What\'s new in WiX', collapsed: true, autogenerate: { directory: '/wix/whatsnew' } },
-
           'wix/using-wix',
           'wix/gethelp',
+
+          { label: 'What\'s new in WiX', collapsed: true, autogenerate: { directory: '/wix/whatsnew' } },
 
           { label: 'Tutorial', collapsed: true, items: [
             { label: 'Tutorial Introduction', link: 'wix/tutorial/' },
