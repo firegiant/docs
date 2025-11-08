@@ -17,7 +17,7 @@ export default defineConfig({
       filter: (page) => !page.startsWith('https://docs.firegiant.com/wix3/')
     }),
     starlight({
-      title: 'Docs',
+      title: 'FireGiant Docs',
       logo: {
         dark: './src/assets/firegiant-logo-black.svg',
         light: './src/assets/firegiant-logo-standard.svg',
