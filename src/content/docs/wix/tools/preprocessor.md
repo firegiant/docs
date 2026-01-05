@@ -2,6 +2,12 @@
 title: Preprocessor
 ---
 
+I hit this page when trying to get <?if?> to work (which is another story.  I can happily pull together a PR if yuor project works like this.
+
+This change is more of a "test the water" to see if you would want this.
+
+(and yes, I am working on an opensource project and FWIW I believe that Opensource only flourishes by people submitting patches like this)
+
 The WiX preprocessor lets you use variables in your WiX authoring, share fragments of WiX authoring, and conditionally include or exclude XML elements based on conditional expressions. For example, you can conditionally include a fragment based on the value of an environment variable:
 
 ```xml
