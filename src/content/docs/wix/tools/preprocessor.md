@@ -107,12 +107,12 @@ There are several conditional blocks that let you include or exclude XML based o
 
 | Name | Description |
 | ---- | ----------- |
-| <?if _expression_ ?> | Include the XML fragment if the provided expression evaluates to true. |
-| <?ifdef _variablename_ ?> | Include the XML fragment if the specified variable is defined. |
-| <?ifndef _variablename_ ?> | Include the XML fragment if the specified variable is *not* defined. |
-| <?elseif _expression_ ?> | Include the XML fragment if a preceding `<?if?>`, `<?ifdef?>`, or `<?ifndef?>` block condition wasn't met *and* the provided expression evaluates to true. |
-| <?else?> | Include the XML fragment if _all_ preceding `<?if?>`, `<?ifdef?>`, or `<?ifndef?>` block conditions weren't met. |
-| <?endif?> | Indicates the end of the conditional blocks. |
+| \<?if _expression_ ?> | Include the XML fragment if the provided expression evaluates to true. |
+| \<?ifdef _variablename_ ?> | Include the XML fragment if the specified variable is defined. |
+| \<?ifndef _variablename_ ?> | Include the XML fragment if the specified variable is *not* defined. |
+| \<?elseif _expression_ ?> | Include the XML fragment if a preceding `<?if?>`, `<?ifdef?>`, or `<?ifndef?>` block condition wasn't met *and* the provided expression evaluates to true. |
+| \<?else?> | Include the XML fragment if _all_ preceding `<?if?>`, `<?ifdef?>`, or `<?ifndef?>` block conditions weren't met. |
+| \<?endif?> | Indicates the end of the conditional blocks. |
 
 Conditional blocks always begin with `<?if?>`, `<?ifdef?>`, or `<?ifndef ?>`, followed by optional `<?elseif?>`s and one optional `<?else?>`, and must end with `<?endif?>`:
 
@@ -120,13 +120,13 @@ Conditional blocks always begin with `<?if?>`, `<?ifdef?>`, or `<?ifndef ?>`, fo
 {<?if?>|<?ifdef?>|<?ifndef?>}
   <xml />
   <xml />
-[<?elseif>]
+[<?elseif?>]
   <xml />
   <xml />
-[<?elseif>]
+[<?elseif?>]
   <xml />
   <xml />
-[<?else>]
+[<?else?>]
   <xml />
   <xml />
 <?endif?>
