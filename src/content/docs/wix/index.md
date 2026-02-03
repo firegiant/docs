@@ -29,13 +29,14 @@ the Windows installation engine.
 
 ## Open Source Maintenance Fee
 
-<a href="https://opensourcemaintenancefee.org/"><img src='/images/osmf-logo-square-dark.png' width='146' align='right' /></a>
+<a href="https://opensourcemaintenancefee.org/" style='float:right;margin-left:1em'><img src='/images/osmf-logo-square-dark.png' width='146' /></a>
 
-To ensure the long-term sustainability of the WiX Toolset, use of the project requires an [Open Source Maintenance Fee](https://opensourcemaintenancefee.org). While the source code is freely available under the terms of the [LICENSE](https://github.com/wixtoolset/wix/blob/main/LICENSE.TXT), other aspects of the project--including opening issues and downloading releases--require adherence to the Maintenance Fee.
+The WiX Toolset participates in the [Open Source Maintenance Fee](https://opensourcemaintenancefee.org) to support long-term, sustainable maintenance.
 
-In short, if you use this project to generate revenue, the [Open Source Maintenance Fee is required](https://opensourcemaintenancefee.org).
+While the source code remains freely available under the [LICENSE](https://github.com/wixtoolset/wix/blob/main/LICENSE.TXT),
+revenue-generating use of the project’s releases requires participation in the Maintenance Fee.
 
-To pay the Maintenance Fee, [become a Sponsor](https://github.com/sponsors/wixtoolset).
+[Learn how OSMF applies to WiX, including verification and EULA acceptance.](/wix/osmf/)
 
 
 ## System requirements

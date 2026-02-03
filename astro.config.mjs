@@ -9,6 +9,16 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   site: 'https://docs.firegiant.com',
   trailingSlash: "always",
+  vite: {
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://127.0.0.1:8788',
+          changeOrigin: false,
+        },
+      },
+    },
+  },
   markdown: {
     remarkPlugins: [remarkHeadingId],
   },
@@ -63,6 +73,7 @@ export default defineConfig({
 
         { label: 'WiX Toolset', collapsed: true, items: [
           'wix',
+          'wix/osmf',
           'wix/using-wix',
           'wix/gethelp',
 
