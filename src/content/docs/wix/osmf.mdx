@@ -1,0 +1,79 @@
+---
+title: Open Source Maintenance Fee
+description: Check sponsorship and instructions how to accept the WiX Toolset EULA.
+---
+
+import CheckOsmf from '@components/CheckOsmf.astro';
+import { Code } from '@astrojs/starlight/components';
+import quickStartTxt from '@examples/quick-start/example.txt?raw';
+
+<a href="https://opensourcemaintenancefee.org/" style='float:right;margin-left:1em'><img src='/images/osmf-logo-square-dark.png' width='146' /></a>
+
+The WiX Toolset participates in the [Open Source Maintenance Fee](https://opensourcemaintenancefee.org) to support long-term, sustainable maintenance.
+
+While the source code remains freely available under the terms of the [LICENSE](https://github.com/wixtoolset/wix/blob/main/LICENSE.TXT), organizations that generate more than $10,000 in annual revenue (as defined by the OSMF terms) are required to sponsor the [`wixtoolset` GitHub organization](https://github.com/sponsors/wixtoolset/) to satisfy the Open Source Maintenance Fee.
+
+:::note
+The Open Source Maintenance Fee was [first introduced in WiX v6](https://github.com/wixtoolset/issues/issues/8974), but the [EULA acceptance enforcement was implemented](https://github.com/wixtoolset/issues/issues/9196) in WiX v7.
+:::
+
+
+## Check your Maintenance Fee payment status
+
+If you are a FireGiant customer, [log in to your account](https://account.firegiant.com/profile). If you see `Current role: Member of <Your Company Name>` then the maintenance fee is covered by your company's [WiX Developer Direct](https://www.firegiant.com/wix-developer-direct/) plan.
+
+Otherwise, the verification button may be able to confirm that your GitHub account (or an organization you belong to) pays the maintenance fee for the WiX Toolset. Please note that your organizations' access permissions may prevent this check from succeeding.
+
+<CheckOsmf returnPath="/wix/osmf/" />
+
+
+## Accept the EULA (WiX v7 and later)
+
+After you have confirmed that the maintenance fee is paid, accept the WiX Toolset EULA using one of the following options.
+The direct acceptance option is designed for use in build scripts and CI/CD. The indirect acceptance is intended for
+occasional manual use. See the table at the bottom of this page for the [full list of EULA IDs](#available-eula-ids).
+
+
+### Direct Acceptance
+
+The first option to accept the EULA is to add the `AcceptEula` MSBuild property to your .wixproj with the [appropriate EULA ID](#available-eula-ids):
+
+```xml title="MyPackage.wixproj" ins={3}
+<Project Sdk="WixToolset.Sdk/7.0.0">
+  <PropertyGroup>
+    <AcceptEula>wix7</AcceptEula>
+  </PropertyGroup>
+</Project>
+```
+
+Or use the `-acceptEula` command-line switch to `wix.exe` to specify the EULA ID:
+
+```cmd title="C:\src\MySetup" ins="-acceptEula wix7" frame="terminal"
+wix build -acceptEula wix7 *.wxs -o bin\my.msi
+```
+
+### Indirect Acceptance
+
+Alternatively, you can accept the EULA once per-user, per-computer. This is most often used by developers
+who run `wix.exe` commands directly and do not want to specify the command-line switch each time.
+
+```cmd title="C:\src\MySetup" ins="eula accept wix7" frame="terminal"
+wix eula accept wix7
+```
+
+MSBuild can also be used to accept the EULA.
+
+```cmd title="C:\src\MySetup" ins="-t:AcceptEula -p:Version=wix7" frame="terminal"
+msbuild -t:AcceptEula -p:EulaId=wix7
+```
+
+
+
+## Available EULA IDs
+
+The following table provides the EULA ID for each version of the WiX Toolset.
+
+| WiX Version | EULA ID | OSMF Version |
+| ----------- | ------- | ------------ |
+| WiX v6      | N/A     | [v1.0](https://github.com/wixtoolset/wix/blob/v6.0.0/OSMFEULA.txt) |
+| WiX v7      | wix7    | [v1.1](https://github.com/wixtoolset/wix/blob/main/OSMFEULA.txt) |

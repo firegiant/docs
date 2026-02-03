@@ -1,0 +1,146 @@
+---
+const { returnPath = "/wix/osmf/" } = Astro.props;
+const href = `/api/osmf/start/?return=${encodeURIComponent(returnPath)}`;
+---
+
+<div class="osmf-check">
+  <a class="osmf-button" href={href}>Check payment status</a>
+  <p class="osmf-note">
+    You will be redirected to GitHub to confirm your sponsorship status.
+  </p>
+</div>
+
+<section class="osmf-results" data-osmf-results data-fallback={returnPath} hidden>
+  <p class="osmf-status osmf-status--ok" data-status="ok" hidden>
+    ✅ Payment verified.
+    <span data-match></span>
+    <span data-coverage></span>
+  </p>
+  <p class="osmf-status osmf-status--no" data-status="no" hidden>
+    ❌ Payment not found for your account or any of your organizations.
+    <br/>
+    Note: Organization access permissions may prevent this check from succeeding
+    so check with your organization directly to verify your payment status.
+  </p>
+  <p class="osmf-status osmf-status--error" data-status="error" hidden>
+    ⚠️ Verification failed. Please try again.
+  </p>
+</section>
+
+<script>
+  const container = document.querySelector("[data-osmf-results]");
+  if (container) {
+    const params = new URLSearchParams(window.location.search);
+    const statusParam = params.get("osmf");
+    const fallback = container.getAttribute("data-fallback") || "/";
+
+    if (statusParam) {
+      const status = statusParam;
+      const match = params.get("match");
+      const matchType = params.get("match_type");
+      const coverage = params.get("coverage");
+      const validUntil = params.get("valid_until");
+
+      const show = (key) => {
+        for (const el of container.querySelectorAll("[data-status]")) {
+          el.hidden = el.getAttribute("data-status") !== key;
+        }
+      };
+
+      const matchEl = container.querySelector("[data-match]");
+      if (matchEl && match) {
+        const label = matchType === "org" ? "Organization" : "Account";
+        matchEl.textContent = ` ${label}: ${match}`;
+      }
+
+      const coverageEl = container.querySelector("[data-coverage]");
+      if (coverageEl) {
+        if (coverage === "active") {
+          coverageEl.textContent = " (active sponsorship)";
+        } else if (coverage === "one_time_within_year") {
+          let suffix = "";
+          if (validUntil) {
+            const parsed = new Date(validUntil);
+            if (!Number.isNaN(parsed.getTime())) {
+              suffix = `, valid until ${parsed.toISOString().slice(0, 10)}`;
+            }
+          }
+          coverageEl.textContent = ` (one-time sponsorship${suffix})`;
+        } else {
+          coverageEl.textContent = "";
+        }
+      }
+
+      container.hidden = false;
+      show(status);
+    } else {
+      if (window.location.pathname !== fallback) {
+        window.location.replace(fallback);
+      }
+    }
+  }
+</script>
+
+<style>
+  .osmf-check {
+    margin-block: 1.5rem;
+  }
+
+  .osmf-button {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    border-radius: 999px;
+    background: #1f6f43;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+    transition: background-color 120ms ease, box-shadow 120ms ease;
+  }
+
+  .osmf-button:hover,
+  .osmf-button:focus {
+    background: #238552;
+    box-shadow: 0 0 0 3px rgba(31, 111, 67, 0.25);
+    outline: none;
+  }
+
+  .osmf-note {
+    margin-top: 0.5rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+
+  .osmf-results {
+    margin-block: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background: #fafafa;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #9ca3af;
+  }
+
+  .osmf-status {
+    margin: 0;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .osmf-results:has(.osmf-status--no) {
+    border-left-color: #b91c1c;
+    background: #fdf2f2;
+  }
+
+  .osmf-status--no {
+    color: #7f1d1d;
+  }
+
+  .osmf-results:has(.osmf-status--error) {
+    border-left-color: #b45309;
+    background: #fffbeb;
+  }
+
+  .osmf-status--error {
+    color: #78350f;
+  }
+</style>
