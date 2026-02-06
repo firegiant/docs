@@ -1,5 +1,7 @@
 ---
 title: Frequently-asked questions
+sidebar:
+  order: 5
 ---
 
 ## Converting packages
