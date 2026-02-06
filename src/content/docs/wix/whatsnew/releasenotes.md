@@ -4,6 +4,29 @@ sidebar:
   order: 4
 ---
 
+## WiX v7
+
+- WiX v7.0.0-rc.1 was published 6-Feb-2026.
+
+WiX v7 continues our three-year-old tradition of shipping releases annually and adding features and fixing bugs while maintaining high compatibility with previous releases.
+
+### Highlights
+
+- Add the ability to use dual-purpose MSI packages in bundles, which lets the user decide whether to install such packages per-user or per-machine. (Issue [8958](https://github.com/wixtoolset/issues/issues/8958))
+- Upgrade to OSMF EULA v1.1 that avoids requiring a fee until you make at least US$10,000 a year from your projects that use WiX. (Issue [9230](https://github.com/wixtoolset/issues/issues/9230))
+- Require an explicit gesture to accept the OSMF EULA to avoid accidentally violating the EULA terms. (Issue [9196](https://github.com/wixtoolset/issues/issues/9196))
+- _BREAKING CHANGE_ The behavior of relative paths in the `Files` element appeared inconsistent but it was technically correct (the best kind of correct). Still, it was confusing, so between tarot cards and a well-used D20 die, we picked one behavior: Relative paths in `Files` are relative to the source path. (Issue [9097](https://github.com/wixtoolset/issues/issues/9097))
+- Use integrity level to detect elevated privileges instead of elevation tokens. (Issues [8178](https://github.com/wixtoolset/issues/issues/8178) and [9205](https://github.com/wixtoolset/issues/issues/9205))
+- Add the `Payloads` element to harvest bundle payloads like `Files` does for package payload. (Issue [9049](https://github.com/wixtoolset/issues/issues/9049))
+- Support longer-than-MAX_PATH paths for payloads in packages and bundles. (Issues [3065](https://github.com/wixtoolset/issues/issues/3065) and [9115](https://github.com/wixtoolset/issues/issues/9115))
+- Heat was deprecated in WiX v6 after the introduction of `Files` and `Payloads` and has now been removed from WiX v7. (Issue [9039](https://github.com/wixtoolset/issues/issues/9039))
+- Add support for [RedirectionGuard](https://www.microsoft.com/en-us/msrc/blog/2025/06/redirectionguard-mitigating-unsafe-junction-traversal-in-windows) to Burn as an additional security mitigation. (Issue [9228](https://github.com/wixtoolset/issues/issues/9228))
+- Correctly uninstall a patch bundle when uninstalling the base bundle. (Issue [9104](https://github.com/wixtoolset/issues/issues/9104))
+- Ensure that a patched package can be uninstalled. (Issue [6350](https://github.com/wixtoolset/issues/issues/6350))
+- Restore the ability to specify an icon that appears in a WixStdBA bootstrapper application window. (Issue [8104](https://github.com/wixtoolset/issues/issues/8104))
+- Make WixUI_Advanced handle 64-bit installation directories. (Issue [2165](https://github.com/wixtoolset/issues/issues/2165))
+- Add `ProductSearch/@Result='exists'` to Burn searches. (Issue [9079](https://github.com/wixtoolset/issues/issues/9079))
+
 ## WiX v6
 
 WiX v6 is the second annual release since WiX v4. WiX v6 continues in the tradition of being intentionally highly compatible with its predecessor WiX v5&mdash;and by the transitive property of backward compatibility, with WiX v4 too. WiX v6 contains a number of fixes and enhancements of existing features, including those newly introduced in WiX v5. Notable examples include:
