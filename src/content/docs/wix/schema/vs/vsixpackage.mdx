@@ -1,7 +1,6 @@
 ---
 title: "VsixPackage element (Vs extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ This element provides the metdata required to install/uninstall a file as
  a VSIX Package. The VSIX package file will be installed as part of the MSI
  then passed to the VSIX installer to install the VSIX package. To avoid the
  duplication, simply use the MSI to install the VSIX package itself.
-
 
 ## Attributes
 
@@ -40,7 +38,7 @@ This element provides the metdata required to install/uninstall a file as
   <BlockReference
     content={{
       title: "Permanent",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether the VSIX package is uninstalled when the parent Component is uninstalled.
@@ -73,7 +71,7 @@ This element provides the metdata required to install/uninstall a file as
   <BlockReference
     content={{
       title: "Vital",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether failure to install the VSIX package causes the installation to rollback.

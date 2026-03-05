@@ -1,13 +1,11 @@
 ---
 title: "BundlePackage element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Describes a single bundle package to install.
-
 
 ## Attributes
 
@@ -28,7 +26,7 @@ Describes a single bundle package to install.
     content={{
       title: "Cache",
       type: "KeepRemoveForceTypeUnion",
-      typeLink: "../keepremoveforcetype/",
+      typeLink: "../keepremoveforcetypeunion/",
       typeTitle: "Values of this type will either be \"force\", \"keep\", or \"remove\"."
     }}
   >
@@ -41,14 +39,15 @@ Describes a single bundle package to install.
       type: "string"
     }}
   >
-  The identifier to use when caching the package.
+  The identifier to use when caching the package. WiX provides default cache ids---do not override the default unless you
+   have a specific need and understand the implications.
   </BlockReference>
 
   <BlockReference
     content={{
       title: "Compressed",
       type: "YesNoDefaultTypeUnion",
-      typeLink: "../yesnodefaulttype/",
+      typeLink: "../yesnodefaulttypeunion/",
       typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
     }}
   >
@@ -162,7 +161,7 @@ Describes a single bundle package to install.
   <BlockReference
     content={{
       title: "Permanent",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the package can be uninstalled. The default is "no".
@@ -191,7 +190,7 @@ Describes a single bundle package to install.
   <BlockReference
     content={{
       title: "PrereqPackage, from extension namespace http://wixtoolset.org/schemas/v4/wxs/bal",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   When set to "yes", the Prereq BA will plan the package to be installed if its InstallCondition is "true" or empty.
@@ -266,7 +265,7 @@ Describes a single bundle package to install.
   <BlockReference
     content={{
       title: "Visible",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the bundle will be displayed in Programs and Features (also known as Add/Remove Programs).
@@ -278,7 +277,7 @@ Describes a single bundle package to install.
   <BlockReference
     content={{
       title: "Vital",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the package must succeed for the chain to continue. The default "yes"
@@ -310,6 +309,10 @@ Describes a single bundle package to install.
     {
       title: "PayloadGroupRef",
       link: "../payloadgroupref/"
+    },
+    {
+      title: "Payloads",
+      link: "../payloads/"
     },
     {
       title: "Provides",

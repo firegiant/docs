@@ -1,13 +1,15 @@
 ---
 title: "Files element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Authoring to define the set of files to be harvested for inclusion in a package.
-
+ 
+ Note that using `Files` in per-user packages generates components and files that
+ do not pass ICE validation. The preferred solution is to use per-user-or-machine
+ or per-machine-or-user packages.
 
 ## Attributes
 
@@ -31,9 +33,14 @@ Authoring to define the set of files to be harvested for inclusion in a package.
     }}
   >
   A file-selection pattern that can include directory names, file names, and wildcards.
-   If a pattern is not an absolute path (via a preprocessor variable, unnamed bind path,
-   or named bind path), it is interpreted as relative to the directory containing the
-   source file. Absolute paths via a named bind path are recommended.
+  
+   We recommend that patterns be fully-qualified, absolute paths,
+   preferably via named bind path. You can also use preprocessor
+   variables or unnamed bind paths to create absolute paths.
+  
+   If the pattern is a relative path, it is interpreted as relative to either:
+   - an unnamed bind path, if one or more is specified.
+   - the source directory of the file containing the `Files` element, if no unnamed bind paths are specified.
   
    Wildcards include typical `*.ext` globs and MSBuild-style `**` globs to indicate
    that directories should be recursed. Examples include:

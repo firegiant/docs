@@ -1,14 +1,12 @@
 ---
 title: "FirewallException element (Firewall extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Registers an exception for a program or a specific port and protocol in the Windows Firewall.
  For more information about the Windows Firewall, see [Windows Firewall with Advanced Security](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ics/windows-firewall-advanced-security-start-page).
-
 
 ## Attributes
 
@@ -17,7 +15,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "Action",
-      type: "FirewallActionTypeUnion"
+      type: "FirewallActionTypeUnion",
+      typeLink: "../firewallactiontypeunion/",
+      typeTitle: "FirewallActionTypeUnion"
     }}
   >
   The action for this firewall exception.
@@ -35,7 +35,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "EdgeTraversal",
-      type: "FirewallEdgeTraversalTypeUnion"
+      type: "FirewallEdgeTraversalTypeUnion",
+      typeLink: "../firewalledgetraversaltypeunion/",
+      typeTitle: "FirewallEdgeTraversalTypeUnion"
     }}
   >
   Sets the edge traversal of the firewall exception.
@@ -46,7 +48,8 @@ Registers an exception for a program or a specific port and protocol in the Wind
       title: "Enabled",
       type: "FirewallYesNoPropertyType",
       typeLink: "../firewallyesnopropertytype/",
-      typeTitle: "Allows \"yes\" or \"true\" or \"no\" or \"false\" or a Property reference."
+      typeTitle: "Allows \"yes\" or \"true\" or \"no\" or \"false\" or a Property reference.",
+      version: "5"
     }}
   >
   Indicates whether the firewall exception should be enabled.
@@ -59,7 +62,7 @@ Registers an exception for a program or a specific port and protocol in the Wind
     }}
   >
   Identifier of a File to be granted access through the firewall. By default,
-   all incoming ports and protocols are allowed unless the Port and.or Protocol
+   all incoming ports and protocols are allowed unless the Port and/or Protocol
    attributes are specified.
   
    If you use File, you cannot also use Program.
@@ -95,7 +98,7 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "IgnoreFailure",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   If "yes", failures to register this firewall exception will be silently
@@ -114,7 +117,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "InterfaceType",
-      type: "FirewallInterfaceTypeUnion"
+      type: "FirewallInterfaceTypeUnion",
+      typeLink: "../firewallinterfacetypeunion/",
+      typeTitle: "FirewallInterfaceTypeUnion"
     }}
   >
   Interface type for the firewall exception.
@@ -123,7 +128,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "IPSecSecureFlags",
-      type: "FirewallIPSecSecureFlagsUnion"
+      type: "FirewallIPSecSecureFlagsUnion",
+      typeLink: "../firewallipsecsecureflagsunion/",
+      typeTitle: "FirewallIPSecSecureFlagsUnion"
     }}
   >
   IPSec secure flags for the firewall exception.
@@ -141,7 +148,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "LocalScope",
-      type: "FirewallLocalScopeTypeUnion"
+      type: "FirewallLocalScopeTypeUnion",
+      typeLink: "../firewalllocalscopetypeunion/",
+      typeTitle: "FirewallLocalScopeTypeUnion"
     }}
   >
   Local scope for the firewall exception.
@@ -179,7 +188,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "OnUpdate",
-      type: "FirewallOnUpdateTypeUnion"
+      type: "FirewallOnUpdateTypeUnion",
+      typeLink: "../firewallonupdatetypeunion/",
+      typeTitle: "FirewallOnUpdateTypeUnion"
     }}
   >
   Installation instruction when updating the firewall exception.
@@ -188,7 +199,7 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "Outbound",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   If "yes", registers an outbound firewall rule. The default is "no".
@@ -208,7 +219,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "Profile",
-      type: "FirewallProfileTypeUnion"
+      type: "FirewallProfileTypeUnion",
+      typeLink: "../firewallprofiletypeunion/",
+      typeTitle: "FirewallProfileTypeUnion"
     }}
   >
   Profile type for this firewall exception. Default is "all".
@@ -221,7 +234,7 @@ Registers an exception for a program or a specific port and protocol in the Wind
     }}
   >
   Path to a target program to be granted access through the firewall. By default,
-   all incoming ports and protocols are allowed unless the Port and.or Protocol
+   all incoming ports and protocols are allowed unless the Port and/or Protocol
    attributes are specified.
   
    Note that this is a formatted field, so you can use [#fileId]
@@ -232,7 +245,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "Protocol",
-      type: "FirewallProtocolTypeUnion"
+      type: "FirewallProtocolTypeUnion",
+      typeLink: "../firewallprotocoltypeunion/",
+      typeTitle: "FirewallProtocolTypeUnion"
     }}
   >
   IP protocol used for this firewall exception. If Port is defined,
@@ -269,7 +284,9 @@ Registers an exception for a program or a specific port and protocol in the Wind
   <BlockReference
     content={{
       title: "Scope",
-      type: "FirewallScopeTypeUnion"
+      type: "FirewallScopeTypeUnion",
+      typeLink: "../firewallscopetypeunion/",
+      typeTitle: "FirewallScopeTypeUnion"
     }}
   >
   The scope of this firewall exception, which indicates whether incoming

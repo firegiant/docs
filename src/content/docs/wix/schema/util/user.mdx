@@ -1,13 +1,11 @@
 ---
 title: "User element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 User for all kinds of things. When it is not nested under a component it is included in the MSI so it can be referenced by other elements such as the User attribute in the AppPool element. When it is nested under a Component element, the User will be created on install and can also be used for reference.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "CanNotChangePassword",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   The user cannot change the account's password. Equivalent to UF_PASSWD_CANT_CHANGE.
@@ -34,7 +32,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "CreateUser",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether or not to create the user. User creation can be skipped if all that is desired is to join a user to groups.
@@ -43,7 +41,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "Disabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   The account is disabled. Equivalent to UF_ACCOUNTDISABLE.
@@ -61,7 +59,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "FailIfExists",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates if the install should fail if the user already exists.
@@ -79,7 +77,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "LogonAsBatchJob",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether or not the user can logon as a batch job. User creation can be skipped if all that is desired is to set this access right on the user.
@@ -88,7 +86,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "LogonAsService",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether or not the user can logon as a serivce. User creation can be skipped if all that is desired is to set this access right on the user.
@@ -116,7 +114,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "PasswordExpired",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether the user must change their password on their first login.
@@ -125,7 +123,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "PasswordNeverExpires",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   The account's password never expires. Equivalent to UF_DONT_EXPIRE_PASSWD.
@@ -134,7 +132,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "RemoveComment",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether remove the comment from the user. The default value is "no".
@@ -143,7 +141,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "RemoveOnUninstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether the user account should be removed or left behind on uninstall.
@@ -152,7 +150,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "UpdateIfExists",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates if the user account properties should be updated if the user already exists.
@@ -161,7 +159,7 @@ User for all kinds of things. When it is not nested under a component it is incl
   <BlockReference
     content={{
       title: "Vital",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether failure to create the user or add the user to a group fails the installation. The default value is "yes".

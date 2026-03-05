@@ -1,7 +1,6 @@
 ---
 title: "AppId element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ Application ID containing DCOM information for the associated application GUID.
  If this element is nested under a Fragment, Module, or Package element, it must be
  advertised.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -18,7 +16,7 @@ Application ID containing DCOM information for the associated application GUID.
   <BlockReference
     content={{
       title: "ActivateAtStorage",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this value to 'yes' to configure the client to activate on the same system as persistent storage.
@@ -27,7 +25,7 @@ Application ID containing DCOM information for the associated application GUID.
   <BlockReference
     content={{
       title: "Advertise",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this value to 'yes' in order to create a normal AppId table row. Set this value to 'no' in order to
@@ -89,7 +87,7 @@ Application ID containing DCOM information for the associated application GUID.
   <BlockReference
     content={{
       title: "RunAsInteractiveUser",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this value to 'yes' to configure a class to run under the identity of the user currently

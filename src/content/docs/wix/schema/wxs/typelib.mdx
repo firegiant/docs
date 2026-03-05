@@ -1,7 +1,6 @@
 ---
 title: "TypeLib element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ Register a type library (TypeLib). Please note that in order to properly use thi
  non-advertised, you will need use this element with Advertise='no' and also author the
  appropriate child Interface elements by extracting them from the type library itself.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -18,7 +16,7 @@ Register a type library (TypeLib). Please note that in order to properly use thi
   <BlockReference
     content={{
       title: "Advertise",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Value of 'yes' will create a row in the TypeLib table.
@@ -29,7 +27,7 @@ Register a type library (TypeLib). Please note that in order to properly use thi
   <BlockReference
     content={{
       title: "Control",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Value of 'yes' means the type library describes controls, and should not be displayed in type browsers intended for nonvisual objects.
@@ -57,7 +55,7 @@ Register a type library (TypeLib). Please note that in order to properly use thi
   <BlockReference
     content={{
       title: "HasDiskImage",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Value of 'yes' means the type library exists in a persisted form on disk. This attribute can only be set if Advertise='no'.
@@ -85,7 +83,7 @@ Register a type library (TypeLib). Please note that in order to properly use thi
   <BlockReference
     content={{
       title: "Hidden",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Value of 'yes' means the type library should not be displayed to users, although its use is not restricted.
@@ -153,7 +151,7 @@ Register a type library (TypeLib). Please note that in order to properly use thi
   <BlockReference
     content={{
       title: "Restricted",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Value of 'yes' means the type library is restricted, and should not be displayed to users. This attribute can only be set if Advertise='no'.

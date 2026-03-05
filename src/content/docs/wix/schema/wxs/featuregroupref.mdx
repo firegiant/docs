@@ -1,13 +1,11 @@
 ---
 title: "FeatureGroupRef element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Create a reference to a FeatureGroup in another Fragment.
-
 
 ## Attributes
 
@@ -26,7 +24,7 @@ Create a reference to a FeatureGroup in another Fragment.
   <BlockReference
     content={{
       title: "IgnoreParent",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Normally feature group references that end up nested under a parent element create a
@@ -38,7 +36,7 @@ Create a reference to a FeatureGroup in another Fragment.
   <BlockReference
     content={{
       title: "Primary",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to 'yes' in order to make the parent feature of this group

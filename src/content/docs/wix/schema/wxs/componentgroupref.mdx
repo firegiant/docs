@@ -1,14 +1,12 @@
 ---
 title: "ComponentGroupRef element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Create a reference to a ComponentGroup in another Fragment.
  _New in WiX v5: Can be a child of the `Package` element._
-
 
 ## Attributes
 
@@ -27,7 +25,7 @@ Create a reference to a ComponentGroup in another Fragment.
   <BlockReference
     content={{
       title: "Primary",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to 'yes' in order to make the parent feature of this component

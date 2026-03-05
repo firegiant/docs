@@ -1,13 +1,11 @@
 ---
 title: "Bundle element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 The root element for creating bundled packages.
-
 
 ## Attributes
 
@@ -38,7 +36,7 @@ The root element for creating bundled packages.
     content={{
       title: "Compressed",
       type: "YesNoDefaultTypeUnion",
-      typeLink: "../yesnodefaulttype/",
+      typeLink: "../yesnodefaulttypeunion/",
       typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
     }}
   >
@@ -71,7 +69,7 @@ The root element for creating bundled packages.
     content={{
       title: "DisableModify",
       type: "YesNoButtonTypeUnion",
-      typeLink: "../yesnobuttontype/",
+      typeLink: "../yesnobuttontypeunion/",
       typeTitle: "Values of this type will either be \"button\", \"yes\"/\"true\", or \"no\"/\"false\"."
     }}
   >
@@ -86,7 +84,7 @@ The root element for creating bundled packages.
   <BlockReference
     content={{
       title: "DisableRemove",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Determines whether the bundle can be removed via the Programs and Features (also
@@ -383,6 +381,10 @@ The root element for creating bundled packages.
     {
       title: "PayloadGroupRef",
       link: "../payloadgroupref/"
+    },
+    {
+      title: "Payloads",
+      link: "../payloads/"
     },
     {
       title: "ProductSearch (Util extension)",

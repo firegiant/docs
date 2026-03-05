@@ -1,13 +1,11 @@
 ---
 title: "Hypertext element (Thmutil extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines a text block with support for HTML `\<a>` tags.
-
 
 ## Attributes
 
@@ -53,7 +51,7 @@ Defines a text block with support for HTML `\<a>` tags.
   <BlockReference
     content={{
       title: "HideWhenDisabled",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control should be hidden when disabled.
@@ -95,7 +93,7 @@ Defines a text block with support for HTML `\<a>` tags.
   <BlockReference
     content={{
       title: "TabStop",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is part of the tab sequence of controls.
@@ -104,7 +102,7 @@ Defines a text block with support for HTML `\<a>` tags.
   <BlockReference
     content={{
       title: "Visible",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is initially visible.
@@ -161,6 +159,24 @@ Defines a text block with support for HTML `\<a>` tags.
     {
       title: "Tooltip",
       link: "../tooltip/"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Page",
+      link: "../page/"
+    },
+    {
+      title: "Window",
+      link: "../window/"
+    },
+    {
+      title: "Panel",
+      link: "../panel/"
     }
   ]}
 />

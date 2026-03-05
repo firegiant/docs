@@ -1,13 +1,11 @@
 ---
 title: "SqlScript element (Sql extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 SQL Script
-
 
 ## Attributes
 
@@ -26,7 +24,7 @@ SQL Script
   <BlockReference
     content={{
       title: "ContinueOnError",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Continue executing scripts even if this one fails.
@@ -35,7 +33,7 @@ SQL Script
   <BlockReference
     content={{
       title: "ExecuteOnInstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies to execute the script when the associated component is installed. This attribute is mutually exclusive with the RollbackOnInstall, RollbackOnReinstall and RollbackOnUninstall attributes.
@@ -44,7 +42,7 @@ SQL Script
   <BlockReference
     content={{
       title: "ExecuteOnReinstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to execute the script when the associated component is reinstalled. Setting ExecuteOnInstall to yes does **not** imply ExecuteOnReinstall is set to yes. ExecuteOnReinstall must be set in addition to ExecuteOnInstall for it to be executed during both install and reinstall. This attribute is mutually exclusive with the RollbackOnInstall, RollbackOnReinstall and RollbackOnUninstall attributes.
@@ -53,7 +51,7 @@ SQL Script
   <BlockReference
     content={{
       title: "ExecuteOnUninstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies to execute the script when the associated component is uninstalled. This attribute is mutually exclusive with the RollbackOnInstall, RollbackOnReinstall and RollbackOnUninstall attributes.
@@ -71,7 +69,7 @@ SQL Script
   <BlockReference
     content={{
       title: "RollbackOnInstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to execute the script on rollback if an attempt is made to install the associated component. This attribute is mutually exclusive with the ExecuteOnInstall, ExecuteOnReinstall and ExecuteOnUninstall attributes.
@@ -80,7 +78,7 @@ SQL Script
   <BlockReference
     content={{
       title: "RollbackOnReinstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to execute the script on rollback if an attempt is made to reinstall the associated component. This attribute is mutually exclusive with the ExecuteOnInstall, ExecuteOnReinstall and ExecuteOnUninstall attributes.
@@ -89,7 +87,7 @@ SQL Script
   <BlockReference
     content={{
       title: "RollbackOnUninstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to execute the script on rollback if an attempt is made to uninstall the associated component. This attribute is mutually exclusive with the ExecuteOnInstall, ExecuteOnReinstall and ExecuteOnUninstall attributes.

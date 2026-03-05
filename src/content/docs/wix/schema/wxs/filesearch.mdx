@@ -1,13 +1,11 @@
 ---
 title: "FileSearch element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Searches for file and assigns to fullpath value of parent Property
-
 
 ## Attributes
 
@@ -28,7 +26,7 @@ Searches for file and assigns to fullpath value of parent Property
       type: "string"
     }}
   >
-  The languages supported by the file.
+  The languages supported by the file. If multiple languages are provided, then the search is for a file that supports all of those languages.
   </BlockReference>
 
   <BlockReference

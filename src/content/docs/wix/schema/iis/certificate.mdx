@@ -1,13 +1,11 @@
 ---
 title: "Certificate element (Iis extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Used to install and uninstall certificates.
-
 
 ## Attributes
 
@@ -67,7 +65,7 @@ Used to install and uninstall certificates.
   <BlockReference
     content={{
       title: "Request",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   This attribute controls whether the CertificatePath attribute is a path to a certificate file (Request='no') or the
@@ -117,7 +115,7 @@ Used to install and uninstall certificates.
   <BlockReference
     content={{
       title: "Vital",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether to fail the install if the certificate fails to install. The default is "yes".

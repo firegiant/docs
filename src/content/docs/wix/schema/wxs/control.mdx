@@ -1,13 +1,11 @@
 ---
 title: "Control element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Contains the controls that appear on each dialog.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Bitmap",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for RadioButton and PushButton Controls.
@@ -25,7 +23,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Cancel",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause this Control to be invoked by the escape key.
@@ -34,7 +32,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "CDROM",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Volume and Directory Controls.
@@ -61,7 +59,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "ComboList",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for ComboBox Controls.
@@ -70,7 +68,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Default",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause this Control to be invoked by the return key.
@@ -97,7 +95,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Disabled",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the Control to be disabled.
@@ -106,7 +104,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "ElevationShield",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for PushButton controls.
@@ -130,7 +128,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Fixed",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Volume and Directory Controls.
@@ -139,7 +137,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "FixedSize",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for RadioButton, PushButton, and Icon Controls.
@@ -148,7 +146,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Floppy",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Volume and Directory Controls.
@@ -157,7 +155,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "FormatSize",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Text Controls.
@@ -166,7 +164,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "HasBorder",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for RadioButton Controls.
@@ -196,7 +194,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Hidden",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the Control to be hidden.
@@ -214,7 +212,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Icon",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for RadioButton and PushButton Controls.
@@ -245,7 +243,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Image",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for RadioButton, PushButton, and Icon Controls.
@@ -254,7 +252,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Indirect",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the value displayed or changed by this control is referenced indirectly. If this bit is set, the control displays or changes the value of the property that has the identifier listed in the Property column of the Control table.
@@ -263,7 +261,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Integer",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the linked Property value for the Control to be treated as an integer. Otherwise, the Property will be treated as a string.
@@ -272,7 +270,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "LeftScroll",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the scroll bar to display on the left side of the Control.
@@ -281,7 +279,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Multiline",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Edit Controls.
@@ -290,7 +288,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "NoPrefix",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Text Controls.
@@ -299,7 +297,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "NoWrap",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Text Controls.
@@ -308,7 +306,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Password",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Edit Controls.
@@ -317,7 +315,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "ProgressBlocks",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for ProgressBar Controls.
@@ -335,7 +333,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "PushLike",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for RadioButton and Checkbox Controls.
@@ -344,7 +342,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "RAMDisk",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Volume and Directory Controls.
@@ -353,7 +351,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Remote",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Volume and Directory Controls.
@@ -362,7 +360,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Removable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Volume and Directory Controls.
@@ -371,7 +369,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "RightAligned",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the Control to be right aligned.
@@ -380,7 +378,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "RightToLeft",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the Control to display from right to left.
@@ -398,7 +396,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "ShowRollbackCost",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for VolumeCostList Controls.
@@ -407,7 +405,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Sorted",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for ListBox, ListView, and ComboBox Controls. Set
@@ -418,7 +416,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Sunken",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause the Control to be sunken.
@@ -427,7 +425,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "TabSkip",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to "yes" to cause this Control to be skipped in the tab sequence.
@@ -454,7 +452,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "Transparent",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Text Controls.
@@ -473,7 +471,7 @@ Contains the controls that appear on each dialog.
   <BlockReference
     content={{
       title: "UserLanguage",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute is only valid for Text Controls.

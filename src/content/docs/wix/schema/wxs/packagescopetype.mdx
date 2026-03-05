@@ -1,5 +1,7 @@
 ---
 title: "PackageScopeType type"
+sidebar:
+  hidden: true
 ---
 
 Use this attribute to specify the installation scope of this package: per-machine, per-user, or a choice of either.
@@ -8,7 +10,12 @@ Use this attribute to specify the installation scope of this package: per-machin
 
   - *perMachine*: Set this value to declare that the package is a per-machine installation and requires elevated privileges to install.
      Sets the ALLUSERS property to 1.
+  - *perMachineOrUser*: _New in WiX v7: WiX v7 adds this option to the Package Scope attribute._
+     Set this value to declare that the package is [dual-purpose that can install per-machine or per-user](https://learn.microsoft.com/en-us/windows/win32/msi/single-package-authoring)
+     and defaults to installing per-machine.
+     Sets the ALLUSERS property to 2.
   - *perUser*: Set this value to declare that the package is a per-user installation and does not require elevated privileges to install.
      Sets the package's InstallPrivileges attribute to "limited."
-  - *perUserOrMachine*: Set this value to declare that the package is [dual-purpose that can install per-user or per-machine](https://learn.microsoft.com/en-us/windows/win32/msi/single-package-authoring).
+  - *perUserOrMachine*: Set this value to declare that the package is [dual-purpose that can install per-user or per-machine](https://learn.microsoft.com/en-us/windows/win32/msi/single-package-authoring)
+     and defaults to installing per-user.
      Sets the ALLUSERS property to 2 and MSIINSTALLPERUSER property to 1.

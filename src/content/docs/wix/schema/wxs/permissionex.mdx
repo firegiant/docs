@@ -1,16 +1,14 @@
 ---
 title: "PermissionEx element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
-Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, this cannot be used
+Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Registry element, this cannot be used
  if the Action attribute's value is remove or removeKeyOnInstall. This element is only available
  when installing with MSI 5.0. For downlevel support, see the PermissionEx element from the
  WixUtilExtension.
-
 
 ## Attributes
 

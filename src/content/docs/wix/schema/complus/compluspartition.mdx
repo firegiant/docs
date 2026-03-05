@@ -1,7 +1,6 @@
 ---
 title: "ComPlusPartition element (Complus extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -11,7 +10,6 @@ Defines a COM+ partition. If this element is a child of a
  component. If the element is a child of any of the Fragment, Module, or Package
  elements it is considered to be a locater, referencing an existing partition.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -19,7 +17,7 @@ Defines a COM+ partition. If this element is a child of a
   <BlockReference
     content={{
       title: "Changeable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -28,7 +26,7 @@ Defines a COM+ partition. If this element is a child of a
   <BlockReference
     content={{
       title: "Deleteable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   

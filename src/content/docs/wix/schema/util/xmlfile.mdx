@@ -1,13 +1,11 @@
 ---
 title: "XmlFile element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Adds or removes .xml file entries. If you use the XmlFile element you must reference WixUtilExtension.dll as it contains the XmlFile custom actions.
-
 
 ## Attributes
 
@@ -68,7 +66,7 @@ Adds or removes .xml file entries. If you use the XmlFile element you must refer
   <BlockReference
     content={{
       title: "Permanent",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether or not the modification should be removed on uninstall. This has no effect on uninstall if the action was deleteValue.
@@ -77,7 +75,7 @@ Adds or removes .xml file entries. If you use the XmlFile element you must refer
   <BlockReference
     content={{
       title: "PreserveModifiedDate",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies wheter or not the modification should preserve the modified date. Preserving the modified date will allow the file to be patched if no other modifications have been made.

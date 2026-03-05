@@ -1,12 +1,26 @@
 ---
 title: "ServiceArgument element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Argument used in ServiceControl parent
+
+## Attributes
+
+<BlockWrapper>
+
+  <BlockReference
+    content={{
+      title: "Value",
+      type: "string"
+    }}
+  >
+  A Formatted value for the Service argument.
+  </BlockReference>
+
+</BlockWrapper>
 
 
 ## Parents

@@ -1,13 +1,9 @@
 ---
 title: "UpgradeVersion element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
-
-
-
 
 ## Attributes
 
@@ -16,7 +12,7 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "ExcludeLanguages",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to "yes" to detect all languages, excluding the languages listed in the Language attribute.
@@ -25,7 +21,7 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "IgnoreRemoveFailure",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to "yes" to continue installation upon failure to remove a product or application.
@@ -34,7 +30,7 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "IncludeMaximum",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to "yes" to make the range of versions detected include the value specified in Maximum.
@@ -43,7 +39,7 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "IncludeMinimum",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to "no" to make the range of versions detected exclude the value specified in Minimum. This attribute is "yes" by default.
@@ -70,7 +66,7 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "MigrateFeatures",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to "yes" to migrate feature states from upgraded products by enabling the logic in the MigrateFeatureStates action.
@@ -88,7 +84,7 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "OnlyDetect",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to "yes" to detect products and applications but do not uninstall.

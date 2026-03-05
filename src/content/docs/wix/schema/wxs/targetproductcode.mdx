@@ -1,13 +1,11 @@
 ---
 title: "TargetProductCode element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 A product code for a product that can accept the patch.
-
 
 ## Attributes
 
@@ -30,10 +28,6 @@ A product code for a product that can accept the patch.
 
 <BlockDefList content={[
     {
-      title: "PatchCreation",
-      link: "../patchcreation/"
-    },
-    {
       title: "TargetProductCodes",
       link: "../targetproductcodes/"
     }
@@ -42,7 +36,4 @@ A product code for a product that can accept the patch.
 
 ## Remarks
 
-When using the PatchCreation element, if the Id attribute value is '*' or this element is not authored, the product codes of all products referenced by the TargetImages element are used.
-
-When using the Patch element, the Id attribute value must not be '*'. Use the TargetProductCodes/@Replace attribute instead.
-
+The Id attribute value must not be '*'. Use the TargetProductCodes/@Replace attribute instead.

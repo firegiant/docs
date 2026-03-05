@@ -1,15 +1,17 @@
 ---
 title: "ManagedBootstrapperApplicationPrereqInformation element (Bal extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
+import { Badge } from '@astrojs/starlight/components';
+
+<Badge text="deprecated" variant="caution" size="small" title="this element is deprecated and may be removed in a future release" />
+<Badge text="v4" variant="danger" size="small" title="introduced in WiX v4" />
 
 Adds license information for a prereq package, should only be used when unable to add the license attributes to the package directly.
 
- _Available in WiX v4. Deprecated in WiX v5; use BootstrapperApplicationPrerequisiteInformation instead._
-
+ _Deprecated in WiX v5; use BootstrapperApplicationPrerequisiteInformation instead._
 
 ## Attributes
 

@@ -1,13 +1,11 @@
 ---
 title: "WebSite element (Iis extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 IIs Web Site
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ IIs Web Site
   <BlockReference
     content={{
       title: "AutoStart",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to automatically start the web site.
@@ -25,7 +23,7 @@ IIs Web Site
   <BlockReference
     content={{
       title: "ConfigureIfExists",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to configure the web site if it already exists. Note: This will not affect uninstall behavior. If the web site exists on uninstall, it will be removed.
@@ -104,7 +102,7 @@ IIs Web Site
   <BlockReference
     content={{
       title: "StartOnInstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to start the web site on install.

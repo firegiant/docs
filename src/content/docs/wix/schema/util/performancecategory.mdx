@@ -1,13 +1,11 @@
 ---
 title: "PerformanceCategory element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Used to create performance categories and configure performance counters.
-
 
 ## Attributes
 
@@ -147,7 +145,7 @@ Used to create performance categories and configure performance counters.
   <BlockReference
     content={{
       title: "MultiInstance",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Flag that specifies whether the performance counter category is multi or single instanced. Default is single instance.

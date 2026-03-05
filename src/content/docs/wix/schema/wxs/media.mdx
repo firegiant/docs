@@ -1,13 +1,11 @@
 ---
 title: "Media element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Media element describes a disk that makes up the source media for the installation.
-
 
 ## Attributes
 
@@ -26,7 +24,7 @@ Media element describes a disk that makes up the source media for the installati
     content={{
       title: "CompressionLevel",
       type: "CompressionLevelTypeUnion",
-      typeLink: "../compressionleveltype/",
+      typeLink: "../compressionleveltypeunion/",
       typeTitle: "Indicates the compression level for a cabinet."
     }}
   >
@@ -46,7 +44,7 @@ Media element describes a disk that makes up the source media for the installati
   <BlockReference
     content={{
       title: "EmbedCab",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Instructs the binder to embed the cabinet in the product if 'yes'. This attribute can only be specified in conjunction with the Cabinet attribute.

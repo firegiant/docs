@@ -1,14 +1,12 @@
 ---
 title: "SummaryInformation element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Properties about the package to be placed in the Summary Information Stream. These are
  visible from COM through the IStream interface, and these properties can be seen on the package in Explorer.
-
 
 ## Attributes
 
@@ -26,10 +24,11 @@ Properties about the package to be placed in the Summary Information Stream. The
   <BlockReference
     content={{
       title: "Comments",
-      type: "string"
+      type: "string",
+      version: "5"
     }}
   >
-  Optional comments for browsing. _New in WiX v5: WiX v5 adds this attribute to the `SummaryInformation` element._
+  Optional comments for browsing.
   </BlockReference>
 
   <BlockReference

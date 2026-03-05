@@ -1,14 +1,12 @@
 ---
 title: "Patch element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 The Patch element is analogous to the main function in a C program. When linking, only one Patch section
  can be given to the linker to produce a successful result. Using this element creates an MSP file.
-
 
 ## Attributes
 
@@ -17,7 +15,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "AllowRemoval",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Whether this is an uninstallable patch.
@@ -26,7 +24,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "ApiPatchingSymbolNoFailuresFlag",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Flag used when creating a binary file patch. Default is "no". Don't fail patch due to imagehlp failures.
@@ -35,7 +33,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "ApiPatchingSymbolNoImagehlpFlag",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Flag used when creating a binary file patch. Default is "no". Don't use imagehlp.dll.
@@ -44,7 +42,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "ApiPatchingSymbolUndecoratedTooFlag",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Flag used when creating a binary file patch. Default is "no". After matching decorated symbols, try to match remaining by undecorated names.
@@ -130,7 +128,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "MinorUpdateTargetRTM",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Indicates that the patch targets the RTM version of the product or the most recent major
@@ -152,7 +150,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "OptimizedInstallMode",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute is set to 'yes' in all the patches to be applied in a transaction, the
@@ -162,7 +160,7 @@ The Patch element is analogous to the main function in a C program. When linking
   <BlockReference
     content={{
       title: "OptimizePatchSizeForLargeFiles",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When this attribute is set, patches for files greater than approximately 4 MB in size may be made smaller.

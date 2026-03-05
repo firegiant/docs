@@ -1,13 +1,11 @@
 ---
 title: "ServiceInstall element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Adds services for parent Component. Use the ServiceControl element to remove services.
-
 
 ## Attributes
 
@@ -52,7 +50,7 @@ Adds services for parent Component. Use the ServiceControl element to remove ser
   <BlockReference
     content={{
       title: "EraseDescription",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Determines whether the existing service description will be ignored. If 'yes', the service description will be null, even if the Description attribute is set.
@@ -84,7 +82,7 @@ Adds services for parent Component. Use the ServiceControl element to remove ser
   <BlockReference
     content={{
       title: "Interactive",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Whether or not the service interacts with the desktop.
@@ -150,7 +148,7 @@ Adds services for parent Component. Use the ServiceControl element to remove ser
   <BlockReference
     content={{
       title: "Vital",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to 'yes' or left unspecified the overall install will fail if this service fails to install. A value of 'no' indicates failure to install the service will be ignored.

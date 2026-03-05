@@ -1,15 +1,13 @@
 ---
 title: "ServiceConfig element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Configures a service being installed or one that already exists. This element's functionality is available starting with MSI 5.0. However, a
  [remark indicating the functionality does not work correctly](https://learn.microsoft.com/en-us/windows/win32/msi/msiconfigureservices-action) was added later.
- Consider using the [util:ServiceConfig element](../../schema/util/serviceconfig.md) instead.
-
+ Consider using the [util:ServiceConfig element](/wix/schema/util/serviceconfig/) instead.
 
 ## Attributes
 
@@ -50,7 +48,7 @@ Configures a service being installed or one that already exists. This element's 
   <BlockReference
     content={{
       title: "OnInstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether to configure the service when the parent Component is installed. This attribute may be combined with OnReinstall
@@ -60,7 +58,7 @@ Configures a service being installed or one that already exists. This element's 
   <BlockReference
     content={{
       title: "OnReinstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether to configure the service when the parent Component is reinstalled. This attribute may be combined with OnInstall
@@ -70,7 +68,7 @@ Configures a service being installed or one that already exists. This element's 
   <BlockReference
     content={{
       title: "OnUninstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether to configure the service when the parent Component is uninstalled. This attribute may be combined with OnInstall

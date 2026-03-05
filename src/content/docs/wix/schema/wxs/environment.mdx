@@ -1,13 +1,11 @@
 ---
 title: "Environment element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Environment variables added or removed for the parent component.
-
 
 ## Attributes
 
@@ -62,7 +60,7 @@ Environment variables added or removed for the parent component.
   <BlockReference
     content={{
       title: "Permanent",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies that the environment variable should not be removed on uninstall.
@@ -80,7 +78,7 @@ Environment variables added or removed for the parent component.
   <BlockReference
     content={{
       title: "System",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies that the environment variable should be added to the system environment space. The default

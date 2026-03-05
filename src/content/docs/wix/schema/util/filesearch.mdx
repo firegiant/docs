@@ -1,13 +1,11 @@
 ---
 title: "FileSearch element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Describes a file search.
-
 
 ## Attributes
 
@@ -34,7 +32,7 @@ Describes a file search.
   <BlockReference
     content={{
       title: "DisableFileRedirection",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   When set to "yes" and the running bundle is 32-bit, Wow64DisableWow64FsRedirection is called before starting the search.

@@ -1,13 +1,11 @@
 ---
 title: "Validate element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Sets information in the patch transform that determines if the transform applies to an installed product and what errors should be ignored when applying the patch transform.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "IgnoreAddExistingRow",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ignore errors when adding existing rows. The default is 'yes'.
@@ -25,7 +23,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "IgnoreAddExistingTable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ignore errors when adding existing tables. The default is 'yes'.
@@ -34,7 +32,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "IgnoreChangingCodePage",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ignore errors when changing the database code page. The default is 'no'.
@@ -43,7 +41,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "IgnoreDeleteMissingRow",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ignore errors when deleting missing rows. The default is 'yes'.
@@ -52,7 +50,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "IgnoreDeleteMissingTable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ignore errors when deleting missing tables. The default is 'yes'.
@@ -61,7 +59,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "IgnoreUpdateMissingRow",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ignore errors when updating missing rows. The default is 'yes'.
@@ -70,7 +68,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "ProductId",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Requires that the installed ProductCode match the target ProductCode used to create the transform. The default is 'yes'.
@@ -79,7 +77,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "ProductLanguage",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Requires that the installed ProductLanguage match the target ProductLanguage used to create the transform. The default is 'no'.
@@ -114,7 +112,7 @@ Sets information in the patch transform that determines if the transform applies
   <BlockReference
     content={{
       title: "UpgradeCode",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Requires that the installed UpgradeCode match the target UpgradeCode used to create the transform. The default is 'yes'.

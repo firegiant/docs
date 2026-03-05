@@ -1,13 +1,11 @@
 ---
 title: "TargetProductCodes element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 The product codes for products that can accept the patch.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ The product codes for products that can accept the patch.
   <BlockReference
     content={{
       title: "Replace",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Whether to replace the product codes that can accept the patch from the target packages with the child elements.

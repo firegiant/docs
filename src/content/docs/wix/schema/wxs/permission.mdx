@@ -1,7 +1,6 @@
 ---
 title: "Permission element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
  if the Action attribute's value is remove or removeKeyOnInstall. This element has no Id attribute.
  The table and key are taken from the parent element.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -18,7 +16,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Append",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -27,7 +25,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "ChangePermission",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -36,7 +34,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "CreateChild",
-      type: "yesno"
+      type: "bool"
     }}
   >
   For a directory, the right to create a subdirectory. Only valid under a 'CreateFolder' parent.
@@ -45,7 +43,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "CreateFile",
-      type: "yesno"
+      type: "bool"
     }}
   >
   For a directory, the right to create a file in the directory. Only valid under a 'CreateFolder' parent.
@@ -54,7 +52,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "CreateLink",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -63,7 +61,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "CreateSubkeys",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -72,7 +70,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Delete",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -81,7 +79,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "DeleteChild",
-      type: "yesno"
+      type: "bool"
     }}
   >
   For a directory, the right to delete a directory and all the files it contains, including read-only files. Only valid under a 'CreateFolder' parent.
@@ -99,7 +97,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "EnumerateSubkeys",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -108,7 +106,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Execute",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -117,7 +115,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "FileAllRights",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Bit mask for FILE_ALL_ACCESS from WinNT.h (0x001F01FF).
@@ -126,7 +124,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "GenericAll",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -135,7 +133,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "GenericExecute",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -144,7 +142,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "GenericRead",
-      type: "yesno"
+      type: "bool"
     }}
   >
   specifying this will fail to grant read access
@@ -153,7 +151,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "GenericWrite",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -162,7 +160,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Notify",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -171,7 +169,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Read",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -180,7 +178,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "ReadAttributes",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -189,7 +187,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "ReadExtendedAttributes",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -198,7 +196,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "ReadPermission",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -207,7 +205,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "SpecificRightsAll",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Bit mask for SPECIFIC_RIGHTS_ALL from WinNT.h (0x0000FFFF).
@@ -216,7 +214,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Synchronize",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -225,7 +223,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "TakeOwnership",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -234,7 +232,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Traverse",
-      type: "yesno"
+      type: "bool"
     }}
   >
   For a directory, the right to traverse the directory. By default, users are assigned the BYPASS_TRAVERSE_CHECKING privilege, which ignores the FILE_TRAVERSE access right. Only valid under a 'CreateFolder' parent.
@@ -253,7 +251,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "Write",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -262,7 +260,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "WriteAttributes",
-      type: "yesno"
+      type: "bool"
     }}
   >
   
@@ -271,7 +269,7 @@ Sets ACLs on File, Registry, or CreateFolder. When under a Registry element, thi
   <BlockReference
     content={{
       title: "WriteExtendedAttributes",
-      type: "yesno"
+      type: "bool"
     }}
   >
   

@@ -1,14 +1,12 @@
 ---
 title: "FileSharePermission element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Sets ACLs on a FileShare. This element has no Id attribute.
  The table and key are taken from the parent element.
-
 
 ## Attributes
 
@@ -17,7 +15,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "ChangePermission",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -26,7 +24,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "CreateChild",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to create a subdirectory. Only valid under a 'CreateFolder' parent.
@@ -35,7 +33,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "CreateFile",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to create a file in the directory. Only valid under a 'CreateFolder' parent.
@@ -44,7 +42,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "Delete",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -53,7 +51,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "DeleteChild",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to delete a directory and all the files it contains, including read-only files. Only valid under a 'CreateFolder' parent.
@@ -62,7 +60,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "GenericAll",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -71,7 +69,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "GenericExecute",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -80,7 +78,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "GenericRead",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   specifying this will fail to grant read access
@@ -89,7 +87,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "GenericWrite",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -98,7 +96,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "Read",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -107,7 +105,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "ReadAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -116,7 +114,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "ReadExtendedAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -125,7 +123,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "ReadPermission",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -134,7 +132,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "Synchronize",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -143,7 +141,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "TakeOwnership",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -152,7 +150,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "Traverse",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to traverse the directory. By default, users are assigned the BYPASS_TRAVERSE_CHECKING privilege, which ignores the FILE_TRAVERSE access right. Only valid under a 'CreateFolder' parent.
@@ -171,7 +169,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "WriteAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -180,7 +178,7 @@ Sets ACLs on a FileShare. This element has no Id attribute.
   <BlockReference
     content={{
       title: "WriteExtendedAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   

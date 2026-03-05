@@ -1,13 +1,11 @@
 ---
 title: "WebServiceExtension element (Iis extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 The WebServiceExtension property is used by the Web server to determine whether a Web service extension is permitted to run.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ The WebServiceExtension property is used by the Web server to determine whether 
   <BlockReference
     content={{
       title: "Allow",
-      type: "wxs:YesNoTypeUnion",
+      type: "bool",
       required: true
     }}
   >
@@ -63,7 +61,7 @@ The WebServiceExtension property is used by the Web server to determine whether 
   <BlockReference
     content={{
       title: "UIDeletable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates if the UI is allowed to delete the extension from the list of not. Default: Not deletable.

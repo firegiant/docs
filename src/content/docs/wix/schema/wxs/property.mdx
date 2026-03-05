@@ -1,13 +1,11 @@
 ---
 title: "Property element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Property value for a Package or Module.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Property value for a Package or Module.
   <BlockReference
     content={{
       title: "Admin",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Denotes that the property is saved during [administrative installations](https://learn.microsoft.com/en-us/windows/win32/msi/administrative-installation).
@@ -26,7 +24,7 @@ Property value for a Package or Module.
   <BlockReference
     content={{
       title: "ComplianceCheck",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Adds a row to the CCPSearch table. This attribute is only valid when this Property contains a search element.
@@ -35,7 +33,7 @@ Property value for a Package or Module.
   <BlockReference
     content={{
       title: "Hidden",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Denotes that the Property is not logged during installation. See the [MsiHiddenProperties Property](https://learn.microsoft.com/en-us/windows/win32/msi/msihiddenproperties) for more information.
@@ -54,7 +52,7 @@ Property value for a Package or Module.
   <BlockReference
     content={{
       title: "Secure",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Denotes that the Property can be passed to the server side when doing a managed installation with elevated privileges. See the [SecureCustomProperties Property](https://learn.microsoft.com/en-us/windows/win32/msi/securecustomproperties) for more information.
@@ -63,7 +61,7 @@ Property value for a Package or Module.
   <BlockReference
     content={{
       title: "SuppressModularization",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Use to suppress modularization of this property identifier in merge modules.

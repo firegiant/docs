@@ -1,7 +1,6 @@
 ---
 title: "Package element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -9,7 +8,6 @@ import BlockDefList from '@components/BlockDefList.astro';
 The Package element is analogous to the main function in a C program. When linking, only one Package section
  can be given to the build to produce a successful result. Using this element creates an MSI file which often
  referred to as a Product.
-
 
 ## Attributes
 
@@ -28,7 +26,7 @@ The Package element is analogous to the main function in a C program. When linki
   <BlockReference
     content={{
       title: "Compressed",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Indicates whether the package files are compressed. Default is compressed packages.
@@ -107,7 +105,7 @@ The Package element is analogous to the main function in a C program. When linki
     content={{
       title: "Scope",
       type: "PackageScopeTypeUnion",
-      typeLink: "../packagescopetype/",
+      typeLink: "../packagescopetypeunion/",
       typeTitle: "Use this attribute to specify the installation scope of this package: per-machine, per-user, or a choice of either."
     }}
   >
@@ -117,7 +115,7 @@ The Package element is analogous to the main function in a C program. When linki
   <BlockReference
     content={{
       title: "ShortNames",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Indicates whether the package files are installed using 8.3 filenames. The default is no.
@@ -140,12 +138,12 @@ The Package element is analogous to the main function in a C program. When linki
     content={{
       title: "UpgradeStrategy",
       type: "UpgradeStrategyTypeUnion",
-      typeLink: "../upgradestrategytype/",
-      typeTitle: "Use this attribute to specify the upgrade strategy of this package: major upgrade or none."
+      typeLink: "../upgradestrategytypeunion/",
+      typeTitle: "Use this attribute to specify the upgrade strategy of this package: major upgrade or none.",
+      version: "5"
     }}
   >
-  _New in WiX v5: WiX v5 adds this attribute to the `Package` element._
-   The upgrade strategy for the package. If "none," no major upgrade is expected.
+  The upgrade strategy for the package. If "none," no major upgrade is expected.
    If "majorUpgrade," the UpgradeCode attribute is required and a major upgrade is expected.
    The default is "majorUpgrade."
    A default major upgrade is automatically provided if none is authored.
@@ -184,7 +182,7 @@ The Package element is analogous to the main function in a C program. When linki
     },
     {
       title: "Application (Msix extension)",
-      link: "../../msix/application/"
+      link: "/firegiant/schema/msix/application/"
     },
     {
       title: "Binary",
@@ -260,7 +258,7 @@ The Package element is analogous to the main function in a C program. When linki
     },
     {
       title: "Dependency (Msix extension)",
-      link: "../../msix/dependency/"
+      link: "/firegiant/schema/msix/dependency/"
     },
     {
       title: "Directory",
@@ -364,7 +362,7 @@ The Package element is analogous to the main function in a C program. When linki
     },
     {
       title: "Msix (Msix extension)",
-      link: "../../msix/msix/"
+      link: "/firegiant/schema/msix/msix/"
     },
     {
       title: "PackageCertificates",
@@ -384,7 +382,7 @@ The Package element is analogous to the main function in a C program. When linki
     },
     {
       title: "PublicRegistry (Msix extension)",
-      link: "../../msix/publicregistry/"
+      link: "/firegiant/schema/msix/publicregistry/"
     },
     {
       title: "QueryNativeMachine (Util extension)",
@@ -500,7 +498,7 @@ The Package element is analogous to the main function in a C program. When linki
     },
     {
       title: "WriteRegistry (Msix extension)",
-      link: "../../msix/writeregistry/"
+      link: "/firegiant/schema/msix/writeregistry/"
     }
   ]}
 />

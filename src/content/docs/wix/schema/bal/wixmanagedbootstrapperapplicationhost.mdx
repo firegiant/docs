@@ -1,15 +1,17 @@
 ---
 title: "WixManagedBootstrapperApplicationHost element (Bal extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
+import { Badge } from '@astrojs/starlight/components';
+
+<Badge text="deprecated" variant="caution" size="small" title="this element is deprecated and may be removed in a future release" />
+<Badge text="v4" variant="danger" size="small" title="introduced in WiX v4" />
 
 Uses WixManagedBootstrapperApplicationHost as the Bootstrapper Application for a Bundle.
 
- _Available in WiX v4. Deprecated in WiX v5; use WixPrerequisiteBootstrapperApplication instead._
-
+ _Deprecated in WiX v5; use WixPrerequisiteBootstrapperApplication instead._
 
 ## Attributes
 

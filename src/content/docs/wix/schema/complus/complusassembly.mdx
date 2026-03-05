@@ -1,7 +1,6 @@
 ---
 title: "ComPlusAssembly element (Complus extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -11,7 +10,6 @@ Represents a DLL or assembly to be registered with COM+. If
  registered in this application. Other ways the Application attribute must be
  set to an application. The element must be a descendent of a Component element,
  it can not be a child of a ComPlusApplication locator element.
-
 
 ## Attributes
 
@@ -54,7 +52,7 @@ Represents a DLL or assembly to be registered with COM+. If
   <BlockReference
     content={{
       title: "DllPathFromGAC",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates that the DLL path should be extracted from the
@@ -68,7 +66,7 @@ Represents a DLL or assembly to be registered with COM+. If
   <BlockReference
     content={{
       title: "EventClass",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates that the assembly is to be installed as an event
@@ -98,7 +96,7 @@ Represents a DLL or assembly to be registered with COM+. If
   <BlockReference
     content={{
       title: "RegisterInCommit",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates that the assembly should be installed in the

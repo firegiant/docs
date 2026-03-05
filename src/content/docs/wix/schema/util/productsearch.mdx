@@ -1,13 +1,11 @@
 ---
 title: "ProductSearch element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Describes a product search.
-
 
 ## Attributes
 
@@ -69,6 +67,8 @@ Describes a product search.
   - *language*: Saves the language of a matching product if found; empty otherwise.
   - *state*: Saves the state of the product: advertised (1), absent (2), or locally installed (5).
   - *version*: Saves the version of a matching product if found; 0.0.0.0 otherwise. This is the default.
+  - *exists*: [WiX v7 and later]
+     Saves true if a matching product entry is found (non-absent); false otherwise.
   </BlockReference>
 
   <BlockReference

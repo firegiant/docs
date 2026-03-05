@@ -1,7 +1,6 @@
 ---
 title: "ServiceControl element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ Starts, stops, and removes services for parent Component. This element is used t
  of a service installed by the MSI or MSM file by using the start, stop and remove attributes.
  For example, Start='install' Stop='both' Remove='uninstall' would mean: start the service on install,
  remove the service when the product is uninstalled, and stop the service both on install and uninstall.
-
 
 ## Attributes
 
@@ -90,7 +88,7 @@ Starts, stops, and removes services for parent Component. This element is used t
   <BlockReference
     content={{
       title: "Wait",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether or not to wait for the service to complete before continuing. The default is 'yes'.

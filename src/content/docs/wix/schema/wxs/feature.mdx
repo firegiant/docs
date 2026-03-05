@@ -1,14 +1,12 @@
 ---
 title: "Feature element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 A feature for the Feature table. Features are the smallest installable unit. See msi.chm for more
  detailed information on the myriad installation options for a feature.
-
 
 ## Attributes
 
@@ -17,7 +15,7 @@ A feature for the Feature table. Features are the smallest installable unit. See
   <BlockReference
     content={{
       title: "AllowAbsent",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute determines if a user will have the option to set a feature to absent in the user interface.
@@ -26,7 +24,7 @@ A feature for the Feature table. Features are the smallest installable unit. See
   <BlockReference
     content={{
       title: "AllowAdvertise",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute determines the possible advertise states for this feature. The default is 'yes'.

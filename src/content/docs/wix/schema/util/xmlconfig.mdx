@@ -1,13 +1,11 @@
 ---
 title: "XmlConfig element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Adds or removes .xml file entries. If you use the XmlConfig element you must reference WixUtilExtension.dll as it contains the XmlConfig custom actions.
-
 
 ## Attributes
 
@@ -96,7 +94,7 @@ Adds or removes .xml file entries. If you use the XmlConfig element you must ref
   <BlockReference
     content={{
       title: "PreserveModifiedDate",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies wheter or not the modification should preserve the modified date. Preserving the modified date will allow the file to be patched if no other modifications have been made.

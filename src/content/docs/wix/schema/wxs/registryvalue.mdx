@@ -1,7 +1,6 @@
 ---
 title: "RegistryValue element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -11,7 +10,6 @@ Used to create a registry value. For multi-string values, this can be used to pr
  For legacy authoring: Use several of these elements to specify each registry value in a multiString registry value. This element
  cannot be used if the Value attribute is specified unless the Type attribute is set to 'multiString'.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -19,13 +17,12 @@ Used to create a registry value. For multi-string values, this can be used to pr
   <BlockReference
     content={{
       title: "Action",
-      type: ""
+      type: "RegistryValueActionUnion",
+      typeLink: "../registryvalueactionunion/",
+      typeTitle: "Values of this type represent possible registry value actions."
     }}
   >
-  This is the action that will be taken for this registry value. This attribute's value must be one of the following:
-  - *append*: Appends the specified value(s) to a multiString registry value.
-  - *prepend*: Prepends the specified value(s) to a multiString registry value.
-  - *write*: Writes a registry value. This is the default value.
+  This is the action that will be taken for this registry value. If not specified, the default is 'write'.
   </BlockReference>
 
   <BlockReference
@@ -52,7 +49,7 @@ Used to create a registry value. For multi-string values, this can be used to pr
   <BlockReference
     content={{
       title: "KeyPath",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to 'yes' to make this registry key the KeyPath of the parent component.
@@ -93,19 +90,12 @@ Used to create a registry value. For multi-string values, this can be used to pr
   <BlockReference
     content={{
       title: "Type",
-      type: ""
+      type: "RegistryValueTypeUnion",
+      typeLink: "../registryvaluetypeunion/",
+      typeTitle: "Values of this type represent possible registry value types."
     }}
   >
-  Set this attribute to the type of the desired registry key. This attribute must be specified whenever the Value
-   attribute or a child RegistryValue element is specified. This attribute
-   should only be set when the value of the Action attribute does not include the word 'remove'. This attribute's value must be one of the following:
-  - *string*: The value is interpreted and stored as a string (REG_SZ).
-  - *integer*: The value is interpreted and stored as an integer (REG_DWORD).
-  - *binary*: The value is interpreted and stored as a hexadecimal value (REG_BINARY).
-  - *expandable*: The value is interpreted and stored as an expandable string (REG_EXPAND_SZ).
-  - *multiString*: The value is interpreted and stored as a multiple strings (REG_MULTI_SZ).
-     Please note that this value will only result in a multi-string value if there is more than one registry value
-     or the Action attribute's value is 'append' or 'prepend'. Otherwise a string value will be created.
+  Set this attribute to the type of the desired registry key. If not specified, the default is 'string'.
   </BlockReference>
 
   <BlockReference

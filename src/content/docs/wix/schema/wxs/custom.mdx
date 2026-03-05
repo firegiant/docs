@@ -1,13 +1,11 @@
 ---
 title: "Custom element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Use to sequence a custom action.
-
 
 ## Attributes
 
@@ -68,7 +66,7 @@ Use to sequence a custom action.
   <BlockReference
     content={{
       title: "Overridable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If "yes", the sequencing of this action may be overridden by sequencing elsewhere.

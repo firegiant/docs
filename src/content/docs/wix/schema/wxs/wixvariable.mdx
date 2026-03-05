@@ -1,7 +1,6 @@
 ---
 title: "WixVariable element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ This element exposes advanced WiX functionality. Use this element to declare WiX
  from directly within your authoring. WiX variables are not resolved until the final package
  file is actually generated (bind time). WiX variables do not persist into the package file,
  so they cannot be used when an MSI file is being installed; it's a WiX-only concept.
-
 
 ## Attributes
 
@@ -29,7 +27,7 @@ This element exposes advanced WiX functionality. Use this element to declare WiX
   <BlockReference
     content={{
       title: "Overridable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this value to 'yes' in order to make the variable's value overridable either by
