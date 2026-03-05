@@ -92,6 +92,7 @@ export default defineConfig({
           ] },
 
           { label: 'Tools and concepts', collapsed: true, items: [
+            'wix/tools/identifiers',
             'wix/tools/msbuild',
             'wix/tools/preprocessor',
             'wix/tools/payloads',
@@ -100,8 +101,7 @@ export default defineConfig({
             'wix/tools/dtf',
             'wix/tools/patches',
             'wix/tools/codepage',
-            'wix/tools/wixexe',
-            'wix/tools/heat'
+            'wix/tools/wixexe'
           ] },
 
           { label: 'WiX extensions and custom actions', collapsed: true, autogenerate: { directory: '/wix/tools/wixext' } },

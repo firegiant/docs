@@ -1,14 +1,23 @@
 ---
-title: Heat harvesting
+title: Deprecated and obsolete features
+sidebar:
+  order: 8
 ---
 
+:::tip
+The features described here are deprecated and have been or will be removed from WiX.
+:::
+
+
+## Heat harvesting
+
 :::caution[Obsolete]
-`heat.exe` and the information on this page is obsolete. It will be deprecated in a future version of WiX.
-Consider adopting [HeatWave's advanced harvesting](/heatwave/build-tools/harvesting/) or the [`Files` element in WiX v5+](/wix/schema/wxs/files/).
+Heat is obsolete. It was removed in WiX v7.
+Consider adopting [HeatWave's advanced harvesting](/heatwave/build-tools/harvesting/) or the [`Files` element](/wix/schema/wxs/files/) or [`Payloads` element](/wix/schema/wxs/payloads/).
 See the [harvesting technology comparisons](/heatwave/build-tools/harvesting/comparisons/) for more details.
 :::
 
-In WiX v4, Heat is available in a WiX extension NuGet Package. To use Heat to harvest directories, files, or projects:
+In WiX v4, Heat is available in a WiX extension NuGet package. To use Heat to harvest directories, files, or projects:
 
 1. Add a reference to the [WixToolset.Heat NuGet package](https://www.nuget.org/packages/WixToolset.Heat/).
 2. Add an item group based on the kind of harvesting you want to do in your project:

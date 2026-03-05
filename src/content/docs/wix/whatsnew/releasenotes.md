@@ -6,6 +6,7 @@ sidebar:
 
 ## WiX v7
 
+- WiX v7.0.0-rc.2 was published 5-Mar-2026.
 - WiX v7.0.0-rc.1 was published 6-Feb-2026.
 
 WiX v7 continues our three-year-old tradition of shipping releases annually and adding features and fixing bugs while maintaining high compatibility with previous releases.

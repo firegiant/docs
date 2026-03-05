@@ -97,7 +97,7 @@ $(MyVariable)
 ```
 
 :::tip
-In WiX v3, user-defined variables were referenced with the syntax `$(var.MyVariable)`. WiX v4 uses `$(MyVariable)` instead and supports `$(var.MyVariable)` for backward compatibility.
+WiX uses `$(MyVariable)` instead and supports `$(var.MyVariable)` for compatibility with WiX v3.
 :::
 
 

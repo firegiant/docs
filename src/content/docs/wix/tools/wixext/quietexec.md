@@ -113,7 +113,7 @@ WixSilentExec supports silent and deferred execution like WixQuietExec.
 
 ## 64-bit awareness
 
-WixQuietExec64 and WixSilentExec64 are variants of WixQuietExec and WixSilentExec that are 32-bit custom actions (regardless of name) that are 64-bit aware. Specifically, they know how to turn off file-system redirections (for example) to support running 64-bit processes. WiX v4 has native custom actions for all three supported platforms (x86, x64, and Arm64), so if you need to call a 64-bit process from a 32-bit package, use those by hard-coding the `BinaryRef`. For example:
+WixQuietExec64 and WixSilentExec64 are variants of WixQuietExec and WixSilentExec that are 32-bit custom actions (regardless of name) that are 64-bit aware. Specifically, they know how to turn off file-system redirections (for example) to support running 64-bit processes. WiX has native custom actions for all three supported platforms (x86, x64, and Arm64), so if you need to call a 64-bit process from a 32-bit package, use those by hard-coding the `BinaryRef`. For example:
 
 ```xml
 <CustomAction

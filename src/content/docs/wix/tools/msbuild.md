@@ -2,7 +2,7 @@
 title: MSBuild
 ---
 
-WiX v4 is available as an MSBuild SDK. SDK-style projects have smart defaults that make for simple .wixproj project authoring. For example, here's a minimal .wixproj that builds an MSI from the .wxs source files in the project directory:
+WiX is available as an MSBuild SDK. SDK-style projects have smart defaults that make for simple .wixproj project authoring. For example, here's a minimal .wixproj that builds an MSI from the .wxs source files in the project directory:
 
 ```xml
 <Project Sdk="WixToolset.Sdk/6.0.2">
@@ -116,7 +116,7 @@ variables will not be available when using the command-line to build a project f
 Sometimes you need to add or modify several of the same properties in multiple MSBuild projects, like manufacturer name, copyright, product name, and so forth. Instead of editing every single project, you can manage properties from a central location in a file named Directory.Build.props.
 
 :::info
-Directory.Build.props is a feature of Microsoft.Common.props, which the WiX v4 MSBuild targets consume. The same is also true of Directory.Build.targets and Microsoft.Common.targets. [You can read more about this support here.](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory)
+Directory.Build.props is a feature of Microsoft.Common.props, which the WiX MSBuild targets consume. The same is also true of Directory.Build.targets and Microsoft.Common.targets. [You can read more about this support here.](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory)
 :::
 
 To use Directory.Build.props, add it to the root of your project -- MSBuild will find the file in parent directories -- and give it a property group. For example:
