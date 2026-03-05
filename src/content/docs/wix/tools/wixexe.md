@@ -355,7 +355,7 @@ _sourceFile_ can include wildcards like `*.wxs`.
 | `Win64AttributeRenamed` | The Win64 attribute has been renamed. Use the Bitness attribute instead. |
 | `Win64AttributeRenameCannotBeAutomatic` | Breaking change: The Win64 attribute's value '{0}' cannot be converted automatically to the new Bitness attribute. |
 | `TagElementRenamed` | The Tag element has been renamed. Use the element 'SoftwareTag' name. |
-| `IntegratedDependencyNamespace` | The Dependency namespace has been incorporated into WiX v4 namespace. |
+| `IntegratedDependencyNamespace` | The Dependency namespace has been incorporated into WiX namespace. |
 | `RemoveUnusedNamespaces` | Remove unused namespaces. |
 | `RemotePayloadRenamed` | The Remote element has been renamed. Use the "XxxPackagePayload" element instead. |
 | `NameAttributeMovedToRemotePayload` | The XxxPackage/@Name attribute must be specified on the child XxxPackagePayload element when using a remote payload. |
@@ -375,7 +375,7 @@ _sourceFile_ can include wildcards like `*.wxs`.
 | `MsuPackageKBObsolete` | The MsuPackage element contains obsolete '{0}' attribute. Windows no longer supports silently removing MSUs so the attribute is unnecessary. The attribute will be removed. |
 | `MsuPackagePermanentObsolete` | The MsuPackage element contains obsolete '{0}' attribute. MSU packages are now always permanent because Windows no longer supports silently removing MSUs. The attribute will be removed. |
 | `MoveNamespacesToRoot` | Namespace should be defined on the root. The '{0}' namespace was move to the root element. |
-| `CustomActionIdsIncludePlatformSuffix` | Custom action ids have changed in WiX v4 extensions. Because WiX v4 has platform-specific custom actions, the platform is applied as a suffix: _X86, _X64, _A64 (Arm64). When manually rescheduling custom actions, you must use the new custom action id, with platform suffix. |
+| `CustomActionIdsIncludePlatformSuffix` | Custom action ids have changed in WiX v4 extensions. Because WiX now has platform-specific custom actions, the platform is applied as a suffix: _X86, _X64, _A64 (Arm64). When manually rescheduling custom actions, you must use the new custom action id, with platform suffix. |
 | `StandardDirectoryRefDeprecated` | The {0} directory should no longer be explicitly referenced. Remove the DirectoryRef element with Id attribute '{0}'. |
 | `EmptyStandardDirectoryRefNotConvertable` | Referencing '{0}' directory directly is no longer supported. The DirectoryRef will not be removed but you will probably need to reference a more specific directory. |
 | `WixMbaPrereqLicenseUrlDeprecated` | The magic WixVariable 'WixMbaPrereqLicenseUrl' has been removed. Add bal:PrereqLicenseUrl="_url_" to a prereq package instead. |

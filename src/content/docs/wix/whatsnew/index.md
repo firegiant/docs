@@ -4,6 +4,11 @@ sidebar:
   order: 2
 ---
 
+## What's new in WiX v7
+
+WiX v7.0.0-rc.2 is available. See [the release notes](/wix/whatsnew/releasenotes/#wix-v7) for details about this prerelease.
+
+
 ## What's new in WiX v6
 
 WiX v6 continues to be highly compatible in its language syntax with WiX v5 and even v4. We're liking how easy it is to pick up new versions of WiX without worrying about code conversion.

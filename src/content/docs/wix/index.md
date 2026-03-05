@@ -43,7 +43,7 @@ revenue-generating use of the project’s releases requires participation in the
 
 ### Running packages built with WiX
 
-In general, packages you build with WiX will work on Windows 7 or later. Code that you introduce -- for example, custom actions or bootstrapper applications -- can require later versions of Windows.
+In general, packages you build with WiX work on Windows 7 and later. Code you write--for example, custom actions or bootstrapper applications--can require later versions of Windows. In general, the WiX team prioritizes issues related to _supported_ versions of Windows. Once a version of Windows is no longer supported by Microsoft, public interest in those versions is limited.
 
 ### Building packages with WiX
 

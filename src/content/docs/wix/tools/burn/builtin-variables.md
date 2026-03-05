@@ -60,6 +60,8 @@ The Burn engine offers a set of commonly-used variables so you can use them with
 | WindowsFolder | The well-known folder for CSIDL_WINDOWS. |
 | WindowsVolume | The well-known folder for the windows volume. |
 | WixBundleAction | Numeric value of BOOTSTRAPPER_ACTION from the command-line and updated during the call to IBootstrapperEngine::Plan. |
+| WixBundleAuthoredScope | Reports the bundle's scope at build time: 1=Per-machine, 2=Per-machine or per-user, 3=Per-user or per-machine, 4=Per-user |
+| WixBundleDetectedScope | Reports the scope of the bundle when it was originally installed: 1=Per-machine, 2=Per-user |
 | WixBundleDirectoryLayout | The folder provided to the `-layout` switch (default is the directory containing the bundle executable). This variable can also be set by the bootstrapper application to modify where files will be laid out. |
 | WixBundleElevated | Non-zero if the bundle was launched elevated and set to `1` once the bundle is elevated. For example, use this variable to show or hide the elevation shield in the bootstrapper application UI. |
 | WixBundleExecutePackageCacheFolder | The absolute path to the currently executing package's cache folder. This variable is only available while a package is executing. |
@@ -70,6 +72,7 @@ The Burn engine offers a set of commonly-used variables so you can use them with
 | WixBundleManufacturer | The manufacturer of the bundle (from `Bundle/@Manufacturer`). |
 | WixBundleOriginalSource | The source path where the bundle originally ran. |
 | WixBundleOriginalSourceFolder | The folder where the bundle originally ran. |
+| WixBundlePlannedScope | Reports the scope of the bundle when the BA began the planning phase: 1=Per-machine, 2=Per-user |
 | WixBundleSourceProcessPath | The source path of the bundle where originally executed. Will only be set when bundle is executing in the clean room. (Removed in WiX v5) |
 | WixBundleSourceProcessFolder | The source folder of the bundle where originally executed. Will only be set when bundle is executing in the clean room. (Removed in WiX v5) |
 | WixBundleProviderKey | The bundle dependency provider key. |
