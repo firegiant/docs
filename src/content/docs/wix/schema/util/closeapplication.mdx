@@ -1,13 +1,11 @@
 ---
 title: "CloseApplication element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Closes applications or schedules a reboot if application cannot be closed.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Closes applications or schedules a reboot if application cannot be closed.
   <BlockReference
     content={{
       title: "CloseMessage",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Optionally sends a close message to the application. Default is no.
@@ -44,7 +42,7 @@ Closes applications or schedules a reboot if application cannot be closed.
   <BlockReference
     content={{
       title: "ElevatedCloseMessage",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Optionally sends a close message to the application from deffered action without impersonation. Default is no.
@@ -53,7 +51,7 @@ Closes applications or schedules a reboot if application cannot be closed.
   <BlockReference
     content={{
       title: "ElevatedEndSessionMessage",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Sends WM_QUERYENDSESSION then WM_ENDSESSION messages to the application from a deffered action without impersonation. Default is "no".
@@ -62,7 +60,7 @@ Closes applications or schedules a reboot if application cannot be closed.
   <BlockReference
     content={{
       title: "EndSessionMessage",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Sends WM_QUERYENDSESSION then WM_ENDSESSION messages to the application. Default is "no".
@@ -80,7 +78,7 @@ Closes applications or schedules a reboot if application cannot be closed.
   <BlockReference
     content={{
       title: "PromptToContinue",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   When this attribute is set to "yes", the user will be prompted when the application is still running. The Description attribute must contain the message to
@@ -101,7 +99,7 @@ Closes applications or schedules a reboot if application cannot be closed.
   <BlockReference
     content={{
       title: "RebootPrompt",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Optionally prompts for reboot if application is still running.

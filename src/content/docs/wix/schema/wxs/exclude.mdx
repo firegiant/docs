@@ -1,13 +1,11 @@
 ---
 title: "Exclude element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
-Using wildcards, defines the files from a parent `Files` element that should be excluded from harvesting.
-
+Using wildcards, defines the files from a parent `Files` or `Payloads` element that should be excluded from harvesting.
 
 ## Attributes
 
@@ -20,7 +18,7 @@ Using wildcards, defines the files from a parent `Files` element that should be 
       required: true
     }}
   >
-  Excludes files from the set of files harvested via the parent `Files` element.
+  Excludes files from the set of files harvested via the parent `Files` or `Payloads` element.
    Inclusion and exclusion wildcards must match paths. For example, if you have a
    `Files` element with `Include="!(bindpath.ToBeHarvested)\**"` and want to
    exclude one of the files, use an `Exclude` element with a `Files` attribute
@@ -50,6 +48,10 @@ Using wildcards, defines the files from a parent `Files` element that should be 
 ## Parents
 
 <BlockDefList content={[
+    {
+      title: "Payloads",
+      link: "../payloads/"
+    },
     {
       title: "Files",
       link: "../files/"

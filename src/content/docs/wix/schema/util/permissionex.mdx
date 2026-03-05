@@ -1,7 +1,6 @@
 ---
 title: "PermissionEx element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
  if the Action attribute's value is remove or removeKeyOnInstall. This element has no Id attribute.
  The table and key are taken from the parent element.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -18,7 +16,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Append",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -27,7 +25,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ChangePermission",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -36,7 +34,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "CreateChild",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to create a subdirectory. Only valid under a 'CreateFolder' parent.
@@ -45,7 +43,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "CreateFile",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to create a file in the directory. Only valid under a 'CreateFolder' parent.
@@ -54,7 +52,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "CreateLink",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -63,7 +61,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "CreateSubkeys",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -72,7 +70,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Delete",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -81,7 +79,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "DeleteChild",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to delete a directory and all the files it contains, including read-only files. Only valid under a 'CreateFolder' parent.
@@ -99,7 +97,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "EnumerateSubkeys",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -108,7 +106,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Execute",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -117,7 +115,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "GenericAll",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -126,7 +124,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "GenericExecute",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -135,7 +133,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "GenericRead",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   specifying this will fail to grant read access
@@ -144,7 +142,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "GenericWrite",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -153,7 +151,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Inheritable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Whether the permissions are inheritable. The default is "yes".
@@ -162,7 +160,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Notify",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -171,7 +169,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Read",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -180,7 +178,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ReadAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -189,7 +187,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ReadExtendedAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -198,7 +196,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ReadPermission",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -207,7 +205,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceChangeConfig",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the ChangeServiceConfig or ChangeServiceConfig2 function to change the service configuration. Only valid under a 'ServiceInstall' parent.
@@ -216,7 +214,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceEnumerateDependents",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the EnumDependentServices function to enumerate all the services dependent on the service. Only valid under a 'ServiceInstall' parent.
@@ -225,7 +223,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceInterrogate",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the ControlService function to ask the service to report its status immediately. Only valid under a 'ServiceInstall' parent.
@@ -234,7 +232,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServicePauseContinue",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the ControlService function to pause or continue the service. Only valid under a 'ServiceInstall' parent.
@@ -243,7 +241,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceQueryConfig",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the QueryServiceConfig and QueryServiceConfig2 functions to query the service configuration. Only valid under a 'ServiceInstall' parent.
@@ -252,7 +250,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceQueryStatus",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the QueryServiceStatus function to ask the service control manager about the status of the service. Only valid under a 'ServiceInstall' parent.
@@ -261,7 +259,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceStart",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the StartService function to start the service. Only valid under a 'ServiceInstall' parent.
@@ -270,7 +268,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceStop",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the ControlService function to stop the service. Only valid under a 'ServiceInstall' parent.
@@ -279,7 +277,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "ServiceUserDefinedControl",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Required to call the ControlService function to specify a user-defined control code. Only valid under a 'ServiceInstall' parent.
@@ -288,7 +286,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Synchronize",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -297,7 +295,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "TakeOwnership",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -306,7 +304,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Traverse",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   For a directory, the right to traverse the directory. By default, users are assigned the BYPASS_TRAVERSE_CHECKING privilege, which ignores the FILE_TRAVERSE access right. Only valid under a 'CreateFolder' parent.
@@ -325,7 +323,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "Write",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -334,7 +332,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "WriteAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -343,7 +341,7 @@ Sets ACLs on File, Registry, CreateFolder, or ServiceInstall. When under a Regis
   <BlockReference
     content={{
       title: "WriteExtendedAttributes",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   

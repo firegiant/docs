@@ -1,13 +1,11 @@
 ---
 title: "ChangePageAction element (Thmutil extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 When the button is pressed, the specified page is shown.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ When the button is pressed, the specified page is shown.
   <BlockReference
     content={{
       title: "Cancel",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to 'yes', none of the variable changes made on the current page are saved.

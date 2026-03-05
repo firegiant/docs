@@ -1,13 +1,11 @@
 ---
 title: "AppService element (Msix extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines an application contracts as a way for an app to invoke a background task belonging to another app; or for a background task invoked to service an app contract a way to communicate with its caller.
-
 
 ## Attributes
 
@@ -44,7 +42,7 @@ Defines an application contracts as a way for an app to invoke a background task
   <BlockReference
     content={{
       title: "SupportsMultipleInstances",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Supports multiple, separate instances of an app service.
@@ -58,7 +56,7 @@ Defines an application contracts as a way for an app to invoke a background task
 <BlockDefList content={[
     {
       title: "File (Wxs extension)",
-      link: "../../wxs/file/"
+      link: "/wix/schema/wxs/file/"
     }
   ]}
 />

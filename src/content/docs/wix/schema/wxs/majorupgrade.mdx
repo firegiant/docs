@@ -1,7 +1,6 @@
 ---
 title: "MajorUpgrade element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -15,7 +14,6 @@ Simplifies authoring for major upgrades, including support for preventing downgr
  FindRelatedProducts action is run, the value of the WIX_UPGRADE_DETECTED property is a
  list of product codes, separated by semicolons (;), detected on the system.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -23,7 +21,7 @@ Simplifies authoring for major upgrades, including support for preventing downgr
   <BlockReference
     content={{
       title: "AllowDowngrades",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to no (the default), products with lower version numbers are blocked from
@@ -36,7 +34,7 @@ Simplifies authoring for major upgrades, including support for preventing downgr
   <BlockReference
     content={{
       title: "AllowSameVersionUpgrades",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to no (the default), installing a product with the same version and upgrade code
@@ -62,7 +60,7 @@ Simplifies authoring for major upgrades, including support for preventing downgr
   <BlockReference
     content={{
       title: "Disallow",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to yes, products with higer version numbers are blocked from
@@ -97,7 +95,7 @@ Simplifies authoring for major upgrades, including support for preventing downgr
   <BlockReference
     content={{
       title: "IgnoreLanguage",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to yes, the Upgrade table rows will match any product with the same UpgradeCode.
@@ -109,7 +107,7 @@ Simplifies authoring for major upgrades, including support for preventing downgr
   <BlockReference
     content={{
       title: "IgnoreRemoveFailure",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to yes, failures removing the installed product during the upgrade will be
@@ -122,7 +120,7 @@ Simplifies authoring for major upgrades, including support for preventing downgr
   <BlockReference
     content={{
       title: "MigrateFeatures",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When set to yes (the default), the MigrateFeatureStates standard action will set the

@@ -1,7 +1,6 @@
 ---
 title: "ComPlusApplication element (Complus extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -15,7 +14,6 @@ Defines a COM+ application. If this element is a descendent
  If the element is a child of a ComPlusPartition element,
  or have its Partition attribute set, the application will be installed under
  the referenced partition.
-
 
 ## Attributes
 
@@ -46,7 +44,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "ApplicationAccessChecksEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -104,7 +102,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "Changeable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -140,7 +138,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "CRMEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -158,7 +156,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "Deleteable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -176,7 +174,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "DumpEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -185,7 +183,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "DumpOnException",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -194,7 +192,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "DumpOnFailfast",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -212,7 +210,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "EventsEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -253,7 +251,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "IsEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -323,7 +321,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "QueueListenerEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -332,7 +330,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "QueuingEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -386,7 +384,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "Replicable",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -395,7 +393,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "RunForever",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -413,7 +411,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "SoapActivated",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -449,7 +447,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "SRPEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -469,7 +467,7 @@ Defines a COM+ application. If this element is a descendent
   <BlockReference
     content={{
       title: "ThreeGigSupportEnabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   

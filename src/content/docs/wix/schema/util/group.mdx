@@ -1,13 +1,11 @@
 ---
 title: "Group element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Group for all kinds of (usergroup) things. When it is not nested under a component it is included in the MSI so it can be referenced by other elements such as the GroupRef element under a User element (to add the User to the Group). When it is nested under a Component element, the Group will be created on install and can also be used for reference.
-
 
 ## Attributes
 
@@ -25,7 +23,7 @@ Group for all kinds of (usergroup) things. When it is not nested under a compone
   <BlockReference
     content={{
       title: "CreateGroup",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether or not to create the group. Group creation can be skipped if all that is desired is to add group memberships.
@@ -43,7 +41,7 @@ Group for all kinds of (usergroup) things. When it is not nested under a compone
   <BlockReference
     content={{
       title: "FailIfExists",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates if the install should fail if the group already exists.
@@ -71,7 +69,7 @@ Group for all kinds of (usergroup) things. When it is not nested under a compone
   <BlockReference
     content={{
       title: "RemoveComment",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether remove the comment from the group. The default value is "no".
@@ -80,7 +78,7 @@ Group for all kinds of (usergroup) things. When it is not nested under a compone
   <BlockReference
     content={{
       title: "RemoveOnUninstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether the group should be removed or left behind on uninstall.
@@ -89,7 +87,7 @@ Group for all kinds of (usergroup) things. When it is not nested under a compone
   <BlockReference
     content={{
       title: "UpdateIfExists",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates if the group properties should be updated if the group already exists.
@@ -98,7 +96,7 @@ Group for all kinds of (usergroup) things. When it is not nested under a compone
   <BlockReference
     content={{
       title: "Vital",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether failure to create the group or add the group to another group fails the installation. The default value is "yes".

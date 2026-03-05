@@ -1,13 +1,11 @@
 ---
 title: "Msix element (Msix extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Metadata required to create a package.
-
 
 ## Attributes
 
@@ -144,7 +142,7 @@ Metadata required to create a package.
     content={{
       title: "Target",
       type: "TargetTypeUnion",
-      typeLink: "../targettype/",
+      typeLink: "../targettypeunion/",
       typeTitle: "Values of this type will either be \"desktop\" or \"server\"."
     }}
   >
@@ -168,15 +166,15 @@ Metadata required to create a package.
 <BlockDefList content={[
     {
       title: "Package (Wxs extension)",
-      link: "../../wxs/package/"
+      link: "/wix/schema/wxs/package/"
     },
     {
       title: "Fragment (Wxs extension)",
-      link: "../../wxs/fragment/"
+      link: "/wix/schema/wxs/fragment/"
     },
     {
       title: "Module (Wxs extension)",
-      link: "../../wxs/module/"
+      link: "/wix/schema/wxs/module/"
     }
   ]}
 />

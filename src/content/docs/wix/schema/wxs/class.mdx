@@ -1,13 +1,11 @@
 ---
 title: "Class element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 COM Class registration for parent Component.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "Advertise",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this value to "yes" in order to create a normal Class table row. Set this value to
@@ -68,7 +66,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "Control",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute's value to 'yes' to identify an object as an ActiveX Control. The default value is 'no'.
@@ -144,7 +142,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "Insertable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies the CLSID may be insertable.
@@ -153,7 +151,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "Programmable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies the CLSID may be programmable.
@@ -162,7 +160,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "RelativePath",
-      type: "yesno"
+      type: "bool"
     }}
   >
   When the value is "yes", the bare file name can be used for COM servers. The installer
@@ -173,7 +171,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "SafeForInitializing",
-      type: "yesno"
+      type: "bool"
     }}
   >
   May only be specified if the value of the Advertise attribute is "no".
@@ -182,7 +180,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "SafeForScripting",
-      type: "yesno"
+      type: "bool"
     }}
   >
   May only be specified if the value of the Advertise attribute is "no".
@@ -202,7 +200,7 @@ COM Class registration for parent Component.
   <BlockReference
     content={{
       title: "ShortPath",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether or not to use the short path for the COM server. This can only apply when Advertise is set to 'no'. The default is 'no' meaning that it will use the long file name for the COM server.

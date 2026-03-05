@@ -1,13 +1,11 @@
 ---
 title: "DotNetCompatibilityCheck element (Netfx extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Validates whether the specified .NET is installed on the computer.
-
 
 ## Attributes
 
@@ -42,7 +40,7 @@ Validates whether the specified .NET is installed on the computer.
   >
   Name of the property in which to place the result of the compatibility check. The possible values are:
    - 0 - Successful compatibility check.
-   - 13 - Requested platform is not compatible with OS. _Introduced in WiX v5.0._
+   - 13 - Requested platform is not compatible with OS. _Introduced in WiX v5._
    - 12289 - No runtime is installed.
    - 12290 - Required runtime is not installed.
    - 12291 - Failed to get hostfxr exports.

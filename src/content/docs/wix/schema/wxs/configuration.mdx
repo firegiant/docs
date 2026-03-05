@@ -1,13 +1,11 @@
 ---
 title: "Configuration element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines the configurable attributes of merge module.
-
 
 ## Attributes
 
@@ -84,7 +82,7 @@ Defines the configurable attributes of merge module.
   <BlockReference
     content={{
       title: "KeyNoOrphan",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Does not merge rule according to rules in MSI SDK.
@@ -103,7 +101,7 @@ Defines the configurable attributes of merge module.
   <BlockReference
     content={{
       title: "NonNullable",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If yes, null is not a valid entry.

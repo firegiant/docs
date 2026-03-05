@@ -1,7 +1,6 @@
 ---
 title: "CopyFile element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -16,7 +15,6 @@ Copy or move an existing file on the target machine, or copy a file that is bein
  specified destination directory is the same as the directory containing the original file and the name for the proposed source
  file is the same as the original, then no action takes place.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -24,7 +22,7 @@ Copy or move an existing file on the target machine, or copy a file that is bein
   <BlockReference
     content={{
       title: "Delete",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute cannot be specified if the element is nested under a File element or the FileId attribute is specified. In other

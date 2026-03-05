@@ -1,13 +1,11 @@
 ---
 title: "HarvestFile element (Buildtools extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Harvest a file and exclude it from future harvesting.
-
 
 ## Attributes
 
@@ -25,7 +23,7 @@ Harvest a file and exclude it from future harvesting.
   <BlockReference
     content={{
       title: "SelfReg",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Capture self-registration for executable files during harvesting. Self-reg is only attempted when the attribute is set to 'yes'. The default is 'no'.
@@ -52,7 +50,7 @@ Harvest a file and exclude it from future harvesting.
   <BlockReference
     content={{
       title: "SelfRegWarnOnError",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Downgrade error messages encountered during self-registration capture to warnings. Ignored unless SelfReg attribute is 'yes'. The default is 'no'.
@@ -71,7 +69,7 @@ Harvest a file and exclude it from future harvesting.
   <BlockReference
     content={{
       title: "SuppressFont",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Prevent automatically marking ".ttf" and ".otf" files as a font. The default is 'no'.
@@ -94,7 +92,7 @@ Harvest a file and exclude it from future harvesting.
 <BlockDefList content={[
     {
       title: "Component (Wxs extension)",
-      link: "../../wxs/component/"
+      link: "/wix/schema/wxs/component/"
     }
   ]}
 />

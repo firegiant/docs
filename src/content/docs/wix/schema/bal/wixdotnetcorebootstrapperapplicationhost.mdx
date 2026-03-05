@@ -1,15 +1,17 @@
 ---
 title: "WixDotNetCoreBootstrapperApplicationHost element (Bal extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
+import { Badge } from '@astrojs/starlight/components';
+
+<Badge text="deprecated" variant="caution" size="small" title="this element is deprecated and may be removed in a future release" />
+<Badge text="v4" variant="danger" size="small" title="introduced in WiX v4" />
 
 Uses WixDotNetCoreBootstrapperApplicationHost as the Bootstrapper Application for a Bundle.
 
- _Available in WiX v4. Deprecated in WiX v5; use WixPrerequisiteBootstrapperApplication instead._
-
+ _Deprecated in WiX v5; use WixPrerequisiteBootstrapperApplication instead._
 
 ## Attributes
 
@@ -18,7 +20,7 @@ Uses WixDotNetCoreBootstrapperApplicationHost as the Bootstrapper Application fo
   <BlockReference
     content={{
       title: "AlwaysInstallPrereqs",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   When not set or set to "no", the prereq BA is only used when the .NET Core runtime can't be loaded.
@@ -47,7 +49,7 @@ Uses WixDotNetCoreBootstrapperApplicationHost as the Bootstrapper Application fo
   <BlockReference
     content={{
       title: "SelfContainedDeployment",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Whether the .NET Core BA was published as self-contained (SCD).

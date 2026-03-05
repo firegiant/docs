@@ -1,13 +1,11 @@
 ---
 title: "Editbox element (Thmutil extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines an edit box.
-
 
 ## Attributes
 
@@ -25,7 +23,7 @@ Defines an edit box.
   <BlockReference
     content={{
       title: "FileSystemAutoComplete",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the edit box should auto-complete with file system paths.
@@ -62,7 +60,7 @@ Defines an edit box.
   <BlockReference
     content={{
       title: "HideWhenDisabled",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control should be hidden when disabled.
@@ -104,7 +102,7 @@ Defines an edit box.
   <BlockReference
     content={{
       title: "TabStop",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is part of the tab sequence of controls.
@@ -113,7 +111,7 @@ Defines an edit box.
   <BlockReference
     content={{
       title: "Visible",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is initially visible.
@@ -159,3 +157,18 @@ Defines an edit box.
   </BlockReference>
 
 </BlockWrapper>
+
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Page",
+      link: "../page/"
+    },
+    {
+      title: "Window",
+      link: "../window/"
+    }
+  ]}
+/>

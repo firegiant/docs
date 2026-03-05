@@ -1,13 +1,11 @@
 ---
 title: "HarvestProjectOutput element (Buildtools extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Harvest files from a project's output groups.
-
 
 ## Attributes
 
@@ -47,7 +45,7 @@ Harvest files from a project's output groups.
   <BlockReference
     content={{
       title: "SelfReg",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Capture self-registration for executable files during harvesting. Self-reg is only attempted when the attribute is set to 'yes'. The default is 'no'.
@@ -74,7 +72,7 @@ Harvest files from a project's output groups.
   <BlockReference
     content={{
       title: "SelfRegWarnOnError",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Downgrade error messages encountered during self-registration capture to warnings. Ignored unless SelfReg attribute is 'yes'. The default is 'no'.
@@ -84,7 +82,7 @@ Harvest files from a project's output groups.
     content={{
       title: "Strategy",
       type: "HarvestStrategyTypeUnion",
-      typeLink: "../harveststrategytype/",
+      typeLink: "../harveststrategytypeunion/",
       typeTitle: "Values of this type will either be \"default\", \"singleFileComponents\" or \"contentFileComponentsWithGeneratedKeyPath\"."
     }}
   >
@@ -94,7 +92,7 @@ Harvest files from a project's output groups.
   <BlockReference
     content={{
       title: "SuppressFont",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Prevent automatically marking ".ttf" files as a font. The default is 'no'.
@@ -121,7 +119,7 @@ Harvest files from a project's output groups.
 <BlockDefList content={[
     {
       title: "Component (Wxs extension)",
-      link: "../../wxs/component/"
+      link: "/wix/schema/wxs/component/"
     }
   ]}
 />

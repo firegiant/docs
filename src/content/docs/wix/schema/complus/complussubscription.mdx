@@ -1,13 +1,11 @@
 ---
 title: "ComPlusSubscription element (Complus extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines an event subscription for a COM+ component.
-
 
 ## Attributes
 
@@ -36,7 +34,7 @@ Defines an event subscription for a COM+ component.
   <BlockReference
     content={{
       title: "Enabled",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -121,7 +119,7 @@ Defines an event subscription for a COM+ component.
   <BlockReference
     content={{
       title: "PerUser",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   
@@ -141,7 +139,7 @@ Defines an event subscription for a COM+ component.
   <BlockReference
     content={{
       title: "Queued",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   

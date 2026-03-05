@@ -1,13 +1,11 @@
 ---
 title: "MessageQueue element (Msmq extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Installs an MSMQ message queue.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Installs an MSMQ message queue.
   <BlockReference
     content={{
       title: "Authenticate",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   The default value is "no".
@@ -43,7 +41,7 @@ Installs an MSMQ message queue.
   <BlockReference
     content={{
       title: "Journal",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   The default value is "no".
@@ -120,7 +118,7 @@ Installs an MSMQ message queue.
   <BlockReference
     content={{
       title: "Transactional",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   The default value is "no".

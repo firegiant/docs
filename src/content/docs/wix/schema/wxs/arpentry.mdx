@@ -1,14 +1,12 @@
 ---
 title: "ArpEntry element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Information about the Add/Remove Programs entry that is installed by the package.
  ArpEntry may not be specified with DetectCondition or UninstallArguments.
-
 
 ## Attributes
 
@@ -36,7 +34,7 @@ Information about the Add/Remove Programs entry that is installed by the package
   <BlockReference
     content={{
       title: "UseUninstallString",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If yes, use the `UninstallString` value instead of the default `QuietUninstallString`.
@@ -57,7 +55,7 @@ Information about the Add/Remove Programs entry that is installed by the package
   <BlockReference
     content={{
       title: "Win64",
-      type: "yesno",
+      type: "bool",
       required: true
     }}
   >

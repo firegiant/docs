@@ -1,13 +1,11 @@
 ---
 title: "Component element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Component for parent Directory
-
 
 ## Attributes
 
@@ -17,7 +15,7 @@ Component for parent Directory
     content={{
       title: "Bitness",
       type: "BitnessTypeUnion",
-      typeLink: "../bitnesstype/",
+      typeLink: "../bitnesstypeunion/",
       typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
     }}
   >
@@ -65,7 +63,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "DisableRegistryReflection",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to 'yes' in order to disable registry reflection on all existing and
@@ -137,7 +135,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "KeyPath",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute's value is set to 'yes', then the Directory of this Component is used
@@ -165,7 +163,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "MultiInstance",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute is set to 'yes', a new Component/@Guid will be generated for each
@@ -177,7 +175,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "NeverOverwrite",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute is set to 'yes', the installer does not install or reinstall the
@@ -191,7 +189,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "Permanent",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute is set to 'yes', the installer does not remove the component during
@@ -205,7 +203,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "Shared",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute's value is set to 'yes', enables advanced patching semantics for
@@ -217,7 +215,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "SharedDllRefCount",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute's value is set to 'yes', the installer increments the reference count
@@ -238,7 +236,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "Transitive",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute is set to 'yes', the installer reevaluates the value of the statement
@@ -251,7 +249,7 @@ Component for parent Directory
   <BlockReference
     content={{
       title: "UninstallWhenSuperseded",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If this attribute is set to 'yes', the installer will uninstall the Component's files
@@ -346,7 +344,7 @@ Component for parent Directory
     },
     {
       title: "Driver (Buildtools extension)",
-      link: "../../buildtools/driver/"
+      link: "/firegiant/schema/buildtools/driver/"
     },
     {
       title: "Environment",
@@ -378,15 +376,15 @@ Component for parent Directory
     },
     {
       title: "HarvestFile (Buildtools extension)",
-      link: "../../buildtools/harvestfile/"
+      link: "/firegiant/schema/buildtools/harvestfile/"
     },
     {
       title: "HarvestFolder (Buildtools extension)",
-      link: "../../buildtools/harvestfolder/"
+      link: "/firegiant/schema/buildtools/harvestfolder/"
     },
     {
       title: "HarvestProjectOutput (Buildtools extension)",
-      link: "../../buildtools/harvestprojectoutput/"
+      link: "/firegiant/schema/buildtools/harvestprojectoutput/"
     },
     {
       title: "IniFile",
@@ -434,7 +432,7 @@ Component for parent Directory
     },
     {
       title: "ProtectedService (Buildtools extension)",
-      link: "../../buildtools/protectedservice/"
+      link: "/firegiant/schema/buildtools/protectedservice/"
     },
     {
       title: "Provides",
@@ -442,7 +440,7 @@ Component for parent Directory
     },
     {
       title: "PublicRegistry (Msix extension)",
-      link: "../../msix/publicregistry/"
+      link: "/firegiant/schema/msix/publicregistry/"
     },
     {
       title: "RegistryKey",

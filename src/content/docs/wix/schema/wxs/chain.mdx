@@ -1,13 +1,11 @@
 ---
 title: "Chain element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Contains the chain of packages to install.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Contains the chain of packages to install.
   <BlockReference
     content={{
       title: "DisableRollback",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the bundle will attempt to roll back packages
@@ -30,7 +28,7 @@ Contains the chain of packages to install.
   <BlockReference
     content={{
       title: "DisableSystemRestore",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the bundle will attempt to create a system
@@ -44,7 +42,7 @@ Contains the chain of packages to install.
   <BlockReference
     content={{
       title: "ParallelCache",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the bundle will start installing packages

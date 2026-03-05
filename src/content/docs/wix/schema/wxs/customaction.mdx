@@ -1,7 +1,6 @@
 ---
 title: "CustomAction element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -9,7 +8,6 @@ import BlockDefList from '@components/BlockDefList.astro';
 Specifies a custom action to be added to the MSI CustomAction table. Various combinations of the attributes for this element
  correspond to different custom action types. For more information about custom actions see the [
         Custom Action Types](https://learn.microsoft.com/en-us/windows/win32/msi/summary-list-of-all-custom-action-types) topic on MSDN.
-
 
 ## Attributes
 
@@ -32,7 +30,7 @@ Specifies a custom action to be added to the MSI CustomAction table. Various com
     content={{
       title: "Bitness",
       type: "BitnessTypeUnion",
-      typeLink: "../bitnesstype/",
+      typeLink: "../bitnesstypeunion/",
       typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
     }}
   >
@@ -123,7 +121,7 @@ Specifies a custom action to be added to the MSI CustomAction table. Various com
   <BlockReference
     content={{
       title: "HideTarget",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Ensures the installer does not log the CustomActionData for the deferred custom action.
@@ -142,7 +140,7 @@ Specifies a custom action to be added to the MSI CustomAction table. Various com
   <BlockReference
     content={{
       title: "Impersonate",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute specifies whether the Windows Installer, which executes as LocalSystem,
@@ -165,7 +163,7 @@ Specifies a custom action to be added to the MSI CustomAction table. Various com
   <BlockReference
     content={{
       title: "PatchUninstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute specifies that the Windows Installer, execute the custom action only when
@@ -238,7 +236,7 @@ Specifies a custom action to be added to the MSI CustomAction table. Various com
   <BlockReference
     content={{
       title: "SuppressModularization",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Use to suppress modularization of this custom action name in merge modules.
@@ -250,7 +248,7 @@ Specifies a custom action to be added to the MSI CustomAction table. Various com
   <BlockReference
     content={{
       title: "TerminalServerAware",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute specifies controls whether the custom action will impersonate the

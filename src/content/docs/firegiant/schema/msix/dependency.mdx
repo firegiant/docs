@@ -1,13 +1,11 @@
 ---
 title: "Dependency element (Msix extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Metadata required to add a dependency on a package.
-
 
 ## Attributes
 
@@ -35,7 +33,7 @@ Metadata required to add a dependency on a package.
   <BlockReference
     content={{
       title: "Optional",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Indicates whether the dependency is optional (yes) or required (no).
@@ -69,15 +67,15 @@ Metadata required to add a dependency on a package.
 <BlockDefList content={[
     {
       title: "Package (Wxs extension)",
-      link: "../../wxs/package/"
+      link: "/wix/schema/wxs/package/"
     },
     {
       title: "Fragment (Wxs extension)",
-      link: "../../wxs/fragment/"
+      link: "/wix/schema/wxs/fragment/"
     },
     {
       title: "Module (Wxs extension)",
-      link: "../../wxs/module/"
+      link: "/wix/schema/wxs/module/"
     }
   ]}
 />

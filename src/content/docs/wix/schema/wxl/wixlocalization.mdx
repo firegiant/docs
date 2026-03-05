@@ -1,13 +1,9 @@
 ---
 title: "WixLocalization element (Wxl extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
-
-
-
 
 ## Attributes
 
@@ -36,10 +32,11 @@ import BlockDefList from '@components/BlockDefList.astro';
       title: "ExtensionDefaultCulture",
       type: "LocalizationYesNoType",
       typeLink: "../localizationyesnotype/",
-      typeTitle: "Values of this type will either be \"yes\"/\"true\" or \"no\"/\"false\"."
+      typeTitle: "Values of this type will either be \"yes\"/\"true\" or \"no\"/\"false\".",
+      version: "5"
     }}
   >
-  [WiX v5] Optional. Indicates that the localization file's culture is the default culture for a WiX Extension. Only valid when used in a WiX library included in a WiX Extension.. This attribute's value must be one of the following:
+  Optional. Indicates that the localization file's culture is the default culture for a WiX Extension. Only valid when used in a WiX library included in a WiX Extension.. This attribute's value must be one of the following:
   - *no*
   - *false*
   - *yes*

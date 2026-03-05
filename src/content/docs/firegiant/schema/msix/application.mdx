@@ -1,13 +1,11 @@
 ---
 title: "Application element (Msix extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines an Application in a package. Alternative to using the Application attribute on the File element.
-
 
 ## Attributes
 
@@ -53,7 +51,7 @@ Defines an Application in a package. Alternative to using the Application attrib
   <BlockReference
     content={{
       title: "Primary",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Sets the Application as the primary Application in the MSIX package. The primary Application's logo and name is visible at some places in Windows 10 instead of the MSIX package logo and name.
@@ -84,19 +82,19 @@ Defines an Application in a package. Alternative to using the Application attrib
 <BlockDefList content={[
     {
       title: "Package (Wxs extension)",
-      link: "../../wxs/package/"
+      link: "/wix/schema/wxs/package/"
     },
     {
       title: "Fragment (Wxs extension)",
-      link: "../../wxs/fragment/"
+      link: "/wix/schema/wxs/fragment/"
     },
     {
       title: "Module (Wxs extension)",
-      link: "../../wxs/module/"
+      link: "/wix/schema/wxs/module/"
     },
     {
       title: "File (Wxs extension)",
-      link: "../../wxs/file/"
+      link: "/wix/schema/wxs/file/"
     }
   ]}
 />

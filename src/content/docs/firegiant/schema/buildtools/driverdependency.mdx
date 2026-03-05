@@ -1,13 +1,11 @@
 ---
 title: "DriverDependency element (Buildtools extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Driver or load ordering group that must start before the parent driver.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Driver or load ordering group that must start before the parent driver.
   <BlockReference
     content={{
       title: "Group",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Set to 'yes' to indicate that the value in the Name attribute is the name of a load ordering group.

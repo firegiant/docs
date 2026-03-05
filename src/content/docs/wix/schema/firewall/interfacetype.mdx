@@ -1,13 +1,14 @@
 ---
 title: "InterfaceType element (Firewall extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
+import { Badge } from '@astrojs/starlight/components';
 
-[WiX v5] Registers an inteface type to the firewall rule.
+<Badge text="v5" variant="danger" size="small" title="introduced in WiX v5" />
 
+Registers an inteface type to the firewall rule.
 
 ## Attributes
 
@@ -16,7 +17,9 @@ import BlockDefList from '@components/BlockDefList.astro';
   <BlockReference
     content={{
       title: "Value",
-      type: "FirewallInterfaceTypeUnion"
+      type: "FirewallInterfaceTypeUnion",
+      typeLink: "../firewallinterfacetypeunion/",
+      typeTitle: "FirewallInterfaceTypeUnion"
     }}
   >
   A interface type to which the firewall rule applices. See [Interfaces](https://learn.microsoft.com/en-us/windows/win32/api/netfw/nf-netfw-inetfwrule-get_interfaces)

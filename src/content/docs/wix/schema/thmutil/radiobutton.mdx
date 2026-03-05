@@ -1,13 +1,11 @@
 ---
 title: "RadioButton element (Thmutil extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines an individual radio button within a set of radio buttons.
-
 
 ## Attributes
 
@@ -53,7 +51,7 @@ Defines an individual radio button within a set of radio buttons.
   <BlockReference
     content={{
       title: "HideWhenDisabled",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control should be hidden when disabled.
@@ -95,7 +93,7 @@ Defines an individual radio button within a set of radio buttons.
   <BlockReference
     content={{
       title: "TabStop",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is part of the tab sequence of controls.
@@ -113,7 +111,7 @@ Defines an individual radio button within a set of radio buttons.
   <BlockReference
     content={{
       title: "Visible",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is initially visible.

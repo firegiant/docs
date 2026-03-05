@@ -1,13 +1,11 @@
 ---
 title: "Billboard element (Thmutil extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines a control that rotates through a set of panels on a specified interval.
-
 
 ## Attributes
 
@@ -44,7 +42,7 @@ Defines a control that rotates through a set of panels on a specified interval.
   <BlockReference
     content={{
       title: "HideWhenDisabled",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control should be hidden when disabled.
@@ -62,7 +60,7 @@ Defines a control that rotates through a set of panels on a specified interval.
   <BlockReference
     content={{
       title: "Loop",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the billboard should loop through the panels infinitely.
@@ -95,7 +93,7 @@ Defines a control that rotates through a set of panels on a specified interval.
   <BlockReference
     content={{
       title: "TabStop",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is part of the tab sequence of controls.
@@ -104,7 +102,7 @@ Defines a control that rotates through a set of panels on a specified interval.
   <BlockReference
     content={{
       title: "Visible",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is initially visible.
@@ -157,6 +155,20 @@ Defines a control that rotates through a set of panels on a specified interval.
     {
       title: "Panel",
       link: "../panel/"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Page",
+      link: "../page/"
+    },
+    {
+      title: "Window",
+      link: "../window/"
     }
   ]}
 />

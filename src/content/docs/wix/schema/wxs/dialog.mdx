@@ -1,13 +1,11 @@
 ---
 title: "Dialog element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines a dialog box in the Dialog Table.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "CustomPalette",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to specify if pictures in the dialog box are rendered with a custom palette.
@@ -25,7 +23,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "ErrorDialog",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies this dialog as an error dialog.
@@ -46,7 +44,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "Hidden",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to hide the dialog.
@@ -65,7 +63,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "KeepModeless",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Keep modeless dialogs alive when this dialog is created through DoAction.
@@ -74,7 +72,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "LeftScroll",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to align the scroll bar on the left.
@@ -83,7 +81,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "Modeless",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to set the dialog as modeless.
@@ -92,7 +90,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "NoMinimize",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to specify if the dialog can be minimized.
@@ -101,7 +99,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "RightAligned",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Align text on the right.
@@ -110,7 +108,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "RightToLeft",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to specify if the text in the dialog should be displayed in right to left reading order.
@@ -119,7 +117,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "SystemModal",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Used to set the dialog as system modal.
@@ -137,7 +135,7 @@ Defines a dialog box in the Dialog Table.
   <BlockReference
     content={{
       title: "TrackDiskSpace",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Have the dialog periodically call the installer to check if available disk space has changed.

@@ -1,14 +1,12 @@
 ---
 title: "RegistryKey element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Used for organization of child RegistryValue elements or to create a registry key
  (and optionally remove it during uninstallation).
-
 
 ## Attributes
 
@@ -33,7 +31,7 @@ Used for organization of child RegistryValue elements or to create a registry ke
   <BlockReference
     content={{
       title: "ForceCreateOnInstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to 'yes' to create an empty key, if absent, when the parent component is installed.
@@ -44,7 +42,7 @@ Used for organization of child RegistryValue elements or to create a registry ke
   <BlockReference
     content={{
       title: "ForceDeleteOnUninstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this attribute to 'yes' to remove the key with all its values and subkeys when the parent component is uninstalled.

@@ -1,13 +1,11 @@
 ---
 title: "OptimizeCustomActions element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Indicates whether custom actions can be skipped when applying the patch.
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Indicates whether custom actions can be skipped when applying the patch.
   <BlockReference
     content={{
       title: "SkipAssignment",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Skip property (type 51) and directory (type 35) assignment custom actions.
@@ -25,7 +23,7 @@ Indicates whether custom actions can be skipped when applying the patch.
   <BlockReference
     content={{
       title: "SkipDeferred",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Skip custom actions that run within the script.
@@ -34,7 +32,7 @@ Indicates whether custom actions can be skipped when applying the patch.
   <BlockReference
     content={{
       title: "SkipImmediate",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Skip immediate custom actions that are not property or directory assignment custom actions.
@@ -49,10 +47,6 @@ Indicates whether custom actions can be skipped when applying the patch.
     {
       title: "Patch",
       link: "../patch/"
-    },
-    {
-      title: "PatchMetadata",
-      link: "../patchmetadata/"
     }
   ]}
 />

@@ -1,13 +1,11 @@
 ---
 title: "EventSource element (Util extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Creates an event source.
-
 
 ## Attributes
 
@@ -53,7 +51,7 @@ Creates an event source.
   <BlockReference
     content={{
       title: "KeyPath",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Marks the EventSource registry as the key path of the component it belongs to.
@@ -95,7 +93,7 @@ Creates an event source.
   <BlockReference
     content={{
       title: "SupportsErrors",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Equivalent to EVENTLOG_ERROR_TYPE.
@@ -104,7 +102,7 @@ Creates an event source.
   <BlockReference
     content={{
       title: "SupportsFailureAudits",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Equivalent to EVENTLOG_AUDIT_FAILURE.
@@ -113,7 +111,7 @@ Creates an event source.
   <BlockReference
     content={{
       title: "SupportsInformationals",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Equivalent to EVENTLOG_INFORMATION_TYPE.
@@ -122,7 +120,7 @@ Creates an event source.
   <BlockReference
     content={{
       title: "SupportsSuccessAudits",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Equivalent to EVENTLOG_AUDIT_SUCCESS.
@@ -131,7 +129,7 @@ Creates an event source.
   <BlockReference
     content={{
       title: "SupportsWarnings",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Equivalent to EVENTLOG_WARNING_TYPE.

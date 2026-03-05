@@ -1,13 +1,11 @@
 ---
 title: "Shortcut element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Shortcut, default target is parent File, CreateFolder, or Component's Directory
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
   <BlockReference
     content={{
       title: "Advertise",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies if the shortcut should be advertised or not. Note that advertised shortcuts
@@ -56,10 +54,6 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
   The Formatted string providing the full path to the language neutral file containing the MUI Manifest. Generally
    authored using [#filekey] form. When this attribute is specified, the DescriptionResourceId attribute must also
    be provided.
-  
-   This attribute is only used on Windows Vista and above. If this attribute is not specified and the install
-   is running on Vista and above, the value in the Name attribute is used. If this attribute is provided and
-   the install is running on Vista and above, the value in the Name attribute is ignored.
   </BlockReference>
 
   <BlockReference
@@ -72,10 +66,6 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
   >
   The description name index for the shortcut. This must be a non-negative number. When this attribute is specified,
    the DescriptionResourceDll attribute must also be populated.
-  
-   This attribute is only used on Windows Vista and above. If this attribute is not specified and the install
-   is running on Vista and above, the value in the Name attribute is used. If this attribute is populated and the
-   install is running on Vista and above, the value in the Name attribute is ignored.
   </BlockReference>
 
   <BlockReference
@@ -96,10 +86,6 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
   The Formatted string providing the full path to the language neutral file containing the MUI Manifest. Generally
    authored using [#filekey] form. When this attribute is specified, the DisplayResourceId attribute must also
    be provided.
-  
-   This attribute is only used on Windows Vista and above. If this attribute is not populated and the install
-   is running on Vista and above, the value in the Name attribute is used. If this attribute is populated and
-   the install is running on Vista and above, the value in the Name attribute is ignored.
   </BlockReference>
 
   <BlockReference
@@ -112,10 +98,6 @@ Shortcut, default target is parent File, CreateFolder, or Component's Directory
   >
   The display name index for the shortcut. This must be a non-negative number. When this attribute is specified, the
    DisplayResourceDll attribute must also be provided.
-  
-   This attribute is only used on Windows Vista and above. If this attribute is not specified and the install
-   is running on Vista and above, the value in the Name attribute is used. If this attribute is specified and
-   the install is running on Vista and above, the value in the Name attribute is ignored.
   </BlockReference>
 
   <BlockReference

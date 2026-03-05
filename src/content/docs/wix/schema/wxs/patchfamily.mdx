@@ -1,13 +1,11 @@
 ---
 title: "PatchFamily element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Collection of items that should be kept from the differences between two products.
-
 
 ## Attributes
 
@@ -37,7 +35,7 @@ Collection of items that should be kept from the differences between two product
   <BlockReference
     content={{
       title: "Supersede",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set this value to 'yes' to indicate that this patch will supersede all previous patches in this patch family.

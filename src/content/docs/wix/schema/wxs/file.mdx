@@ -1,13 +1,11 @@
 ---
 title: "File element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines a file to be installed by the package.
-
 
 ## Attributes
 
@@ -80,11 +78,12 @@ Defines a file to be installed by the package.
     content={{
       title: "Bitness",
       type: "BitnessTypeUnion",
-      typeLink: "../bitnesstype/",
-      typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\"."
+      typeLink: "../bitnesstypeunion/",
+      typeTitle: "Values of this type will be \"default\", \"always32\" or \"always64\".",
+      version: "5"
     }}
   >
-  [WiX v5] Only valid when the File element is not a child of the Component element.
+  Only valid when the File element is not a child of the Component element.
    Overrides the default File bitness. Only a 64-bit File can install to 64-bit locations such
    as `ProgramFiles64Folder` and the 64-bit registry. The value `always64` will force the File
    bitness to be 64-bit and cannot be included in 32-bit packages.
@@ -97,7 +96,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "Checksum",
-      type: "yesno"
+      type: "bool"
     }}
   >
   This attribute should be set to "yes" for every executable file in the installation that has a valid checksum stored in the Portable Executable (PE) file header. Only those files that have this attribute set will be verified for valid checksum during a reinstall.
@@ -120,7 +119,7 @@ Defines a file to be installed by the package.
     content={{
       title: "Compressed",
       type: "YesNoDefaultTypeUnion",
-      typeLink: "../yesnodefaulttype/",
+      typeLink: "../yesnodefaulttypeunion/",
       typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
     }}
   >
@@ -130,10 +129,11 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "Condition",
-      type: "string"
+      type: "string",
+      version: "5"
     }}
   >
-  [WiX v5] Only valid when the File element is not a child of the Component element.
+  Only valid when the File element is not a child of the Component element.
    The condition expression to be evaluated at install time. When false the File will not be installed.
   </BlockReference>
 
@@ -169,10 +169,11 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "Directory",
-      type: "string"
+      type: "string",
+      version: "5"
     }}
   >
-  [WiX v5] Only valid when the File element is not a child of the Component element.
+  Only valid when the File element is not a child of the Component element.
    This attribute specifies a reference to a Directory element with matching Id attribute containing a directory path.
    If not provided, the value will default to "INSTALLFOLDER".
   </BlockReference>
@@ -216,7 +217,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "Hidden",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to yes in order to have the file's hidden attribute set when it is installed on the target machine.
@@ -234,7 +235,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "KeyPath",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to yes in order to force this file to be the key path for the parent component.
@@ -257,7 +258,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "PatchAllowIgnoreOnError",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to indicate that the patch is non-vital.
@@ -279,7 +280,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "PatchIgnore",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Prevents the updating of the file that is in fact changed in the upgraded image relative to the target images.
@@ -288,7 +289,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "PatchWholeFile",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set if the entire file should be installed rather than creating a binary patch.
@@ -310,7 +311,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "ReadOnly",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to yes in order to have the file's read-only attribute set when it is installed on the target machine.
@@ -355,10 +356,11 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "Subdirectory",
-      type: "string"
+      type: "string",
+      version: "5"
     }}
   >
-  [WiX v5] Only valid when the File element is not a child of the Component element.
+  Only valid when the File element is not a child of the Component element.
    This attribute defines one or more directories below the directory referenced by the Directory attribute.
   </BlockReference>
 
@@ -383,7 +385,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "System",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Set to yes in order to have the file's system attribute set when it is installed on the target machine.
@@ -392,7 +394,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "TrueType",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Causes an entry to be generated for the file in the Font table with no FontTitle specified. This attribute is intended to be used to register the file as a TrueType font.
@@ -401,7 +403,7 @@ Defines a file to be installed by the package.
   <BlockReference
     content={{
       title: "Vital",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If a file is vital, then installation cannot proceed unless the file is successfully installed. The user will have no option to ignore an error installing this file. If an error occurs, they can merely retry to install the file or abort the installation. The default is "yes," unless the -sfdvital switch (candle.exe) or SuppressFileDefaultVital property (.wixproj) is used.
@@ -414,7 +416,7 @@ Defines a file to be installed by the package.
 <BlockDefList content={[
     {
       title: "ActivatableClass (Msix extension)",
-      link: "../../msix/activatableclass/"
+      link: "/firegiant/schema/msix/activatableclass/"
     },
     {
       title: "AppId",
@@ -422,19 +424,19 @@ Defines a file to be installed by the package.
     },
     {
       title: "Application (Msix extension)",
-      link: "../../msix/application/"
+      link: "/firegiant/schema/msix/application/"
     },
     {
       title: "AppPrinter (Msix extension)",
-      link: "../../msix/appprinter/"
+      link: "/firegiant/schema/msix/appprinter/"
     },
     {
       title: "AppService (Msix extension)",
-      link: "../../msix/appservice/"
+      link: "/firegiant/schema/msix/appservice/"
     },
     {
       title: "AppUriHandler (Msix extension)",
-      link: "../../msix/appurihandler/"
+      link: "/firegiant/schema/msix/appurihandler/"
     },
     {
       title: "AssemblyName",
@@ -442,7 +444,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "BackgroundTask (Msix extension)",
-      link: "../../msix/backgroundtask/"
+      link: "/firegiant/schema/msix/backgroundtask/"
     },
     {
       title: "Class",
@@ -455,7 +457,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "DesktopAppMigration (Msix extension)",
-      link: "../../msix/desktopappmigration/"
+      link: "/firegiant/schema/msix/desktopappmigration/"
     },
     {
       title: "EventManifest (Util extension)",
@@ -475,7 +477,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "FullTrustProcess (Msix extension)",
-      link: "../../msix/fulltrustprocess/"
+      link: "/firegiant/schema/msix/fulltrustprocess/"
     },
     {
       title: "NativeImage (Netfx extension)",
@@ -491,7 +493,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "OutOfProcessServer (Msix extension)",
-      link: "../../msix/outofprocessserver/"
+      link: "/firegiant/schema/msix/outofprocessserver/"
     },
     {
       title: "PerfCounter (Util extension)",
@@ -512,7 +514,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "PreInstalledConfigTask (Msix extension)",
-      link: "../../msix/preinstalledconfigtask/"
+      link: "/firegiant/schema/msix/preinstalledconfigtask/"
     },
     {
       title: "Shortcut",
@@ -525,7 +527,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "StartupTask (Msix extension)",
-      link: "../../msix/startuptask/"
+      link: "/firegiant/schema/msix/startuptask/"
     },
     {
       title: "SymbolPath",
@@ -541,7 +543,7 @@ Defines a file to be installed by the package.
     },
     {
       title: "UpdateTask (Msix extension)",
-      link: "../../msix/updatetask/"
+      link: "/firegiant/schema/msix/updatetask/"
     },
     {
       title: "VsixPackage (Vs extension)",

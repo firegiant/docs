@@ -1,7 +1,6 @@
 ---
 title: "NativeImage element (Netfx extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -9,7 +8,6 @@ import BlockDefList from '@components/BlockDefList.astro';
 Improves the performance of managed applications by creating native images.
  Requires the .NET Framework 2.0 or newer to be installed on the target machine since
  it runs [NGen](https://learn.microsoft.com/en-us/dotnet/framework/tools/ngen-exe-native-image-generator).
-
 
 ## Attributes
 
@@ -64,7 +62,7 @@ Improves the performance of managed applications by creating native images.
   <BlockReference
     content={{
       title: "Debug",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Set to "yes" to generate native images that can be used under a debugger.
@@ -74,7 +72,7 @@ Improves the performance of managed applications by creating native images.
   <BlockReference
     content={{
       title: "Dependencies",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Set to "no" to generate the minimum number of native images.
@@ -125,7 +123,7 @@ Improves the performance of managed applications by creating native images.
   <BlockReference
     content={{
       title: "Profile",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Set to "yes" to generate native images that can be used under a profiler.

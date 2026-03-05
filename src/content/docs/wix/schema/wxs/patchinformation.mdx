@@ -1,13 +1,11 @@
 ---
 title: "PatchInformation element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Properties about the patch to be placed in the Summary Information Stream. These are visible from COM through the IStream interface, and these properties can be seen on the package in Explorer.
-
 
 ## Attributes
 
@@ -16,7 +14,8 @@ Properties about the patch to be placed in the Summary Information Stream. These
   <BlockReference
     content={{
       title: "AdminImage",
-      type: "yesno"
+      type: "bool",
+      deprecated: true
     }}
   >
   Deprecated
@@ -34,7 +33,8 @@ Properties about the patch to be placed in the Summary Information Stream. These
   <BlockReference
     content={{
       title: "Compressed",
-      type: "yesno"
+      type: "bool",
+      deprecated: true
     }}
   >
   Deprecated
@@ -61,7 +61,8 @@ Properties about the patch to be placed in the Summary Information Stream. These
   <BlockReference
     content={{
       title: "Languages",
-      type: "string"
+      type: "string",
+      deprecated: true
     }}
   >
   Deprecated
@@ -79,7 +80,8 @@ Properties about the patch to be placed in the Summary Information Stream. These
   <BlockReference
     content={{
       title: "Platforms",
-      type: "string"
+      type: "string",
+      deprecated: true
     }}
   >
   Deprecated
@@ -89,7 +91,7 @@ Properties about the patch to be placed in the Summary Information Stream. These
     content={{
       title: "ReadOnly",
       type: "YesNoDefaultTypeUnion",
-      typeLink: "../yesnodefaulttype/",
+      typeLink: "../yesnodefaulttypeunion/",
       typeTitle: "Values of this type will either be \"default\", \"yes\", or \"no\"."
     }}
   >
@@ -101,7 +103,8 @@ Properties about the patch to be placed in the Summary Information Stream. These
   <BlockReference
     content={{
       title: "ShortNames",
-      type: "yesno"
+      type: "bool",
+      deprecated: true
     }}
   >
   Deprecated
@@ -125,10 +128,6 @@ Properties about the patch to be placed in the Summary Information Stream. These
     {
       title: "Patch",
       link: "../patch/"
-    },
-    {
-      title: "PatchCreation",
-      link: "../patchcreation/"
     }
   ]}
 />

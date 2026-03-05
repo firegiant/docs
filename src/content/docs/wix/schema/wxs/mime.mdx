@@ -1,13 +1,11 @@
 ---
 title: "MIME element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 MIME content-type for an Extension
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ MIME content-type for an Extension
   <BlockReference
     content={{
       title: "Advertise",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Whether this MIME is to be advertised. The default is to match whatever the parent extension element uses. If the parent element is not advertised, then this element cannot be advertised either.
@@ -46,7 +44,7 @@ MIME content-type for an Extension
   <BlockReference
     content={{
       title: "Default",
-      type: "yesno"
+      type: "bool"
     }}
   >
   If 'yes', become the content type for the parent Extension. The default value is 'no'.

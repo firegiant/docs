@@ -1,13 +1,11 @@
 ---
 title: "ServiceConfigFailureActions element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Configures the failure actions for a service being installed or one that already exists. This element's functionality is available starting with MSI 5.0.
-
 
 ## Attributes
 
@@ -36,7 +34,7 @@ Configures the failure actions for a service being installed or one that already
   <BlockReference
     content={{
       title: "OnInstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether to configure the service when the parent Component is installed. This attribute may be combined with OnReinstall
@@ -46,7 +44,7 @@ Configures the failure actions for a service being installed or one that already
   <BlockReference
     content={{
       title: "OnReinstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether to configure the service when the parent Component is reinstalled. This attribute may be combined with OnInstall
@@ -56,7 +54,7 @@ Configures the failure actions for a service being installed or one that already
   <BlockReference
     content={{
       title: "OnUninstall",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether to configure the service when the parent Component is uninstalled. This attribute may be combined with OnInstall

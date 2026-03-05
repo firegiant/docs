@@ -1,7 +1,6 @@
 ---
 title: "Driver element (Difxapp extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
@@ -10,7 +9,6 @@ Installs a driver. To use this element, you need to reference the WixDifxAppExte
  .wixlib appropriate for the target platform (difxapp_x86.wixlib or difxapp_x64.wixlib)
  to your project.
 
-
 ## Attributes
 
 <BlockWrapper>
@@ -18,7 +16,7 @@ Installs a driver. To use this element, you need to reference the WixDifxAppExte
   <BlockReference
     content={{
       title: "AddRemovePrograms",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies that the DIFxApp CustomActions should add an entry in the Add/Remove Programs Control
@@ -28,7 +26,7 @@ Installs a driver. To use this element, you need to reference the WixDifxAppExte
   <BlockReference
     content={{
       title: "DeleteFiles",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   If set to "yes", configures DIFxApp to delete binary files that were copied to the system from the driver
@@ -43,7 +41,7 @@ Installs a driver. To use this element, you need to reference the WixDifxAppExte
   <BlockReference
     content={{
       title: "ForceInstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies that the DIFxApp CustomActions should force the installation of a new Plug and Play driver
@@ -56,7 +54,7 @@ Installs a driver. To use this element, you need to reference the WixDifxAppExte
   <BlockReference
     content={{
       title: "Legacy",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   If set to "yes", configures DIFxApp to install unsigned driver packages and driver packages with missing
@@ -72,7 +70,7 @@ Installs a driver. To use this element, you need to reference the WixDifxAppExte
   <BlockReference
     content={{
       title: "PlugAndPlayPrompt",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies that the DIFxApp CustomActions should prompt the user to connect the Plug and Play

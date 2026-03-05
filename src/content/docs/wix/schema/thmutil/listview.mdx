@@ -1,13 +1,11 @@
 ---
 title: "ListView element (Thmutil extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines a listview.
-
 
 ## Attributes
 
@@ -62,7 +60,7 @@ Defines a listview.
   <BlockReference
     content={{
       title: "HideWhenDisabled",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control should be hidden when disabled.
@@ -131,7 +129,7 @@ Defines a listview.
   <BlockReference
     content={{
       title: "TabStop",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is part of the tab sequence of controls.
@@ -140,7 +138,7 @@ Defines a listview.
   <BlockReference
     content={{
       title: "Visible",
-      type: "yesno"
+      type: "bool"
     }}
   >
   Specifies whether the control is initially visible.
@@ -193,6 +191,20 @@ Defines a listview.
     {
       title: "Column",
       link: "../column/"
+    }
+  ]}
+/>
+
+## Parents
+
+<BlockDefList content={[
+    {
+      title: "Page",
+      link: "../page/"
+    },
+    {
+      title: "Window",
+      link: "../window/"
     }
   ]}
 />

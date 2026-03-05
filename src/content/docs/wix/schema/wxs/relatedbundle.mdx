@@ -1,13 +1,11 @@
 ---
 title: "RelatedBundle element"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 Defines a related bundle for the parent Bundle.
-
 
 ## Attributes
 
@@ -43,7 +41,8 @@ Defines a related bundle for the parent Bundle.
       title: "Id",
       type: "Guid",
       typeLink: "../guid/",
-      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples."
+      typeTitle: "Values of this type will look like: \"01234567-89AB-CDEF-0123-456789ABCDEF\" or \"{01234567-89AB-CDEF-0123-456789ABCDEF}\". Also allows \"PUT-GUID-HERE\" for use in examples.",
+      deprecated: true
     }}
   >
   Deprecated: Use the Code attribute instead.

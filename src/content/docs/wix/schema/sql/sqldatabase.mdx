@@ -1,13 +1,11 @@
 ---
 title: "SqlDatabase element (Sql extension)"
 ---
-
 import BlockWrapper from '@components/BlockWrapper.astro';
 import BlockReference from '@components/BlockReference.astro';
 import BlockDefList from '@components/BlockDefList.astro';
 
 SQL Database
-
 
 ## Attributes
 
@@ -16,7 +14,7 @@ SQL Database
   <BlockReference
     content={{
       title: "ConfirmOverwrite",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Prompt the user to overwrite the database.
@@ -25,7 +23,7 @@ SQL Database
   <BlockReference
     content={{
       title: "ContinueOnError",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Continue even if the database operation fails.
@@ -34,7 +32,7 @@ SQL Database
   <BlockReference
     content={{
       title: "CreateOnInstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Create the database during installation.
@@ -43,7 +41,7 @@ SQL Database
   <BlockReference
     content={{
       title: "CreateOnReinstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to create the database when the associated component is reinstalled. Setting CreateOnInstall to yes does **not** imply CreateOnReinstall is set to yes. CreateOnReinstall must be set in addition to CreateOnInstall for it to be created during both install and reinstall.
@@ -52,7 +50,7 @@ SQL Database
   <BlockReference
     content={{
       title: "CreateOnUninstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Create the database during uninstallation.
@@ -73,7 +71,7 @@ SQL Database
   <BlockReference
     content={{
       title: "DropOnInstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Drop the database during installation.
@@ -82,7 +80,7 @@ SQL Database
   <BlockReference
     content={{
       title: "DropOnReinstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Specifies whether to drop the database when the associated component is reinstalled. Setting DropOnInstall to yes does **not** imply DropOnReinstall is set to yes. DropOnReinstall must be set in addition to DropOnInstall for it to be dropped during both install and reinstall.
@@ -91,7 +89,7 @@ SQL Database
   <BlockReference
     content={{
       title: "DropOnUninstall",
-      type: "wxs:YesNoTypeUnion"
+      type: "bool"
     }}
   >
   Drop the database during uninstallation.
