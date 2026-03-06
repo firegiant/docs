@@ -12,7 +12,7 @@ pagefind: false
   <dt>Inner Text</dt>
   <dd>None</dd>
   <dt>Children</dt>
-  <dd>Choice of elements (min: 0, max: 1)<ul><li><a href="../patchcreation/">PatchCreation</a> (min: 0, max: 1)</li><li>Sequence (min: 1, max: 1)<ol><li>Choice of elements (min: 0, max: 1)<ul><li><a href="../bundle/">Bundle</a> (min: 0, max: 1)</li><li><a href="../module/">Module</a> (min: 0, max: 1)</li><li><a href="../patch/">Patch</a> (min: 0, max: 1)</li><li><a href="../product/">Product</a> (min: 0, max: 1)</li></ul></li><li><a href="../fragment/">Fragment</a> (min: 0, max: unbounded)</li></ol></li></ul></dd>
+  <dd>Choice of elements (min: 0, max: 1)<ul><li><a href="../patchcreation/">PatchCreation</a> (min: 0, max: 1)</li><li>Sequence (min: 1, max: 1)<ol><li>Choice of elements (min: 0, max: 1)<ul><li><a href="/wix3/bundle/">Bundle</a> (min: 0, max: 1)</li><li><a href="../module/">Module</a> (min: 0, max: 1)</li><li><a href="../patch/">Patch</a> (min: 0, max: 1)</li><li><a href="../product/">Product</a> (min: 0, max: 1)</li></ul></li><li><a href="../fragment/">Fragment</a> (min: 0, max: unbounded)</li></ol></li></ul></dd>
   <dt>Attributes</dt>
   <dd>
     <table cellspacing="0" cellpadding="0" class="schema">

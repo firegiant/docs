@@ -69,4 +69,3 @@
   <String Id="RemoveSubscriptionsComPlusComponents" Overridable="yes">Borrando suscripción a componentes COM+</String>
   <String Id="RemoveSubscriptionsComPlusComponentsTemplate" Overridable="yes">Suscripción: [1]</String>
 </WixLocalization>
-

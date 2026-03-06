@@ -9,7 +9,9 @@ sidebar:
 FireGiant provides [commerical support for companies][support] that want guaranteed answers to questions and bug fixes in WiX itself.
 
 
-## Discussions forum
+<div id="discussions-forum"></div>
+
+## Discussions forum {#forum}
 
 There is a [Discussion forum on GitHub][ghtalk] where you can ask questions,
 make suggestions, or discuss the WiX toolset with other users.

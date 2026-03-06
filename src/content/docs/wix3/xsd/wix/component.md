@@ -137,7 +137,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/files_and_registry/add_a_file">How To: Add a file to your installer</a>
+        <a href="/wix3/howtos/files_and_registry/add_a_file">How To: Add a file to your installer</a>
       </li>
     </ul>
   </dd>

@@ -33,7 +33,7 @@ To use a WiX extension during the build of your project, you need to load the ex
 
 To use a WiX extension when using the Wix.exe command-line .NET tool, you need to:
 
-1. [Add the extension to the WiX extension cache.](../wixexe/#extensionadd)
+1. [Add the extension to the WiX extension cache.](../wixexe/#extension)
 2. [Use the extension when building.](../wixexe/#build)
 
 For example:

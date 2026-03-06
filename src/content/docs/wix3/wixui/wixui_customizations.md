@@ -75,9 +75,9 @@ The WixUI dialog library includes default bitmaps for the background of the welc
 
 ## Customizing the ExitDlg
 
-The ExitDlg is the [dialog in the built-in WixUI dialog sets](dialog_reference/wixui_dialogs/) that is displayed at the end of a successful setup. The ExitDlg supports showing both optional, customizable text and an optional checkbox.
+The ExitDlg is the [dialog in the built-in WixUI dialog sets](/wix3/wixui/dialog_reference/wixui_dialogs/) that is displayed at the end of a successful setup. The ExitDlg supports showing both optional, customizable text and an optional checkbox.
 
-See [How To: Run the Installed Application After Setup](../howtos/ui_and_localization/run_program_after_install/) for an example of how to show a checkbox on the ExitDlg.
+See [How To: Run the Installed Application After Setup](/wix3/howtos/ui_and_localization/run_program_after_install/) for an example of how to show a checkbox on the ExitDlg.
 
 To show optional text on the ExitDlg, set the WIXUI_EXITDIALOGOPTIONALTEXT property to the string you want to show. For example:
 
@@ -111,11 +111,11 @@ For example, to override the descriptive text on the WelcomeDlg, you would add t
 
 ## Changing the UI sequence of a built-in dialog set
 
-Each of the WixUI dialog sets contains a pre-defined set of dialogs that will be displayed in a specific order. Information about the dialogs included in each built-in WixUI dialog set can be found in the [WixUI Dialog Library Reference](dialog_reference/).
+Each of the WixUI dialog sets contains a pre-defined set of dialogs that will be displayed in a specific order. Information about the dialogs included in each built-in WixUI dialog set can be found in the [WixUI Dialog Library Reference](/wix3/wixui/dialog_reference/).
 
 It is possible to change the default sequence of a built-in dialog set. To do so, you must copy the contents of the &lt;Fragment/&gt; that includes the definition of the dialog set that you want to customize from the WiX source code to your project. Then, you must modify the &lt;Publish/&gt; elements to define the exact dialog sequence that you want in your installation experience.
 
-For example, to remove the LicenseAgreementDlg from the [WixUI_InstallDir](dialog_reference/wixui_installdir/) dialog set, you would do the following:
+For example, to remove the LicenseAgreementDlg from the [WixUI_InstallDir](/wix3/wixui/dialog_reference/wixui_installdir/) dialog set, you would do the following:
 
 <ol>
   <li>Copy the full contents of the &lt;Fragment/&gt; defined in WixUI_InstallDir.wxs in the WiX source code to your project.</li>
@@ -136,7 +136,7 @@ For example, to remove the LicenseAgreementDlg from the [WixUI_InstallDir](dialo
 
 You can add custom dialogs to the UI sequence in a built-in WixUI dialog set. To do so, you must define a &lt;UI/&gt; element for your new dialog. Then, you must copy the contents of the &lt;Fragment/&gt; that includes the definition of the dialog set that you want to customize from the WiX source code to your project. Finally, you must modify the &lt;Publish/&gt; elements to define the exact dialog sequence that you want in your installation experience.
 
-For example, to insert a dialog named SpecialDlg between the WelcomeDlg and the LicenseAgreementDlg in the [WixUI_InstallDir](dialog_reference/wixui_installdir/) dialog set, you would do the following:
+For example, to insert a dialog named SpecialDlg between the WelcomeDlg and the LicenseAgreementDlg in the [WixUI_InstallDir](/wix3/wixui/dialog_reference/wixui_installdir/) dialog set, you would do the following:
 
 <ol>
   <li>Define the appearance of the SpecialDlg in a &lt;UI/&gt; element in your project.</li>

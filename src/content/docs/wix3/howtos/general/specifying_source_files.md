@@ -34,7 +34,7 @@ be more than two characters long and be followed by an equal sign (&quot;=&quot;
 an example in the *Identifying payload via named binder paths* section
 
 ## Identifying files by name and directory tree
-When you use the [File](../../xsd/wix/file/)/@Name
+When you use the [File](/wix3/xsd/wix/file/)/@Name
 attribute and don't use the File/@Source attribute, the compiler constructs an
 implicit path to the file based on the file's parent component directory plus
 the name you supply. So, for example, given the partial authoring
@@ -51,9 +51,9 @@ the binder looks for a file *foo\bar\baz.txt* in the unnamed binder
 input paths.
 
 #### Overriding implicit payload directories
-The [FileSource](../../xsd/wix/directoryref/)
-attribute for the [Directory](../../xsd/wix/directory/)
-and [DirectoryRef](../../xsd/wix/directoryref/)
+The [FileSource](/wix3/xsd/wix/directoryref/)
+attribute for the [Directory](/wix3/xsd/wix/directory/)
+and [DirectoryRef](/wix3/xsd/wix/directoryref/)
 elements sets a new directory for files in that directory or any child
 directories. For example, given the partial authoring
 
@@ -68,7 +68,7 @@ directories. For example, given the partial authoring
 the binder looks for a file *build\retail\x86\bar\baz.txt* in the
 unnamed binder input paths.
 
-The [FileSource](../../xsd/wix/directoryref/)
+The [FileSource](/wix3/xsd/wix/directoryref/)
 attribute can use preprocessor variables or environment variables. If the value
 is an absolute path, the binder's unnamed input paths aren't used.
 

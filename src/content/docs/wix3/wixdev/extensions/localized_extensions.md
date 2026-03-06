@@ -3,7 +3,7 @@ pagefind: false
 title: Localizing Extensions
 ---
 
-You can create your own localized extensions like [WixUIExtension](../../wixui/wixui_dialog_library/) using lit.exe. Localized extensions can even contain multiple languages. Products using these extensions can pass the -cultures switch to [light.exe](../../overview/light/) along with the -ext switch to reference the extension.
+You can create your own localized extensions like [WixUIExtension](/wix3/wixui/wixui_dialog_library/) using lit.exe. Localized extensions can even contain multiple languages. Products using these extensions can pass the -cultures switch to [light.exe](/wix3/overview/light/) along with the -ext switch to reference the extension.
 
 WiX extensions contain libraries comprised of fragments. These fragments may contain properties, search properties, dialogs, and more. Just like when localizing products, replace any localizable fields with variables in the format !(loc.<i>variableName</i>). Product would be authored to reference elements in this library, and when compiled would themselves contain the localization variables.
 The following shows an example on how to localize an extension
@@ -32,7 +32,7 @@ file named en-us.wxl and add the following content:
       <String Id="errormsg" Overridable="yes">General Failure</String>
     </WixLocalization>
 
-These [String](../../xsd/wixloc/string/) elements are attributed as @Overridable=&quot;yes&quot; to allow for product developers to override these strings with their own values if they so choose. For example, a product developer may wish to use &quot;Previous&quot; instead of &quot;Back&quot;, so they can define the same String/@Id in their own .wxl while still linking to the extension where that string is used. This offers product developers the benefits of the library while allowing for customizations. Extension developers can also choose to disallow overriding certain strings if it makes sense to do so.
+These [String](/wix3/xsd/wixloc/string/) elements are attributed as @Overridable=&quot;yes&quot; to allow for product developers to override these strings with their own values if they so choose. For example, a product developer may wish to use &quot;Previous&quot; instead of &quot;Back&quot;, so they can define the same String/@Id in their own .wxl while still linking to the extension where that string is used. This offers product developers the benefits of the library while allowing for customizations. Extension developers can also choose to disallow overriding certain strings if it makes sense to do so.
 
 ## Step 3: Build the library
 
@@ -50,7 +50,7 @@ You can add more than one .wxl file for each culture you want available. To be u
 
 ## Using the Libraries
 
-Product developers reference elements within your .wixlib, as shown in the [WixUIExtension](../../wixui/wixui_dialog_library/) example. When compiling and linking, the extension is specified on the command line using the -ext switch. If any additional localization variables are used in the product authoring or would override localization variables in the library, those .wxl files are passed to the -loc switch as shown in the example below.
+Product developers reference elements within your .wixlib, as shown in the [WixUIExtension](/wix3/wixui/wixui_dialog_library/) example. When compiling and linking, the extension is specified on the command line using the -ext switch. If any additional localization variables are used in the product authoring or would override localization variables in the library, those .wxl files are passed to the -loc switch as shown in the example below.
 
     candle.exe example.wxs -ext WixUIExtension -out example.wixobj
     light.exe example.wixobj -ext WixUIExtension -cultures:en-us -loc en-us.wxl -out example.msi

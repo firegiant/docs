@@ -36,4 +36,4 @@ In addition, WixUI_Minimal includes the following common dialogs that appear in 
 * WaitForCostingDlg
 
 
-See [the WixUI dialog reference](wixui_dialogs/) for detailed descriptions of each of the above dialogs.
+See [the WixUI dialog reference](/wix3/wixui/dialog_reference/wixui_dialogs/) for detailed descriptions of each of the above dialogs.

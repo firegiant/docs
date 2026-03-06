@@ -9,7 +9,7 @@ pagefind: false
   <dd>None</dd>
   <dt>Parents</dt>
   <dd>
-    <a href="../bootstrapperapplication/">BootstrapperApplication</a>, <a href="../bootstrapperapplicationref/">BootstrapperApplicationRef</a>, <a href="../bundle/">Bundle</a>, <a href="../exepackage/">ExePackage</a>, <a href="../msipackage/">MsiPackage</a>, <a href="../msppackage/">MspPackage</a>, <a href="../msupackage/">MsuPackage</a>, <a href="../payloadgroup/">PayloadGroup</a>, <a href="../ux/">UX</a></dd>
+    <a href="../bootstrapperapplication/">BootstrapperApplication</a>, <a href="../bootstrapperapplicationref/">BootstrapperApplicationRef</a>, <a href="/wix3/bundle/">Bundle</a>, <a href="../exepackage/">ExePackage</a>, <a href="../msipackage/">MsiPackage</a>, <a href="../msppackage/">MspPackage</a>, <a href="../msupackage/">MsuPackage</a>, <a href="../payloadgroup/">PayloadGroup</a>, <a href="../ux/">UX</a></dd>
   <dt>Inner Text</dt>
   <dd>None</dd>
   <dt>Children</dt>

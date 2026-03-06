@@ -32,21 +32,21 @@ executables from source code. At build time, the WiX source files are validated
 against the core WiX schema, then processed by a preprocessor, compiler, and 
 linker to create the final result. There are a set of WiX tools that can be used 
 to produce different output types.
-For a complete list of file types and tools in WiX, see the [File Types](../overview/files/)
+For a complete list of file types and tools in WiX, see the [File Types](/wix3/overview/files/)
 and the
-[List of Tools](../overview/alltools/) sections.
+[List of Tools](/wix3/overview/alltools/) sections.
 
 See the following topics for more detailed information:
 
-* [Fundamental Tools and Concepts](../overview/)
-* [Creating Installation Package Bundles](../bundle/)
+* [Fundamental Tools and Concepts](/wix3/overview/)
+* [Creating Installation Package Bundles](/wix3/bundle/)
 * [Working in Visual Studio](../votive/)
-* [Working with MSBuild](../msbuild/)
-* [How To Guides](../howtos/)
-* [Standard Custom Actions](../customactions/)
+* [Working with MSBuild](/wix3/msbuild/)
+* [How To Guides](/wix3/howtos/)
+* [Standard Custom Actions](/wix3/customactions/)
 * [Creating an Installation Patch](../patching/)
-* [WiX Schema Reference](../xsd/)
-* [Developing for WiX](../wixdev/)
+* [WiX Schema Reference](/wix3/xsd/)
+* [Developing for WiX](/wix3/wixdev/)
 
 ## WiX system requirements
 

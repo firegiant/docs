@@ -10,7 +10,7 @@ DirectX 9.0 can be re-distributed in several different ways, each of which is ou
 Prior to redistributing the DirectX binaries you should read and understand the license agreement for the redistributable files. The license agreement can be found in the **Documentation\License Agreements\DirectX Redist.txt** file in your DirectX SDK installation.
 
 ## Step 1: Add the installer files to your WiX project
-Adding the files to the WiX project follows the same process as described in [How To: Add a file to your installer](../../howtos/files_and_registry/add_a_file/). The following example illustrates a typical fragment that includes the necessary files:
+Adding the files to the WiX project follows the same process as described in [How To: Add a file to your installer](/wix3/howtos/files_and_registry/add_a_file/). The following example illustrates a typical fragment that includes the necessary files:
 
 ```xml
 <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
@@ -45,7 +45,7 @@ Adding the files to the WiX project follows the same process as described in [Ho
 The files included are <a href="http://msdn.microsoft.com/library/bb219742.aspx" target="_blank">the minimal set of files</a> required by the DirectX 9.0 install process, as described in the MSDN documentation. The last file in the list, DEC2006\_d3dx9\_32\_x86.cab contains the specific DirectX component required by the installed application. These files are all included in a single component as, even in a patching situation, all the files must go together. A Feature element is used to create a feature specific to DirectX installation, and its Display attribute is set to **hidden** to prevent the user from seeing the feature in any UI that may be part of your installer.
 
 ## Step 2: Add a custom action to invoke the installer
-To run the DirectX 9.0 installer a custom action is added that runs before the install is finalized. The [CustomAction](../../xsd/wix/customaction/), [InstallExecuteSequence](../../xsd/wix/installexecutesequence/) and [Custom](../../xsd/wix/custom/) elements are used to create the custom action, as illustrated in the following sample.
+To run the DirectX 9.0 installer a custom action is added that runs before the install is finalized. The [CustomAction](/wix3/xsd/wix/customaction/), [InstallExecuteSequence](/wix3/xsd/wix/installexecutesequence/) and [Custom](/wix3/xsd/wix/custom/) elements are used to create the custom action, as illustrated in the following sample.
 
 ```xml
 <CustomAction Id="InstallDirectX"
@@ -67,7 +67,7 @@ The CustomAction element creates the custom action that runs the setup. It is gi
 The Custom element is used inside an InstallExecuteSequence to add the custom action to the actual installation process. The Action attribute references the CustomAction by its unique id. The Before attribute is set to InstallFinalize to run the custom action before the overall installation is complete. The condition prevents the DirectX installer from running when the user uninstalls your application, since DirectX components cannot be uninstalled.
 
 ## Step 3: Include progress text for the custom action
-If you are using standard WiX UI dialogs you can include custom progress text for display while the DirectX installation takes place. The [UI](../../xsd/wix/ui/) and [ProgressText](../../xsd/wix/progresstext/) elements are used, as illustrated in the following example.
+If you are using standard WiX UI dialogs you can include custom progress text for display while the DirectX installation takes place. The [UI](/wix3/xsd/wix/ui/) and [ProgressText](/wix3/xsd/wix/progresstext/) elements are used, as illustrated in the following example.
 
 ```xml
 <UI>

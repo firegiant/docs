@@ -12,4 +12,3 @@ To create a blank solution in Visual Studio:
 5. Enter `WixTutorial` as the solution name.
 6. You can take the Visual Studio default directory in `Location` or use another directory if you like being contrarian.
 7. Choose `Create`.
-

@@ -39,4 +39,4 @@ Embedded files were compressed in a cabinet. This simple format does not compres
 ## See Also
 
 * [WIXFEAT:4274](http://wixtoolset.org/issues/4274/)
-* [WIP:4273](4273-wix-layering-improvements/)
+* [WIP:4273](../4273-wix-layering-improvements/)

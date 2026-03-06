@@ -58,4 +58,3 @@ public void Load(
 - Reference to latest version of an extension in the cache (MyExtension.Example.wixext):
 - Versioned reference to specific extension in the cache (MyExtension.Example.wixext/1.0.2):
 - Relative path to an extension file (..\..\MyExtensions\MyExtension.Example.wixext.dll):
-

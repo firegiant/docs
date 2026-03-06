@@ -4,10 +4,10 @@ title: 'HarvestFile Target'
 ---
 
 The **HarvestFile** target passes **HarvestFile** items to the
-[HeatFile task](../../msbuild/task_reference/heatfile/) to generate authoring from a file. Authoring is generated
+[HeatFile task](/wix3/msbuild/task_reference/heatfile/) to generate authoring from a file. Authoring is generated
 for type libraries and self-registration from `DllRegisterServer`. This
 target is processed before compilation. Generated authoring is automatically added
-to the **Compile** item group to be compiled by the [Candle task](../../msbuild/task_reference/candle/)
+to the **Compile** item group to be compiled by the [Candle task](/wix3/msbuild/task_reference/candle/)
 
 ```xml
 <ItemGroup>

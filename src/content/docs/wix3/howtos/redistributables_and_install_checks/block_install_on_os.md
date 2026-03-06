@@ -14,4 +14,3 @@ Windows Installer provides the standard <a href="http://msdn.microsoft.com/libra
 <a href="http://msdn.microsoft.com/library/aa369297.aspx" target="_blank">Installed</a> is a Windows Installer property that ensures the check is only done when the user is installing the application, rather than on a repair or remove. The VersionNT part will pass if the property&apos;s value is greater than or equal to 600, the version that matches Windows Vista, the installation will proceed. The values for different versions of the Windows operating system are <a href="http://msdn.microsoft.com/library/aa370556.aspx" target="_blank">available on MSDN</a>.
 
 To check for versions of 64-bit Windows use the <a href="http://msdn.microsoft.com/library/aa372497.aspx" target="_blank">VersionNT64</a> property. To check for versions of Windows prior to Windows NT use the <a href="http://msdn.microsoft.com/library/aa370556.aspx" target="_blank">Windows9X</a> property.
-

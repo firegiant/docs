@@ -3,7 +3,7 @@ pagefind: false
 title: "How To: Set Your Installer's Icon in Add/Remove Programs"
 ---
 
-Windows Installer supports a standard property, [ARPPRODUCTICON][1], that controls the icon displayed in Add/Remove Programs for your application. To set this property you first need to include the icon in your installer using the [Icon](../../xsd/wix/icon/) element, then set the property using the [Property](../../xsd/wix/property/) element.
+Windows Installer supports a standard property, [ARPPRODUCTICON][1], that controls the icon displayed in Add/Remove Programs for your application. To set this property you first need to include the icon in your installer using the [Icon](/wix3/xsd/wix/icon/) element, then set the property using the [Property](/wix3/xsd/wix/property/) element.
 
 ```xml
 <Icon Id="icon.ico" SourceFile="MySourceFiles\icon.ico"/>

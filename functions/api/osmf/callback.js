@@ -297,4 +297,3 @@ async function findOrgSponsorship(token, orgLogin, sponsorLogin) {
   if (!result) return null;
   return { match: orgLogin, matchType: "org", ...result };
 }
-

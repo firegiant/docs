@@ -89,4 +89,3 @@ The following table describes the switches used for building the patch:
 | `-bindpath path\to\V1PackageOutput` | Provides a bind path to find the target package. |
 | `-bindpath path\to\V2PackageOutput` | Provides a bind path to find the update package. |
 | `-out path\to\patch.msp` | Specify the output is a patch. |
-

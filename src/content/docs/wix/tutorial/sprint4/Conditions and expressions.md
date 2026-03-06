@@ -29,4 +29,3 @@ As we've discussed in earlier sprints, the WiX language is expressed in XML. XML
 ```
 MsiNTProductType &lt;&gt; 1
 ```
-

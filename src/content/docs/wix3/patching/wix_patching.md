@@ -176,7 +176,7 @@ On Windows XP Service Pack 2 and Windows Server 2003, go to &quot;Add/Remove Pro
 
 ## Restrictions
 
-In addition to [restrictions](patch_restrictions/) about what can be in a patch in order for it to install and uninstall correctly, the following restrictions ensure that your patch works correctly.
+In addition to [restrictions](/wix3/patching/patch_restrictions/) about what can be in a patch in order for it to install and uninstall correctly, the following restrictions ensure that your patch works correctly.
 
 ### Patch families can only grow
 
@@ -186,4 +186,4 @@ Note that in order for one patch to supersede any other patches, all patch famil
 
 ### Certain elements cannot be added to uninstallable patches
 
-There are certain elements referenced in [restrictions](patch_restrictions/) that cannot be added or modified if the patch is to be uninstallable. If a Patch/@AllowRemoval is set to &quot;yes&quot; and any of these elements are added or modified, Pyro.exe will return an error. These elements compile into tables that Windows Installer restricts in patches, so WiX informs you and prevents you from creating a patch that is not uninstallable when you want it to be uninstallable.
+There are certain elements referenced in [restrictions](/wix3/patching/patch_restrictions/) that cannot be added or modified if the patch is to be uninstallable. If a Patch/@AllowRemoval is set to &quot;yes&quot; and any of these elements are added or modified, Pyro.exe will return an error. These elements compile into tables that Windows Installer restricts in patches, so WiX informs you and prevents you from creating a patch that is not uninstallable when you want it to be uninstallable.

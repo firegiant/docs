@@ -5,10 +5,10 @@ title: Creating patches
 
 Patches are updates to a product or products. WiX supports two different ways of creating them:
 
-* [Using Patch Creation Properties](patch_building/) which requires that you have the Windows Installer 3.0 or newer SDK installed for full support of included examples.
-* [Using Purely WiX](wix_patching/) which uses functionality provided in WiX and does not require additional tools.
+* [Using Patch Creation Properties](/wix3/patching/patch_building/) which requires that you have the Windows Installer 3.0 or newer SDK installed for full support of included examples.
+* [Using Purely WiX](/wix3/patching/wix_patching/) which uses functionality provided in WiX and does not require additional tools.
 
-There are also [restrictions](patch_restrictions/) on how patches are built in order to avoid problems when installing them.
+There are also [restrictions](/wix3/patching/patch_restrictions/) on how patches are built in order to avoid problems when installing them.
 
 ## How Patches Work
 

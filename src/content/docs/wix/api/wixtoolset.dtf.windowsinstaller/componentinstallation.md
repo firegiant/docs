@@ -99,4 +99,3 @@ public InstallState State { get; set; }
 ```
 ### Remarks
 Win32 MSI API: [MsiGetComponentPath](http://msdn.microsoft.com/library/en-us/msi/setup/msigetcomponentpath.asp) , [MsiGetComponentPathEx](http://msdn.microsoft.com/library/dd408006.aspx)
-

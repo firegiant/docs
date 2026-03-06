@@ -14,7 +14,7 @@ Light uses multiple threads to build multiple cabinets in a single package. Unfo
 
 By default, Light uses the number of processors/cores in the system as the number of threads to use when creating cabinets. You can override the default using Light's -ct switch or the CabinetCreationThreadCount property in a .wixproj project.
 
-You can use multiple cabinets both externally and embedded in the .msi package (using the [Media/@EmbedCab](../../xsd/wix/media/) attribute).
+You can use multiple cabinets both externally and embedded in the .msi package (using the [Media/@EmbedCab](/wix3/xsd/wix/media/) attribute).
 
 ## Cabinet reuse
 

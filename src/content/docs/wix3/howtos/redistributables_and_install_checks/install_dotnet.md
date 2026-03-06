@@ -6,12 +6,12 @@ title: 'How To: Install the .NET Framework Using Burn'
 Applications written using the .NET Framework often need to bundle the .NET framework and install it with their application.  Wix 3.6 and later makes this easy with Burn.
 
 ## Step 1: Create a bundle for your application
-Follow the instructions in [Building Installation Package Bundles](../../bundle/).
+Follow the instructions in [Building Installation Package Bundles](/wix3/bundle/).
 
 ## Step 2: Add a reference to one of the .NET PackageGroups
 
 1. Add a reference to WixNetFxExtension to your bundle project.
-2. Add a PackageGroupRef element to your bundle's chain that references the .NET package required by your application.  For a full list, see [WixNetfxExtension](../../customactions/wixnetfxextension/). Ensure that the PayloadGroupRef is placed before any other packages that require .NET.
+2. Add a PackageGroupRef element to your bundle's chain that references the .NET package required by your application.  For a full list, see [WixNetfxExtension](/wix3/customactions/wixnetfxextension/). Ensure that the PayloadGroupRef is placed before any other packages that require .NET.
 
 ```xml
 <Chain>
@@ -36,7 +36,7 @@ The .NET PackageGroups use remote payloads to download the .NET redistributable 
 Note that the PackageGroupRef in the bundle's chain is still required.
 
 ## Customizing your bootstrapper application
-Any native bootstrapper application, including the [WiX Standard Bootstrapper Application](../../bundle/wixstdba/), will work well with bundles that include .NET.
+Any native bootstrapper application, including the [WiX Standard Bootstrapper Application](/wix3/bundle/wixstdba/), will work well with bundles that include .NET.
 
 Managed bootstrapper applications must take care when including .NET to ensure that they do not unnecessarily depend on the .NET framework version being installed.
 

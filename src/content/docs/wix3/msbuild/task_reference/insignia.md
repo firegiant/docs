@@ -3,7 +3,7 @@ pagefind: false
 title: 'Insignia Task'
 ---
 
-The Insignia task wraps [insignia.exe](../../overview/insignia/), the WiX inscribing/signing tool. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your process. You can refer to the [Candle Task](candle/) for details about how to set up a PropertyGroup.
+The Insignia task wraps [insignia.exe](/wix3/overview/insignia/), the WiX inscribing/signing tool. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your process. You can refer to the [Candle Task](/wix3/msbuild/task_reference/candle/) for details about how to set up a PropertyGroup.
 
 The following table describes the common WiX MSBuild parameters that are applicable to the <b>Insignia</b> task.
 

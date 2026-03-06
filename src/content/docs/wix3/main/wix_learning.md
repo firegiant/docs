@@ -7,7 +7,7 @@ There are several options available to get started learning how to use WiX.
 
 ## How To Guides
 
-This help file includes a set of [How To Guides](../howtos/) that explain how to accomplish common Windows Installer tasks using WiX.
+This help file includes a set of [How To Guides](/wix3/howtos/) that explain how to accomplish common Windows Installer tasks using WiX.
 
 ## Tutorials
 
@@ -26,11 +26,11 @@ an overview of WiX editors at
 
 ## Reverse Engineering
 
-If you prefer to learn by working backward from a Windows Installer package you have already created, you can run the [WiX decompiler](../overview/alltools/) \(Dark\) to convert your package into WiX authoring and then recompile it using the [WiX compiler](../overview/candle/) \(Candle\) and [WiX linker](../overview/light/) \(Light\).
+If you prefer to learn by working backward from a Windows Installer package you have already created, you can run the [WiX decompiler](/wix3/overview/alltools/) \(Dark\) to convert your package into WiX authoring and then recompile it using the [WiX compiler](/wix3/overview/candle/) \(Candle\) and [WiX linker](/wix3/overview/light/) \(Light\).
 
 ## Reading Source Code
 
-If you prefer to learn by reading code, WiX is an open source project, and you can look at the source code by reviewing the [How to be a WiX Developer](../wixdev/) topic.
+If you prefer to learn by reading code, WiX is an open source project, and you can look at the source code by reviewing the [How to be a WiX Developer](/wix3/wixdev/) topic.
 
 ## Fix a Bug, Write a Feature
 

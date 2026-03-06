@@ -101,6 +101,6 @@ This problem can be mitigated with [access modifiers for identifiers][WIP:4258] 
 
 * [WIXFEAT:4259](http://wixtoolset.org/issues/4259/)
 
-* [WIP:4258](4258-identifier-access-modifiers/)
+* [WIP:4258](../4258-identifier-access-modifiers/)
 
-* [WIP:4260](4260-inline-directory-syntax/)
+* [WIP:4260](../4260-inline-directory-syntax/)

@@ -4,11 +4,11 @@ title: 'HarvestDirectory Target'
 ---
 
 The **HarvestDirectory** target passes **HarvestDirectory** items to the
-[HeatDirectory task](../../msbuild/task_reference/heatdirectory/) to generate
+[HeatDirectory task](/wix3/msbuild/task_reference/heatdirectory/) to generate
 authoring from a file. Authoring is generated for type libraries and self-registration
 from `DllRegisterServer` for any files found in directories. This target
 is processed before compilation. Generated authoring is automatically added to the
-**Compile** item group to be compiled by the [Candle task](../../msbuild/task_reference/candle/).
+**Compile** item group to be compiled by the [Candle task](/wix3/msbuild/task_reference/candle/).
 
 ```xml
 <ItemGroup>

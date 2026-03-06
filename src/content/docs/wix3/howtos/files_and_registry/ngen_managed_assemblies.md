@@ -18,7 +18,7 @@ If you are using WiX in Visual Studio you can add the extensions using the Add R
 1. Close the Add Reference dialog
 
 ## Step 2: Add the WiX .NET extensions namespace to your project
-Once the library is added to your project you need to add the .NET extensions namespace to your project so you can access the appropriate WiX elements. To do this modify the top-level [Wix](../../xsd/wix/wix/wix/) element in your project by adding the following attribute:
+Once the library is added to your project you need to add the .NET extensions namespace to your project so you can access the appropriate WiX elements. To do this modify the top-level [Wix](/wix3/xsd/wix/wix/) element in your project by adding the following attribute:
 
 ```xml
 xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"
@@ -32,7 +32,7 @@ A complete Wix element with the standard namespace and the .NET extensions names
 ```
 
 ## Step 3: Mark the managed files for NGen
-Once you have the .NET extension library and namespace added to your project you can use the [NetFx:NativeImage](../../xsd/netfx/nativeimage/) element to enable NGen on your managed assemblies. The NativeImage element goes inside a parent File element:
+Once you have the .NET extension library and namespace added to your project you can use the [NetFx:NativeImage](/wix3/xsd/netfx/nativeimage/) element to enable NGen on your managed assemblies. The NativeImage element goes inside a parent File element:
 
 ```xml
 <Component Id="myapplication.exe" Guid="PUT-GUID-HERE">

@@ -15,4 +15,3 @@
   <String Id="ExecuteSqlStrings" Overridable="yes">Ejecutando cadenas SQL</String>
   <String Id="RollbackExecuteSqlStrings" Overridable="yes">Revirtiendo cadenas SQL</String>
 </WixLocalization>
-

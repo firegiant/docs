@@ -9,7 +9,7 @@ pagefind: false
   <dd>None</dd>
   <dt>Parents</dt>
   <dd>
-    <a href="../bundle/">Bundle</a>, <a href="../fragment/">Fragment</a>, <a href="../module/">Module</a>, <a href="../product/">Product</a></dd>
+    <a href="/wix3/bundle/">Bundle</a>, <a href="../fragment/">Fragment</a>, <a href="../module/">Module</a>, <a href="../product/">Product</a></dd>
   <dt>Inner Text</dt>
   <dd>None</dd>
   <dt>Children</dt>

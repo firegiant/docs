@@ -99,7 +99,7 @@ Light supports the following command line parameters:
       <p>-cultures:&lt;cultures&gt;</p>
     </td>
     <td>
-      <p>Specifies a semicolon or comma delimited list of localized string cultures to load from .wxl files and libraries.  Precedence of cultures is from left to right.  For more information see <a href="../../howtos/ui_and_localization/specifying_cultures_to_build">Specifying cultures to build</a>.</p>
+      <p>Specifies a semicolon or comma delimited list of localized string cultures to load from .wxl files and libraries.  Precedence of cultures is from left to right.  For more information see <a href="/wix3/howtos/ui_and_localization/specifying_cultures_to_build">Specifying cultures to build</a>.</p>
     </td>
   </tr>
   <tr>
@@ -790,7 +790,7 @@ Localization variables are in the following format:
 
 ### Custom Binder Variables
 
-You can create your own binder variables using the [WixVariable](../xsd/wix/wixvariable/) element or by simply typing your own variable name in the following format:
+You can create your own binder variables using the [WixVariable](/wix3/xsd/wix/wixvariable/) element or by simply typing your own variable name in the following format:
 
 `!(bind.<i>VariableName</i>)`
 

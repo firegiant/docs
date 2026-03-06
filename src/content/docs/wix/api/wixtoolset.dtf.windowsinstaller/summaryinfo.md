@@ -259,4 +259,3 @@ Note that if the package is marked as compressed (bit 1 is set), the installer o
 For a patch package, the WordCount summary information property specifies the patch engine that was used to create the patch files. The default value is 1 and indicates that MSPATCH was used to create the patch A value of "2" means that the patch is using smaller, optimized, files available only with Windows Installer version 1.2 or later. A patch with a WordCount of "2" fails immediately if used with a Windows Installer version earlier than 1.2. A patch with a WordCount of "3" fails immediately if used with a Windows Installer version earlier than 2.0.
 This summary property is REQUIRED.
 Win32 MSI APIs: [MsiSummaryInfoGetProperty](http://msdn.microsoft.com/library/en-us/msi/setup/msisummaryinfogetproperty.asp) , [MsiSummaryInfoSetProperty](http://msdn.microsoft.com/library/en-us/msi/setup/msisummaryinfosetproperty.asp)
-

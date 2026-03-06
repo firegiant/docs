@@ -9,7 +9,7 @@ If your application depends on the Visual C++ runtimes you can include them as p
 The Visual C++ runtime merge modules are installed with Visual Studio and are located in **\Program Files\Common Files\Merge Modules**. The Visual C++ 8.0 runtime file is **Microsoft\_VC80\_CRT\_x86.msm**. This same MSM is used for the Visual C++ 8.0 SP1 runtime, however it is updated in place by the Visual Studio 2005 SP1 installer. The Visual Studio 9.0 runtime file is **Microsoft\_VC90\_CRT\_x86.msm**. There is generally no need to include the policy MSMs as part of the installation.
 
 ## Step 2: Include the merge module in your installer
-To include the merge module in your installer use the [Merge](../../xsd/wix/merge/) and [MergeRef](../../xsd/wix/mergeref/) elements. The following example illustrates how these elements are used.
+To include the merge module in your installer use the [Merge](/wix3/xsd/wix/merge/) and [MergeRef](/wix3/xsd/wix/mergeref/) elements. The following example illustrates how these elements are used.
 
 ```xml
 <DirectoryRef Id="TARGETDIR">

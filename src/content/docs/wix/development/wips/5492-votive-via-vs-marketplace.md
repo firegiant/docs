@@ -86,5 +86,5 @@ numbers correctly.
 * [WIXFEAT:5492 - Votive via VS Marketplace][5492]
 
 [5492]: https://github.com/wixtoolset/issues/issues/5492
-[repos]: 5489-repository-reorganization.md
+[repos]: ../5489-repository-reorganization/
 [vsm]: https://marketplace.visualstudio.com/

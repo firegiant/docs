@@ -2,7 +2,7 @@
 title: DirectX custom action
 ---
 
-The [GetCapabilities](../../schema/directx/getcapabilities/) element in the [Directx schema](../../schema/directx/) schedules a custom action that detects DirectX capabilities and sets properties based on the results.
+The [GetCapabilities](../../../schema/directx/getcapabilities/) element in the [Directx schema](../../../schema/directx/) schedules a custom action that detects DirectX capabilities and sets properties based on the results.
 
 | Property | Description |
 | -------- | ----------- |

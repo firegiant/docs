@@ -35,4 +35,3 @@ If you were to try that on a typical x64 machine, the installer would run, just 
 ![Windows Installer message box showing launch condition failure message](/images/docs/not-x64.png)
 
 So we're done! Well, we're done if we want to cheat. Let's try to accomplish step #2 and write a launch condition that also blocks the x64 package on an Arm64 machine. If that gets too hard, we can always fall back to cheating.
-

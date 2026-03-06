@@ -7,7 +7,7 @@ WiX supports building localized installers through the use of language files tha
 
 ## Step 1: Create the language file
 
-Language files end in the .wxl extension and specify their culture using the [WixLocalization](../../xsd/wixloc/wixlocalization/) element. To create a language file on the command line create a new file with the appropriate name and add the following:
+Language files end in the .wxl extension and specify their culture using the [WixLocalization](/wix3/xsd/wixloc/wixlocalization/) element. To create a language file on the command line create a new file with the appropriate name and add the following:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -24,7 +24,7 @@ By default Visual Studio creates language files in the en-us culture. To create 
 
 ## Step 2: Add the localized strings
 
-Localized strings are defined using the [String](../../xsd/wixloc/string/) element. Each element consists of a unique id for later reference in your WiX project and the string value. For example:
+Localized strings are defined using the [String](/wix3/xsd/wixloc/string/) element. Each element consists of a unique id for later reference in your WiX project and the string value. For example:
 
 ```xml
 <String Id="ApplicationName">My Application Name</String>
@@ -47,4 +47,4 @@ Once you have defined the strings you can use them in your project wherever you 
 
 Localization strings are referenced using the **!(loc.stringname)** syntax. These references will be replaced with the actual strings for the appropriate locale at build time.
 
-For information on how to compile localized versions of your installer once you have the necessary language files see [How To: Build a localized version of your installer](build_a_localized_version/).
+For information on how to compile localized versions of your installer once you have the necessary language files see [How To: Build a localized version of your installer](/wix3/howtos/ui_and_localization/build_a_localized_version/).

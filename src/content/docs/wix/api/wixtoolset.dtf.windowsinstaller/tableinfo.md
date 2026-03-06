@@ -68,4 +68,3 @@ public string SqlSelectString { get; set; }
 ```
 ### Remarks
 The columns are listed explicitly in the SELECT string, as opposed to using "SELECT *".
-

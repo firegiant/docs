@@ -3,7 +3,7 @@ pagefind: false
 title: 'HeatProject Task'
 ---
 
-The <b>HeatProject</b> task wraps [heat.exe](../../overview/heat/), the WiX harvester,
+The <b>HeatProject</b> task wraps [heat.exe](/wix3/overview/heat/), the WiX harvester,
 using the <b>project</b> harvesting type. It supports a variety of settings that
 are described in more detail below. To control these settings in your .wixproj file,
 you can create a PropertyGroup and specify the settings that you want to use for

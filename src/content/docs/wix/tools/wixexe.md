@@ -186,7 +186,7 @@ The `wix burn` command has the following subcommands:
 
 ### `wix burn detach` and `wix burn reattach` subcommands {#burnsigning}
 
-The `wix burn detach` and `wix burn reattach` subcommands are used to sign bundles. For details, see [Signing bundles](./signing.md/#signing-bundles).
+The `wix burn detach` and `wix burn reattach` subcommands are used to sign bundles. For details, see [Signing bundles](../signing/#signing-bundles).
 
 ```sh
 wix burn detach [options] original.exe -engine engine.exe
