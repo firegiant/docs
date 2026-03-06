@@ -101,6 +101,29 @@ wix --version
 - [Wix.exe command-line reference](../tools/wixexe/)
 
 
+## Trusting WiX Packages
+
+The official WiX Toolset packages are signed so you can harden your build process by configuring your [`nuget.config`](https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file) file to validate the signatures.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <config>
+    <add key="signatureValidationMode" value="require" />
+  </config>
+  <trustedSigners>
+    <author name="firegiant">
+      <certificate
+        fingerprint="D95336DD2022934D80E3F3A4F938DD66EC7076BBBA680F76C11F2B54B346D61D"
+        hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+    </author>
+  </trustedSigners>
+</configuration>
+```
+
+See the [Manage package trust boundaries](https://learn.microsoft.com/en-us/nuget/consume-packages/installing-signed-packages) NuGet documentation for more details.
+
+
 ## Using development builds
 
 WiX development builds with all the latest bug fixes are available in a NuGet package feed on GitHub. To add that feed as a package source:
