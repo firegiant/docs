@@ -14,6 +14,8 @@ The motivation for this change can be found in [#7916](https://github.com/wixtoo
 The [WiX repo on GitHub](https://github.com/wixtoolset/wix) contains the code to bootstrapper applications using the new model, like [WixStandardBootstrapperApplication](https://github.com/wixtoolset/wix/blob/HEAD/src/ext/Bal/stdbas/WixStandardBootstrapperApplication.cpp) (C++) and [WixBA](https://github.com/wixtoolset/wix/tree/HEAD/src/test/burn/WixToolset.WixBA) (C#).
 :::
 
+## BootstrapperApplication as an EXE
+
 First, the custom bootstrapper application project needs to change from DLL to EXE.
 
 ```diff
@@ -83,6 +85,8 @@ At this point, the bootstrapper application API is fairly compatible with only a
 * `BalBaseBootstrapperApplication.h` was renamed to `BootstrapperApplicationBase.h`.
 * `CBalBaseBootstrapperApplication` was deprecated, use `CBootstrapperApplicationBase` instead.
 
+## Package Renames
+
 To take advantage of the breaking change, we took the opportunity to improve the names of many NuGet packages related to custom bootstrapper applications:
 
 * `WixToolset.BalUtil` - renamed to `WixToolset.BootstrapperApplicationApi` to provide the native headers and libraries to communicate with Burn. Also, split out the `WixToolset.WixStandardBootstrapperApplicationFunctionApi` for WixStdBA BAFunctions API.
@@ -100,3 +104,28 @@ Related issues
 
 * [#7916 - BootstrapperApplication Processes](https://github.com/wixtoolset/issues/issues/7916)
 * [#8020 - Better Burn-related .nupkg names](https://github.com/wixtoolset/issues/issues/8020)
+
+
+## Primary and Secondary BootstrapperApplications
+
+A bundle may include two BootstrapperApplications: the primary and the secondary. The primary (no pun intended) use case is to support a complex BootstrapperApplication that requires prerequisites to be installed before it can proceed. A "secondary" BootstrapperApplication with no dependencies (and usually a minimal design) can be included to install those prerequisites. The sequence works like this:
+
+1. Burn launches the primary BootstrapperApplication.
+2. If the primary BootstrapperApplication returns `0` as its exit code, Burn exits with the code provided via `IBootstrapperEngine.Quit()` and the sequence is complete.
+3. Otherwise, Burn launches the secondary BootstrapperApplication.
+4. If the secondary BootstrapperApplication returns `0` as its exit code, Burn exits with the code provided via `IBootstrapperEngine.Quit()` and the sequence is complete.
+5. Otherwise, Burn launches the primary BootstrapperApplication, one last time.
+
+This sequence allows the primary BootstrapperApplication to complete the install/uninstall/repair/etc if possible. If not, the secondary BootstrapperApplication can complete the process itself or, more common, install a subset of the bundle's packages required to boot the primary BootstrapperApplication then return non-zero exit code to Burn.
+
+This sequence also supports _always_ launching the prerequisite BootstrapperApplication as "primary" where it detects that everything is in place before _always_ returning non-zero so the main BootstrapperApplication runs secondary. This sequence is less optimal as it always requires two BootstrapperApplication launches but it is supported.
+
+To author your primary and secondary BootstrapperApplications, use the `BootstrapperApplication` element's `Secondary` attribute. For example:
+
+```xml
+<Fragment>
+  <BootstrapperApplication Id="MainBA" SourceFile="mainba.exe" />
+
+  <BootstrapperApplication Id="PrereqBA" SourceFile="prqba.exe" Secondary="yes" />
+</Fragment>
+```
