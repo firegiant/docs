@@ -43,4 +43,3 @@ public void Shutdown()
 ```
 ### Remarks
 If the installation was canceled during initialization, this method will not be called. If the installation was canceled or failed at any later point, this method will be called at the end.Win32 MSI API: [ShutdownEmbeddedUI](http://msdn.microsoft.com/library/en-us/msi/setup/shutdownembeddedui.asp)
-

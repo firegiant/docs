@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
     Copyright (c) Microsoft Corporation.  All rights reserved.
     
@@ -180,4 +180,3 @@
     <String Id="msierrXmlConfigFailedSelect" Overridable="yes">Konnte Knoten [3] in der XML-Datei [4] nicht finden, Systemfehler: [2]</String>
     <String Id="msierrXmlConfigFailedSave" Overridable="yes">Beim Speichern der Änderungen an der XML-Datei [3] trat ein Fehler auf, Systemfehler: [2]</String>
 </WixLocalization>
-

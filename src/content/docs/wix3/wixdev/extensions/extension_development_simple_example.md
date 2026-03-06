@@ -27,7 +27,7 @@ Although this WiX extension will not do anything yet, you can now pass the newly
 
 This covers the basics of creating the skeleton of an extension. You can now use 
 this skeleton code to build your own custom action. After you are done, you can 
-author the custom action in the WiX source code by following the [Adding a Custom Action](authoring_custom_actions/) topic. 
+author the custom action in the WiX source code by following the [Adding a Custom Action](/wix3/wixdev/extensions/authoring_custom_actions/) topic. 
 You can also build your own extensions to the WiX toolset using this skeleton 
 code. For an example of building an extension, see
-[Creating a Preprocessor Extension](extension_development_preprocessor/).
+[Creating a Preprocessor Extension](/wix3/wixdev/extensions/extension_development_preprocessor/).

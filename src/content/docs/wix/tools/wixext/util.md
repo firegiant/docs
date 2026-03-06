@@ -2,7 +2,7 @@
 title: Utility custom actions
 ---
 
-WiX includes a number of utility custom actions in the WixToolset.Util.wixext WiX extension. To use them, add a package reference to WixToolset.Util.wixext in your .wixproj or use [`wix extension`](../../wixexe/#wix-extension-command-extension) and [`wix build -ext`](../../wixexe/#wix-build-command-build) at the command line.
+WiX includes a number of utility custom actions in the WixToolset.Util.wixext WiX extension. To use them, add a package reference to WixToolset.Util.wixext in your .wixproj or use [`wix extension`](../../wixexe/#extension) and [`wix build -ext`](../../wixexe/#build) at the command line.
 
 
 ## WixShellExec custom actions

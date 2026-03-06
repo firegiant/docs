@@ -3,7 +3,7 @@ pagefind: false
 title: WixGamingExtension
 ---
 
-The [WixGamingExtension](../xsd/gaming/) lets you register your application as a game in Windows Vista and later, in three main categories:
+The [WixGamingExtension](/wix3/xsd/gaming/) lets you register your application as a game in Windows Vista and later, in three main categories:
 
 * Game Explorer integration with game definition file
 * Game Explorer tasks
@@ -43,13 +43,13 @@ For details, see <a href="http://msdn.microsoft.com/library/bb173450.aspx" targe
     </File>
 ```
 
-For details, see the [Gaming schema documentation](../xsd/gaming/).
+For details, see the [Gaming schema documentation](/wix3/xsd/gaming/).
 
-<span class="signature">Implementation note: Game Explorer tasks are shortcuts, so the Gaming compiler extension translates the PlayTask into rows in [Shortcuts](../xsd/wix/shortcut/) and SupportTask into WixUtilExtension [InternetShortcuts](../xsd/util/internetshortcut/). It also creates directories to hold the shortcuts and custom actions to set the directories.</span>
+<span class="signature">Implementation note: Game Explorer tasks are shortcuts, so the Gaming compiler extension translates the PlayTask into rows in [Shortcuts](/wix3/xsd/wix/shortcut/) and SupportTask into WixUtilExtension [InternetShortcuts](/wix3/xsd/util/internetshortcut/). It also creates directories to hold the shortcuts and custom actions to set the directories.</span>
 
 ## Rich saved-game preview
 
-Windows Vista includes a shell handler that lets games expose metadata in their saved-game files. For details, see <a href="http://msdn.microsoft.com/library/bb173448.aspx" target="_blank">Rich Saved Games</a>. If your game supports rich saved games, you can register it for the rich saved-game preview using the WixGamingExtension IsRichSavedGame attribute on the [Extension element](../xsd/wix/extension/):
+Windows Vista includes a shell handler that lets games expose metadata in their saved-game files. For details, see <a href="http://msdn.microsoft.com/library/bb173448.aspx" target="_blank">Rich Saved Games</a>. If your game supports rich saved games, you can register it for the rich saved-game preview using the WixGamingExtension IsRichSavedGame attribute on the [Extension element](/wix3/xsd/wix/extension/):
 
 ```xml
     <ProgId Id="MyGameProgId">

@@ -5,7 +5,7 @@ title: 'How To: Run the Installed Application After Setup'
 
 Often when completing the installation of an application it is desirable to offer the user the option of immediately launching the installed program when setup is complete. This how to describes customizing the default WiX UI experience to include a checkbox and a WiX custom action to launch the application if the checkbox is checked.
 
-This how to assumes you have already created a basic WiX project using the steps outlined in [How To: Add a file to your installer](../../howtos/files_and_registry/add_a_file/).
+This how to assumes you have already created a basic WiX project using the steps outlined in [How To: Add a file to your installer](/wix3/howtos/files_and_registry/add_a_file/).
 
 ## Step 1: Add the extension libraries to your project
 This walkthrough requires WiX extensions for UI components and custom actions. These extension libraries must must be added to your project prior to use. If you are using WiX on the command-line you need to add the following to your candle and light command lines:
@@ -21,7 +21,7 @@ If you are using Visual Studio you can add the extensions using the Add Referenc
 
 ## Step 2: Add UI to your installer
 
-The WiX [Minimal UI](../../wixui/wixui_dialog_library/) sequence includes a basic set of dialogs that includes a finished dialog with optional checkbox. To include the sequence in your project add the following snippet anywhere inside the `Product` element.
+The WiX [Minimal UI](/wix3/wixui/wixui_dialog_library/) sequence includes a basic set of dialogs that includes a finished dialog with optional checkbox. To include the sequence in your project add the following snippet anywhere inside the `Product` element.
 
 ```xml
 <UI>
@@ -39,7 +39,7 @@ The WIXUI\_EXITDIALOGOPTIONALCHECKBOXTEXT property is provided by the standard U
 
 ## Step 3: Include the custom action
 
-Custom actions are included in a WiX project using the [CustomAction](../../xsd/wix/customaction/) element. Running an application is accomplished with the WixShellExecTarget custom action. To tell Windows Installer about the custom action, and to set its properties, include the following in your project anywhere inside the `Product` element:
+Custom actions are included in a WiX project using the [CustomAction](/wix3/xsd/wix/customaction/) element. Running an application is accomplished with the WixShellExecTarget custom action. To tell Windows Installer about the custom action, and to set its properties, include the following in your project anywhere inside the `Product` element:
 
 ```xml
 <Property Id="WixShellExecTarget" Value="[#myapplication.exe]" />
@@ -52,7 +52,7 @@ The CustomAction element includes the action in the installer. It is given a uni
 
 ## Step 4: Trigger the custom action
 
-Simply including the custom action, as in Step 3, isn't sufficient to cause it to run. Windows Installer must also be told when the custom action should be triggered. This is done by using the [Publish](../../xsd/wix/publish/) element to add it to the actions run when the user clicks the Finished button on the final page of the UI dialogs. The Publish element should be included inside the `UI` element from Step 2, and looks like this:
+Simply including the custom action, as in Step 3, isn't sufficient to cause it to run. Windows Installer must also be told when the custom action should be triggered. This is done by using the [Publish](/wix3/xsd/wix/publish/) element to add it to the actions run when the user clicks the Finished button on the final page of the UI dialogs. The Publish element should be included inside the `UI` element from Step 2, and looks like this:
 
 ```xml
 <Publish Dialog="ExitDialog"

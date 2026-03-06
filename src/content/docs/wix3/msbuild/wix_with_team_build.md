@@ -3,7 +3,7 @@ pagefind: false
 title: 'Building WiX Projects In Team Foundation Build'
 ---
 
-Once you have created a [WiX project file](authoring_first_msbuild_project/), you need to perform some additional steps in order to successfully build the WiX project in Team Foundation Build. Without these additional steps, the WiX project will be ignored by default by Team Foundation Build even though it is an MSBuild-compatible project.
+Once you have created a [WiX project file](/wix3/msbuild/authoring_first_msbuild_project/), you need to perform some additional steps in order to successfully build the WiX project in Team Foundation Build. Without these additional steps, the WiX project will be ignored by default by Team Foundation Build even though it is an MSBuild-compatible project.
 
 ## Step 1: Update the Solution Build Configuration
   

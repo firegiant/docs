@@ -3,7 +3,7 @@ pagefind: false
 title: 'Light Task'
 ---
 
-The Light task wraps [light.exe](../../overview/light/), the WiX linker. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your build process. The following is a sample PropertyGroup that contains settings that will be used by the Light task:
+The Light task wraps [light.exe](/wix3/overview/light/), the WiX linker. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your build process. The following is a sample PropertyGroup that contains settings that will be used by the Light task:
 
 ```xml
 <PropertyGroup>

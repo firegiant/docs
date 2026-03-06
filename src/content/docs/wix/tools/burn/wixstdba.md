@@ -72,4 +72,3 @@ WixStdBA sets the following bundle variables, which you can use in theme files (
 | WixStdBAShowVersion | Set to `1` if [`WixStandardBootstrapperApplication/@ShowVersion`](../../../schema/bal/wixstandardbootstrapperapplication/) was set to `yes`. |
 | WixStdBASuppressOptionsUI | Set to `1` if [`WixStandardBootstrapperApplication/@SuppressOptionsUI`](../../../schema/bal/wixstandardbootstrapperapplication/) was set to `yes`. |
 | WixStdBAUpdateAvailable | Set to the highest version of an avalable update specified in the feed pointed to by [`Bundle/@UpdateURL`](../../../schema/wxs/bundle/). |
-

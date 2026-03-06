@@ -7,23 +7,23 @@ In the WiX schema, its not always entirely obvious how the tables from the Windo
 
 ## DuplicateFile Table
 
-This is authored using a [CopyFile](../xsd/wix/copyfile/) node nested under a File node. You only need to set the Id, DestinationFolder, and DestinationName attributes.
+This is authored using a [CopyFile](/wix3/xsd/wix/copyfile/) node nested under a File node. You only need to set the Id, DestinationFolder, and DestinationName attributes.
 
 ## LaunchCondition Table
 
-This is authored using a [Condition](../xsd/wix/condition/) node authored under Fragment or Product. You only need to set the Message attribute.
+This is authored using a [Condition](/wix3/xsd/wix/condition/) node authored under Fragment or Product. You only need to set the Message attribute.
 
 ##LockPermissions Table
 
-This is authored using [Permission](../xsd/wix/permission/).
+This is authored using [Permission](/wix3/xsd/wix/permission/).
 
 ## MoveFile Table
 
-This is authored using a [CopyFile](../xsd/wix/copyfile/) node nested under a Component node. You will need to set all attributes except Delete. Set Delete to &apos;yes&apos; in order to use the msidbMoveFileOptionsMove option.
+This is authored using a [CopyFile](/wix3/xsd/wix/copyfile/) node nested under a Component node. You will need to set all attributes except Delete. Set Delete to &apos;yes&apos; in order to use the msidbMoveFileOptionsMove option.
 
 ## PublishComponent Table
 
-The PublishComponent functionality is available in WiX by using a [Category](../xsd/wix/category/). Here is a small sample of what a PublishComponent record would look like in MSI, then in WiX notation.
+The PublishComponent functionality is available in WiX by using a [Category](/wix3/xsd/wix/category/). Here is a small sample of what a PublishComponent record would look like in MSI, then in WiX notation.
 
 <dl>
   <dt>MSI</dt>
@@ -73,8 +73,8 @@ The PublishComponent functionality is available in WiX by using a [Category](../
 
 ## RemoveIniFile
 
-This is authored using [IniFile](../xsd/wix/inifile/). Just set the Action attribute to &apos;removeLine&apos; or &apos;removeTag&apos; as appropriate.
+This is authored using [IniFile](/wix3/xsd/wix/inifile/). Just set the Action attribute to &apos;removeLine&apos; or &apos;removeTag&apos; as appropriate.
 
 ## RemoveRegistry Table
 
-This is authored using [Registry](../xsd/wix/registry/). Simply set the Action attribute to &apos;remove&apos; or &apos;removeKey&apos; (as appropriate) in order to get an entry in the RemoveRegistry table.
+This is authored using [Registry](/wix3/xsd/wix/registry/). Simply set the Action attribute to &apos;remove&apos; or &apos;removeKey&apos; (as appropriate) in order to get an entry in the RemoveRegistry table.

@@ -38,7 +38,7 @@ pagefind: false
       <tr>
         <td>Source</td>
         <td>String</td>
-        <td>             Used to set the default file system source for child Component elements. For more information, see              <a href="../../../howtos/general/specifying_source_files">Specifying source files</a>.           </td>
+        <td>             Used to set the default file system source for child Component elements. For more information, see              <a href="/wix3/howtos/general/specifying_source_files">Specifying source files</a>.           </td>
         <td>&nbsp;</td>
       </tr>
       <tr>

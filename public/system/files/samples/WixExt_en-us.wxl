@@ -180,4 +180,3 @@
     <String Id="msierrXmlConfigFailedSelect" Overridable="yes">Failed to find node: [3] in XML file: [4], system error: [2]</String>
     <String Id="msierrXmlConfigFailedSave" Overridable="yes">Failed to save changes to XML file [3], system error: [2]</String>
 </WixLocalization>
-

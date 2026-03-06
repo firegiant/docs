@@ -5,7 +5,7 @@ title: Creating a Preprocessor Extension
 
 The preprocessor in WiX allows extensibilty at a few levels. This sample will demonstrate how to add a PreprocessorExtension to your WixExtension that will handle variables and functions you define in your own namespace.
 
-This sample assumes you have already reviewed the [Creating a Skeleton Extension](extension_development_simple_example/) topic.
+This sample assumes you have already reviewed the [Creating a Skeleton Extension](/wix3/wixdev/extensions/extension_development_simple_example/) topic.
 
 1. Add a new class to your project called SamplePreprocessorExtension.
 1. If you added a new file for this class, add a using statement that refers to the Microsoft.Tools.WindowsInstallerXml namespace.
@@ -14,7 +14,7 @@ This sample assumes you have already reviewed the [Creating a Skeleton Extension
 1. Make your SamplePreprocessorExtension class implement PreprocessorExtension.
 
         public class SamplePreprocessorExtension : PreprocessorExtension
-1. Add your SamplePreprocessorExtension to your [previously created SampleWixExtension class](extension_development_simple_example/) and override the PreprocessorExtension property from the base class. This will cause your extension to know what to do when WiX asks your extension for its preprocessor extension.
+1. Add your SamplePreprocessorExtension to your [previously created SampleWixExtension class](/wix3/wixdev/extensions/extension_development_simple_example/) and override the PreprocessorExtension property from the base class. This will cause your extension to know what to do when WiX asks your extension for its preprocessor extension.
 
         private SamplePreprocessorExtension preprocessorExtension; 
         

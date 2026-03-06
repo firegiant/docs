@@ -5,11 +5,11 @@ title: Define Searches Using Variables
 
 Searches are used to detect if the target machine meets certain conditions. The result of a search is stored into a variable. Variables are then used to construct install conditions. The search schemas are in the WixUtilExtension. Here is the list of supported searches:
 
-* [FileSearch](../xsd/util/filesearch/)
-* [RegistrySearch](../xsd/util/registrysearch/)
-* [DirectorySearch](../xsd/util/directorysearch/)
-* [ComponentSearch](../xsd/util/componentsearch/)
-* [ProductSearch](../xsd/util/productsearch/)
+* [FileSearch](/wix3/xsd/util/filesearch/)
+* [RegistrySearch](/wix3/xsd/util/registrysearch/)
+* [DirectorySearch](/wix3/xsd/util/directorysearch/)
+* [ComponentSearch](/wix3/xsd/util/componentsearch/)
+* [ProductSearch](/wix3/xsd/util/productsearch/)
 
 A search can be dependent on the result of another search. Keep in mind that all searches are in the WiXUtilExtension. So remember to add the WiXUtilExtension namespace in the authoring. Here is an example:
 ```xml
@@ -63,4 +63,4 @@ After the searches are defined and stored into variables, the variables can then
 </Wix>
 ```
 
-Now you have a fully-defined fragment that can be shared to be consumed by other Burn packages. To see how to chain this package into a Burn package, see [Chain Packages into a Bundle](bundle_author_chain/).
+Now you have a fully-defined fragment that can be shared to be consumed by other Burn packages. To see how to chain this package into a Burn package, see [Chain Packages into a Bundle](/wix3/bundle/bundle_author_chain/).

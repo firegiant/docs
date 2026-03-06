@@ -3,7 +3,7 @@ pagefind: false
 title: 'Library Tool (lit)'
 ---
 
-Lit is the WiX library creation tool. It can be used to combine multiple .wixobj files into libraries that can be consumed by [light](light/).
+Lit is the WiX library creation tool. It can be used to combine multiple .wixobj files into libraries that can be consumed by [light](/wix3/overview/light/).
 
 ## Usage Information
 

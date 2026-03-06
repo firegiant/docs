@@ -25,4 +25,3 @@ Open Package.wxs and update the id of the `ComponentGroupRef`:
 ```
 
 And lest we forget, let's rename the WiX source file ExampleComponents.wxs to AppComponents.wxs. Right-click the file ExampleComponents.wxs in Solution Explorer and choose Rename to rename the file to AppComponents.wxs.
-

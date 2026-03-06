@@ -21,7 +21,7 @@ Before investing in an extension, one should evaluate whether an external tool a
 
 Multiple extensions and extension types are supported, but there is no guarantee of the order in which a particular class of extensions will be processed. As a result, there must not be any sequencing dependencies between extensions within the same extension class.
 
-Extension developers might also implement a RequiredVersion attribute on the [Wix](../../xsd/wix/wix/wix/) element. This allows setup developers using your extension to require a specific version of the extension in case a new feature is introduced or a breaking change is made. You can add an attribute to the Wix element in an extension as shown in the following example.
+Extension developers might also implement a RequiredVersion attribute on the [Wix](/wix3/xsd/wix/wix/) element. This allows setup developers using your extension to require a specific version of the extension in case a new feature is introduced or a breaking change is made. You can add an attribute to the Wix element in an extension as shown in the following example.
 
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns:xse="http://schemas.microsoft.com/wix/2005/XmlSchemaExtension">

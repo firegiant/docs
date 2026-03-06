@@ -18,4 +18,3 @@ You might think we should have a more descriptive project name than `App`. Howev
 4. Choose `Next`.
 5. Enter `App` as the project name.
 6. Choose `Create`.
-

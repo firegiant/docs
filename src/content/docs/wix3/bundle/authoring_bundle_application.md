@@ -3,9 +3,9 @@ pagefind: false
 title: Author Bootstrapper Application for a Bundle
 ---
 
-Every bundle requires a bootstrapper application to drive the Burn engine. The [BootstrapperApplication](../xsd/wix/bootstrapperapplication/) element is used to define a new bootstrapper application. The [BootstrapperApplicationRef](../xsd/wix/bootstrapperapplicationref/) element is used to refer to a bootstrapper application that exists in a [Fragment](../xsd/wix/fragment/) or WiX extension.
+Every bundle requires a bootstrapper application to drive the Burn engine. The [BootstrapperApplication](/wix3/xsd/wix/bootstrapperapplication/) element is used to define a new bootstrapper application. The [BootstrapperApplicationRef](/wix3/xsd/wix/bootstrapperapplicationref/) element is used to refer to a bootstrapper application that exists in a [Fragment](/wix3/xsd/wix/fragment/) or WiX extension.
 
-The [WiX Standard Bootstrapper Application](wixstdba/) exists in the WixBalExtension.dll. The following shows how to use it in a bundle:
+The [WiX Standard Bootstrapper Application](/wix3/bundle/wixstdba/) exists in the WixBalExtension.dll. The following shows how to use it in a bundle:
 
 ```xml
 <?xml version="1.0"?>
@@ -31,7 +31,7 @@ The WiX Standard Bootstrapper Application may not provide all functionality a sp
 </Wix>
 ```
 
-Inside the [BootstrapperApplication](../xsd/wix/bootstrapperapplication/) element and [BootstrapperApplicationRef](../xsd/wix/bootstrapperapplicationref/) element, you may add additional payload files such as resources files that are required by the bootstrapper application DLL as follows:
+Inside the [BootstrapperApplication](/wix3/xsd/wix/bootstrapperapplication/) element and [BootstrapperApplicationRef](/wix3/xsd/wix/bootstrapperapplicationref/) element, you may add additional payload files such as resources files that are required by the bootstrapper application DLL as follows:
 
 ```xml
 <?xml version="1.0"?>
@@ -47,6 +47,6 @@ Inside the [BootstrapperApplication](../xsd/wix/bootstrapperapplication/) elemen
 </Wix>
 ```
 
-This example references a payload file that is on the local machine named resources.dll, as well as a group of payload files that are defined in a [PayloadGroup](../xsd/wix/payloadgroup/) element inside a [Fragment](../xsd/wix/fragment/) elsewhere.
+This example references a payload file that is on the local machine named resources.dll, as well as a group of payload files that are defined in a [PayloadGroup](/wix3/xsd/wix/payloadgroup/) element inside a [Fragment](/wix3/xsd/wix/fragment/) elsewhere.
 
-The next step is to [add installation packages to the chain](authoring_bundle_package_manifest/).
+The next step is to [add installation packages to the chain](/wix3/bundle/authoring_bundle_package_manifest/).

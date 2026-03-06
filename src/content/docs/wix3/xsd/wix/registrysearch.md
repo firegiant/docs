@@ -68,7 +68,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/files_and_registry/read_a_registry_entry">How To: Read a registry entry during installation</a>
+        <a href="/wix3/howtos/files_and_registry/read_a_registry_entry">How To: Read a registry entry during installation</a>
       </li>
     </ul>
   </dd>

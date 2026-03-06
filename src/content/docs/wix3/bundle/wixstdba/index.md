@@ -3,7 +3,7 @@ pagefind: false
 title: Working with WiX Standard Bootstrapper Application
 ---
 
-As described in the introduction to [building installation package bundles](../../bundle/), every bundle requires a bootstrapper application DLL to drive the Burn engine. Custom bootstrapper applications can be created but require the developer to write native or managed code. Therefore, the WiX toolset provides a standard bootstrapper application that developers can use and customize in particular ways.
+As described in the introduction to [building installation package bundles](/wix3/bundle/), every bundle requires a bootstrapper application DLL to drive the Burn engine. Custom bootstrapper applications can be created but require the developer to write native or managed code. Therefore, the WiX toolset provides a standard bootstrapper application that developers can use and customize in particular ways.
 
 There are several variants of the WiX Standard Bootstrapper Application.
 
@@ -13,7 +13,7 @@ There are several variants of the WiX Standard Bootstrapper Application.
 1. WixStandardBootstrapperApplication.RtfLargeLicense - this variant is similar to RtfLicense but is a larger dialog and supports the option of displaying the version number.
 1. WixStandardBootstrapperApplication.HyperlinkLargeLicense - this variant is similar to HyperlinkLicense but is a larger dialog and supports the option of displaying the version number.
 
-To use the WiX Standard Bootstrapper Application, a [BootstrapperApplicationRef](../../xsd/wix/bootstrapperapplicationref/) element must reference one of the above identifiers. The following example uses the bootstrapper application that displays the license:
+To use the WiX Standard Bootstrapper Application, a [BootstrapperApplicationRef](/wix3/xsd/wix/bootstrapperapplicationref/) element must reference one of the above identifiers. The following example uses the bootstrapper application that displays the license:
 
 ```xml
 <?xml version="1.0"?>

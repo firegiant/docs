@@ -158,4 +158,3 @@ public bool Uninstallable { get; set; }
 ```
 ### Remarks
 Even if this property is true, the installer can still block the uninstallation if this patch is required by another patch that cannot be uninstalled.
-

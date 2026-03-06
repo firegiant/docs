@@ -3,7 +3,7 @@ pagefind: false
 title: 'How To: Check for .NET Framework Versions'
 ---
 
-When installing applications written using managed code, it is often useful to verify that the user's machine has the necessary version of the .NET Framework prior to installation. The WiX support for detecting .NET Framework versions is included in a WiX extension, WixNetFxExtension. This how to describes using the WixNetFxExtension to verify .NET Framework versions at install time. For information on how to install the .NET Framework during your installation see [How To: Install the .NET Framework Using Burn](install_dotnet/).
+When installing applications written using managed code, it is often useful to verify that the user's machine has the necessary version of the .NET Framework prior to installation. The WiX support for detecting .NET Framework versions is included in a WiX extension, WixNetFxExtension. This how to describes using the WixNetFxExtension to verify .NET Framework versions at install time. For information on how to install the .NET Framework during your installation see [How To: Install the .NET Framework Using Burn](/wix3/howtos/redistributables_and_install_checks/install_dotnet/).
 
 ## Step 1: Add WixNetFxExtension to your project
 You must add the WixNetFxExtension to your project prior to use. If you are using WiX on the command line, you need to add the following to your candle and light command lines:
@@ -18,7 +18,7 @@ If you are using WiX in Visual Studio, you can add the extension using the Add R
 1. Close the Add Reference dialog.
 
 ## Step 2: Add WixNetFxExtension's namespace to your project
-Once the extension is added to your project, you need to add its namespace to your project so you can access the appropriate WiX elements. To do this, modify the top-level [Wix](../../xsd/wix/wix/wix/) element in your project by adding the following attribute:
+Once the extension is added to your project, you need to add its namespace to your project so you can access the appropriate WiX elements. To do this, modify the top-level [Wix](/wix3/xsd/wix/wix/) element in your project by adding the following attribute:
 
 ```xml
 xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"
@@ -32,7 +32,7 @@ A complete Wix element with the standard namespace and WixNetFxExtension's names
 ```
 
 ## Step 3: Reference the required properties in your project
-WixNetFxExtension defines [properties for all current versions of the .NET Framework](../../customactions/wixnetfxextension/), including service pack levels. To make these properties available to your installer, you need to reference them using the [PropertyRef](../../xsd/wix/propertyref/) element. For each property you want to use, add the corresponding PropertyRef to your project. For example, if you are interested in detecting .NET Framework 2.0 add the following:
+WixNetFxExtension defines [properties for all current versions of the .NET Framework](/wix3/customactions/wixnetfxextension/), including service pack levels. To make these properties available to your installer, you need to reference them using the [PropertyRef](/wix3/xsd/wix/propertyref/) element. For each property you want to use, add the corresponding PropertyRef to your project. For example, if you are interested in detecting .NET Framework 2.0 add the following:
 
 ```xml
 <PropertyRef Id="NETFRAMEWORK20"/>

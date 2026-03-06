@@ -78,4 +78,4 @@ In addition, WixUI_Advanced includes the following common dialogs that appear in
 * VerifyReadyDlg
 * WaitForCostingDlg
 
-See [the WixUI dialog reference](wixui_dialogs/) for detailed descriptions of each of the above dialogs.
+See [the WixUI dialog reference](/wix3/wixui/dialog_reference/wixui_dialogs/) for detailed descriptions of each of the above dialogs.

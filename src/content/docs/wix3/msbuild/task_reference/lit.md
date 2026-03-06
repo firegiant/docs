@@ -3,7 +3,7 @@ pagefind: false
 title: 'Lit Task'
 ---
 
-The Lit task wraps [lit.exe](../../overview/lit/), the WiX library creation tool. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your build process. The following is a sample PropertyGroup that contains settings that will be used by the Lit task:
+The Lit task wraps [lit.exe](/wix3/overview/lit/), the WiX library creation tool. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your build process. The following is a sample PropertyGroup that contains settings that will be used by the Lit task:
 
 ```xml
 <PropertyGroup>

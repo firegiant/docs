@@ -2,7 +2,7 @@
 title: Detecting and installing .NET
 ---
 
-WiX includes a number of MSI properties and bundle variables to detect .NET Framework, .NET Core, and .NET in the WixToolset.Netfx.wixext WiX extension. There is also a custom action to generate native images on .NET Framework. To use them, add a package reference to WixToolset.Netfx.wixext in your .wixproj or use [`wix extension`](../../wixexe/#wix-extension-command-extension) and [`wix build -ext`](../../wixexe/#wix-build-command-build) at the command line.
+WiX includes a number of MSI properties and bundle variables to detect .NET Framework, .NET Core, and .NET in the WixToolset.Netfx.wixext WiX extension. There is also a custom action to generate native images on .NET Framework. To use them, add a package reference to WixToolset.Netfx.wixext in your .wixproj or use [`wix extension`](../../wixexe/#extension) and [`wix build -ext`](../../wixexe/#build) at the command line.
 
 
 ## .NET Framework

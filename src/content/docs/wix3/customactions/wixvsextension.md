@@ -3,7 +3,7 @@ pagefind: false
 title: WixVSExtension
 ---
 
-The [WixVSExtension](../xsd/vs/) includes a set of custom actions to manage help collections. It also includes a set of properties and custom actions that can be used to detect the presence of various versions of Visual Studio and register add-ins, project templates and item templates for use in Visual Studio.
+The [WixVSExtension](/wix3/xsd/vs/) includes a set of custom actions to manage help collections. It also includes a set of properties and custom actions that can be used to detect the presence of various versions of Visual Studio and register add-ins, project templates and item templates for use in Visual Studio.
 
 * [Properties](#allproperties)
   * [Visual Studio .NET 2003](#vs2003properties)

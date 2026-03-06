@@ -522,4 +522,3 @@ public int Language { get; set; }
 ```
 ### Remarks
 Win32 MSI API: [MsiGetLanguage](http://msdn.microsoft.com/library/en-us/msi/setup/msigetlanguage.asp)
-

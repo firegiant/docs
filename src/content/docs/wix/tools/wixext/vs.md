@@ -360,4 +360,3 @@ For example:
 | ------------- | ----------- |
 | VS2022Setup | Runs devenv.exe /setup if Visual Studio 2022 Community Edition or higher is found on the system. Including this custom action automatically adds the VS2022DEVENV property. |
 | VS2022InstallVSTemplates | Runs devenv.exe /InstallVSTemplates if Visual Studio 2022 Community Edition or higher is found on the system. Including this custom action automatically adds the VS2022DEVENV property. |
-

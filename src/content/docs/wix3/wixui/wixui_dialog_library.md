@@ -25,7 +25,7 @@ Assuming you have an existing installer that is functional but is just lacking a
 </Product>
 ```
 
-2. Pass the -ext and -cultures switches to [light.exe](../../overview/light/) to reference the WixUIExtension. For example:
+2. Pass the -ext and -cultures switches to [light.exe](/wix3/overview/light/) to reference the WixUIExtension. For example:
 
 `light -ext WixUIExtension -cultures:en-us Product.wixobj -out Product.msi`
 

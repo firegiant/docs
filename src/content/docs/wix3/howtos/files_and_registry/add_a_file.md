@@ -6,7 +6,7 @@ title: 'How To: Add a File To Your Installer'
 Installing files is the most fundamental aspect of any installer, and is usually what leads people to build an installer in the first place. Learning how to place a file on disk using Windows Installer best practices not only ensures maintainability going forward, but also enables you to build patches later if necessary.
 
 ## Step 1: Define the directory structure
-Installers frequently have many files to install into a few locations on disk. To improve the readability of the WiX file, it is a good practice to define your installation directories first before listing the files you'll install. Directories are defined using the [Directory](../../xsd/wix/directory/) element and describe the hierarchy of folders you would like to see on the target machine. The following sample defines a directory for the installation of the main application executable.
+Installers frequently have many files to install into a few locations on disk. To improve the readability of the WiX file, it is a good practice to define your installation directories first before listing the files you'll install. Directories are defined using the [Directory](/wix3/xsd/wix/directory/) element and describe the hierarchy of folders you would like to see on the target machine. The following sample defines a directory for the installation of the main application executable.
 
 ```xml
 <Directory Id="TARGETDIR" Name="SourceDir">
@@ -21,7 +21,7 @@ The element with the id <a href="http://msdn.microsoft.com/library/aa372064.aspx
 The result of these tags is a **c:\Program Files\My Application Name** folder on the target machine.
 
 ## Step 2: Add files to your installer package
-A file is added to the installer using two elements: a [Component](../../xsd/wix/component/) element to specify an atomic unit of installation and a [File](../../xsd/wix/file/) element to specify the file that should be installed.
+A file is added to the installer using two elements: a [Component](/wix3/xsd/wix/component/) element to specify an atomic unit of installation and a [File](/wix3/xsd/wix/file/) element to specify the file that should be installed.
 
 The component element describes a set of resources (usually files, registry entries, and shortcuts) that need to be installed as a single unit. This is separate from whether the set of items consist of a logical feature the user can select to install which is discussed in Step 3. While it may not seem like a big deal when you are first authoring your installer, components play a critical role when you decide to build patches at a later date.
 
@@ -40,7 +40,7 @@ The following sample uses the directory structure defined in Step 1 to install t
 </DirectoryRef>
 ```
 
-The [DirectoryRef](../../xsd/wix/directoryref/) element is used to refer to the directory structure created in step 1. By referencing the APPLICATIONROOTDIRECTORY directory, the files will be installed into the **c:\program files\My Application Name** folder. Underneath the DirectoryRef are two Component elements, one for each of the two files that will be installed. This is in keeping with the best practice of having one component per file. Each Component element is given an Id and a Guid. The Id is used to refer to the component later in the WiX project. The Guid is used later for patches and must be unique for each component. For information on generating GUIDs see [How To: Generate a GUID](../../howtos/general/generate_guids/).
+The [DirectoryRef](/wix3/xsd/wix/directoryref/) element is used to refer to the directory structure created in step 1. By referencing the APPLICATIONROOTDIRECTORY directory, the files will be installed into the **c:\program files\My Application Name** folder. Underneath the DirectoryRef are two Component elements, one for each of the two files that will be installed. This is in keeping with the best practice of having one component per file. Each Component element is given an Id and a Guid. The Id is used to refer to the component later in the WiX project. The Guid is used later for patches and must be unique for each component. For information on generating GUIDs see [How To: Generate a GUID](/wix3/howtos/general/generate_guids/).
 
 Beneath each component is a File element that does the actual work of packaging your source files into the installer. The Id is used to refer to the file elsewhere in the WiX project. The Source attribute specifies the location of the file on your machine, so WiX can find it and build it into the installer.
 
@@ -49,7 +49,7 @@ The KeyPath attribute is set to yes to tell the Windows Installer that this part
 The Checksum attribute should be set to yes for executable files that have a checksum value in the file header (this is generally true for all executables), and is used by the Windows Installer to verify the validity of the file on re-install.
 
 ## Step 3: Tell Windows Installer to install the files
-After defining the directory structure and listing the files to package into the installer, the last step is to tell Windows Installer to actually install the files. The [Feature](../../xsd/wix/feature/) element is used to do this, and is where you break up your installer into logical pieces that the user can install independently. The following example creates a single feature that installs the application executable and documentation from Step 2.
+After defining the directory structure and listing the files to package into the installer, the last step is to tell Windows Installer to actually install the files. The [Feature](/wix3/xsd/wix/feature/) element is used to do this, and is where you break up your installer into logical pieces that the user can install independently. The following example creates a single feature that installs the application executable and documentation from Step 2.
 
 ```xml
 <Feature Id="MainApplication" Title="Main Application" Level="1">
@@ -60,7 +60,7 @@ After defining the directory structure and listing the files to package into the
 
 The Feature is given a Id. If you are using an installer UI sequence that includes feature selection, the Title attribute contains the text displayed in the UI for the feature. The Level attribute should be set to 1 to enable the installation of the feature by default.
 
-The [ComponentRef](../../xsd/wix/componentref/) element is used to reference the components created in Step 2 via the Id attribute.
+The [ComponentRef](/wix3/xsd/wix/componentref/) element is used to reference the components created in Step 2 via the Id attribute.
 
 ## The Complete Sample
 The following is a complete sample that uses the above concepts. This example can be inserted into a WiX project and compiled, or compiled and linked from the command line, to generate an installer.

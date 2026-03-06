@@ -3,16 +3,16 @@ pagefind: false
 title: 'How To: Install a Windows service'
 ---
 
-To install a Windows service, use the [ServiceInstall](./../../xsd/wix/serviceinstall/) 
+To install a Windows service, use the [ServiceInstall](/wix3/xsd/wix/serviceinstall/) 
 element. Other configuration can be made using the 
-[ServiceControl](./../../xsd/wix/servicecontrol/) element and the 
-[ServiceConfig](./../../xsd/util/serviceconfig/) element from WixUtilExtension.
+[ServiceControl](/wix3/xsd/wix/servicecontrol/) element and the 
+[ServiceConfig](/wix3/xsd/util/serviceconfig/) element from WixUtilExtension.
 
 ## Step 1: Install the service
 
 The `ServiceInstall` element contains the basic information about the service to install.
-This element should be the child of a [Component](./../../xsd/wix/component/) element
-whose key path is a sibling [File](./../../xsd/wix/file/) element that specifies the 
+This element should be the child of a [Component](/wix3/xsd/wix/component/) element
+whose key path is a sibling [File](/wix3/xsd/wix/file/) element that specifies the 
 service executable file.
 
 **Tip:** to specify a system account, such as LocalService or NetworkService, use the prefix 
@@ -21,10 +21,10 @@ to run the service under this account.
 
 ## Step 2: Configure the service (optional)
 
-Using the [util:ServiceConfig](./../../xsd/util/serviceconfig/) element from WixUtilExtension, 
+Using the [util:ServiceConfig](/wix3/xsd/util/serviceconfig/) element from WixUtilExtension, 
 you can configure how the service behaves if it fails. To use it,
-[add](extension_usage_introduction/) WixUtilExtension to your project, add the 
-the [util](./../../xsd/util/) namespace to your WiX authoring,
+[add](/wix3/howtos/general/extension_usage_introduction/) WixUtilExtension to your project, add the 
+the [util](/wix3/xsd/util/) namespace to your WiX authoring,
 and prefix the element name with the `util` prefix:
 
 ```xml

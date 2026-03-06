@@ -3,7 +3,7 @@ pagefind: false
 title: 'Candle Task'
 ---
 
-The Candle task wraps [candle.exe](../../overview/candle/), the WiX compiler. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your build process. The following is a sample PropertyGroup that contains settings that will be used by the Candle task:
+The Candle task wraps [candle.exe](/wix3/overview/candle/), the WiX compiler. It supports a variety of settings that are described in more detail below. To control these settings in your .wixproj file, you can create a PropertyGroup and specify the settings that you want to use for your build process. The following is a sample PropertyGroup that contains settings that will be used by the Candle task:
 
 ```xml
 <PropertyGroup>

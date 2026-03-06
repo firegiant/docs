@@ -67,7 +67,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/author_product_dependencies">How To: Author product dependencies</a>
+        <a href="/wix3/howtos/author_product_dependencies">How To: Author product dependencies</a>
       </li>
     </ul>
   </dd>

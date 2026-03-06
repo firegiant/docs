@@ -29,4 +29,3 @@ public System.Int64 TempCost { get; set; }
 ```
 ### Remarks
 This temporary space requirement is space needed only for the duration of the installation, over the final footprint on disk.
-

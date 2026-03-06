@@ -3,9 +3,9 @@ pagefind: false
 title: Chain Packages into a Bundle
 ---
 
-To chain a package, you can either put the package definition directly under the [Chain](../xsd/wix/chain/) element or put a [PackageGroupRef](../xsd/wix/packagegroupref/) inside the [Chain](../xsd/wix/chain/) to reference a shared package definition.
+To chain a package, you can either put the package definition directly under the [Chain](/wix3/xsd/wix/chain/) element or put a [PackageGroupRef](/wix3/xsd/wix/packagegroupref/) inside the [Chain](/wix3/xsd/wix/chain/) to reference a shared package definition.
 
-Here&apos;s an example of having the definition directly under [Chain](../xsd/wix/chain/):
+Here&apos;s an example of having the definition directly under [Chain](/wix3/xsd/wix/chain/):
 
 ```xml
 <?xml version="1.0"?>

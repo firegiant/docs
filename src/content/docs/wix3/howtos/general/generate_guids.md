@@ -7,7 +7,7 @@ GUIDs are used extensively with the Windows Installer to uniquely identify produ
 
 All examples in the How To documentation use the text **PUT-GUID-HERE** for GUIDs. Every **PUT-GUID-HERE** must be replaced with a newly-generated GUID.
 
-The [Component](../../xsd/wix/component/), [Package](../../xsd/wix/package/), [Patch](../../xsd/wix/patch/),&nbsp; [Product](../../xsd/wix/product/) elements support auto-generation of GUIDs every time you build your project by specifying a **\*** in place of the GUID. For example:
+The [Component](/wix3/xsd/wix/component/), [Package](/wix3/xsd/wix/package/), [Patch](/wix3/xsd/wix/patch/),&nbsp; [Product](/wix3/xsd/wix/product/) elements support auto-generation of GUIDs every time you build your project by specifying a **\*** in place of the GUID. For example:
 
 ```xml
 <Product Id="*"

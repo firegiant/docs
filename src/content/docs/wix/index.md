@@ -183,7 +183,7 @@ Users should be encouraged to participate in the life of the project and the com
 
 Users who continue to engage with the project and its community will often find themselves becoming more and more involved. Such users may then go on to become Contributors, as described above.
 
-**How to become a User:** Use the WiX Toolset and participate on the [mailing lists](gethelp.md#mailinglists) and [discussion forum](gethelp.md#forum).
+**How to become a User:** Use the WiX Toolset and participate on the [discussion forum](gethelp/#forum).
 
 
 ## Contribution License Agreement

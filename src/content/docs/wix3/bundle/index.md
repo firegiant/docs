@@ -14,10 +14,10 @@ Creating bundles with the WiX toolset is directly analogous to creating Windows 
 This section will give you an overview of the WiX bundle language and how to use it to create a bundle.
 
 *  [Create the Skeleton Bundle Authoring](authoring_bundle_skeleton/)
-*  [Author the Bootstrapper Application for a Bundle](authoring_bundle_application/)
-*  [Author a Bundle Package Manifest](authoring_bundle_package_manifest/)
-*  [Burn Built-In Variables](bundle_built_in_variables/)
-*  [Define Searches Using Variables](bundle_define_searches/)
-*  [Chain Packages into a Bundle](bundle_author_chain/)
-*  [Working with WiX Standard Bootstrapper Application](wixstdba/)
+*  [Author the Bootstrapper Application for a Bundle](/wix3/bundle/authoring_bundle_application/)
+*  [Author a Bundle Package Manifest](/wix3/bundle/authoring_bundle_package_manifest/)
+*  [Burn Built-In Variables](/wix3/bundle/bundle_built_in_variables/)
+*  [Define Searches Using Variables](/wix3/bundle/bundle_define_searches/)
+*  [Chain Packages into a Bundle](/wix3/bundle/bundle_author_chain/)
+*  [Working with WiX Standard Bootstrapper Application](/wix3/bundle/wixstdba/)
 *  [Building a Bootstrapper Application](ba/)

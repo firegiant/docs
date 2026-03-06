@@ -3,7 +3,7 @@ pagefind: false
 title: WixNetfxExtension
 ---
 
-The [WixNetfxExtension](../xsd/netfx/) includes a set of custom actions to compile native images using Ngen.exe. For an example, see [How To: NGen managed assemblies during installation](../howtos/files_and_registry/ngen_managed_assemblies/).
+The [WixNetfxExtension](/wix3/xsd/netfx/) includes a set of custom actions to compile native images using Ngen.exe. For an example, see [How To: NGen managed assemblies during installation](/wix3/howtos/files_and_registry/ngen_managed_assemblies/).
 
 ## PackageGroups
 
@@ -118,7 +118,7 @@ The WixNetfxExtension includes package groups that make it easier to include .NE
 
 ## Properties
 
-The WixNetfxExtension also includes a set of properties that can be used to detect the presence of various versions of the .NET Framework, the .NET Framework SDK and the Windows SDK. For information on how to use these properties to verify the user&apos;s .NET Framework version at install time see [How To: Check for .NET Framework Versions](../howtos/redistributables_and_install_checks/check_for_dotnet/).
+The WixNetfxExtension also includes a set of properties that can be used to detect the presence of various versions of the .NET Framework, the .NET Framework SDK and the Windows SDK. For information on how to use these properties to verify the user&apos;s .NET Framework version at install time see [How To: Check for .NET Framework Versions](/wix3/howtos/redistributables_and_install_checks/check_for_dotnet/).
 
 The following properties (available starting in WiX v3.10) let you detect a particular minimum version of .NET Framework 4.X releases that are in-place updates (rather than that are installed side-by-side with other releases):
 

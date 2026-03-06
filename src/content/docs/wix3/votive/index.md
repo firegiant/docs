@@ -22,4 +22,4 @@ using Visual Studio and WiX.
 * [Using project references and variables](votive_project_references/)
 
 Alternatively, you may also use WiX on the command line by calling the tools 
-directly or [using MSBuild](../msbuild/).
+directly or [using MSBuild](/wix3/msbuild/).

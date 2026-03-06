@@ -179,7 +179,7 @@ pagefind: false
       <tr>
         <td>Source</td>
         <td>String</td>
-        <td>Specifies the path to the File in the build process. Overrides default source path set by parent directories and Name attribute. This attribute must be set if no source information can be gathered from parent directories. For more information, see <a href="../../../howtos/general/specifying_source_files">Specifying source files</a>.</td>
+        <td>Specifies the path to the File in the build process. Overrides default source path set by parent directories and Name attribute. This attribute must be set if no source information can be gathered from parent directories. For more information, see <a href="/wix3/howtos/general/specifying_source_files">Specifying source files</a>.</td>
         <td>&nbsp;</td>
       </tr>
       <tr>
@@ -217,7 +217,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/files_and_registry/add_a_file">How To: Add a file to your installer</a>
+        <a href="/wix3/howtos/files_and_registry/add_a_file">How To: Add a file to your installer</a>
       </li>
     </ul>
   </dd>

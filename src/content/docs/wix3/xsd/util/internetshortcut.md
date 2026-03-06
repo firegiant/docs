@@ -72,7 +72,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/files_and_registry/create_internet_shortcut">How To: Create a shortcut to a webpage</a>
+        <a href="/wix3/howtos/files_and_registry/create_internet_shortcut">How To: Create a shortcut to a webpage</a>
       </li>
     </ul>
   </dd>

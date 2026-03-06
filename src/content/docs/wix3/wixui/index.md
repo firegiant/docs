@@ -9,4 +9,4 @@ installation packages. This section covers the following topics about using the 
 * [Using Built-in WixUI Dialog Sets](wixui_dialog_library/)
 * [Customizing Built-in WixUI Dialog Sets](wixui_customizations/)
 * [Using Localized Versions of WixUI](wixui_localization/)
-* [WixUI Dialog Reference](dialog_reference/)
+* [WixUI Dialog Reference](/wix3/wixui/dialog_reference/)

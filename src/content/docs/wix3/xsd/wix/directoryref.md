@@ -38,7 +38,7 @@ pagefind: false
       <tr>
         <td>FileSource</td>
         <td>String</td>
-        <td>Used to set the file system source for this DirectoryRef's child elements. For more information, see <a href="../../../howtos/general/specifying_source_files">Specifying source files</a>.</td>
+        <td>Used to set the file system source for this DirectoryRef's child elements. For more information, see <a href="/wix3/howtos/general/specifying_source_files">Specifying source files</a>.</td>
         <td>&nbsp;</td>
       </tr>
       <tr>
@@ -58,7 +58,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/files_and_registry/add_a_file">How To: Add a file to your installer</a>
+        <a href="/wix3/howtos/files_and_registry/add_a_file">How To: Add a file to your installer</a>
       </li>
     </ul>
   </dd>

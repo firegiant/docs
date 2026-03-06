@@ -65,7 +65,7 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/redistributables_and_install_checks/install_vcredist">How To: Install the Visual C++ Redistributable with your installer</a>
+        <a href="/wix3/howtos/redistributables_and_install_checks/install_vcredist">How To: Install the Visual C++ Redistributable with your installer</a>
       </li>
     </ul>
   </dd>

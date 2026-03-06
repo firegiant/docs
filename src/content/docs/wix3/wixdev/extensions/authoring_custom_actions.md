@@ -3,7 +3,7 @@ pagefind: false
 title: Adding a Custom Action
 ---
 
-This example shows how to author a binary custom action called &quot;FooAction&quot;. A common example is a dll custom action that launches notepad.exe or some other application as part of their install. Before you start, you will need a sample dll that has an entrypoint called &quot;FooEntryPoint&quot;. This sample assumes you have already reviewed the [Creating a Skeleton Extension](extension_development_simple_example/) topic.
+This example shows how to author a binary custom action called &quot;FooAction&quot;. A common example is a dll custom action that launches notepad.exe or some other application as part of their install. Before you start, you will need a sample dll that has an entrypoint called &quot;FooEntryPoint&quot;. This sample assumes you have already reviewed the [Creating a Skeleton Extension](/wix3/wixdev/extensions/extension_development_simple_example/) topic.
 
 ## Step 1: Create a Fragment
 

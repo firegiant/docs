@@ -25,5 +25,3 @@ Bundle UIs are challenging to debug. They are an executable carried as a payload
 6. Attach a debugger to the Bundle UI process
 7. Set a breakpoint in the Bundle UI code to debug
 8. Continue in the debugger to hit the break point
-
-

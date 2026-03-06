@@ -42,4 +42,3 @@ public FeatureInstallation+UsageData Usage { get; set; }
 ### Remarks
 If no usage metrics are recorded, the «see P:WixToolset.Dtf.WindowsInstaller.FeatureInstallation.UsageData.UseCount» value is 0.
 Win32 MSI API: [MsiGetFeatureUsage](http://msdn.microsoft.com/library/en-us/msi/setup/msigetfeatureusage.asp)
-

@@ -267,4 +267,4 @@ The preprocessor supports the following functions:
 
 ## Extensions
 
-WiX has support for preprocessor [extensions](../wixdev/extensions/extensions/) via the PreprocessorExtension class. The PreprocessorExtension can provide callbacks with context at foreach initialization, variable evaluation, function definitions, and the last call before invoking the compiler (for full custom preprocessing).
+WiX has support for preprocessor [extensions](/wix3/wixdev/extensions/extensions/) via the PreprocessorExtension class. The PreprocessorExtension can provide callbacks with context at foreach initialization, variable evaluation, function definitions, and the last call before invoking the compiler (for full custom preprocessing).

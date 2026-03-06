@@ -45,7 +45,7 @@ You can set the following properties in your .wixproj to control the build:
 | SuppressValidation | If **true**, turns off MSI validation. Default: **false** |
 | TreatSpecificWarningsAsErrors | Semicolon-delimited list of warning message numbers to treat as errors. Default: none |
 | TreatWarningsAsErrors | If **true**, treats all warning messages as errors. Default: **false** |
-| ValidationAdditionalOptions | A string specifying arbitrary [Wix.exe command-line arguments](../wixexe/#wix-msi-command) to use during validation. Default: none |
+| ValidationAdditionalOptions | A string specifying arbitrary [Wix.exe command-line arguments](../wixexe/#msivalidate) to use during validation. Default: none |
 | VerboseOutput | If **true**, turns on verbose messages. Default: **false** |
 
 

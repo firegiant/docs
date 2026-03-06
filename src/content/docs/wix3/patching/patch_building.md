@@ -201,4 +201,4 @@ On Windows XP Service Pack 2 and Windows Server 2003, go to &quot;Add/Remove Pro
 
 ## Restrictions
 
-Please review [restrictions](patch_restrictions/) on how patches must be built to avoid problem during patch installation.
+Please review [restrictions](/wix3/patching/patch_restrictions/) on how patches must be built to avoid problem during patch installation.

@@ -4,9 +4,9 @@ title: 'HarvestProjects Target'
 ---
 
 The **HarvestProjects** target passes **HarvestProject** items to the
-[HeatProject task](../../msbuild/task_reference/heatproject/) to generate authoring from a project file.
+[HeatProject task](/wix3/msbuild/task_reference/heatproject/) to generate authoring from a project file.
 
-Harvesting projects is disabled by default because it may not always work correctly, but you can enable it by adding the following to the top of your [WiX project file](../../msbuild/authoring_first_msbuild_project/):
+Harvesting projects is disabled by default because it may not always work correctly, but you can enable it by adding the following to the top of your [WiX project file](/wix3/msbuild/authoring_first_msbuild_project/):
 
 ```xml
 <PropertyGroup>
@@ -15,7 +15,7 @@ Harvesting projects is disabled by default because it may not always work correc
 ```
 
 If enabled, this target is processed before compilation. Generated authoring is automatically added to the
-**Compile** item group to be compiled by the [Candle task](../../msbuild/task_reference/candle/).
+**Compile** item group to be compiled by the [Candle task](/wix3/msbuild/task_reference/candle/).
 
 ```xml
 <ItemGroup>

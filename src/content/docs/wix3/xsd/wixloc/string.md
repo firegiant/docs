@@ -48,10 +48,10 @@ pagefind: false
   <dd>
     <ul>
       <li>
-        <a href="../../../howtos/ui_and_localization/build_a_localized_version">How To: Build a localized version of your installer</a>
+        <a href="/wix3/howtos/ui_and_localization/build_a_localized_version">How To: Build a localized version of your installer</a>
       </li>
       <li>
-        <a href="../../../howtos/ui_and_localization/make_installer_localizable">How To: Make your installer localizable</a>
+        <a href="/wix3/howtos/ui_and_localization/make_installer_localizable">How To: Make your installer localizable</a>
       </li>
     </ul>
   </dd>

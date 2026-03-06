@@ -17,6 +17,6 @@ WiX supports the following classes of extensions:
 * <b>Validator Extensions</b> allow clients to process ICE validation messages. By default, ICE validation messages are output to the console.
 * <b>WixBinder Extensions</b> allow clients to completely change the Binder to, for example, create different output formats from WiX authoring.
 
-For information on how to use WiX extensions on the command line or inside the Visual Studio IDE, please visit the [Using WiX extensions](../../../howtos/general/extension_usage_introduction/) topic.
+For information on how to use WiX extensions on the command line or inside the Visual Studio IDE, please visit the [Using WiX extensions](/wix3/howtos/general/extension_usage_introduction/) topic.
 
 For information on how to use localized WiX extensions, please visit the [Localized extensions](../localized_extensions/) topic.
