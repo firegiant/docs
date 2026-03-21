@@ -1,0 +1,11 @@
+---
+import '@astrojs/starlight/style/markdown.css';
+import { PRIORITY_PAGEFIND_CONTENT_WEIGHT, isPrioritySearchSlug } from '../../utils/pagefind';
+
+const slug = Astro.locals.starlightRoute.entry.slug;
+const dataAttributes = isPrioritySearchSlug(slug)
+  ? { 'data-pagefind-weight': PRIORITY_PAGEFIND_CONTENT_WEIGHT }
+  : {};
+---
+
+<div class="sl-markdown-content" {...dataAttributes}><slot /></div>
