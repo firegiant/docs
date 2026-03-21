@@ -1,0 +1,88 @@
+---
+import config from 'virtual:starlight/user-config';
+
+import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import SocialIcons from 'virtual:starlight/components/SocialIcons';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+
+const shouldRenderSearch =
+  config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="fg-header">
+  <div class="fg-title sl-flex">
+    <SiteTitle />
+  </div>
+  <div class="fg-search sl-flex print:hidden">
+    {shouldRenderSearch && <Search class="fg-search-control" />}
+  </div>
+  <div class="fg-right sl-hidden md:sl-flex print:hidden">
+    <div class="fg-social sl-flex">
+      <SocialIcons />
+    </div>
+    <ThemeSelect />
+    <LanguageSelect />
+  </div>
+</div>
+
+<style>
+  .fg-header {
+    display: flex;
+    align-items: center;
+    gap: var(--sl-nav-gap);
+    min-width: 0;
+    width: 100%;
+  }
+
+  .fg-title {
+    flex: 0 0 auto;
+    min-width: max-content;
+    overflow: visible;
+  }
+
+  .fg-search {
+    flex: 1 1 16rem;
+    min-width: 0;
+  }
+
+  .fg-search :global(site-search) {
+    display: block;
+    width: 100%;
+  }
+
+  .fg-search :global(button[data-open-modal]) {
+    max-width: 22rem;
+  }
+
+  .fg-right,
+  .fg-social {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fg-right {
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+    min-width: max-content;
+  }
+
+  .fg-social::after {
+    content: '';
+    height: 2rem;
+    border-inline-end: 1px solid var(--sl-color-gray-5);
+  }
+
+  @media (max-width: 63.999rem) {
+    .fg-search {
+      flex-basis: 14rem;
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .fg-search :global(button[data-open-modal]) {
+      max-width: 100%;
+    }
+  }
+</style>

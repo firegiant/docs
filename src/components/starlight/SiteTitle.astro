@@ -14,14 +14,24 @@ const docsHref = 'https://docs.firegiant.com/';
 
 <style>
   .site-title {
+    --logo-height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+    align-items: center;
     gap: 1rem;
+    min-width: max-content;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
+
   .site-title a {
     display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
+
   .firegiant-logo {
     color: var(--sl-color-white);
   }
+
   .docs-logo {
     color: var(--sl-color-text-accent);
   }
@@ -37,15 +47,22 @@ const docsHref = 'https://docs.firegiant.com/';
   }
   /* Adjust svg sizes to full nav height */
   .site-title :global(svg) {
-    --display-height: 1.75rem;
-    /* `auto` ensures the `<svg>` scales down on really narrow viewports */
+    display: block;
     width: auto;
-    height: auto;
-    margin-block: calc((var(--sl-nav-height) - var(--display-height)) / 2);
+    height: var(--logo-height);
+    max-width: none;
     transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
   }
+
   .site-title a:hover :global(svg) {
     --hover-offset: 0.15rem;
     transform: translateY(calc(var(--hover-offset) * -1));
+  }
+
+  @media (max-width: 64rem) {
+    .site-title {
+      --logo-height: 1.625rem;
+      gap: 0.75rem;
+    }
   }
 </style>
