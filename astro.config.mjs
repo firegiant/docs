@@ -45,6 +45,7 @@ export default defineConfig({
       components: {
         // Override the default `Head` component to add our page tracking.
         Head: './src/components/starlight/Head.astro',
+        Header: './src/components/starlight/Header.astro',
         // Boost schema reference pages in Pagefind results.
         MarkdownContent: './src/components/starlight/MarkdownContent.astro',
         PageTitle: './src/components/starlight/PageTitle.astro',
