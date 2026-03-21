@@ -45,6 +45,9 @@ export default defineConfig({
       components: {
         // Override the default `Head` component to add our page tracking.
         Head: './src/components/starlight/Head.astro',
+        // Boost schema reference pages in Pagefind results.
+        MarkdownContent: './src/components/starlight/MarkdownContent.astro',
+        PageTitle: './src/components/starlight/PageTitle.astro',
         // Override the default `SiteTitle` component to link to both firegiant.com and docs.firegiant.com.
         SiteTitle: './src/components/starlight/SiteTitle.astro',
       },
