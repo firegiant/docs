@@ -4,9 +4,22 @@ sidebar:
   order: 2
 ---
 
+## Get the latest version of WiX
+
+- [WiX MSBuild SDK](https://www.nuget.org/packages/WixToolset.Sdk)
+- [.NET command-line tool](https://www.nuget.org/packages/wix)
+- [GitHub release](https://github.com/wixtoolset/wix/releases/tag/v7.0.0)
+
+
 ## What's new in WiX v7
 
-WiX v7.0.0-rc.2 is available. See [the release notes](/wix/whatsnew/releasenotes/#wix-v7) for details about this prerelease.
+WiX v7 continues our annual release cadence, first introduced with WiX v4 way back in 2023. This release contains a normal number of features and fixes but the highlights are:
+
+- Burn now supports dual-purpose MSI packages in bundles, which lets a user choose to install a bundle per-user or per-machine at install time.
+- WiX v7 adopts the OSMF EULA v1.1 that avoids requiring a fee until you make at least US$10,000 a year from your projects that use WiX and requires explicit acceptance of the EULA.
+- Extra-long paths (i.e., paths longer than 260 characters) are now generally supported for locating payloads in packages.
+
+See [the release notes](/wix/whatsnew/releasenotes/#wix-v7) for details about this release.
 
 
 ## What's new in WiX v6

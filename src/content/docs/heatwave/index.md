@@ -13,14 +13,13 @@ HeatWave is FireGiant's Visual Studio extension for modern WiX. HeatWave Communi
 -   Project and item templates
 -   Property pages to control how the project builds
 
-HeatWave peacefully coexists with the WiX v3 Visual Studio extension, which lets you mix and match WiX v3 and modern WiX projects in a solution. You can convert the WiX v3 projects to modern WiX gradually.
+HeatWave peacefully coexists with the WiX v3 Visual Studio extension, which lets you convert WiX v3 projects to modern WiX.
 
 ## Installing HeatWave
 
 HeatWave is available from the Visual Studio Marketplace.
 
-- [Download HeatWave for Visual Studio 2022 here.](https://marketplace.visualstudio.com/items?itemName=FireGiant.FireGiantHeatWaveDev17)
-- [Download HeatWave for Visual Studio 2019 here.](https://marketplace.visualstudio.com/items?itemName=FireGiant.FireGiantHeatWaveDev16)
+- [Download HeatWave for Visual Studio 2026 and 2022 here.](https://marketplace.visualstudio.com/items?itemName=FireGiant.FireGiantHeatWaveDev17)
 
 Double-click the downloaded .vsix file to install HeatWave.
 

@@ -6,6 +6,7 @@ sidebar:
 
 ## WiX v7
 
+- WiX v7.0.0 was published 6-Apr-2026.
 - WiX v7.0.0-rc.2 was published 5-Mar-2026.
 - WiX v7.0.0-rc.1 was published 6-Feb-2026.
 
@@ -27,6 +28,7 @@ WiX v7 continues our three-year-old tradition of shipping releases annually and 
 - Restore the ability to specify an icon that appears in a WixStdBA bootstrapper application window. (Issue [8104](https://github.com/wixtoolset/issues/issues/8104))
 - Make WixUI_Advanced handle 64-bit installation directories. (Issue [2165](https://github.com/wixtoolset/issues/issues/2165))
 - Add `ProductSearch/@Result='exists'` to Burn searches. (Issue [9079](https://github.com/wixtoolset/issues/issues/9079))
+
 
 ## WiX v6
 
@@ -55,7 +57,7 @@ WiX v6 is the second annual release since WiX v4. WiX v6 continues in the tradit
 Get started with an SDK-style .wixproj project:
 
 ```xml
-<Project Sdk="WixToolset.Sdk/6.0.2">
+<Project Sdk="WixToolset.Sdk/7.0.0">
 </Project>
 ```
 
@@ -63,7 +65,7 @@ and simple package code in a .wxs file:
 
 ```xml
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-    <Package Id="Acme.HelloWorld" Name="HelloWorld" Version="6.0.0" Manufacturer="Acme">
+    <Package Id="Acme.HelloWorld" Name="HelloWorld" Version="7.0.0" Manufacturer="Acme">
         <Files Include="*" />
     </Package>
 </Wix>
