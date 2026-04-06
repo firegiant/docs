@@ -11,9 +11,9 @@ You can follow along this whole tutorial one step at a time. You can also hop in
 
 ## System requirements
 
-WiX is available as an MSBuild SDK and .NET tool when using a .NET 6.0 or later SDK. It is also available as an MSBuild SDK when using MSBuild in Visual Studio 2019 and later.
+WiX is available as an MSBuild SDK and .NET tool when using a .NET 6.0 or later SDK. It is also available as an MSBuild SDK when using MSBuild in Visual Studio 2022 and later.
 
-In this tutorial, we're using Visual Studio 2022 but you can use Visual Studio 2019 -- or even no Visual Studio at all. But sometimes the words and procedures are assuming the use of current versions of Visual Studio 2022. You can also just follow along and not actually play with the code...but where's the fun in that?
+In this tutorial, we're using Visual Studio 2022 but you can use Visual Studio 2026 -- or even no Visual Studio at all. But sometimes the words and procedures are assuming the use of current versions of Visual Studio 2022. You can also just follow along and not actually play with the code...but where's the fun in that?
 
 
 ## The story so far

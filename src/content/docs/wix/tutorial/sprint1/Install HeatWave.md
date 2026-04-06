@@ -9,11 +9,10 @@ We're building our app and its installer in Visual Studio, so we need a Visual S
 
 HeatWave is available from the Visual Studio Marketplace.
 
-- [Download HeatWave for Visual Studio 2022 here.][dl17]
-- [Download HeatWave for Visual Studio 2019 here.][dl16]
+[Download HeatWave for Visual Studio 2022 and 2026 here.][dl]
 
 Double-click the downloaded .vsix file to install HeatWave.
 
+You can also install HeatWave inside Visual Studio by choosing `Extensions` then `Manage Extensions`.
 
-[dl17]: https://marketplace.visualstudio.com/items?itemName=FireGiant.FireGiantHeatWaveDev17
-[dl16]: https://marketplace.visualstudio.com/items?itemName=FireGiant.FireGiantHeatWaveDev16
+[dl]: https://marketplace.visualstudio.com/items?itemName=FireGiant.FireGiantHeatWaveDev17
