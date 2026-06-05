@@ -139,22 +139,22 @@ The expressions used with `<?if?>` and `<?elseif?>` is a Boolean expression eval
 - The expression is evaluated left to right
 - Expressions are case-sensitive with the following exceptions:
   - Environment variable names
-  - The keywords `and`, `or`, and `not`
+  - The keywords `And`, `Or`, and `Not`
   - The `~=` operator is case-insensitive.
 - All variables must use the `$()` syntax or they will be considered a literal value.
 - To use a literal `$(`, escape the `$` with a second one: `$$(`
 - Variables can be compared to a literal or another variable:
-  - Comparisons with `=`, `!=`, and `~=` are string comparisons.
+  - Comparisons with `=` (or `==`), `!=`, and `~=` are string comparisons.
   - Comparisons with relational operators (`<`, `<=`, `>`, `>=`) can only be performed on integer values.
-  - If the variable doesn't exist, evaluation will fail and an error will be raised.
+  - If a variable doesn't exist, evaluation will fail and an error will be raised.
 - The operator precedence is as follows:
   1. `""`
   2. `()`, `$()`
-  3. `<`, `>`, `<=`, `>=`, `=`, `!=`, `~=`
+  3. `<`, `>`, `<=`, `>=`, `=`, `==`, `!=`, `~=`
   4. `Not`
   5. `And`, `Or`
 - Parentheses can be nested.
-- Literals can be surrounded by quotes, although quotes are not required.
+- Literals can be surrounded by quotes, although quotes are required only when literals contain whitespace.
 - Quotes and leading and trailing whitespace are stripped off literal values.
 - Invalid expressions result in a preprocessor failure.
 
