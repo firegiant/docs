@@ -62,6 +62,7 @@ export default defineConfig({
           'heatwave/adding-wix-extensions',
           'heatwave/adding-project-references',
           'heatwave/building-wix-projects',
+          'heatwave/release-notes',
           'heatwave/reporting-bugs',
           { label: 'Build Tools', collapsed: true, items: [
             'heatwave/build-tools',
