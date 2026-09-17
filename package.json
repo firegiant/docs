@@ -6,18 +6,24 @@
     "dev": "astro dev",
     "pages:dev": "wrangler pages dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.0",
     "@astrojs/starlight": "0.37.6",
     "astro": "5.18.0",
-    "astro-broken-link-checker": "github:firegiant/astro-broken-link-checker",
     "remark-heading-id": "1.0.1",
     "sharp": "0.34.5"
   },
   "devDependencies": {
-    "esbuild": "0.27.3"
+    "playwright": "1.58.2",
+    "vite-plus": "0.3.2"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.24.0",
+      "onFail": "warn"
+    }
   }
 }
