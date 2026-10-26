@@ -6,6 +6,7 @@ sidebar:
 
 ## WiX v7
 
+- WiX v7.0.1 was published 26-Oct-2026.
 - WiX v7.0.0 was published 6-Apr-2026.
 - WiX v7.0.0-rc.2 was published 5-Mar-2026.
 - WiX v7.0.0-rc.1 was published 6-Feb-2026.
@@ -30,12 +31,20 @@ WiX v7 continues our three-year-old tradition of shipping releases annually and 
 - Add `ProductSearch/@Result='exists'` to Burn searches. (Issue [9079](https://github.com/wixtoolset/issues/issues/9079))
 
 
+### WiX v7.0.1
+
+WiX v7.0.1 was released in response to a security release in a .NET assembly that WiX includes. WiX v7.0.1 avoids the vulnerable assembly and also includes the following fixes for customers:
+
+- Add the `-nohardlinks` switch to prevent WiX from using hard links to copy files during the build process. Copying files instead of using hard links can significantly add to build times for large payloads but some build systems get confused without physical copying.
+- Don't complain about duplicate layout names in a bundle build if the payloads are identical files. The `WIX8004` error was added in WiX v4 to prevent accidentally overwriting commonly-named files and breaking a bundle install. But if the files being laid out are identical, the bundle will install successfully, so `WIX8004` is not an accurate error.
+
+
 ### Get started 
 
 Get started with an SDK-style .wixproj project:
 
 ```xml
-<Project Sdk="WixToolset.Sdk/7.0.0">
+<Project Sdk="WixToolset.Sdk/7.0.1">
 </Project>
 ```
 
@@ -43,7 +52,7 @@ and simple package code in a .wxs file:
 
 ```xml
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-    <Package Id="Acme.HelloWorld" Name="HelloWorld" Version="7.0.0" Manufacturer="Acme">
+    <Package Id="Acme.HelloWorld" Name="HelloWorld" Version="7.0.1" Manufacturer="Acme">
         <Files Include="*" />
     </Package>
 </Wix>

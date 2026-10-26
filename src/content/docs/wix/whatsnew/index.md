@@ -8,7 +8,7 @@ sidebar:
 
 - [WiX MSBuild SDK](https://www.nuget.org/packages/WixToolset.Sdk)
 - [.NET command-line tool](https://www.nuget.org/packages/wix)
-- [GitHub release](https://github.com/wixtoolset/wix/releases/tag/v7.0.0)
+- [GitHub release](https://github.com/wixtoolset/wix/releases/tag/v7.0.1)
 
 
 ## What's new in WiX v7
