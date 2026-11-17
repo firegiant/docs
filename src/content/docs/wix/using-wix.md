@@ -116,6 +116,9 @@ The official WiX Toolset packages are signed so you can harden your build proces
       <certificate
         fingerprint="D95336DD2022934D80E3F3A4F938DD66EC7076BBBA680F76C11F2B54B346D61D"
         hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+      <certificate
+        fingerprint="3B1DB2FB5F2AA8D88962B1ADDBEFE9A740A571C3353B6F195F66B98ADBB603E2"
+        hashAlgorithm="SHA256" allowUntrustedRoot="false" />
     </author>
   </trustedSigners>
 </configuration>
