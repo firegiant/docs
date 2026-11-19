@@ -85,6 +85,7 @@ To keep both customers and consumers safe, security updates are released more wi
 | WiX v4 | 2023/04/05 | 2025/02/05 |
 | WiX v5 | 2024/04/05 | 2026/02/05 |
 | WiX v6 | 2025/04/05 | 2027/02/05 |
+| WiX v7 | 2026/04/05 | 2028/02/05 |
 
 This provides consumers with security updates for 22 months and ensures they are protected while updating to the latest major version.
 
